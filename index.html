@@ -1,37 +1,82 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
 
-You can use the [editor on GitHub](https://github.com/striumve/LyxWeb.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lyx's personal web!</title>
+    <style>
+        #header {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            border: black, 2px, solid;
+            overflow: hidden;
+            /* background-color: pink; */
+            cursor:default;
+        }
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        #header-bg1 {
+            position: absolute;
+            z-index: 1;
+            left: 0px;
+            bottom: 0px;
+        }
 
-### Markdown
+        #header-bg2 {
+            position: absolute;
+            z-index: 1;
+            left: 800px;
+            bottom: 0px;
+        }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        #header-bg-right {
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 200px;
+            background: url(1.jpg);
+            background-position: 1600px 100%;
+        }
 
-```markdown
-Syntax highlighted code block
+        #welcome-1 {
+            position: absolute;
+            z-index: 2;
+            top: 0px;
+            left: 25px;
+            font-size: 100px;
+            font-family: '微软雅黑';
+            color: white;
+            /* 以下注释段可以实现文字流光效果，但是效果不是很好看 */
+            /* background-image: -webkit-linear-gradient(left, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            -webkit-text-fill-color: transparent;
+            background-clip: text; */
+            margin: 0px;
+        }
 
-# Header 1
-## Header 2
-### Header 3
+        #welcome-2 {
+            position: absolute;
+            z-index: 2;
+            bottom: 10px;
+            left: 10px;
+            font-size: 25px;
+            font-family: '微软雅黑';
+            color: white;
+            margin: 0px;
+        }
+    </style>
+</head>
 
-- Bulleted
-- List
+<body>
+    <div id="header">
+        <img src="1.jpg" alt="背景图片1" title="我是一个背景图片QwQ" id="header-bg1">
+        <img src="2.jpg" alt="背景图片2" title="(｡･∀･)ﾉﾞ嗨,我是一个背景图片" id="header-bg2">
+        <div id="header-bg-right" title="($_$)刚刚谁叫我啊？"></div>
+        <p id="welcome-1">欢 迎</p>
+        <p id="welcome-2">lyx的个人网站</p>
+    </div>
+</body>
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/striumve/LyxWeb.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</html>
