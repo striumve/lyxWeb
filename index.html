@@ -1,3 +1,6 @@
+<!-- lyx的个人网站~(￣▽￣)~* -->
+<!-- 没钱租用服务器（也不懂），所以用了GitHub的静态网页托管 -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lyx's personal web!</title>
+    <link rel="icon" href="logo.jpg" sizes="32x32">
     <style>
+        /* header部分 */
         #header {
             position: relative;
             width: 100%;
@@ -15,21 +20,21 @@
             border: black, 2px, solid;
             overflow: hidden;
             /* background-color: pink; */
-            cursor:default;
+            cursor: default;
         }
 
         #header-bg1 {
             position: absolute;
             z-index: 1;
             left: 0px;
-            bottom: 0px;
+            top: 0px;
         }
 
         #header-bg2 {
             position: absolute;
             z-index: 1;
             left: 800px;
-            bottom: 0px;
+            top: 0px;
         }
 
         #header-bg-right {
@@ -38,15 +43,15 @@
             width: 100%;
             height: 200px;
             background: url(1.jpg);
-            background-position: 1600px 100%;
+            background-position: 1600px 0;
         }
 
         #welcome-1 {
             position: absolute;
             z-index: 2;
-            top: 0px;
+            top: 5px;
             left: 25px;
-            font-size: 100px;
+            font-size: 65px;
             font-family: '微软雅黑';
             color: white;
             /* 以下注释段可以实现文字流光效果，但是效果不是很好看 */
@@ -59,12 +64,54 @@
         #welcome-2 {
             position: absolute;
             z-index: 2;
-            bottom: 10px;
-            left: 10px;
+            bottom: 15px;
+            left: 30px;
             font-size: 25px;
             font-family: '微软雅黑';
             color: white;
             margin: 0px;
+        }
+
+        #poem {
+            position: absolute;
+            z-index: 2;
+            top: 15px;
+            right: 25px;
+            font-size: 40px;
+            font-family: '方正粗黑宋简体';
+            color: white;
+            margin: 0px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        #poem:hover {
+            color: rgb(200, 200, 200);
+        }
+
+        #date {
+            position: absolute;
+            z-index: 2;
+            bottom: 10px;
+            right: 30px;
+            font-size: 25px;
+            font-family: '微软雅黑';
+            color: white;
+            margin: 0px;
+            line-height: 15px;
+            text-align: right;
+        }
+
+
+        /* 颜色过渡部分 */
+        #transition {
+            position: relative;
+            height: 100px;
+            /* filter: blur(100px); */
+            /* background-color: rgb(6, 0, 48); */
+            /* 我尽力了。 */
+            background-image: -webkit-linear-gradient(top, rgb(2,3,70), white);
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -73,10 +120,94 @@
     <div id="header">
         <img src="1.jpg" alt="背景图片1" title="我是一个背景图片QwQ" id="header-bg1">
         <img src="2.jpg" alt="背景图片2" title="(｡･∀･)ﾉﾞ嗨,我是一个背景图片" id="header-bg2">
-        <div id="header-bg-right" title="($_$)刚刚谁叫我啊？"></div>
+        <div id="header-bg-right"></div>
         <p id="welcome-1">欢 迎</p>
-        <p id="welcome-2">lyx的个人网站</p>
+        <p id="welcome-2">欢迎浏览<br>lyx的个人网站</p>
+        <a id="poem" href="#" target="_blank" title="轻点以查看出处及释义。"></a>
+        <div id="date">
+            <p style="margin-right: 15px;">今天是</p>
+            <p id="date-1">美好的一天</p>
+        </div>
+    </div>
+    <div id="transition" title="过渡的颜色不是很好看。我尽力了。"></div>
+    <div id="main">
+
     </div>
 </body>
+
+<script>
+    //显示时间(日期) 及 分时问候功能
+    var welcome = document.querySelector('#welcome-1');
+    var showPoem = document.querySelector("#poem");
+    var date = document.querySelector("#date-1");
+
+    //显示当前时间(日期)
+    function getNowDate() {
+        var getdate = new Date();
+        var year = getdate.getFullYear();
+        var month = getdate.getMonth() + 1;
+        var date = getdate.getDate();
+        var day = getdate.getDay();
+        var chiday = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var outday = chiday[day];
+        var output = year + '年' + month + '月' + date + '日' + ' ' + outday;
+        console.log('今天是' + output);
+        return output;
+    }
+    //分时问候.左边
+    function welcomeByTime() {
+        var getdate = new Date();
+        var hour = getdate.getHours();
+        var sayHi;
+        if (hour <= 3 || hour >= 18) {
+            sayHi = '晚上好！';
+        }
+        if (hour >= 4 && hour <= 11) {
+            sayHi = '上午好！';
+        }
+        if (hour >= 12 && hour <= 13) {
+            sayHi = '中午好！';
+        }
+        if (hour >= 14 && hour <= 17) {
+            sayHi = '下午好！';
+        }
+        return sayHi;
+    }
+    //分时问候.右边（诗句）
+    function poemByTime() {
+        var getdate = new Date();
+        var hour = getdate.getHours();
+        var poem;
+        if (hour <= 4 || hour >= 19) {
+            poem = '春江潮水连海平，海上明月共潮生。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx';
+        }
+        if (hour >= 5 && hour <= 7) {
+            poem = '清晨入古寺,初日照高林。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_e2890c61279c.aspx';
+        }
+        if (hour >= 8 && hour <= 11) {
+            poem = '一年之计在于春，一日之计在于晨。';
+            showPoem.href = 'https://so.gushiwen.cn/mingju/juv_0b9bcd3d3a7b.aspx';
+        }
+        if (hour >= 12 && hour <= 13) {
+            poem = '云淡风轻过午天，傍花随柳过前川。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_45fe7c553da8.aspx';
+        }
+        if (hour >= 14 && hour <= 16) {
+            poem = '午后郊园静，晴来景物新。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_ee3fe413887f.aspx';
+        }
+        if (hour >= 17 && hour <= 18) {
+            poem = '朱雀桥边野草花，乌衣巷口夕阳斜。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_8b671db8c10d.aspx';
+        }
+        return poem;
+    }
+
+    welcome.innerHTML = welcomeByTime();
+    showPoem.innerHTML = poemByTime();
+    date.innerHTML = getNowDate();
+</script>
 
 </html>
