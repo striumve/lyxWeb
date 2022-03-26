@@ -1,5 +1,5 @@
 <!-- lyx的个人网站~(￣▽￣)~* -->
-<!-- 不想租用服务器（也不懂），所以用了GitHub的静态网页托管 -->
+<!-- 不想租用服务器（也不懂），所以用了GitHub Pages -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -135,7 +135,11 @@
         #main {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 800px;
+            background: url(3.jpg);
+            background-size: cover;
+            overflow: hidden;
+            cursor: default;
         }
 
         #js {
@@ -144,6 +148,13 @@
             background-color: rgba(150, 150, 150, 0.5);
             color: rgba(0, 0, 0, 0.5);
             padding: 10px;
+        }
+
+        #cjhyy>p {
+            text-align: center;
+            font-family: '方正粗黑宋简体';
+            font-size: 30px;
+            margin: 15px;
         }
 
 
@@ -227,24 +238,39 @@
     <!-- <div id="transition"></div> -->
 
     <div id="main">
-        <div id="js">您已禁用JavaScript，这可能影响您的浏览体验。<br>建议您前往浏览器的设置中启用JavaScript。</div>
-        <p>网站建设中</p>
+        <div id="js">您已禁用JavaScript, 这可能影响您的浏览体验。<br>建议您前往浏览器的设置中启用JavaScript。</div>
+        <div id="cjhyy">
+            <br>
+            <br>
+            <p style="font-size: 50px;">春江花月夜</p>
+            <br>
+            <p>春江潮水连海平，海上明月共潮生。滟滟随波千万里，何处春江无月明！</p>
+            <p>江流宛转绕芳甸，月照花林皆似霰。空里流霜不觉飞，汀上白沙看不见。</p>
+            <p>江天一色无纤尘，皎皎空中孤月轮。江畔何人初见月？江月何年初照人？</p>
+            <p>人生代代无穷已，江月年年望相似。不知江月待何人，但见长江送流水。</p>
+            <p>白云一片去悠悠，青枫浦上不胜愁。谁家今夜扁舟子？何处相思明月楼？</p>
+            <p>可怜楼上月裴回，应照离人妆镜台。玉户帘中卷不去，捣衣砧上拂还来。</p>
+            <p>此时相望不相闻，愿逐月华流照君。鸿雁长飞光不度，鱼龙潜跃水成文。</p>
+            <p>昨夜闲潭梦落花，可怜春半不还家。江水流春去欲尽，江潭落月复西斜。</p>
+            <p>斜月沉沉藏海雾，碣石潇湘无限路。不知乘月几人归，落月摇情满江树。</p>
+        </div>
     </div>
 
     <div id="footer">
-        <p id="footer-p1">本网站使用GitHub静态网页托管。</p>
+        <p id="footer-p1">本网站为GitHub Pages站点。</p>
         <div id="footer-left">
-            <a href="https://docs.github.com/cn/pages" target="_blank">GitHub静态网页托管 官方文档 (简体中文)</a>
+            <a href="https://docs.github.com/cn/pages" target="_blank">GitHub Pages 官方文档 (简体中文)</a>
             <p class="go"></p>
             <br>
-            <a href="https://docs.github.com/en/pages" target="_blank">GitHub静态网页托管 官方文档 (English)</a>
+            <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages 官方文档 (English)</a>
             <p class="go"></p>
             <br>
             <a href="https://github.com/striumve/lyxWeb" target="_blank">网页源代码 (也可以使用开发人员工具查看)</a>
             <p class="go"></p>
             <br>
-            <a href="https://www.vcg.com/creative/1294292397" target="_blank">网页首部背景图来源</a>
+            <a href="source.html">网页各背景图来源</a>
             <p class="go"></p>
+            <br>
         </div>
         <div id="footer-right">
             <a href="https://github.com/striumve" target="_blank">GitHub个人主页</a>
