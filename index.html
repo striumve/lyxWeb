@@ -136,8 +136,6 @@
             position: relative;
             width: 100%;
             height: 800px;
-            background: url(3.jpg);
-            background-size: cover;
             overflow: hidden;
             cursor: default;
         }
@@ -152,6 +150,9 @@
 
         #cjhyy {
             text-align: center;
+            background: url(3.jpg);
+            background-size: cover;
+            height: 800px;
         }
 
         #cjhyy>p {
@@ -182,10 +183,9 @@
             padding-bottom: 20px;
         }
 
-        #footer-left,
-        #footer-right {
+        .footer {
             float: left;
-            width: 590px;
+            width: 390px;
         }
 
         #footer-p1 {
@@ -195,9 +195,9 @@
             padding-left: 20px;
         }
 
-        #footer-left>a,
-        #footer-right>a {
+        .footer>a {
             display: inline-block;
+            position: float;
             padding-left: 20px;
             padding-top: 10px;
             color: black;
@@ -225,8 +225,8 @@
             }
         }
 
-        #footer-left>a:hover+.go,
-        #footer-right>a:hover+.go {
+        .footer>a:hover+.go,
+        .footer>a:hover+.go {
             animation-name: footer;
             animation-duration: .2s;
             animation-iteration-count: 1;
@@ -242,7 +242,7 @@
         <div alt="背景图片2" title="(｡･∀･)ﾉﾞ嗨,我是一个背景图片" id="header-bg2"></div>
         <div alt="背景图片3" id="header-bg-right"></div>
         <p id="welcome-1">欢 迎</p>
-        <p id="welcome-2">欢迎浏览<br>lyx的个人网站</p>
+        <p id="welcome-2">欢迎访问<br>lyx的个人网站</p>
         <a id="poem" href="#" target="_blank" title="轻点以查看出处及释义。"></a>
         <div id="date">
             <p style="margin-right: 15px;">今天是</p>
@@ -256,7 +256,8 @@
         <div id="cjhyy">
             <br>
             <br>
-            <a style="font-size: 50px;" href="https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx" title="轻点以查看详情（注释、译文、作者、背景等）" target="_blank">春江花月夜</a>
+            <a style="font-size: 50px;" href="https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx"
+                title="轻点以查看详情（注释、译文、作者、背景等）" target="_blank">春江花月夜</a>
             <br>
             <p>春江潮水连海平，海上明月共潮生。滟滟随波千万里，何处春江无月明！</p>
             <p>江流宛转绕芳甸，月照花林皆似霰。空里流霜不觉飞，汀上白沙看不见。</p>
@@ -272,7 +273,7 @@
 
     <div id="footer">
         <p id="footer-p1">本网站为GitHub Pages站点。</p>
-        <div id="footer-left">
+        <div class="footer">
             <a href="https://docs.github.com/cn/pages" target="_blank">GitHub Pages 官方文档 (简体中文)</a>
             <p class="go"></p>
             <br>
@@ -282,23 +283,32 @@
             <a href="https://github.com/striumve/lyxWeb" target="_blank">网页源代码 (也可以使用开发人员工具查看)</a>
             <p class="go"></p>
             <br>
-            <a href="source.html">网页各背景图来源</a>
+            <a href="source.html">网页各素材来源</a>
             <p class="go"></p>
             <br>
         </div>
-        <div id="footer-right">
+        <div class="footer">
             <a href="https://www.zxxk.com/" target="_blank">中学学科网</a>
             <p class="go"></p>
             <br>
             <a href="https://www.bilibili.com" target="_blank">Bilibili首页</a>
             <p class="go"></p>
             <br>
-            <a href="https://visualstudio.microsoft.com/zh-hans/" target="_blank">Visual Studio</a>
+            <a href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank">教你获取任意网站资源</a>
             <p class="go"></p>
             <br>
             <a href="https://www.gov.cn" target="_blank">中华人民共和国中央人民政府</a>
             <p class="go"></p>
             <br>
+        </div>
+        <div class="footer">
+            <a href="diary.html">网页开发日志</a>
+            <p class="go"></p>
+            <br>
+            <a href="https://icomoon.io/">icomoon字体图标</a>
+            <p class="go"></p>
+            <br>
+
         </div>
     </div>
 </body>
@@ -355,8 +365,8 @@
         var hour = getdate.getHours();
         var poem;
         if (hour <= 4 || hour >= 19) {
-            poem = '春江潮水连海平，海上明月共潮生。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx';
+            poem = '露从今夜白，月是故乡明。';
+            showPoem.href = 'https://so.gushiwen.cn/shiwenv_ad6f7cfa10c2.aspx';
         }
         if (hour >= 5 && hour <= 7) {
             poem = '清晨入古寺,初日照高林。';
