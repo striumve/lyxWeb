@@ -135,7 +135,7 @@
         #main {
             position: relative;
             width: 100%;
-            height: 800px;
+            height: auto;
             overflow: hidden;
             cursor: default;
         }
@@ -170,6 +170,46 @@
             font-size: 30px;
             margin: 15px;
             color: black;
+        }
+
+        #klein {
+            height: auto;
+            background: rgb(0, 47, 167);
+            padding: 35px;
+        }
+
+        #klein>a {
+            display: block;
+            width: 300px;
+            color: white;
+            font-size: 30px;
+            margin: 0px;
+            margin-bottom: 28px;
+            /* 28px: after伪类上面10px，下面15px */
+            text-decoration: none;
+        }
+
+        #klein>a:hover {
+            color: rgba(255, 255, 255, .8);
+            transition: .2s;
+        }
+
+        #klein>a::after {
+            display: block;
+            position: relative;
+            top: 10px;
+            content: "";
+            width: 400px;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        #klein>div>p {
+            width: 500px;
+            color: white;
+            font-family: '微软雅黑 Light';
+            font-weight: 100;
+            text-indent: 2em;
         }
 
 
@@ -269,6 +309,27 @@
             <p>昨夜闲潭梦落花，可怜春半不还家。江水流春去欲尽，江潭落月复西斜。</p>
             <p>斜月沉沉藏海雾，碣石潇湘无限路。不知乘月几人归，落月摇情满江树。</p>
         </div>
+        <br>
+        <div id="klein">
+            <a href="https://baike.baidu.com/item/%E5%85%8B%E8%8E%B1%E5%9B%A0%E8%93%9D/6799999" target="_blank" title="轻点以查看百科">克莱因蓝 - Klein Blue</a>
+            <div>
+                <p>
+                    克莱因相信，只有最单纯的色彩才能唤起最强烈的心灵感受力。一些艺术家使用各种色彩以求获得艺术生命力，而克莱因宁愿回归单纯。“克莱因蓝”的RGB比值是0:47:167，但是明确的数据并不能减少人们面对它时那种震惊——蓝色本身象征着天空和海洋，象征着没有界限，又因为“克莱因蓝”太过纯净，以至于很难找到可与之搭配的色彩进入人们的视野，因此，它的冲击力格外强烈。这种蓝被誉为一种理想之蓝、绝对之蓝，其明净空旷往往使人迷失其中。克莱因曾说:“表达这种感觉，不用解释，也无需语言，就能让心灵感知——我相信，这就是引导我画单色画的感觉。”
+                </p>
+                <p>
+                    如此有个性的色彩，时尚大佬们自然不会轻易放过。2007年春夏的T台是“克莱因蓝”的天下，在Dior、Givenchy、Bruno Pieters和Alberta
+                    erretti系列里，都有“克莱因蓝”孤绝而闪亮的风景。好玩艺术的欧洲人既然如此，一向以前卫自居的美国自然也不甘落后。纽约时装大师Oscar de la Renta和Dnna
+                    Karan都拜倒在“克莱因蓝”脚下。从蓝色妆容到荷叶边尾的女式常用礼服再到及地夏季长袍，2007年时尚界彻底掀起了一场“深蓝色风暴”。</p>
+                <p>
+                    “克莱因蓝”集万千宠爱于一身，还有人从模特们来来回回的身影中品味到一丝孤独，真是至死不失其“蓝血”贵族风范。有人大胆猜测，今后“小蓝裙”将继小黑裙晚装之后成为新的必需品。其实，“克莱因蓝”盛极一时，早就有人预料到了，Chaiken的创意总监Jeff
+                    Mahshie曾说:“我曾对1957年美国成衣界的奠基人Claire
+                    McCardell的一件鲜蓝色女装作过研究，我发现克莱因的IKB字母组合绘画也是在那段时间创作的。”看来，“克莱因蓝”是早就被设计师们盯上了。</p>
+                <p>
+                    虽大牌们号称热爱“克莱因蓝”，但这种色极难搭配，而且容易水洗褪色，所以传说几乎所有的“克莱因蓝”单品，都只是"仿克莱因蓝"。也许，“克莱因蓝”的曲高和寡，注定了它在喧嚣中，也一样孤独。</p>
+
+
+            </div>
+        </div>
     </div>
 
     <div id="footer">
@@ -306,6 +367,9 @@
             <p class="go"></p>
             <br>
             <a href="https://icomoon.io/" target="_blank">icomoon字体图标</a>
+            <p class="go"></p>
+            <br>
+            <a href="https://www.vcg.com/" target="_blank">视觉中国</a>
             <p class="go"></p>
             <br>
 

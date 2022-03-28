@@ -73,8 +73,8 @@
 
         .diary {
             position: absolute;
-            right: 0px;
             display: inline-block;
+            right: 0px;
             text-align: right;
             font-size: 25px;
             margin: 0px;
@@ -87,17 +87,26 @@
             background-color: lightblue;
         }
 
+        #abc div:nth-child(odd):hover {
+            background-color: rgb(120, 200, 255);
+            transition: .2s;
+        }
+
         #abc div:nth-child(even) {
             /* #abc孩子里的第偶数个div */
             background-color: lightyellow;
+        }
+
+        #abc div:nth-child(even):hover {
+            background-color: rgb(247, 247, 170);
+            transition: .2s;
         }
     </style>
 </head>
 
 <body>
-    <!-- 为 什 么 ！ -->
     <!-- 为什么 dairy(乳品店,乳制品) 和 diary(日记,日志) 那么像！！！ -->
-    <!-- 啊！害我一直写错！ -->
+    <!-- 啊！害我一直写错 -->
     <a href="index.html" id="back">返回</a>
     <div id="title">网页开发日志</div>
     <br>
@@ -121,11 +130,15 @@
         </div>
         <div class="text">
             <p class="time">2022.03.26 周六 上午</p>
-            <p class="diary">添加了《春江花月夜》</p>
+            <p class="diary">添加了《春江花月夜》部分</p>
         </div>
         <div class="text">
             <p class="time">2022.03.28 周一 上午</p>
-            <p class="diary">添加了网页开发日志</p>
+            <p class="diary">添加了网页开发日志（就是这个页面）</p>
+        </div>
+        <div class="text">
+            <p class="time">2022.03.28 周一 上午</p>
+            <p class="diary">添加了克莱因蓝部分</p>
         </div>
     </div>
 </body>
