@@ -1,16 +1,16 @@
-<!-- lyx的个人网站~(￣▽￣)~* -->
-<!-- 不想租用服务器（也不懂），所以用了GitHub Pages -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=1200px">
+    <meta name="viewport" content="width: 980px">
     <title>lyx's personal web!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
+    <script>
+        var width = window.innerWidth;
+        html.style.width = width + 'px';
+    </script>
     <style>
         @font-face {
             /* 字体声明  */
@@ -25,12 +25,15 @@
             font-display: block;
         }
 
-        @media screen and (max-width: 1200px) {
-            /* 当页面宽度为1200px以下时，body宽度调整为1200px */
-            /* 就是让页面宽度不能太小 */
-            body {
-                width: 1200px;
-            }
+        html {
+            width: 980px;
+        }
+
+        :root {
+            font-size: 1px;
+            /* rem: font size of the root element （根元素的字体大小） */
+            /* 此时1rem=1px */
+            /* 用于移动端适配 */
         }
 
 
@@ -38,7 +41,7 @@
         #header {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 350rem;
             padding: 0;
             overflow: hidden;
             cursor: default;
@@ -49,7 +52,7 @@
             left: 0px;
             z-index: 1;
             width: 800px;
-            height: 200px;
+            height: 400px;
             background: url(1.jpg);
         }
 
@@ -58,7 +61,7 @@
             left: 800px;
             z-index: 1;
             width: 800px;
-            height: 200px;
+            height: 400px;
             background: url(2.jpg);
         }
 
@@ -66,7 +69,7 @@
             position: absolute;
             z-index: 0;
             width: 100%;
-            height: 200px;
+            height: 400px;
             background: url(1.jpg);
             background-position: 1600px 0;
         }
@@ -76,7 +79,8 @@
             z-index: 2;
             top: 5px;
             left: 25px;
-            font-size: 65px;
+            /* font-size: 65px; */
+            font-size: 65rem;
             font-family: '微软雅黑';
             color: white;
             /* 以下注释段可以实现文字流光效果，但是效果不是很好看 */
@@ -91,7 +95,7 @@
             z-index: 2;
             bottom: 15px;
             left: 30px;
-            font-size: 25px;
+            font-size: 35px;
             font-family: '微软雅黑';
             color: white;
             margin: 0px;
@@ -100,10 +104,10 @@
         #poem {
             position: absolute;
             z-index: 2;
-            top: 15px;
+            top: 120px;
             right: 25px;
-            font-size: 40px;
-            font-family: '方正粗黑宋简体';
+            font-size: 55px;
+            font-family: '新宋体';
             color: white;
             margin: 0px;
             text-decoration: none;
@@ -120,7 +124,7 @@
             z-index: 2;
             bottom: 10px;
             right: 30px;
-            font-size: 25px;
+            font-size: 35px;
             font-family: '微软雅黑';
             color: white;
             margin: 0px;
@@ -160,22 +164,30 @@
             text-align: center;
             background: url(3.jpg);
             background-size: cover;
-            height: 800px;
+            height: auto;
+            padding-bottom: 30px;
         }
 
         #cjhyy>p {
+            display: inline-block;
             text-align: center;
             font-family: '方正粗黑宋简体';
-            font-size: 30px;
-            margin: 15px;
+            font-size: 30rem;
+            margin: 7.5px;
         }
+
+        /* @media screen and (min-width: 700px) {
+            #cjhyy>p {
+                font-size: 30px;
+            }
+        } */
 
         #cjhyy>a {
             display: inline-block;
             text-decoration: none;
             text-align: center;
             font-family: '方正粗黑宋简体';
-            font-size: 30px;
+            font-size: 40rem;
             margin: 15px;
             color: black;
         }
@@ -218,6 +230,7 @@
             font-family: '微软雅黑 Light';
             font-weight: 100;
             text-indent: 2em;
+            font-size: 16rem;
         }
 
 
@@ -226,15 +239,16 @@
             position: relative;
             padding: 0;
             width: 100%;
-            height: 190px;
+            height: 315px;
             background-color: lightgrey;
             padding-bottom: 20px;
+            font-size: 20rem;
         }
 
         .footer {
             float: left;
-            width: 394px;
-            /* ( 1200 - (margin-left)8 - (margin-right)8 ) / 3 约等于394。*/
+            width: 482px;
+            /* 964/2 */
         }
 
         #footer-p1 {
@@ -286,53 +300,24 @@
 </head>
 
 <script>
-    // 移动端适配
-    // 把这个加上会有奇怪的bug，页面加载不出来(╯‵□′)╯︵┻━┻
-    // 搞懂了 但又没完全搞懂 页面加载不出来是因为下面这段在无限循环 但是不知道为什么无限循环
-    // 知道了 这边执行完之后发现是PC端，跳到同一网页，即再执行一遍，于是无限循环
-    /*
-    function isPc() {
-        let userAgentInfo = navigator.userAgent;
-        if(/iphone/i.test(userAgentInfo)){
-            return false;
-        }else if(/android/i.test(userAgentInfo)){
-            return false;
-        }
-        return true;
-    }
-    if(!isPc()){
-        location.href = "index_m.html";
-    }
-    else if(isPc()) {
-        location.href = "index.html";
-    }
-    */
-</script>
-
-<!-- 移动端适配 -->
-<!-- 不仅卡，而且没用(╯‵□′)╯︵┻━┻ -->
-<!-- <script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/JavaScript"></script>
-<script type="text/javascript">uaredirect("index_m.html");</script> -->
-
-<script>
-    // 移动端适配
-    // 终于有用了！啊啊啊啊啊啊啊啊啊！！！
-    var thisOS = navigator.platform;
-    var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
-    function mobile_device_detect(url) {
+    // 移动端适配：如已在PC端则跳转到PC网页
+    var flag = 1;
+    function mobile_device_detect(flag) {
+        var thisOS = navigator.platform;
+        var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
         for (var i = 0; i < os.length; i++) {
             if (thisOS.match(os[i])) {
-                window.location = url;
+                flag = 0;
             }
 
         }
         if (navigator.platform.indexOf('iPad') != -1) {
-            window.location = url;
+            flag = 0;
         }
         var check = navigator.appVersion;
         if (check.match(/linux/i)) {
             if (check.match(/mobile/i) || check.match(/X11/i)) {
-                window.location = url;
+                flag = 0;
             }
         }
         Array.prototype.in_array = function (e) {
@@ -342,10 +327,13 @@
             }
             return false;
         }
+        return flag;
     }
-    mobile_device_detect("index_m.html");
+    flag = mobile_device_detect(flag);
+    if (flag === 1) {
+        window.location = ("index.html");
+    }
 </script>
-
 
 <body>
     <div id="header">
@@ -367,18 +355,44 @@
         <div id="cjhyy">
             <br>
             <br>
-            <a style="font-size: 50px;" href="https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx"
+            <a href="https://so.gushiwen.cn/shiwenv_3aed26d1fa99.aspx"
                 title="轻点以查看详情（注释、译文、作者、背景等）" target="_blank">春江花月夜</a>
             <br>
-            <p>春江潮水连海平，海上明月共潮生。滟滟随波千万里，何处春江无月明！</p>
-            <p>江流宛转绕芳甸，月照花林皆似霰。空里流霜不觉飞，汀上白沙看不见。</p>
-            <p>江天一色无纤尘，皎皎空中孤月轮。江畔何人初见月？江月何年初照人？</p>
-            <p>人生代代无穷已，江月年年望相似。不知江月待何人，但见长江送流水。</p>
-            <p>白云一片去悠悠，青枫浦上不胜愁。谁家今夜扁舟子？何处相思明月楼？</p>
-            <p>可怜楼上月裴回，应照离人妆镜台。玉户帘中卷不去，捣衣砧上拂还来。</p>
-            <p>此时相望不相闻，愿逐月华流照君。鸿雁长飞光不度，鱼龙潜跃水成文。</p>
-            <p>昨夜闲潭梦落花，可怜春半不还家。江水流春去欲尽，江潭落月复西斜。</p>
-            <p>斜月沉沉藏海雾，碣石潇湘无限路。不知乘月几人归，落月摇情满江树。</p>
+            <p>春江潮水连海平，海上明月共潮生。</p>
+            <br>
+            <p>滟滟随波千万里，何处春江无月明！</p>
+            <br>
+            <p>江流宛转绕芳甸，月照花林皆似霰。</p>
+            <br>
+            <p>空里流霜不觉飞，汀上白沙看不见。</p>
+            <br>
+            <p>江天一色无纤尘，皎皎空中孤月轮。</p>
+            <br>
+            <p>江畔何人初见月？江月何年初照人？</p>
+            <br>
+            <p>人生代代无穷已，江月年年望相似。</p>
+            <br>
+            <p>不知江月待何人，但见长江送流水。</p>
+            <br>
+            <p>白云一片去悠悠，青枫浦上不胜愁。</p>
+            <br>
+            <p>谁家今夜扁舟子？何处相思明月楼？</p>
+            <br>
+            <p>可怜楼上月裴回，应照离人妆镜台。</p>
+            <br>
+            <p>玉户帘中卷不去，捣衣砧上拂还来。</p>
+            <br>
+            <p>此时相望不相闻，愿逐月华流照君。</p>
+            <br>
+            <p>鸿雁长飞光不度，鱼龙潜跃水成文。</p>
+            <br>
+            <p>昨夜闲潭梦落花，可怜春半不还家。</p>
+            <br>
+            <p>江水流春去欲尽，江潭落月复西斜。</p>
+            <br>
+            <p>斜月沉沉藏海雾，碣石潇湘无限路。</p>
+            <br>
+            <p>不知乘月几人归，落月摇情满江树。</p>
         </div>
         <br>
         <div id="klein">
@@ -444,6 +458,7 @@
             <a href="https://www.vcg.com/" target="_blank">视觉中国</a>
             <p class="go"></p>
             <br>
+
         </div>
     </div>
 </body>
@@ -529,5 +544,6 @@
     showPoem.innerHTML = poemByTime();
     date.innerHTML = getNowDate();
 </script>
+
 
 </html>
