@@ -26,11 +26,74 @@
         }
 
         @media screen and (max-width: 1200px) {
+
             /* 当页面宽度为1200px以下时，body宽度调整为1200px */
             /* 就是让页面宽度不能太小 */
             body {
                 width: 1200px;
             }
+        }
+
+
+        /* 询问是否切换至移动端 */
+        #mobile {
+            display: none;
+            position: fixed;
+            pointer-events: all;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            background-color: rgba(77, 66, 68, .7);
+        }
+
+        #spider {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 192px;
+            height: 126px;
+            background: url(6.png);
+            background-size: cover;
+            border-top-right-radius: 10px;
+        }
+
+        #box {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 左移50%，上移50%，以居中 */
+            background-color: rgb(170, 150, 154);
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        #box>p {
+            text-align: left;
+            font-size: 20px;
+            margin: 0px;
+        }
+
+        #box>form>button {
+            /* padding: 20px; */
+            width: 75px;
+            height: 40px;
+            border: pink 2px solid;
+            background-color: rgb(170, 150, 154);
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        #mobile-is {
+            margin-right: 50px;
+        }
+
+        #box>form>button:hover {
+            /* border: none; */
+            background-color: rgb(250, 230, 240);
+            color: tomato;
+            transition: .2s;
         }
 
 
@@ -149,9 +212,12 @@
         }
 
         #js {
-            position: absolute;
-            right: 0px;
-            background-color: rgba(150, 150, 150, 0.5);
+            z-index: 5;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: auto;
+            background-color: rgba(150, 150, 150, 0.8);
             color: rgba(0, 0, 0, 0.5);
             padding: 10px;
         }
@@ -244,6 +310,47 @@
             padding-left: 20px;
         }
 
+        #footer-a {
+            display: inline-block;
+            position: absolute;
+            top: 30px;
+            left: 800px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-family: 'icomoon';
+        }
+
+        #footer-a-line {
+            display: block;
+            position: absolute;
+            top: 53.5px;
+            left: 800px;
+            content: "";
+            width: 0px;
+            height: 2px;
+            background-color: black;
+        }
+
+        @keyframes footer-a {
+            0% {
+                width: 0px;
+            }
+
+            100% {
+                width: 100px;
+            }
+        }
+
+        #footer-a:hover+#footer-a-line {
+            animation-name: footer-a;
+            animation-timing-function: linear;
+            animation-duration: .2s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
         .footer>a {
             display: inline-block;
             position: float;
@@ -285,69 +392,21 @@
     </style>
 </head>
 
-<script>
-    // 移动端适配
-    // 把这个加上会有奇怪的bug，页面加载不出来(╯‵□′)╯︵┻━┻
-    // 搞懂了 但又没完全搞懂 页面加载不出来是因为下面这段在无限循环 但是不知道为什么无限循环
-    // 知道了 这边执行完之后发现是PC端，跳到同一网页，即再执行一遍，于是无限循环
-    /*
-    function isPc() {
-        let userAgentInfo = navigator.userAgent;
-        if(/iphone/i.test(userAgentInfo)){
-            return false;
-        }else if(/android/i.test(userAgentInfo)){
-            return false;
-        }
-        return true;
-    }
-    if(!isPc()){
-        location.href = "index_m.html";
-    }
-    else if(isPc()) {
-        location.href = "index.html";
-    }
-    */
-</script>
-
-<!-- 移动端适配 -->
-<!-- 不仅卡，而且没用(╯‵□′)╯︵┻━┻ -->
-<!-- <script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/JavaScript"></script>
-<script type="text/javascript">uaredirect("index_m.html");</script> -->
-
-<script>
-    // 移动端适配
-    // 终于有用了！啊啊啊啊啊啊啊啊啊！！！
-    var thisOS = navigator.platform;
-    var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
-    function mobile_device_detect(url) {
-        for (var i = 0; i < os.length; i++) {
-            if (thisOS.match(os[i])) {
-                window.location = url;
-            }
-
-        }
-        if (navigator.platform.indexOf('iPad') != -1) {
-            window.location = url;
-        }
-        var check = navigator.appVersion;
-        if (check.match(/linux/i)) {
-            if (check.match(/mobile/i) || check.match(/X11/i)) {
-                window.location = url;
-            }
-        }
-        Array.prototype.in_array = function (e) {
-            for (i = 0; i < this.length; i++) {
-                if (this[i] == e)
-                    return true;
-            }
-            return false;
-        }
-    }
-    mobile_device_detect("index_m.html");
-</script>
-
 
 <body>
+    <div id="mobile">
+        <div id="box">
+            <div id="spider" title="我是Warma家的小蜘蛛哦~"></div>
+            <p>检测到您当前使用的是<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp移动端设备。</p>
+            <p>是否跳转到移动端网页？</p>
+            <p>（屏幕比较大或者横屏的话建议不要跳转哦）</p>
+            <form action="">
+                <button id="mobile-is">是</button>
+                <button id="mobile-no">否</button>
+            </form>
+        </div>
+    </div>
+
     <div id="header">
         <div alt="背景图片1" title="我是一个背景图片QwQ" id="header-bg1"></div>
         <div alt="背景图片2" title="(｡･∀･)ﾉﾞ嗨,我是一个背景图片" id="header-bg2"></div>
@@ -360,6 +419,7 @@
             <p id="date-1">美好的一天</p>
         </div>
     </div>
+
     <!-- <div id="transition"></div> -->
 
     <div id="main">
@@ -406,6 +466,8 @@
 
     <div id="footer">
         <p id="footer-p1">本网站为GitHub Pages站点。</p>
+        <a href="index_m.html" id="footer-a">移动端网页</a>
+        <div id="footer-a-line"></div>
         <div class="footer">
             <a href="https://docs.github.com/cn/pages" target="_blank">GitHub Pages 官方文档 (简体中文)</a>
             <p class="go"></p>
@@ -453,6 +515,7 @@
     var hide = document.querySelector("#js");
     hide.style.display = 'none';
 </script>
+
 <script>
     //显示时间(日期) 及 分时问候功能
     var welcome = document.querySelector('#welcome-1');
@@ -528,6 +591,80 @@
     welcome.innerHTML = welcomeByTime();
     showPoem.innerHTML = poemByTime();
     date.innerHTML = getNowDate();
+</script>
+
+<script>
+    // 移动端适配
+    // 把这个加上会有奇怪的bug，页面加载不出来(╯‵□′)╯︵┻━┻
+    // 搞懂了 但又没完全搞懂 页面加载不出来是因为下面这段在无限循环 但是不知道为什么无限循环
+    // 知道了 这边执行完之后发现是PC端，跳到同一网页，即再执行一遍，于是无限循环
+    /*
+    function isPc() {
+        let userAgentInfo = navigator.userAgent;
+        if(/iphone/i.test(userAgentInfo)){
+            return false;
+        }else if(/android/i.test(userAgentInfo)){
+            return false;
+        }
+        return true;
+    }
+    if(!isPc()){
+        location.href = "index_m.html";
+    }
+    else if(isPc()) {
+        location.href = "index.html";
+    }
+    */
+</script>
+
+<script>
+    // 移动端适配
+    // 终于有用了！啊啊啊啊啊啊啊啊啊！！！
+    function isGo() {
+        // 询问是否跳转
+        var is = document.querySelector("#mobile-is");
+        var no = document.querySelector("#mobile-no");
+        var mobile = document.querySelector("#mobile");
+        mobile.style.display = 'block';
+        no.onclick = function () {
+            mobile.style.display = 'none';
+            return false;
+        }
+        is.onclick = function () {
+            window.location = "index_m.html";
+            return false;
+        }
+    }
+    // function mobile_device_detect() {
+    // 下面这段是复制来的，我也不懂，反正能用就是了q(≧▽≦q)
+    // 但是那个函数isGo()是我自己写的
+    var thisOS = navigator.platform;
+    var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
+    for (var i = 0; i < os.length; i++) {
+        if (thisOS.match(os[i])) {
+            isGo();
+        }
+
+    }
+    if (navigator.platform.indexOf('iPad') != -1) {
+        isGo();
+    }
+    var check = navigator.appVersion;
+    if (check.match(/linux/i)) {
+        if (check.match(/mobile/i) || check.match(/X11/i)) {
+            isGo();
+        }
+    }
+    Array.prototype.in_array = function (e) {
+        for (i = 0; i < this.length; i++) {
+            if (this[i] == e)
+                return true;
+        }
+        return false;
+    }
+    // }
+    // mobile_device_detect();
+
 </script>
 
 </html>
