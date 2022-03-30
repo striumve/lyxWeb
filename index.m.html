@@ -62,6 +62,37 @@
             border-top-right-radius: 10px;
         }
 
+        @keyframes mobile-box {
+            0% {
+                top: 100%;
+            }
+
+            100% {
+                top: 50%;
+            }
+        }
+
+        @keyframes mobile-btn {
+            0% {
+                border: transparent;
+                background-color: transparent;
+                color: transparent;
+            }
+
+            30% {
+                border: transparent;
+                background-color: transparent;
+                color: transparent;
+
+            }
+
+            100% {
+                border: pink 2px solid;
+                background-color: rgb(170, 150, 154);
+                color: black;
+            }
+        }
+
         #box {
             text-align: center;
             position: absolute;
@@ -87,6 +118,7 @@
             height: 40px;
             border: pink 2px solid;
             background-color: rgb(170, 150, 154);
+            color: black;
             font-size: 20px;
             margin-top: 25px;
         }
@@ -299,7 +331,7 @@
             font-family: '微软雅黑 Light';
             font-weight: 100;
             text-indent: 2em;
-            font-size: 16rem;
+            font-size: 22rem;
         }
 
 
@@ -308,7 +340,7 @@
             position: relative;
             padding: 0;
             width: 100%;
-            height: 315px;
+            height: 345px;
             background-color: lightgrey;
             padding-bottom: 20px;
             font-size: 20rem;
@@ -331,7 +363,7 @@
             display: inline-block;
             position: absolute;
             top: 30px;
-            left: 800px;
+            left: 600px;
             text-decoration: none;
             color: black;
             font-size: 20px;
@@ -342,7 +374,7 @@
             display: block;
             position: absolute;
             top: 53.5px;
-            left: 800px;
+            left: 600px;
             content: "";
             width: 0px;
             height: 2px;
@@ -355,11 +387,12 @@
             }
 
             100% {
-                width: 100px;
+                width: 140px;
             }
         }
 
-        #footer-a:hover+#footer-a-line {
+        #footer-a:hover+#footer-a-line,
+        #footer-a-line:hover {
             animation-name: footer-a;
             animation-timing-function: linear;
             animation-duration: .2s;
@@ -414,6 +447,7 @@
         <div id="box">
             <div id="spider" title="我是Warma家的小蜘蛛哦~"></div>
             <p>检测到您当前使用的是<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp电脑端设备。</p>
+            <!-- &nbsp：实体空格 -->
             <p>是否跳转到电脑端网页？</p>
             <p>（建议跳转哦）</p>
             <form action="">
@@ -490,10 +524,6 @@
                     克莱因相信，只有最单纯的色彩才能唤起最强烈的心灵感受力。一些艺术家使用各种色彩以求获得艺术生命力，而克莱因宁愿回归单纯。“克莱因蓝”的RGB比值是0:47:167，但是明确的数据并不能减少人们面对它时那种震惊——蓝色本身象征着天空和海洋，象征着没有界限，又因为“克莱因蓝”太过纯净，以至于很难找到可与之搭配的色彩进入人们的视野，因此，它的冲击力格外强烈。这种蓝被誉为一种理想之蓝、绝对之蓝，其明净空旷往往使人迷失其中。克莱因曾说:“表达这种感觉，不用解释，也无需语言，就能让心灵感知——我相信，这就是引导我画单色画的感觉。”
                 </p>
                 <p>
-                    如此有个性的色彩，时尚大佬们自然不会轻易放过。2007年春夏的T台是“克莱因蓝”的天下，在Dior、Givenchy、Bruno Pieters和Alberta
-                    erretti系列里，都有“克莱因蓝”孤绝而闪亮的风景。好玩艺术的欧洲人既然如此，一向以前卫自居的美国自然也不甘落后。纽约时装大师Oscar de la Renta和Dnna
-                    Karan都拜倒在“克莱因蓝”脚下。从蓝色妆容到荷叶边尾的女式常用礼服再到及地夏季长袍，2007年时尚界彻底掀起了一场“深蓝色风暴”。</p>
-                <p>
                     “克莱因蓝”集万千宠爱于一身，还有人从模特们来来回回的身影中品味到一丝孤独，真是至死不失其“蓝血”贵族风范。有人大胆猜测，今后“小蓝裙”将继小黑裙晚装之后成为新的必需品。其实，“克莱因蓝”盛极一时，早就有人预料到了，Chaiken的创意总监Jeff
                     Mahshie曾说:“我曾对1957年美国成衣界的奠基人Claire
                     McCardell的一件鲜蓝色女装作过研究，我发现克莱因的IKB字母组合绘画也是在那段时间创作的。”看来，“克莱因蓝”是早就被设计师们盯上了。</p>
@@ -507,7 +537,7 @@
 
     <div id="footer">
         <p id="footer-p1">本网站为GitHub Pages站点。</p>
-        <a href="index.html" id="footer-a">电脑端网页</a>
+        <a href="index.html" id="footer-a">前往电脑端网页</a>
         <div id="footer-a-line"></div>
         <div class="footer">
             <a href="https://docs.github.com/cn/pages" target="_blank">GitHub Pages 官方文档 (简体中文)</a>
@@ -547,7 +577,9 @@
             <a href="https://www.vcg.com/" target="_blank">视觉中国</a>
             <p class="go"></p>
             <br>
-
+            <a href="https://basic.smartedu.cn/" target="_blank">国家中小学智慧教育平台</a>
+            <p class="go"></p>
+            <br>
         </div>
     </div>
 </body>
@@ -642,7 +674,9 @@
         var is = document.querySelector("#mobile-is");
         var no = document.querySelector("#mobile-no");
         var mobile = document.querySelector("#mobile");
+        var box = document.querySelector("#box");
         mobile.style.display = 'block';
+        box.style.animation = 'mobile-box ease .5s 1 normal forwards';
         no.onclick = function () {
             mobile.style.display = 'none';
             return false;

@@ -57,6 +57,37 @@
             border-top-right-radius: 10px;
         }
 
+        @keyframes mobile-box {
+            0% {
+                top: 100%;
+            }
+
+            100% {
+                top: 50%;
+            }
+        }
+
+        @keyframes mobile-btn {
+            0% {
+                border: transparent;
+                background-color: transparent;
+                color: transparent;
+            }
+
+            30% {
+                border: transparent;
+                background-color: transparent;
+                color: transparent;
+
+            }
+
+            100% {
+                border: pink 2px solid;
+                background-color: rgb(170, 150, 154);
+                color: black;
+            }
+        }
+
         #box {
             text-align: center;
             position: absolute;
@@ -81,6 +112,7 @@
             height: 40px;
             border: pink 2px solid;
             background-color: rgb(170, 150, 154);
+            color: black;
             font-size: 20px;
             margin-top: 25px;
         }
@@ -338,11 +370,12 @@
             }
 
             100% {
-                width: 100px;
+                width: 140px;
             }
         }
 
-        #footer-a:hover+#footer-a-line {
+        #footer-a:hover+#footer-a-line,
+        #footer-a-line:hover {
             animation-name: footer-a;
             animation-timing-function: linear;
             animation-duration: .2s;
@@ -398,6 +431,7 @@
         <div id="box">
             <div id="spider" title="我是Warma家的小蜘蛛哦~"></div>
             <p>检测到您当前使用的是<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp移动端设备。</p>
+            <!-- &nbsp：实体空格 -->
             <p>是否跳转到移动端网页？</p>
             <p>（屏幕比较大或者横屏的话建议不要跳转哦）</p>
             <form action="">
@@ -462,11 +496,12 @@
 
             </div>
         </div>
+        <br>
     </div>
 
     <div id="footer">
         <p id="footer-p1">本网站为GitHub Pages站点。</p>
-        <a href="index.m.html" id="footer-a">移动端网页</a>
+        <a href="index.m.html" id="footer-a">前往移动端网页</a>
         <div id="footer-a-line"></div>
         <div class="footer">
             <a href="https://docs.github.com/cn/pages" target="_blank">GitHub Pages 官方文档 (简体中文)</a>
@@ -483,7 +518,7 @@
             <br>
         </div>
         <div class="footer">
-            <a href="https://www.zxxk.com/" target="_blank">中学学科网</a>
+            <a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank">狗屁不通文章生成器</a>
             <p class="go"></p>
             <br>
             <a href="https://www.bilibili.com" target="_blank">Bilibili首页</a>
@@ -504,6 +539,9 @@
             <p class="go"></p>
             <br>
             <a href="https://www.vcg.com/" target="_blank">视觉中国</a>
+            <p class="go"></p>
+            <br>
+            <a href="https://basic.smartedu.cn/" target="_blank">国家中小学智慧教育平台</a>
             <p class="go"></p>
             <br>
         </div>
@@ -625,7 +663,9 @@
         var is = document.querySelector("#mobile-is");
         var no = document.querySelector("#mobile-no");
         var mobile = document.querySelector("#mobile");
+        var box = document.querySelector("#box");
         mobile.style.display = 'block';
+        box.style.animation = 'mobile-box ease .5s 1 normal forwards';
         no.onclick = function () {
             mobile.style.display = 'none';
             return false;
