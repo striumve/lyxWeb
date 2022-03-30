@@ -121,6 +121,7 @@
             color: black;
             font-size: 20px;
             margin-top: 25px;
+            transition: .2s;
         }
 
         #mobile-is {
@@ -131,7 +132,6 @@
             /* border: none; */
             background-color: rgb(250, 230, 240);
             color: tomato;
-            transition: .2s;
         }
 
 
@@ -210,11 +210,11 @@
             margin: 0px;
             text-decoration: none;
             font-weight: 700;
+            transition: .3s;
         }
 
         #poem:hover {
             color: rgba(255, 255, 255, .8);
-            transition: .3s;
         }
 
         #date {
@@ -308,11 +308,11 @@
             margin-bottom: 28px;
             /* 28px: after伪类上面10px，下面15px */
             text-decoration: none;
+            transition: .2s;
         }
 
         #klein>a:hover {
             color: rgba(255, 255, 255, .8);
-            transition: .2s;
         }
 
         #klein>a::after {
@@ -332,6 +332,70 @@
             font-weight: 100;
             text-indent: 2em;
             font-size: 22rem;
+        }
+
+        #music {
+            width: 100%;
+            height: 510px;
+            background: url(https://desktop.github.com/images/star-bg.svg);
+        }
+
+        #music>p {
+            font-size: 23px;
+            /* font-family: 'icomoon'; */
+            padding-top: 20px;
+            padding-left: 20px;
+            color: black;
+        }
+
+        #music-chooser {
+            height: 410px;
+            overflow: auto;
+        }
+
+        .music-item {
+            position: relative;
+            width: 950px;
+            /* height: 100px; */
+            /* border: black 2px solid; */
+            margin-top: 20px;
+            height: 70px;
+            transition: .2s;
+        }
+
+        .music-item:hover {
+            background-color: rgba(200, 200, 200, .6);
+        }
+
+        .music-img {
+            width: 70px;
+            /* height: 70px; */
+            margin-left: 30px;
+        }
+
+        audio {
+            display: block;
+            border: none;
+            position: absolute;
+            top: 50%;
+            left: 600px;
+            transform: translate(0, -50%);
+        }
+
+        .music-info {
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .music-info-1 {
+            font-size: 30px;
+            margin: 0px;
+        }
+
+        .music-info-2 {
+            font-size: 25px;
+            margin: 0px;
         }
 
 
@@ -446,7 +510,7 @@
     <div id="mobile">
         <div id="box">
             <div id="spider" title="我是Warma家的小蜘蛛哦~"></div>
-            <p>检测到您当前使用的是<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp电脑端设备。</p>
+            <p>检测到您当前使用的是<br>&emsp;&emsp;电脑端设备。</p>
             <!-- &nbsp：实体空格 -->
             <p>是否跳转到电脑端网页？</p>
             <p>（建议跳转哦）</p>
@@ -533,6 +597,151 @@
 
             </div>
         </div>
+        <div id="music">
+            <p style="font-family: 'icomoon';display: inline;"></p>
+            <p style="display: inline-block;margin-bottom: 50px;">来点音乐！o(*￣▽￣*)ブ</p>
+            <div id="music-chooser">
+                <div class="music-item" data-music-count="1">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20200909/20200909132552160655.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">Never Gonna Give You Up</p>
+                        <p class="music-info-2">Rick Astley</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301626/8fc53f9a5f3141af5b7adf5fd76a25d6/KGTX/CLTX001/9d28faa0941c2e12c00dc4f8d20a7730.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="2">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20210331/20210331011451967185.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">Canon in D Major</p>
+                        <p class="music-info-2">-</p>
+                    </div>
+                    <audio class="music" controls autoplay loop>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301516/f1e1898836289c2c84c2978f4b25126e/KGTX/CLTX001/9145a28bda0cb8a49c7868890ecbcc53.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="3">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20200909/20200909123835588577.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">夜的钢琴曲 五</p>
+                        <p class="music-info-2">石进</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301547/1dfb2e71819ae320ec491fbc6d4f74e9/G196/M0A/07/17/ZIcBAF5hwKKAK_VcACCKV1JAHps643.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="4">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20200101/20200101002912272259.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">新宝島</p>
+                        <p class="music-info-2">サカナクション</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://sp-sycdn.kuwo.cn/03b5477e98a87078a93d7b4649a0d329/62441484/resource/n1/16/42/4238156615.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="5">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20211008/20211008205903649443.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">海阔天空</p>
+                        <p class="music-info-2">BEYOND</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source src="https://mp3.haoge500.com/upload/rank/20220211/dd5303dd286b5768b9cd5aec87bf0b43.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="6">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20150719/20150719080647591890.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">Yesterday Once More</p>
+                        <p class="music-info-2">Carpenters</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.tx.kugou.com/202203301629/385f5adf76949a02e69455b7cf4ac8b3/G222/M00/01/04/focBAF8C3yqAGp6wADLQjkEl0Uw573.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="7">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20150715/20150715232524286245.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">童话</p>
+                        <p class="music-info-2">光良</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301702/b6a24b4933a5d520bad6bdc259764f56/KGTX/CLTX001/4e72765fd779da9e35673afc5ae10f1e.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="8">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20200909/20200909114452517665.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">独家记忆</p>
+                        <p class="music-info-2">陈小春</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301705/9b74452c709f1dce7799a0bd4352707c/KGTX/CLTX001/f196ac647f24b1cd8f223cabac5390e0.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="9">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20161031/20161031151741660508.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">Dream It Possible</p>
+                        <p class="music-info-2">Delacey</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301707/df4c8a01000a297540059ad86e7f9cec/G148/M02/13/0F/NIcBAFvJVaqAb5N6ADHXW3DSEx4595.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+                <div class="music-item" data-music-count="last" style="margin-bottom: 10px;">
+                    <img class="music-img"
+                        src="https://imgessl.kugou.com/stdmusic/20190823/20190823185102790583.jpg"></img>
+                    <div class="music-info">
+                        <p class="music-info-1">小欢喜</p>
+                        <p class="music-info-2">刘瑞琦</p>
+                    </div>
+                    <audio class="music" controls>
+                        <source
+                            src="https://webfs.ali.kugou.com/202203301710/a5649d7abacefaffa65559ae123d24c2/G168/M04/0E/09/SIcBAF1BhHiACbLiAD06OktTNmk894.mp3"
+                            type="audio/mpeg" />
+                        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+                    </audio>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="footer">
@@ -554,7 +763,7 @@
             <br>
         </div>
         <div class="footer">
-            <a href="https://www.zxxk.com/" target="_blank">中学学科网</a>
+            <a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank">狗屁不通文章生成器</a>
             <p class="go"></p>
             <br>
             <a href="https://www.bilibili.com" target="_blank">Bilibili首页</a>
