@@ -22,11 +22,17 @@
         }
 
         @media screen and (max-width: 1000px) {
+
             /* 当页面宽度为1000px以下时，body宽度调整为1000px */
             /* 就是让页面宽度不能太小 */
             body {
                 width: 1000px;
             }
+        }
+
+        button:focus {
+            border: none;
+            outline: none;
         }
 
         #back {
@@ -166,7 +172,11 @@
         </div>
         <div class="text">
             <p class="time">2022.03.30 周三 下午</p>
-            <p class="diary">添加了“来点音乐”部分</p>
+            <p class="diary">添加了音乐部分</p>
+        </div>
+        <div class="text">
+            <p class="time">2022.03.31 周四 全天</p>
+            <p class="diary" title="知道为什么吗？手机浏览器的默认控件真的一言难尽啊……">为音乐部分制作了播放控件</p>
         </div>
     </div>
 </body>

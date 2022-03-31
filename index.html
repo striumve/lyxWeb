@@ -11,20 +11,8 @@
     <meta name="viewport" content="width=1200px">
     <title>lyx's personal web!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
     <style>
-        @font-face {
-            /* 字体声明  */
-            font-family: 'icomoon';
-            src: url('fonts/icomoon.eot?p4ssmb');
-            src: url('fonts/icomoon.eot?p4ssmb#iefix') format('embedded-opentype'),
-                url('fonts/icomoon.ttf?p4ssmb') format('truetype'),
-                url('fonts/icomoon.woff?p4ssmb') format('woff'),
-                url('fonts/icomoon.svg?p4ssmb#icomoon') format('svg');
-            font-weight: normal;
-            font-style: normal;
-            font-display: block;
-        }
-
         @media screen and (max-width: 1200px) {
 
             /* 当页面宽度为1200px以下时，body宽度调整为1200px */
@@ -34,98 +22,9 @@
             }
         }
 
-
-        /* 询问是否切换至移动端 */
-        #mobile {
-            display: none;
-            position: fixed;
-            pointer-events: all;
-            width: 100%;
-            height: 100%;
-            z-index: 50;
-            background-color: rgba(77, 66, 68, .7);
-        }
-
-        #spider {
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            width: 192px;
-            height: 126px;
-            background: url(6.png);
-            background-size: cover;
-            border-top-right-radius: 10px;
-        }
-
-        @keyframes mobile-box {
-            0% {
-                top: 100%;
-            }
-
-            100% {
-                top: 50%;
-            }
-        }
-
-        @keyframes mobile-btn {
-            0% {
-                border: transparent;
-                background-color: transparent;
-                color: transparent;
-            }
-
-            30% {
-                border: transparent;
-                background-color: transparent;
-                color: transparent;
-
-            }
-
-            100% {
-                border: pink 2px solid;
-                background-color: rgb(170, 150, 154);
-                color: black;
-            }
-        }
-
-        #box {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* 左移50%，上移50%，以居中 */
-            background-color: rgb(170, 150, 154);
-            padding: 50px;
-            border-radius: 10px;
-        }
-
-        #box>p {
-            text-align: left;
-            font-size: 20px;
-            margin: 0px;
-        }
-
-        #box>form>button {
-            /* padding: 20px; */
-            width: 75px;
-            height: 40px;
-            border: pink 2px solid;
-            background-color: rgb(170, 150, 154);
-            color: black;
-            font-size: 20px;
-            margin-top: 25px;
-            transition: .2s;
-        }
-
-        #mobile-is {
-            margin-right: 50px;
-        }
-
-        #box>form>button:hover {
-            /* border: none; */
-            background-color: rgb(250, 230, 240);
-            color: tomato;
+        button:focus {
+            border: none;
+            outline: none;
         }
 
 
@@ -278,108 +177,16 @@
             color: black;
         }
 
-        #klein {
-            height: auto;
-            background: rgb(0, 47, 167);
-            padding: 35px;
-        }
-
-        #klein>a {
-            display: block;
-            width: 300px;
-            color: white;
-            font-size: 30px;
-            margin: 0px;
-            margin-bottom: 28px;
-            /* 28px: after伪类上面10px，下面15px */
-            text-decoration: none;
-            transition: .2s;
-        }
-
-        #klein>a:hover {
-            color: rgba(255, 255, 255, .8);
-        }
-
-        #klein>a::after {
-            display: block;
-            position: relative;
-            top: 10px;
-            content: "";
-            width: 400px;
-            height: 3px;
-            background-color: #fff;
-        }
-
-        #klein>div>p {
-            width: 500px;
-            color: white;
-            font-family: '微软雅黑 Light';
-            font-weight: 100;
-            text-indent: 2em;
-        }
-
-        #music {
-            width: 100%;
-            height: 510px;
-            background: url(https://desktop.github.com/images/star-bg.svg);
-        }
-
-        #music>p {
-            font-size: 23px;
-            /* font-family: 'icomoon'; */
-            padding-top: 20px;
-            padding-left: 20px;
-            color: black;
-        }
-
-        #music-chooser {
-            height: 410px;
-            overflow: auto;
-        }
-
         .music-item {
             position: relative;
             width: 950px;
             /* height: 100px; */
             /* border: black 2px solid; */
-            margin-top: 20px;
             height: 70px;
-            transition: .2s;
-        }
-
-        .music-item:hover {
-            background-color: rgba(200, 200, 200, .6);
-        }
-
-        .music-img {
-            width: 70px;
-            /* height: 70px; */
-            margin-left: 30px;
-        }
-
-        audio {
-            display: block;
-            border: none;
-            position: absolute;
-            top: 50%;
-            left: 600px;
-            transform: translate(0, -50%);
-        }
-
-        .music-info {
-            display: inline-block;
-            position: relative;
-            bottom: 5px;
-        }
-
-        .music-info-1 {
-            font-size: 30px;
-            margin: 0px;
-        }
-
-        .music-info-2 {
-            font-size: 25px;
-            margin: 0px;
+            transition: .35s;
+            /* margin-top: 20px; */
+            padding: 10px;
+            border-radius: 70px;
         }
 
 
@@ -395,8 +202,8 @@
 
         .footer {
             float: left;
-            width: 394px;
-            /* ( 1200 - (margin-left)8 - (margin-right)8 ) / 3 约等于394。*/
+            width: 296px;
+            /* ( 1200 - (margin-left)8 - (margin-right)8 ) / 4 等于296。*/
         }
 
         #footer-p1 {
@@ -561,9 +368,6 @@
             </div>
         </div>
         <br>
-        <!-- <a id="advice" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1041095264@qq.com">
-            <p>为网页留言或提出建议</p>
-        </a> -->
         <div id="music">
             <p style="font-family: 'icomoon';display: inline;"></p>
             <p style="display: inline-block;">来点音乐！o(*￣▽￣*)ブ</p>
@@ -575,13 +379,35 @@
                         <p class="music-info-1">Never Gonna Give You Up</p>
                         <p class="music-info-2">Rick Astley</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player1">
                         <source
                             src="https://webfs.ali.kugou.com/202203301626/8fc53f9a5f3141af5b7adf5fd76a25d6/KGTX/CLTX001/9d28faa0941c2e12c00dc4f8d20a7730.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol1"></div>
+                        </div>
+                        <button class="play" id="play1">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause1">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH1"></button>
+                        <button class="volL" id="volL1"></button>
+                        <button onclick="document.getElementById('player1').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player1').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime1">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;03:33</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="213" value="0" class="timeline" id="timeline1">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="2">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20210331/20210331011451967185.jpg"></img>
@@ -589,13 +415,35 @@
                         <p class="music-info-1">Canon in D Major</p>
                         <p class="music-info-2">-</p>
                     </div>
-                    <audio class="music" controls autoplay loop>
+                    <audio class="music" loop autoplay id="player2">
                         <source
-                            src="https://webfs.ali.kugou.com/202203301516/f1e1898836289c2c84c2978f4b25126e/KGTX/CLTX001/9145a28bda0cb8a49c7868890ecbcc53.mp3"
+                            src="https://webfs.ali.kugou.com/202203311541/9d827f8c84ab45cac53de057cafd1ab6/KGTX/CLTX001/3bef52d34f8a6ccabf632092fe5a2bd0.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol2"></div>
+                        </div>
+                        <button class="play" id="play2" style="display: none;">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause2" style="display: block;">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH2"></button>
+                        <button class="volL" id="volL2"></button>
+                        <button onclick="document.getElementById('player2').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player2').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime2">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;05:00</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="300" value="0" class="timeline" id="timeline2">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="3">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20200909/20200909123835588577.jpg"></img>
@@ -603,13 +451,35 @@
                         <p class="music-info-1">夜的钢琴曲 五</p>
                         <p class="music-info-2">石进</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player3">
                         <source
                             src="https://webfs.ali.kugou.com/202203301547/1dfb2e71819ae320ec491fbc6d4f74e9/G196/M0A/07/17/ZIcBAF5hwKKAK_VcACCKV1JAHps643.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol3"></div>
+                        </div>
+                        <button class="play" id="play3">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause3">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH3"></button>
+                        <button class="volL" id="volL3"></button>
+                        <button onclick="document.getElementById('player3').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player3').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime3">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;02:13</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="133" value="0" class="timeline" id="timeline3">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="4">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20200101/20200101002912272259.jpg"></img>
@@ -617,13 +487,35 @@
                         <p class="music-info-1">新宝島</p>
                         <p class="music-info-2">サカナクション</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player4">
                         <source
-                            src="https://sp-sycdn.kuwo.cn/03b5477e98a87078a93d7b4649a0d329/62441484/resource/n1/16/42/4238156615.mp3"
+                            src="https://sp-sycdn.kuwo.cn/18c107775c5004a15cb9fead38712bcb/62455cdb/resource/n1/16/42/4238156615.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol4"></div>
+                        </div>
+                        <button class="play" id="play4">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause4">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH4"></button>
+                        <button class="volL" id="volL4"></button>
+                        <button onclick="document.getElementById('player4').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player4').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime4">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;05:05</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="305" value="0" class="timeline" id="timeline4">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="5">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20211008/20211008205903649443.jpg"></img>
@@ -631,12 +523,34 @@
                         <p class="music-info-1">海阔天空</p>
                         <p class="music-info-2">BEYOND</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player5">
                         <source src="https://mp3.haoge500.com/upload/rank/20220211/dd5303dd286b5768b9cd5aec87bf0b43.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol5"></div>
+                        </div>
+                        <button class="play" id="play5">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause5">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH5"></button>
+                        <button class="volL" id="volL5"></button>
+                        <button onclick="document.getElementById('player5').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player5').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime5">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;03:59</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="239" value="0" class="timeline" id="timeline5">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="6">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20150719/20150719080647591890.jpg"></img>
@@ -644,13 +558,35 @@
                         <p class="music-info-1">Yesterday Once More</p>
                         <p class="music-info-2">Carpenters</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player6">
                         <source
                             src="https://webfs.tx.kugou.com/202203301629/385f5adf76949a02e69455b7cf4ac8b3/G222/M00/01/04/focBAF8C3yqAGp6wADLQjkEl0Uw573.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol6"></div>
+                        </div>
+                        <button class="play" id="play6">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause6">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH6"></button>
+                        <button class="volL" id="volL6"></button>
+                        <button onclick="document.getElementById('player6').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player6').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime6">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;03:28</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="208" value="0" class="timeline" id="timeline6">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="7">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20150715/20150715232524286245.jpg"></img>
@@ -658,13 +594,35 @@
                         <p class="music-info-1">童话</p>
                         <p class="music-info-2">光良</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player7">
                         <source
                             src="https://webfs.ali.kugou.com/202203301702/b6a24b4933a5d520bad6bdc259764f56/KGTX/CLTX001/4e72765fd779da9e35673afc5ae10f1e.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol7"></div>
+                        </div>
+                        <button class="play" id="play7">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause7">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH7"></button>
+                        <button class="volL" id="volL7"></button>
+                        <button onclick="document.getElementById('player7').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player7').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime7">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;04:05</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="245" value="0" class="timeline" id="timeline7">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="8">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20200909/20200909114452517665.jpg"></img>
@@ -672,13 +630,35 @@
                         <p class="music-info-1">独家记忆</p>
                         <p class="music-info-2">陈小春</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player8">
                         <source
                             src="https://webfs.ali.kugou.com/202203301705/9b74452c709f1dce7799a0bd4352707c/KGTX/CLTX001/f196ac647f24b1cd8f223cabac5390e0.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol8"></div>
+                        </div>
+                        <button class="play" id="play8">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause8">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH8"></button>
+                        <button class="volL" id="volL8"></button>
+                        <button onclick="document.getElementById('player8').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player8').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime8">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;05:07</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="307" value="0" class="timeline" id="timeline8">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="9">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20161031/20161031151741660508.jpg"></img>
@@ -686,13 +666,35 @@
                         <p class="music-info-1">Dream It Possible</p>
                         <p class="music-info-2">Delacey</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player9">
                         <source
                             src="https://webfs.ali.kugou.com/202203301707/df4c8a01000a297540059ad86e7f9cec/G148/M02/13/0F/NIcBAFvJVaqAb5N6ADHXW3DSEx4595.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol9"></div>
+                        </div>
+                        <button class="play" id="play9">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause9">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH9"></button>
+                        <button class="volL" id="volL9"></button>
+                        <button onclick="document.getElementById('player9').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player9').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime9">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;03:24</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="204" value="0" class="timeline" id="timeline9">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
+
                 <div class="music-item" data-music-count="last" style="margin-bottom: 10px;">
                     <img class="music-img"
                         src="https://imgessl.kugou.com/stdmusic/20190823/20190823185102790583.jpg"></img>
@@ -700,12 +702,33 @@
                         <p class="music-info-1">小欢喜</p>
                         <p class="music-info-2">刘瑞琦</p>
                     </div>
-                    <audio class="music" controls>
+                    <audio class="music" id="player10">
                         <source
                             src="https://webfs.ali.kugou.com/202203301710/a5649d7abacefaffa65559ae123d24c2/G168/M04/0E/09/SIcBAF1BhHiACbLiAD06OktTNmk894.mp3"
                             type="audio/mpeg" />
                         你的浏览器不支持播放音乐┑(￣Д ￣)┍
                     </audio>
+                    <div class="controler">
+                        <div class="volBar">
+                            <div class="volBar-left" id="vol10"></div>
+                        </div>
+                        <button class="play" id="play10">
+                            <p></p>
+                        </button>
+                        <button class="pause" id="pause10">
+                            <p></p>
+                        </button>
+                        <button class="volH" id="volH10"></button>
+                        <button class="volL" id="volL10"></button>
+                        <button onclick="document.getElementById('player10').currentTime -= 10" class="back"></button>
+                        <button onclick="document.getElementById('player10').currentTime += 10" class="come"></button>
+                        <div class="time">
+                            <p class="time-1" id="nowTime10">0:0</p>
+                            <p class="time-2">&nbsp;/&nbsp;&nbsp;04:10</p>
+                        </div>
+                        <input type="range" name="points" min="0" max="250" value="0" class="timeline" id="timeline10">
+                        <!-- max的值为该音频的时长，单位为秒 -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -722,7 +745,7 @@
             <a href="https://github.com/striumve" target="_blank">GitHub个人主页</a>
             <p class="go"></p>
             <br>
-            <a href="https://github.com/striumve/lyxWeb" target="_blank">网页源代码 (也可以使用开发人员工具查看)</a>
+            <a href="https://github.com/striumve/lyxWeb" target="_blank">网页源代码 (或使用开发人员工具)</a>
             <p class="go"></p>
             <br>
             <a href="source.html">网页各素材来源</a>
@@ -757,90 +780,23 @@
             <p class="go"></p>
             <br>
         </div>
+        <div class="footer">
+            <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+            <p class="go"></p>
+            <br>
+            <a href="https://www.w3school.com.cn/" target="_blank">W3school</a>
+            <p class="go"></p>
+            <br>
+        </div>
     </div>
 </body>
+
+<script src="functions.js"></script>
 
 <script>
     //将启用JS的提示隐藏
     var hide = document.querySelector("#js");
     hide.style.display = 'none';
-</script>
-
-<script>
-    //显示时间(日期) 及 分时问候功能
-    var welcome = document.querySelector('#welcome-1');
-    var showPoem = document.querySelector("#poem");
-    var date = document.querySelector("#date-1");
-
-    //显示当前时间(日期)
-    function getNowDate() {
-        var getdate = new Date();
-        var year = getdate.getFullYear();
-        var month = getdate.getMonth() + 1;
-        var date = getdate.getDate();
-        var day = getdate.getDay();
-        var chiday = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-        var outday = chiday[day];
-        var output = year + '年' + month + '月' + date + '日' + ' ' + outday;
-        console.log('今天是' + output);
-        return output;
-    }
-    //分时问候.左边
-    function welcomeByTime() {
-        var getdate = new Date();
-        var hour = getdate.getHours();
-        var sayHi;
-        if (hour <= 4 || hour >= 19) {
-            sayHi = '晚上好！';
-        }
-        if (hour >= 5 && hour <= 11) {
-            sayHi = '上午好！';
-        }
-        if (hour >= 12 && hour <= 13) {
-            sayHi = '中午好！';
-        }
-        if (hour >= 14 && hour <= 16) {
-            sayHi = '下午好！';
-        }
-        if (hour >= 17 && hour <= 18) {
-            sayHi = '傍晚好！';
-        }
-        return sayHi;
-    }
-    //分时问候.右边（诗句）
-    function poemByTime() {
-        var getdate = new Date();
-        var hour = getdate.getHours();
-        var poem;
-        if (hour <= 4 || hour >= 19) {
-            poem = '露从今夜白，月是故乡明。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_ad6f7cfa10c2.aspx';
-        }
-        if (hour >= 5 && hour <= 7) {
-            poem = '清晨入古寺,初日照高林。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_e2890c61279c.aspx';
-        }
-        if (hour >= 8 && hour <= 11) {
-            poem = '一年之计在于春，一日之计在于晨。';
-            showPoem.href = 'https://so.gushiwen.cn/mingju/juv_0b9bcd3d3a7b.aspx';
-        }
-        if (hour >= 12 && hour <= 13) {
-            poem = '云淡风轻过午天，傍花随柳过前川。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_45fe7c553da8.aspx';
-        }
-        if (hour >= 14 && hour <= 16) {
-            poem = '午后郊园静，晴来景物新。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_ee3fe413887f.aspx';
-        }
-        if (hour >= 17 && hour <= 18) {
-            poem = '朱雀桥边野草花，乌衣巷口夕阳斜。';
-            showPoem.href = 'https://so.gushiwen.cn/shiwenv_8b671db8c10d.aspx';
-        }
-        return poem;
-    }
-    welcome.innerHTML = welcomeByTime();
-    showPoem.innerHTML = poemByTime();
-    date.innerHTML = getNowDate();
 </script>
 
 <script>
@@ -865,9 +821,8 @@
         location.href = "index.html";
     }
     */
-</script>
 
-<script>
+
     // 移动端适配
     // 终于有用了！啊啊啊啊啊啊啊啊啊！！！
     function isGo() {
@@ -916,7 +871,6 @@
     }
     // }
     // mobile_device_detect();
-
 </script>
 
 </html>
