@@ -375,16 +375,27 @@ var bar8 = document.getElementById('vol8');
 var bar9 = document.getElementById('vol9');
 var bar10 = document.getElementById('vol10');
 
+player1.volume = 0.5;
+player2.volume = 0.5;
+player3.volume = 0.5;
+player4.volume = 0.5;
+player5.volume = 0.5;
+player6.volume = 0.5;
+player7.volume = 0.5;
+player8.volume = 0.5;
+player9.volume = 0.5;
+player10.volume = 0.5;
+
 bar1.style.width = player1.volume * 100 + 'px';
-bar2.style.width = player1.volume * 100 + 'px';
-bar3.style.width = player1.volume * 100 + 'px';
-bar4.style.width = player1.volume * 100 + 'px';
-bar5.style.width = player1.volume * 100 + 'px';
-bar6.style.width = player1.volume * 100 + 'px';
-bar7.style.width = player1.volume * 100 + 'px';
-bar8.style.width = player1.volume * 100 + 'px';
-bar9.style.width = player1.volume * 100 + 'px';
-bar10.style.width = player1.volume * 100 + 'px';
+bar2.style.width = player2.volume * 100 + 'px';
+bar3.style.width = player3.volume * 100 + 'px';
+bar4.style.width = player4.volume * 100 + 'px';
+bar5.style.width = player5.volume * 100 + 'px';
+bar6.style.width = player6.volume * 100 + 'px';
+bar7.style.width = player7.volume * 100 + 'px';
+bar8.style.width = player8.volume * 100 + 'px';
+bar9.style.width = player9.volume * 100 + 'px';
+bar10.style.width = player10.volume * 100 + 'px';
 
 volH1.onclick = function () {
     player1.volume += 0.1;
