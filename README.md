@@ -12,4 +12,4 @@
 ![badge](https://img.shields.io/static/v1?label=striumve&message=期末考加油&color=important)
 ![badge](https://img.shields.io/static/v1?label=striumve&message=会考加油&color=important)
 
-（有一说一，这徽章还挺好玩）
+（有一说一，这[徽章](https://shields.io)还挺好玩）
