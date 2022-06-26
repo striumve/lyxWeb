@@ -12,7 +12,7 @@ This is a [GitHub Pages](https://docs.github.com/cn/pages) site.
 ****
 To see more development diary, please visit [here](https://striumve.github.io/lyxWeb/diary.html). 
 
-2022-06-26: Made this English document. 
+2022-06-26: Made this English document. Made the 404 page(not completed). 
 
 ****
 #### Something not important 
