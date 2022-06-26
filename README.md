@@ -19,5 +19,5 @@ nav的内容已经想好了：网址导航；工具；Ch/En切换；“striumve�
 然后nav就用[icomoon](https://icomoon.io/)上的字体图标做。
 
 2022-06-26：Markdown可以插入LaTeX公式诶，试一下
-$$s^2=\frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2$$
+$$s^2=\frac{1}{n}\sum^n_{i=1}(x_i-\overline{x})^2$$
 我还发现一个叫[MathJax](https://www.mathjax.org/)的，在script里面引入后就可以在HTML里面插入LaTeX公式了。
