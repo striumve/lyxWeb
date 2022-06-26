@@ -16,4 +16,8 @@
 
 2022-06-25：嗯我打算把新版网站的页面做成，主体是一张风景图片，上面有一排nav的那种，看起来非常高级[doge]。
 nav的内容已经想好了：网址导航；工具；Ch/En切换；“striumve”。工具里面得有清理缓存(假的)、电脑配置价格计算(假的)(B站上看到的沙雕视频)、年龄计算器(假的)（嘿嘿doge）
-然后nav就用icomoon上的图标做。
+然后nav就用[icomoon](https://icomoon.io/)上的字体图标做。
+
+2022-06-26：Markdown可以插入LaTeX公式诶，试一下
+$$s^2=\frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2$$
+我还发现一个叫[MathJax](https://www.mathjax.org/)的，在script里面引入后就可以在HTML里面插入LaTeX公式了。
