@@ -10,6 +10,8 @@
 ![badge](https://img.shields.io/static/v1?label=CodeMark&message=Perfect&color=success)
 
 ****
+2022-03-25：开始制作该网站。更多网页开发日志请访问[这里](https://striumve.github.io/lyxWeb/diary.html)。
+
 2022-06-09：为该项目添加了徽章。
 
 2022-06-26：制作了英文README文档。
