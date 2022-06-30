@@ -14,6 +14,8 @@ To see more development diary, please visit [here](https://striumve.github.io/ly
 
 2022-06-26: Made this English document. Made the 404 page. 
 
+2022-06-30: Start to make the new web page. 
+
 ****
 #### Something not important 
 
