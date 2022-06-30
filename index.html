@@ -8,6 +8,8 @@
     <title>lyx's personal web!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         @font-face {
             /* 字体声明  */
@@ -20,6 +22,52 @@
             font-weight: normal;
             font-style: normal;
             font-display: block;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .main {
+                background: url(background_night.jpg);
+            }
+        }
+
+        @keyframes navUpFrame {
+            0% {
+                top: 0vh;
+            }
+
+            100% {
+                top: -6vh;
+            }
+        }
+
+        @keyframes navDownFrame {
+            0% {
+                top: -10vh;
+            }
+
+            100% {
+                top: 0vh;
+            }
+        }
+
+        @keyframes pageCome {
+            0% {
+                top: -100vh;
+            }
+
+            100% {
+                top: 6vh;
+            }
+        }
+
+        @keyframes pageOut {
+            0% {
+                top: 6vh;
+            }
+
+            100% {
+                top: -100vh;
+            }
         }
 
         body {
@@ -36,6 +84,15 @@
             background-size: cover;
         }
 
+        .noJS {
+            position: absolute;
+            top: 7vh;
+            left: 1vh;
+            background-color: rgba(200, 200, 200, .5);
+            color: rgba(0, 0, 0, .8);
+
+        }
+
         .nav {
             height: 6vh;
             width: 100vw;
@@ -43,7 +100,8 @@
             top: 0px;
             left: 0px;
             background-color: rgba(255, 255, 255, .5);
-
+            cursor: default;
+            z-index: 5;
         }
 
         .logo {
@@ -64,7 +122,6 @@
             font-family: 'icomoon';
             font-size: 4vh;
             margin: 1vh 1.5vh;
-            cursor: default;
             /* background-color: #fff; */
             color: rgba(40, 75, 225, 0.6);
         }
@@ -73,30 +130,179 @@
             margin-left: 8vh;
         }
 
+        .navUp {
+            font-family: 'icomoon';
+            display: inline-block;
+            position: absolute;
+            right: 1vh;
+            top: 1vh;
+            margin: 0;
+            margin-top: 1vh;
+            font-size: 2vh;
+        }
+
+        .navDown {
+            font-family: 'icomoon';
+            display: none;
+            position: absolute;
+            right: 1vh;
+            top: 1vh;
+            margin: 0;
+            margin-top: 1vh;
+            cursor: default;
+            font-size: 2vh;
+        }
+
         .navRight {
             display: inline-block;
             position: absolute;
-            right: 0px;
+            right: 3vh;
             font-family: 'icomoon';
             font-size: 4vh;
             margin: 1vh;
-            cursor: default;
+        }
+
+        .page {
+            position: absolute;
+            top: -100vh;
+            left: 0;
+            background-color: rgba(80, 95, 255, 0.5);
+            width: 100vw;
+            height: 94vh;
         }
     </style>
 </head>
 
 <body>
     <div class="main">
+        <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
         <div class="nav">
             <a class="logo" href="https://github.com/striumve/" target="_blank"></a>
-            <!-- 网址导航；工具；设置；Ch/En切换；“striumve” -->
             <p class="web navbtn"></p>
             <p class="tool navbtn"></p>
             <p class="set navbtn"></p>
-            <p class="lan navbtn"><!-- lan: language --></p>
+            <p class="more navbtn"></p>
+            <p class="navUp"></p>
             <p class="navRight">  </p>
+        </div>
+        <p class="navDown"></p>
+        <div class="webPage page">
+            <p>web</p>
+        </div>
+        <div class="toolPage page">
+            <p>tool</p>
+        </div>
+        <div class="setPage page">
+            <p>set</p>
+        </div>
+        <div class="morePage page">
+            <p>more</p>
         </div>
     </div>
 </body>
+
+<script>
+    //隐藏JavaScript提示
+    var nojs = document.querySelector('.noJS');
+    nojs.style.display = 'none';
+
+    //收起与展开nav栏
+    var up = document.querySelector('.navUp');
+    var nav = document.querySelector('.nav');
+    var down = document.querySelector('.navDown');
+    up.addEventListener("click", function () {
+        nav.style.animation = 'navUpFrame linear .2s forwards';
+        down.style.display = 'block';
+        down.addEventListener("click", function () {
+            nav.style.animation = 'navDownFrame linear .2s forwards';
+            down.style.display = 'none';
+        })
+    })
+
+    //nav栏按钮点击后弹出对应界面
+    var webBtn = document.querySelector('.web');
+    var toolBtn = document.querySelector('.tool');
+    var setBtn = document.querySelector('.set');
+    var moreBtn = document.querySelector('.more');
+    var webPage = document.querySelector('.webPage');
+    var toolPage = document.querySelector('.toolPage');
+    var setPage = document.querySelector('.setPage');
+    var morePage = document.querySelector('.morePage');
+
+    var flagA = 0;
+    var flagB = 0;
+    var flagC = 0;
+    var flagD = 0;
+
+    function avoid() {
+        //防止多个页面重叠
+        //未完成
+        if (flagA === 1) {
+            webPage.style.animation = 'pageOut ease .2s forwards';
+            // flagA = 0;
+        }
+        if (flagB === 1) {
+            toolPage.style.animation = 'pageOut ease .2s forwards';
+            // flagB = 0;
+        }
+        if (flagC === 1) {
+            setPage.style.animation = 'pageOut ease .2s forwards';
+            // flagC = 0;
+        }
+        if (flagD === 1) {
+            morePage.style.animation = 'pageOut ease .2s forwards';
+            // flagD = 0;
+        }
+    }
+
+    webBtn.addEventListener("click", function () {
+        avoid();
+        if (flagA === 0) {
+            webPage.style.animation = 'pageCome ease .2s forwards';
+            flagA = 1;
+        }
+        else if (flagA === 1) {
+            webPage.style.animation = 'pageOut ease .2s forwards';
+            flagA = 0;
+        }
+    })
+
+    toolBtn.addEventListener("click", function () {
+        avoid();
+        if (flagB === 0) {
+            toolPage.style.animation = 'pageCome ease .2s forwards';
+            flagB = 1;
+        }
+        else if (flagB === 1) {
+            toolPage.style.animation = 'pageOut ease .2s forwards';
+            flagB = 0;
+        }
+    })
+
+    setBtn.addEventListener("click", function () {
+        avoid();
+        if (flagC === 0) {
+            setPage.style.animation = 'pageCome ease .2s forwards';
+            flagC = 1;
+        }
+        else if (flagC === 1) {
+            setPage.style.animation = 'pageOut ease .2s forwards';
+            flagC = 0;
+        }
+    })
+
+    moreBtn.addEventListener("click", function () {
+        avoid();
+        if (flagD === 0) {
+            morePage.style.animation = 'pageCome ease .2s forwards';
+            flagD = 1;
+        }
+        else if (flagD === 1) {
+            morePage.style.animation = 'pageOut ease .2s forwards';
+            flagD = 0;
+        }
+    })
+
+</script>
 
 </html>
