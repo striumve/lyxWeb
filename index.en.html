@@ -14,7 +14,7 @@
 
 <body>
     <div class="main">
-        <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
+        <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of your browser and open JavaScript.</div>
         <div class="nav">
             <p class="logo"></p>
             <p class="web navbtn"></p>
@@ -26,24 +26,24 @@
         </div>
         <p class="navDown"></p>
         <div class="webPage page">
-            <p class="pageTitle">网址导航</p>
+            <p class="pageTitle">web sites</p>
             <div class="web-item">
-                <p class="web-name">&emsp;哔哩哔哩</p>
+                <p class="web-name">&emsp;bilibili</p>
                 <p class="web-site">&emsp;https://www.bilibili.com/</p>
                 <p class="web-copy"></p>
                 <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
             </div>
         </div>
         <div class="toolPage page">
-            <p class="pageTitle">工具</p>
+            <p class="pageTitle">tools</p>
         </div>
         <div class="setPage page">
-            <p class="pageTitle">设置</p>
+            <p class="pageTitle">settings</p>
             <div class="set-item set1">
-                <p>语言</p>
+                <p>language</p>
                 <div class="set-option">
                     简体中文&emsp;English
-                    <div class="set-chooser" id="set1-chooser"></div>
+                    <div class="set-chooser" id="set1-chooser" style="width: 7vh;left: auto;right: 0vh;"></div>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
 <script src="functions.js"></script>
 
 <script>
-    FLAG = 0;
+    FLAG = 1;
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');
     nojs.style.display = 'none';
