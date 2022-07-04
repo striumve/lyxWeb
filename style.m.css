@@ -19,12 +19,6 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    body {
-        width: 1200px;
-    }
-}
-
 @keyframes navUpFrame {
     0% {
         top: 0vh;
