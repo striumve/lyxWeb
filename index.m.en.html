@@ -9,7 +9,7 @@
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.m.css">
 </head>
 
 <body>
@@ -25,14 +25,12 @@
         <p class="web navbtn"></p>
         <p class="tool navbtn"></p>
         <p class="set navbtn"></p>
-        <!-- <p class="navRight">  </p> -->
         <p class="time">[time]</p>
     </div>
 
     <div class="main"></div>
 
-    <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of
-        your browser and open JavaScript.</div>
+    <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of your browser and open JavaScript.</div>
 
     <p class="navBtn"></p>
 
@@ -40,22 +38,18 @@
         <p class="pageTitle">web sites</p>
         <div class="web-item">
             <p class="web-name">&emsp;bilibili</p>
-            <p class="web-site">&emsp;https://www.bilibili.com/</p>
             <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;GitHub</p>
-            <p class="web-site">&emsp;https://github.com/</p>
             <a class="web-go" href="https://github.com/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;my GitHub profile</p>
-            <p class="web-site">&emsp;https://github.com/striumve</p>
             <a class="web-go" href="https://github.com/striumve" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;GitHub Pages offical documentation (Simplified Chinese)</p>
-            <p class="web-site">&emsp;https://docs.github.com/cn/pages</p>
             <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
         </div>
     </div>
@@ -72,6 +66,10 @@
         <p class="pageTitle">settings</p>
         <div class="set-item set1">
             <p>language</p>
+            <!-- <div class="set-option">
+                    简体中文&emsp;English
+                    <div class="set-chooser" id="set1-chooser"></div>
+                </div> -->
             <select name="" id="" class="set1-select">
                 <option value="1" class="set1-option">简体中文</option>
                 <option value="2" class="set1-option" selected>English</option>
@@ -79,31 +77,29 @@
             <button class="set1-check">OK</button>
         </div>
     </div>
-
 </body>
 
-<script src="functions.js"></script>
+<script src="functions.m.js"></script>
 
 <script>
     languageFlag = 2;
-
-    FLAG = 1;
-
-    //移动端适配
+    // 移动端适配
+    var flag = 0;
     var thisOS = navigator.platform;
     var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
     for (var i = 0; i < os.length; i++) {
         if (thisOS.match(os[i])) {
-            window.location = "index.m.en.html";
+            flag = 1;
         }
+
     }
     if (navigator.platform.indexOf('iPad') != -1) {
-        window.location = "index.m.en.html";
+        flag = 1;
     }
     var check = navigator.appVersion;
     if (check.match(/linux/i)) {
         if (check.match(/mobile/i) || check.match(/X11/i)) {
-            window.location = "index.m.en.html";
+            flag = 1;
         }
     }
     Array.prototype.in_array = function (e) {
@@ -113,6 +109,11 @@
         }
         return false;
     }
+    if (flag === 0) {
+        window.location = "index.en.html";
+    }
+
+    FLAG = 0;
 
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');
@@ -122,23 +123,21 @@
     function getNowDate() {
         var getdate = new Date();
         var year = getdate.getFullYear();
-        var month = getdate.getMonth();
+        var month = getdate.getMonth() + 1;
         var date = getdate.getDate();
         var day = getdate.getDay();
         var hour = getdate.getHours();
         var minute = getdate.getMinutes();
-        var chiday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        var chimonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var chiday = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
         var outday = chiday[day];
-        var outmonth = chimonth[month];
-        var output = outmonth + ' ' + date + ', ' + year + ' ' + outday + '<br>' + hour + ':' + minute;
+        var output = year + '年' + month + '月' + date + '日' + ' ' + outday + '<br>' + hour + ':' + minute;
         if (minute < 10) {
-            output = outmonth + ' ' + date + ', ' + year + ' ' + outday + '<br>' + hour + ':' + '0' + minute;
+            output = year + '年' + month + '月' + date + '日' + ' ' + outday + '<br>' + hour + ':' + '0' + minute;
         };
         if (hour === 0) {
             hour = '00';
         };
-        console.log('It\'s ' + output + ' now.');
+        console.log('今天是' + output);
         return output;
     }
 
@@ -148,6 +147,17 @@
     var timeTimer = setInterval(function () {
         showTime.innerHTML = getNowDate();
     }, 10000);
+
+    //
+    var vh = window.innerHeight;
+    var vw = window.innerWidth;
+    var time = document.querySelector('.time');
+    if (vw <= 0.8 * vh) {
+        time.style.display = 'none';
+    }
+    if (vw >= 1.3 * vh) {
+        // alert('检测到您当前的屏幕适宜使用电脑版网页。');
+    }
 </script>
 
 </html>

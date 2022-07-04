@@ -1,4 +1,4 @@
-/* public styles */
+/* public styles of mobile pages */
 
 @font-face {
     /* 字体声明  */
@@ -22,11 +22,6 @@
 @media screen and (max-width: 1200px) {
     body {
         width: 1200px;
-    }
-
-    .web-copy,
-    .web-go {
-        width: 36px;
     }
 }
 
@@ -259,29 +254,28 @@ body {
 
 .web-go {
     font-family: 'icomoon';
-    width: 3vw;
+    width: 4vh;
     position: absolute;
-    right: 2vw;
+    right: 2vh;
     font-size: 3vh;
     text-align: center;
     line-height: 4vh;
 }
 
-.web-name,
-.web-site {
-    width: 37vw;
+.web-name {
+    width: 70vw;
     margin-left: 2vw;
     position: relative;
-    /* bottom: .5vh; */
     font-size: 2vh;
     line-height: 4vh;
+    padding-right: 2vh;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .set-item {
-    height: auto;
+    height: 6vh;
     width: 90vw;
     margin-left: 5vw;
     margin-bottom: 3vh;
@@ -298,20 +292,6 @@ body {
     line-height: 6vh;
     margin-left: 2vh;
 }
-
-/* .set-option {
-    display: inline-block;
-    width: auto;
-    height: 2vh;
-    border-radius: 2vh;
-    position: absolute;
-    right: 2vh;
-    top: 1vh;
-    font-size: 2vh;
-    background-color: rgba(150, 150, 255, 0.5);
-    padding: 1vh;
-    z-index: 5;
-} */
 
 .set1-select {
     display: inline-block;
@@ -345,23 +325,6 @@ body {
     outline: none;
     border: none;
 }
-
-/* .set-chooser {
-    width: 8vh;
-    height: 2vh;
-    border-radius: 2vh;
-    position: absolute;
-    left: 0vh;
-    top: 0vh;
-    font-size: 2vh;
-    background-color: rgba(250, 250, 255, 0.3);
-    padding: 1vh;
-}
-
-
-#set1-chooser {
-    width: 8vh;
-} */
 
 .tool-item {
     height: auto;

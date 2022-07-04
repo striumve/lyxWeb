@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1200px, initial-scale=1.0">
-    <title>lyx's personal web!</title>
+    <title>lyx的个人网站!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,39 +13,73 @@
 </head>
 
 <body>
-    <div class="main">
-        <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
-        <div class="nav">
-            <p class="logo"></p>
-            <p class="web navbtn"></p>
-            <p class="tool navbtn"></p>
-            <p class="set navbtn"></p>
-            <p class="navUp"></p>
-            <!-- <p class="navRight">  </p> -->
-            <p class="time">[time]</p>
+    <audio class="music" loop autoplay id="player2">
+        <source
+            src="bgm.mp3"
+            type="audio/mpeg" />
+        你的浏览器不支持播放音乐┑(￣Д ￣)┍
+    </audio>
+
+    <div class="nav">
+        <p class="logo"></p>
+        <p class="web navbtn"></p>
+        <p class="tool navbtn"></p>
+        <p class="set navbtn"></p>
+        <!-- <p class="navRight">  </p> -->
+        <p class="time">[time]</p>
+    </div>
+
+    <div class="main"></div>
+
+    <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
+
+    <p class="navBtn"></p>
+
+    <div class="webPage page">
+        <p class="pageTitle">网址导航</p>
+        <div class="web-item">
+            <p class="web-name">&emsp;哔哩哔哩</p>
+            <p class="web-site">&emsp;https://www.bilibili.com/</p>
+            <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
         </div>
-        <p class="navDown"></p>
-        <div class="webPage page">
-            <p class="pageTitle">网址导航</p>
-            <div class="web-item">
-                <p class="web-name">&emsp;哔哩哔哩</p>
-                <p class="web-site">&emsp;https://www.bilibili.com/</p>
-                <p class="web-copy"></p>
-                <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
-            </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;GitHub</p>
+            <p class="web-site">&emsp;https://github.com/</p>
+            <a class="web-go" href="https://github.com/" target="_blank"></a>
         </div>
-        <div class="toolPage page">
-            <p class="pageTitle">工具</p>
+        <div class="web-item">
+            <p class="web-name">&emsp;GitHub个人主页</p>
+            <p class="web-site">&emsp;https://github.com/striumve</p>
+            <a class="web-go" href="https://github.com/striumve" target="_blank"></a>
         </div>
-        <div class="setPage page">
-            <p class="pageTitle">设置</p>
-            <div class="set-item set1">
-                <p>语言</p>
-                <div class="set-option">
+        <div class="web-item">
+            <p class="web-name">&emsp;GitHub Pages 官方文档 (简体中文)</p>
+            <p class="web-site">&emsp;https://docs.github.com/cn/pages</p>
+            <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
+        </div>
+    </div>
+
+    <div class="toolPage page">
+        <p class="pageTitle">工具</p>
+        <div class="tool-item tool1">
+            <p class="tool-item-name">清除缓存</p>
+            <p class="tool-item-right tool1-change">11.4154 MB</p>
+        </div>
+    </div>
+
+    <div class="setPage page">
+        <p class="pageTitle">设置</p>
+        <div class="set-item set1">
+            <p>语言</p>
+            <!-- <div class="set-option">
                     简体中文&emsp;English
                     <div class="set-chooser" id="set1-chooser"></div>
-                </div>
-            </div>
+                </div> -->
+            <select name="" id="" class="set1-select">
+                <option value="1" class="set1-option" selected>简体中文</option>
+                <option value="2" class="set1-option">English</option>
+            </select>
+            <button class="set1-check">确定</button>
         </div>
 
     </div>
@@ -54,10 +88,66 @@
 <script src="functions.js"></script>
 
 <script>
-    FLAG = 0;
+    languageFlag = 1;
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');
     nojs.style.display = 'none';
+
+    //移动端适配
+    var thisOS = navigator.platform;
+    var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
+    for (var i = 0; i < os.length; i++) {
+        if (thisOS.match(os[i])) {
+            window.location = "index.m.html";
+        }
+    }
+    if (navigator.platform.indexOf('iPad') != -1) {
+        window.location = "index.m.html";
+    }
+    var check = navigator.appVersion;
+    if (check.match(/linux/i)) {
+        if (check.match(/mobile/i) || check.match(/X11/i)) {
+            window.location = "index.m.html";
+        }
+    }
+    Array.prototype.in_array = function (e) {
+        for (i = 0; i < this.length; i++) {
+            if (this[i] == e)
+                return true;
+        }
+        return false;
+    }
+
+    FLAG = 0;
+
+    //按格式获取当前时间
+    function getNowDate() {
+        var getdate = new Date();
+        var year = getdate.getFullYear();
+        var month = getdate.getMonth() + 1;
+        var date = getdate.getDate();
+        var day = getdate.getDay();
+        var hour = getdate.getHours();
+        var minute = getdate.getMinutes();
+        var chiday = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var outday = chiday[day];
+        var output = year + '年' + month + '月' + date + '日' + ' ' + outday + '<br>' + hour + ':' + minute;
+        if (minute < 10) {
+            output = year + '年' + month + '月' + date + '日' + ' ' + outday + '<br>' + hour + ':' + '0' + minute;
+        };
+        if (hour === 0) {
+            hour = '00';
+        };
+        console.log('今天是' + output);
+        return output;
+    }
+
+    //显示时间
+    var showTime = document.querySelector('.time');
+    showTime.innerHTML = getNowDate();
+    var timeTimer = setInterval(function () {
+        showTime.innerHTML = getNowDate();
+    }, 10000);
 </script>
 
 </html>

@@ -1,4 +1,4 @@
-//public functions
+//public functions of mobile pages
 
 var FLAG = 2;
 
@@ -106,9 +106,9 @@ var set1Check = document.querySelector('.set1-check');
 set1Check.addEventListener("click", function () {
     var set1 = document.querySelector('.set1-select').value;
     if (set1 === '1') {
-        window.location = "index.html";
+        window.location = "index.m.html";
     } else if (set1 === '2') {
-        window.location = "index.en.html";
+        window.location = "index.m.en.html";
     }
 })
 
