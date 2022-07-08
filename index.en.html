@@ -10,16 +10,50 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .web-go {
+            font-family: 'icomoon';
+            width: 3vw;
+            position: absolute;
+            right: 2vw;
+            font-size: 3vh;
+            text-align: center;
+            line-height: 4vh;
+        }
+
+        .web-name,
+        .web-site {
+            width: 37vw;
+            margin-left: 2vw;
+            position: relative;
+            /* bottom: .5vh; */
+            font-size: 2vh;
+            line-height: 4vh;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .set-item {
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <audio class="music" loop autoplay id="player2">
-        <source
-            src="bgm.mp3"
-            type="audio/mpeg" />
+    <script>
+        var vw = document.documentElement.clientWidth;
+        var vh = document.documentElement.clientHeight;
+        if (vw <= 1200 || vh <= 600 || vw / vh >= 2.5 || vw / vh <= 0.5) {
+            alert('Please adjust the browser interface, \nso that it is not too wide, too high, or too narrow, \nfor the best browsing experience.');
+        }
+    </script>
+
+    <audio class="bgm" loop autoplay id="player2">
+        <source src="bgm.mp3" type="audio/mpeg" />
         你的浏览器不支持播放音乐┑(￣Д ￣)┍
     </audio>
-    
+
     <div class="nav">
         <p class="logo"></p>
         <p class="web navbtn"></p>
@@ -72,17 +106,30 @@
         <p class="pageTitle">settings</p>
         <div class="set-item set1">
             <p>language</p>
-            <select name="" id="" class="set1-select">
-                <option value="1" class="set1-option">简体中文</option>
-                <option value="2" class="set1-option" selected>English</option>
+            <!-- <div class="set-option">
+                    简体中文&emsp;English
+                    <div class="set-chooser" id="set1-chooser"></div>
+                </div> -->
+            <select name="" id="" class="set-select set1-select">
+                <option value="1" class="set1-option" selected>简体中文</option>
+                <option value="2" class="set1-option">English</option>
+                <option value="3" class="set1-option">日本語</option>
             </select>
-            <button class="set1-check">OK</button>
+            <button class="set-check set1-check">OK</button>
+        </div>
+        <div class="set-item set2">
+            <p>music</p>
+            <select name="" id="" class="set-select set2-select">
+                <option value="1" class="set2-option" selected>Les premiers sourires de Vanessa</option>
+                <option value="2" class="set2-option">no music</option>
+            </select>
+            <button class="set-check set2-check">OK</button>
         </div>
     </div>
 
 </body>
 
-<script src="functions.js"></script>
+<script src="functions.pc.js"></script>
 
 <script>
     languageFlag = 2;
@@ -138,7 +185,7 @@
         if (hour === 0) {
             hour = '00';
         };
-        console.log('It\'s ' + output + ' now.');
+        console.log('Welcome to visit lyx\'s personal web.');
         return output;
     }
 

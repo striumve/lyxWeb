@@ -4,19 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1200px, initial-scale=1.0">
+    <meta name="viewport" content="width=width, initial-scale=1.0">
     <title>lyx的个人网站!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .info {
+            position: absolute;
+            top: 7vh;
+            left: 1vh;
+            width: 20%;
+            height: 50%;
+            background-color: #fff;
+            border-radius: 3vh;
+        }
+
+        .web-go {
+            font-family: 'icomoon';
+            width: 3vw;
+            position: absolute;
+            right: 2vw;
+            font-size: 3vh;
+            text-align: center;
+            line-height: 4vh;
+        }
+
+        .web-name,
+        .web-site {
+            width: 37vw;
+            margin-left: 2vw;
+            position: relative;
+            /* bottom: .5vh; */
+            font-size: 2vh;
+            line-height: 4vh;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .set-item {
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <audio class="music" loop autoplay id="player2">
-        <source
-            src="bgm.mp3"
-            type="audio/mpeg" />
+    <script>
+        var vw = document.documentElement.clientWidth;
+        var vh = document.documentElement.clientHeight;
+        if (vw <= 1200 || vh <= 600 || vw / vh >= 2.5 || vw / vh <= 0.5) {
+            alert('请调整浏览器界面，不要过宽、过高、过于窄小，\n以获取最佳浏览体验。');
+        }
+    </script>
+
+    <audio class="bgm" loop autoplay id="player2">
+        <source src="bgm.mp3" type="audio/mpeg" />
         你的浏览器不支持播放音乐┑(￣Д ￣)┍
     </audio>
 
@@ -28,6 +72,8 @@
         <!-- <p class="navRight">  </p> -->
         <p class="time">[time]</p>
     </div>
+
+    <!-- <div class="info"></div> -->
 
     <div class="main"></div>
 
@@ -75,17 +121,25 @@
                     简体中文&emsp;English
                     <div class="set-chooser" id="set1-chooser"></div>
                 </div> -->
-            <select name="" id="" class="set1-select">
+            <select name="" id="" class="set-select set1-select">
                 <option value="1" class="set1-option" selected>简体中文</option>
                 <option value="2" class="set1-option">English</option>
+                <option value="3" class="set1-option">日本語</option>
             </select>
-            <button class="set1-check">确定</button>
+            <button class="set-check set1-check">确定</button>
         </div>
-
+        <div class="set-item set2">
+            <p>音乐</p>
+            <select name="" id="" class="set-select set2-select">
+                <option value="1" class="set2-option" selected>瓦妮莎的微笑</option>
+                <option value="2" class="set2-option">不播放音乐</option>
+            </select>
+            <button class="set-check set2-check">确定</button>
+        </div>
     </div>
 </body>
 
-<script src="functions.js"></script>
+<script src="functions.pc.js"></script>
 
 <script>
     languageFlag = 1;
@@ -138,7 +192,7 @@
         if (hour === 0) {
             hour = '00';
         };
-        console.log('今天是' + output);
+        console.log('欢迎访问lyx的个人网站！');
         return output;
     }
 

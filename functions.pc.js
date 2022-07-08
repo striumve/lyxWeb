@@ -1,4 +1,4 @@
-//public functions of mobile pages
+//public functions
 
 var FLAG = 2;
 
@@ -100,15 +100,23 @@ setBtn.addEventListener("click", function () {
     }
 })
 
+//logo:hover弹出信息框
+var logo = document.querySelector('.logo');
+logo.addEventListener("mouseover", function() {
+
+})
+
 //设置
 var set1Opt = document.querySelector('.set1-option');
 var set1Check = document.querySelector('.set1-check');
 set1Check.addEventListener("click", function () {
     var set1 = document.querySelector('.set1-select').value;
     if (set1 === '1') {
-        window.location = "index.m.html";
+        window.location = "index.html";
     } else if (set1 === '2') {
-        window.location = "index.m.en.html";
+        window.location = "index.en.html";
+    } else if (set1 === '3') {
+        window.location = '403.html';
     }
 })
 

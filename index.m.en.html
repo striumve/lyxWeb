@@ -4,22 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1200px, initial-scale=1.0">
+    <meta name="viewport" content="width=width, initial-scale=1.0">
     <title>lyx's personal web!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="style.m.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .web-go {
+            font-family: 'icomoon';
+            width: 4vh;
+            position: absolute;
+            right: 2vh;
+            font-size: 3vh;
+            text-align: center;
+            line-height: 4vh;
+        }
+
+        .web-name {
+            width: 70vw;
+            margin-left: 2vw;
+            position: relative;
+            font-size: 2vh;
+            line-height: 4vh;
+            padding-right: 2vh;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .set-item {
+            height: 6vh;
+        }
+    </style>
 </head>
 
 <body>
-    <audio class="music" loop autoplay id="player2">
-        <source
-            src="bgm.mp3"
-            type="audio/mpeg" />
+    <audio class="bgm" loop autoplay id="player2">
+        <source src="bgm.mp3" type="audio/mpeg" />
         你的浏览器不支持播放音乐┑(￣Д ￣)┍
     </audio>
-    
+
     <div class="nav">
         <p class="logo"></p>
         <p class="web navbtn"></p>
@@ -30,7 +55,8 @@
 
     <div class="main"></div>
 
-    <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of your browser and open JavaScript.</div>
+    <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of
+        your browser and open JavaScript.</div>
 
     <p class="navBtn"></p>
 
@@ -70,11 +96,20 @@
                     简体中文&emsp;English
                     <div class="set-chooser" id="set1-chooser"></div>
                 </div> -->
-            <select name="" id="" class="set1-select">
-                <option value="1" class="set1-option">简体中文</option>
-                <option value="2" class="set1-option" selected>English</option>
+            <select name="" id="" class="set-select set1-select">
+                <option value="1" class="set1-option" selected>简体中文</option>
+                <option value="2" class="set1-option">English</option>
+                <option value="3" class="set1-option">日本語</option>
             </select>
-            <button class="set1-check">OK</button>
+            <button class="set-check set1-check">OK</button>
+        </div>
+        <div class="set-item set2">
+            <p>music</p>
+            <select name="" id="" class="set-select set2-select">
+                <option value="1" class="set2-option" selected>Les premiers sourires de Vanessa</option>
+                <option value="2" class="set2-option">no music</option>
+            </select>
+            <button class="set-check set2-check">OK</button>
         </div>
     </div>
 </body>
@@ -137,7 +172,7 @@
         if (hour === 0) {
             hour = '00';
         };
-        console.log('今天是' + output);
+        console.log('Welcome to visit lyx\'s personal web.');
         return output;
     }
 
