@@ -100,10 +100,16 @@ setBtn.addEventListener("click", function () {
     }
 })
 
-//logo:hover弹出信息框
+//信息框
 var logo = document.querySelector('.logo');
+var info = document.querySelector('.info');
 logo.addEventListener("mouseover", function() {
-
+    // info.style.display = 'block';
+    info.style.animation = 'infoCome ease .3s forwards';
+})
+info.addEventListener("mouseout", function() {
+    // info.style.display = 'block';
+    info.style.animation = 'infoOut ease .3s forwards';
 })
 
 //设置
