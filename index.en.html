@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1200px, initial-scale=1.0">
-    <title>lyx's personal web!</title>
+    <title>lyx's personal website!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,12 +13,26 @@
     <style>
         .info {
             position: absolute;
-            top: -25vh;
-            left: -50vh;
-            width: 20vw;
-            height: 50vh;
+            top: -2500vh;
+            left: -5000vh;
+            width: 19vw;
+            height: 49vh;
             background-color: #fff;
             border-radius: 3vh;
+            z-index: 114514;
+            cursor: default;
+            padding: 1vh;
+        }
+
+        .info-sup,
+        .info-shr {
+            font-family: 'icomoon';
+            display: inline;
+            /* float: left; */
+            font-size: 3vh;
+            margin: 0;
+            margin-left: 2vh;
+            margin-top: 2vh;
         }
 
         .web-go {
@@ -51,14 +65,6 @@
 </head>
 
 <body>
-    <script>
-        var vw = document.documentElement.clientWidth;
-        var vh = document.documentElement.clientHeight;
-        if (vw <= 1200 || vh <= 600 || vw / vh >= 2.5 || vw / vh <= 0.5) {
-            alert('Please adjust the browser interface, \nso that it is not too wide, too high, or too narrow, \nfor the best browsing experience.');
-        }
-    </script>
-
     <audio class="bgm" loop autoplay id="player2">
         <source src="bgm.mp3" type="audio/mpeg" />
         你的浏览器不支持播放音乐┑(￣Д ￣)┍
@@ -74,7 +80,20 @@
     </div>
 
     <div class="info">
-        <p>Stay tuned for this feature.</p>
+        <p class="infoOff"></p>
+        <p class="info-sup info-sup-1">support:</p>
+        <p class="info-sup info-sup-2"></p>
+        <p class="info-sup info-sup-3"></p>
+        <p class="info-sup info-sup-4"></p>
+        <br>
+        <br>
+        <p class="info-shr info-shr-1">share to:</p>
+        <p class="info-shr info-shr-2">&emsp;</p>
+        <p class="info-shr info-shr-3"></p>
+        <p class="info-shr info-shr-4"></p>
+        <p class="info-shr info-shr-5"></p>
+        <a href="tencent://message/?uin=1041095264&amp;Site=有事Q我&amp;Menu=yes" class="info-send">Use QQ to send messages
+            to me directly</a>
     </div>
 
     <div class="main"></div>
@@ -85,11 +104,16 @@
     <p class="navBtn"></p>
 
     <div class="webPage page">
-        <p class="pageTitle">web sites</p>
+        <p class="pageTitle">websites</p>
         <div class="web-item">
             <p class="web-name">&emsp;bilibili</p>
             <p class="web-site">&emsp;https://www.bilibili.com/</p>
             <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;source code of this website</p>
+            <p class="web-site">&emsp;https://github.com/striumve/lyxWeb</p>
+            <a class="web-go" href="https://github.com/striumve/lyxWeb" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;GitHub</p>
@@ -107,49 +131,48 @@
             <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Chicken jumping</p>
+            <p class="web-site">&emsp;http://jlh.125ks.cn/cxk/dinogame/</p>
+            <a class="web-go" href="http://jlh.125ks.cn/cxk/dinogame/" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Find out the array general term formula</p>
+            <p class="web-site">
+                &emsp;https://www.wolframalpha.com/input/?i=interpolating%20polynomial%20calculator&utm_medium=social&utm_source=qq&utm_oi=1162720434608119808
+            </p>
+            <a class="web-go"
+                href="https://www.wolframalpha.com/input/?i=interpolating%20polynomial%20calculator&utm_medium=social&utm_source=qq&utm_oi=1162720434608119808"
+                target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;icomoon iconfont</p>
+            <p class="web-site">&emsp;https://icomoon.io/app/#/select</p>
+            <a class="web-go" href="https://icomoon.io/app/#/select" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Bullsh*t generator</p>
+            <p class="web-site">&emsp;https://suulnnka.github.io/BullshitGenerator/index.html</p>
+            <a class="web-go" href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Central People's Government of the People's Republic of China</p>
+            <p class="web-site">&emsp;https://www.gov.cn</p>
+            <a class="web-go" href="https://www.gov.cn" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;National intelligent education platform for primary and secondary schools</p>
+            <p class="web-site">&emsp;https://basic.smartedu.cn/</p>
+            <a class="web-go" href="https://basic.smartedu.cn/" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Stack Overflow</p>
+            <p class="web-site">&emsp;https://stackoverflow.com</p>
+            <a class="web-go" href="https://stackoverflow.com" target="_blank"></a>
         </div>
         <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
-        </div>
-        <div class="web-item">
-            <p class="web-name">&emsp;Useless</p>
-            <p class="web-site">&emsp;none</p>
-            <a class="web-go" href="#" target="_blank"></a>
+            <p class="web-name">&emsp;Teach you to access any website resources</p>
+            <p class="web-site">&emsp;Confidential information, url will not be displayed</p>
+            <a class="web-go" href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank"></a>
         </div>
     </div>
 
@@ -158,6 +181,19 @@
         <div class="tool-item tool1">
             <p class="tool-item-name">clear the cache</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
+        </div>
+        <div class="tool-item tool2">
+            <p class="tool-item-name">LaTeX Formula Preview</p>
+            <p style="display: inline;color:gray;">（I don't know what happened to this thing, but it just can't be done）</p>
+            <br>
+            <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
+            <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
+        </div>
+        <div class="tool-item tool3">
+            <p class="tool-item-name">feedback</p>
+            <br>
+            <textarea class="tool3-input">I don't have any opinion.</textarea>
+            <p class="tool3-check"></p>
         </div>
     </div>
 
@@ -170,8 +206,8 @@
                     <div class="set-chooser" id="set1-chooser"></div>
                 </div> -->
             <select name="" id="" class="set-select set1-select">
-                <option value="1" class="set1-option" selected>简体中文</option>
-                <option value="2" class="set1-option">English</option>
+                <option value="2" class="set1-option" selected>English</option>
+                <option value="1" class="set1-option">简体中文</option>
                 <option value="3" class="set1-option">日本語</option>
             </select>
             <button class="set-check set1-check">OK</button>
@@ -179,7 +215,7 @@
         <div class="set-item set2">
             <p>music</p>
             <select name="" id="" class="set-select set2-select">
-                <option value="1" class="set2-option" selected>Les premiers sourires de Vanessa</option>
+                <option value="1" class="set2-option" selected>Les Premiers Sourires de Vanessa</option>
                 <option value="2" class="set2-option">no music</option>
             </select>
             <button class="set-check set2-check">OK</button>
@@ -189,6 +225,7 @@
 </body>
 
 <script src="functions.pc.js"></script>
+<script src="functions.js"></script>
 
 <script>
     languageFlag = 2;
@@ -220,6 +257,13 @@
         return false;
     }
 
+    var vw = document.documentElement.clientWidth;
+    var vh = document.documentElement.clientHeight;
+    if (vw <= 800 || vh <= 500 || vw / vh >= 2.5 || vw / vh <= 0.5) {
+        alert('Please adjust the browser interface, \nso that it is not too wide, too high, or too narrow, \nfor the best browsing experience.');
+    }
+
+
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');
     nojs.style.display = 'none';
@@ -244,7 +288,7 @@
         if (hour === 0) {
             hour = '00';
         };
-        console.log('Welcome to visit lyx\'s personal web.');
+        console.log('Welcome to visit lyx\'s personal website.');
         return output;
     }
 

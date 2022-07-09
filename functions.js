@@ -1,7 +1,5 @@
 //public functions
 
-var FLAG = 2;
-
 //收起与展开nav栏
 var nav = document.querySelector('.nav');
 var navBtn = document.querySelector('.navBtn');
@@ -30,85 +28,88 @@ var main = document.querySelector('.main');
 var flagA = 0;
 var flagB = 0;
 var flagC = 0;
+var infoFlag = 0;
+
+function pageOut(name) {
+    main.style.animation = 'pageOut-main ease .5s forwards';
+    name.style.animation = 'pageOut ease .5s forwards';
+    if (name === webPage) {flagA = 0}
+    if (name === toolPage) {flagB = 0}
+    if (name === setPage) {flagC = 0}
+}
+
+function pageCome(name) {
+    main.style.animation = 'pageCome-main ease .5s forwards';
+    name.style.animation = 'pageCome ease .5s forwards';
+    if (name === webPage) {flagA = 1}
+    if (name === toolPage) {flagB = 1}
+    if (name === setPage) {flagC = 1}
+}
 
 webBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
+    }
     if (flagB === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        toolPage.style.animation = 'pageOut ease .5s forwards';
-        flagB = 0;
+        pageOut(toolPage);
     }
     if (flagC === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        setPage.style.animation = 'pageOut ease .5s forwards';
-        flagC = 0;
+        pageOut(setPage);
     }
 
     if (flagA === 0) {
-        main.style.animation = 'pageCome-main ease .5s forwards';
-        webPage.style.animation = 'pageCome ease .5s forwards';
-        flagA = 1;
+        pageCome(webPage);
     } else if (flagA === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        webPage.style.animation = 'pageOut ease .5s forwards';
-        flagA = 0;
+        pageOut(webPage);
     }
 })
 
 toolBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
+    }
     if (flagA === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        webPage.style.animation = 'pageOut ease .5s forwards';
-        flagA = 0;
+        pageOut(webPage);
     }
     if (flagC === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        setPage.style.animation = 'pageOut ease .5s forwards';
-        flagC = 0;
+        pageOut(setPage);
     }
 
     if (flagB === 0) {
-        main.style.animation = 'pageCome-main ease .5s forwards';
-        toolPage.style.animation = 'pageCome ease .5s forwards';
-        flagB = 1;
+        pageCome(toolPage);
     } else if (flagB === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        toolPage.style.animation = 'pageOut ease .5s forwards';
-        flagB = 0;
+        pageOut(toolPage);
     }
 })
 
 setBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
+    }
     if (flagA === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        webPage.style.animation = 'pageOut ease .5s forwards';
-        flagA = 0;
+        pageOut(webPage);
     }
     if (flagB === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        toolPage.style.animation = 'pageOut ease .5s forwards';
-        flagB = 0;
+        pageOut(toolPage);
     }
 
     if (flagC === 0) {
-        main.style.animation = 'pageCome-main ease .5s forwards';
-        setPage.style.animation = 'pageCome ease .5s forwards';
-        flagC = 1;
+        pageCome(setPage);
     } else if (flagC === 1) {
-        main.style.animation = 'pageOut-main ease .5s forwards';
-        setPage.style.animation = 'pageOut ease .5s forwards';
-        flagC = 0;
+        pageOut(setPage);
     }
 })
 
 //设置
-var set1Opt = document.querySelector('.set1-option');
-var set1Check = document.querySelector('.set1-check');
-set1Check.addEventListener("click", function () {
-    var set1 = document.querySelector('.set1-select').value;
-    if (set1 === '1') {
-        window.location = "index.html";
-    } else if (set1 === '2') {
-        window.location = "index.en.html";
+var set2Opt = document.querySelector('.set2-option');
+var set2Check = document.querySelector('.set2-check');
+var bgm = document.querySelector('.bgm');
+set2Check.addEventListener("click", function () {
+    var set2 = document.querySelector('.set2-select').value;
+    if (set2 === '1') {
+        bgm.play();
+    } else if (set2 === '2') {
+        bgm.pause();
     }
 })
 
@@ -117,8 +118,23 @@ var tool1 = document.querySelector('.tool1');
 var tool1Change = document.querySelector('.tool1-change');
 tool1.addEventListener("click", function () {
     var sweep = setTimeout(function () {
-        if (languageFlag === 1) {alert('缓存已清除');}
-        else if (languageFlag === 2) {alert('The cache is cleaned.')}
+        if (languageFlag === 1) {
+            alert('缓存已清除');
+        } else if (languageFlag === 2) {
+            alert('The cache has been cleared.')
+        }
         tool1Change.innerHTML = '0.0000 MB';
     }, 1234);
+})
+
+var tool2In = document.querySelector('.tool2-input');
+var tool2Out = document.querySelector('.tool2-output');
+var tool2Timer = setInterval(function () {
+    // 没啥用
+    // tool2Out.innerHTML = '$$ ' + tool2In.value + ' $$';
+}, 1000);
+
+var tool3 = document.querySelector('.tool3-check');
+tool3.addEventListener("click", function() {
+    alert("发送失败。");
 })

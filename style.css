@@ -21,8 +21,8 @@
 
 @keyframes infoCome {
     0% {
-        top: -25vh;
-        left: -50vh;
+        top: 3vh;
+        left: -3vh;
         background-color: rgba(255, 255, 255, 0);
     }
     100% {
@@ -39,8 +39,8 @@
         background-color: rgba(255, 255, 255, .8);
     }
     100% {
-        top: -25vh;
-        left: -50vh;
+        top: 3vh;
+        left: -3vh;
         background-color: rgba(255, 255, 255, 0);
     }
 }
@@ -172,6 +172,61 @@ body {
     background-size: cover;
     margin: 0px;
     margin-right: 1vh;
+}
+
+.infoOff {
+    font-family: 'icomoon';
+    position: absolute;
+    right: 2vh;
+    top: 2vh;
+    margin: 0;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.info-sup-1,
+.info-shr-1 {
+    font-size: 2.5vh;
+}
+
+.info-sup-2 {
+    color: rgb(85,85,85);
+}
+
+.info-sup-3 {
+    color: rgb(0,122,204);
+}
+
+.info-sup-4 {
+    color: rgb(0,120,214);
+}
+
+.info-shr-2 {
+    background: url(https://sqimg.qq.com/qq_product_operations/im/qqlogo/imlogo_b.png);
+    background-size: cover;
+}
+
+.info-shr-3 {
+    color: rgb(123,179,46);
+}
+
+.info-shr-4 {
+    color: rgb(29,161,242);
+}
+
+.info-shr-5 {
+    color: rgb(255,0,0);
+}
+
+.info-send {
+    display: block;
+    /* position: absolute;
+    left: 2vh;
+    top: 12vh; */
+    position: relative;
+    left: 1vh;
+    color: black;
+    text-decoration: underline;
+    margin-top: 3vh;
 }
 
 .navbtn {
@@ -353,4 +408,51 @@ body {
     position: absolute;
     right: 2vh;
     color: gray;
+}
+
+.tool2-input, 
+.tool3-input {
+    width: 60vw;
+    height: 10vh;
+    margin-left: 15vw;
+    resize: none;
+    font-family: 'consolas';
+    font-size: 2vh;
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, 0.5);
+}
+
+.tool2-output {
+    width: 60vw;
+    height: 10vh;
+    margin-left: 15vw;
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, 0.5);
+    line-height: 10vh;
+}
+
+.tool3-input {
+    margin-bottom: 2vh;
+}
+
+.tool3-check {
+    display: inline-block;
+    font-family: 'icomoon';
+    width: 4vh;
+    height: 4vh;
+    border-radius: 4vh;
+    position: absolute;
+    right: 5vw;
+    bottom: 2vh;
+    font-size: 2vh;
+    background-color: rgba(150, 150, 255, 0.5);
+    padding: 1vh;
+    z-index: 5;
+    color: #000;
+    outline: none;
+    border: none;
+    text-align: center;
+    line-height: 4vh;
 }

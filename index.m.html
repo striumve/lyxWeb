@@ -13,12 +13,25 @@
     <style>
         .info {
             position: absolute;
-            top: -25vh;
-            left: -50vh;
+            top: -2500vh;
+            left: -5000vh;
             width: 50vw;
             height: 50vh;
             background-color: #fff;
             border-radius: 3vh;
+            z-index: 114514;
+            cursor: default;
+            padding: 1vh;
+        }
+
+        .info-sup,
+        .info-shr {
+            font-family: 'icomoon';
+            display: inline;
+            font-size: 3vh;
+            margin: 0;
+            margin-left: 2vh;
+            margin-top: 2vh;
         }
 
         .web-go {
@@ -64,7 +77,21 @@
     </div>
 
     <div class="info">
-        <p>敬请期待该功能。</p>
+        <p class="infoOff"></p>
+        <p class="info-sup info-sup-1">提供支持:</p>
+        <br>
+        <p class="info-sup info-sup-2"></p>
+        <p class="info-sup info-sup-3"></p>
+        <p class="info-sup info-sup-4"></p>
+        <br>
+        <br>
+        <p class="info-shr info-shr-1">分享至:</p>
+        <br>
+        <p class="info-shr info-shr-2">&emsp;</p>
+        <p class="info-shr info-shr-3"></p>
+        <p class="info-shr info-shr-4"></p>
+        <p class="info-shr info-shr-5"></p>
+        <a href="tencent://message/?uin=1041095264&amp;Site=有事Q我&amp;Menu=yes" class="info-send">使用QQ直接向我发送消息</a>
     </div>
 
     <div class="main"></div>
@@ -80,6 +107,10 @@
             <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
         </div>
         <div class="web-item">
+            <p class="web-name">&emsp;网页源代码</p>
+            <a class="web-go" href="https://github.com/striumve/lyxWeb" target="_blank"></a>
+        </div>
+        <div class="web-item">
             <p class="web-name">&emsp;GitHub</p>
             <a class="web-go" href="https://github.com/" target="_blank"></a>
         </div>
@@ -91,6 +122,40 @@
             <p class="web-name">&emsp;GitHub Pages 官方文档 (简体中文)</p>
             <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
         </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;菜虚坤跳跳乐</p>
+            <a class="web-go" href="http://jlh.125ks.cn/cxk/dinogame/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;找出数组通项公式</p>
+            <a class="web-go"
+                href="https://www.wolframalpha.com/input/?i=interpolating%20polynomial%20calculator&utm_medium=social&utm_source=qq&utm_oi=1162720434608119808"
+                target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;icomoon字体图标</p>
+            <a class="web-go" href="https://icomoon.io/app/#/select" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;狗屁不通文章生成器</p>
+            <a class="web-go" href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;中华人民共和国中央人民政府</p>
+            <a class="web-go" href="https://www.gov.cn" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;国家中小学智慧教育平台</p>
+            <a class="web-go" href="https://basic.smartedu.cn/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Stack Overflow</p>
+            <a class="web-go" href="https://stackoverflow.com" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;教你获取任意网站资源</p>
+            <a class="web-go" href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank"></a>
+        </div>
     </div>
 
     <div class="toolPage page">
@@ -98,6 +163,19 @@
         <div class="tool-item tool1">
             <p class="tool-item-name">清除缓存</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
+        </div>
+        <div class="tool-item tool2">
+            <p class="tool-item-name">LaTeX公式预览</p>
+            <p style="display: inline;color:gray;">（这玩意我也不知道为什么，反正就是没法搞，看看就好）</p>
+            <br>
+            <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
+            <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
+        </div>
+        <div class="tool-item tool3">
+            <p class="tool-item-name">意见反馈</p>
+            <br>
+            <textarea class="tool3-input">我没有什么意见。</textarea>
+            <p class="tool3-check"></p>
         </div>
     </div>
 
@@ -128,6 +206,7 @@
 </body>
 
 <script src="functions.m.js"></script>
+<script src="functions.js"></script>
 
 <script>
     languageFlag = 1;
