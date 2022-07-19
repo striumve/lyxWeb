@@ -15,7 +15,7 @@
 
 @media (prefers-color-scheme: dark) {
     .main {
-        background: url(background2.jpg);
+        background: url(background_night.jpg);
     }
 }
 
@@ -25,6 +25,7 @@
         left: -3vh;
         background-color: rgba(255, 255, 255, 0);
     }
+
     100% {
         top: 7vh;
         left: 1vh;
@@ -38,6 +39,7 @@
         left: 1vh;
         background-color: rgba(255, 255, 255, .8);
     }
+
     100% {
         top: 3vh;
         left: -3vh;
@@ -62,6 +64,30 @@
 
     100% {
         top: 0vh;
+    }
+}
+
+@keyframes senOut {
+    0% {
+        background-color: rgba(200, 200, 200, .4);
+        color: black;
+    }
+
+    100% {
+        background-color: rgba(200, 200, 200, 0);
+        color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes senCome {
+    0% {
+        background-color: rgba(200, 200, 200, 0);
+        color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background-color: rgba(200, 200, 200, .4);
+        color: black;
     }
 }
 
@@ -119,7 +145,7 @@
     0% {
         top: 6vh;
     }
-     
+
     100% {
         top: -100vh;
     }
@@ -138,6 +164,7 @@ body {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
+    /* cursor: url(sursor.cur); */
 }
 
 .noJS {
@@ -189,15 +216,15 @@ body {
 }
 
 .info-sup-2 {
-    color: rgb(85,85,85);
+    color: rgb(85, 85, 85);
 }
 
 .info-sup-3 {
-    color: rgb(0,122,204);
+    color: rgb(0, 122, 204);
 }
 
 .info-sup-4 {
-    color: rgb(0,120,214);
+    color: rgb(0, 120, 214);
 }
 
 .info-shr-2 {
@@ -206,15 +233,15 @@ body {
 }
 
 .info-shr-3 {
-    color: rgb(123,179,46);
+    color: rgb(123, 179, 46);
 }
 
 .info-shr-4 {
-    color: rgb(29,161,242);
+    color: rgb(29, 161, 242);
 }
 
 .info-shr-5 {
-    color: rgb(255,0,0);
+    color: rgb(255, 0, 0);
 }
 
 .info-send {
@@ -251,6 +278,28 @@ body {
 
 .web {
     margin-left: 8vh;
+}
+
+.sen {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+    text-align: right;
+    cursor: default;
+    font-size: 2vh;
+    background-color: rgba(200, 200, 200, .4);
+    color: black;
+    z-index: 0;
+}
+
+.load {
+    position: absolute;
+    top: 48.5vh;
+    left: 45vw;
+    font-size: 3vh;
+    width: 27vh;
+    z-index: -123;
+    color: rgb(100, 100, 100);
 }
 
 .navBtn {
@@ -315,6 +364,7 @@ body {
     background-color: rgba(129, 216, 207, 0.5);
     overflow: hidden;
     border-radius: 3vh;
+    font-family: 'serif';
 }
 
 .web-item>p,
@@ -345,6 +395,7 @@ body {
     margin: 0;
     line-height: 6vh;
     margin-left: 2vh;
+    font-family: 'serif';
 }
 
 .set-select {
@@ -397,6 +448,7 @@ body {
     margin: 0;
     line-height: 6vh;
     margin-left: 2vh;
+    font-family: 'serif';
 }
 
 .tool-item-right {
@@ -410,7 +462,7 @@ body {
     color: gray;
 }
 
-.tool2-input, 
+.tool2-input,
 .tool3-input {
     width: 60vw;
     height: 10vh;
@@ -444,7 +496,7 @@ body {
     height: 4vh;
     border-radius: 4vh;
     position: absolute;
-    right: 5vw;
+    right: 3vw;
     bottom: 2vh;
     font-size: 2vh;
     background-color: rgba(150, 150, 255, 0.5);
@@ -455,4 +507,37 @@ body {
     border: none;
     text-align: center;
     line-height: 4vh;
+}
+
+.tool4-left {
+    display: inline-block;
+    position: relative;
+    font-size: 2vh;
+    margin-top: 3vh;
+    font-family: 'consolas';
+}
+
+.tool4-right {
+    display: inline-block;
+    position: absolute;
+    font-size: 2vh;
+    margin-top: 3vh;
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, 0.5);
+    height: 3vh;
+    font-family: 'consolas';
+}
+
+.tool4-check {
+    display: block;
+    position: absolute;
+    bottom: 1vh;
+    left: 35vw;
+    width: 20vw;
+    height: 5vh;
+    background-color: rgba(150, 150, 255, 0.5);
+    font-size: 2vh;
+    line-height: 5vh;
+    text-align: center;
 }

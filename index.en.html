@@ -61,6 +61,15 @@
         .set-item {
             height: auto;
         }
+
+        .tool4-right {
+            right: 25vw;
+            width: 20vw;
+        }
+
+        .tool4-left {
+            left: 25vw;
+        }
     </style>
 </head>
 
@@ -97,6 +106,10 @@
     </div>
 
     <div class="main"></div>
+
+    <div class="sen" title="The sentences are come from Bilibili"></div>
+
+    <div class="load">background image is loading……</div>
 
     <div class="noJS">You've closed the JavaScript,<br>this may make you visit worse.<br>Please go to the setting of
         your browser and open JavaScript.</div>
@@ -182,18 +195,43 @@
             <p class="tool-item-name">clear the cache</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
         </div>
-        <div class="tool-item tool2">
+        <!-- <div class="tool-item tool2">
             <p class="tool-item-name">LaTeX Formula Preview</p>
             <p style="display: inline;color:gray;">（I don't know what happened to this thing, but it just can't be done）</p>
             <br>
             <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
             <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
-        </div>
+        </div> -->
         <div class="tool-item tool3">
             <p class="tool-item-name">feedback</p>
             <br>
             <textarea class="tool3-input">I don't have any opinion.</textarea>
             <p class="tool3-check"></p>
+        </div>
+        <div class="tool-item tool4">
+            <p class="tool-item-name">register an account</p>
+            <br>
+            <span class="tool4-left">nickname</span>
+            <input class="tool4-right" type="text" placeholder="enter a nickname">
+            <br>
+            <span class="tool4-left">gender</span>
+            <input class="tool4-right" type="text" placeholder="enter your gender">
+            <br>
+            <span class="tool4-left">phone number</span>
+            <input class="tool4-right" type="text" placeholder="enter your phone number">
+            <br>
+            <span class="tool4-left">email</span>
+            <input class="tool4-right" type="text" placeholder="enter your email">
+            <br>
+            <span class="tool4-left">address</span>
+            <input class="tool4-right" type="text" placeholder="enter your address">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool4-check">register</p>
         </div>
     </div>
 
@@ -220,15 +258,26 @@
             </select>
             <button class="set-check set2-check">OK</button>
         </div>
+        <div class="set-item set3">
+            <p>background picture</p>
+            <select name="" id="" class="set-select set3-select">
+                <option value="1" class="set3-option" selected>picture 1</option>
+                <option value="2" class="set3-option">picture 2</option>
+            </select>
+            <button class="set-check set3-check">OK</button>
+        </div>
     </div>
 
 </body>
+
+<script>
+    languageFlag = 2;
+</script>
 
 <script src="functions.pc.js"></script>
 <script src="functions.js"></script>
 
 <script>
-    languageFlag = 2;
 
     FLAG = 1;
 
@@ -281,9 +330,9 @@
         var chimonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         var outday = chiday[day];
         var outmonth = chimonth[month];
-        var output = outmonth + ' ' + date + ', ' + year + ' ' + outday + '<br>' + hour + ':' + minute;
+        var output = outmonth + ' ' + date + ', ' + year + ', ' + outday + '<br>' + hour + ':' + minute;
         if (minute < 10) {
-            output = outmonth + ' ' + date + ', ' + year + ' ' + outday + '<br>' + hour + ':' + '0' + minute;
+            output = outmonth + ' ' + date + ', ' + year + ', ' + outday + '<br>' + hour + ':' + '0' + minute;
         };
         if (hour === 0) {
             hour = '00';

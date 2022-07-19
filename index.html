@@ -61,6 +61,15 @@
         .set-item {
             height: auto;
         }
+
+        .tool4-right {
+            right: 25vw;
+            width: 20vw;
+        }
+
+        .tool4-left {
+            left: 25vw;
+        }
     </style>
 </head>
 
@@ -96,6 +105,10 @@
     </div>
 
     <div class="main"></div>
+
+    <div class="sen" title="文案来自B站"></div>
+
+    <div class="load">背景图片加载中……</div>
 
     <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
 
@@ -180,18 +193,43 @@
             <p class="tool-item-name">清除缓存</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
         </div>
-        <div class="tool-item tool2">
+        <!-- <div class="tool-item tool2">
             <p class="tool-item-name">LaTeX公式预览</p>
             <p style="display: inline;color:gray;">（这玩意我也不知道为什么，反正就是没法搞，看看就好）</p>
             <br>
             <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
             <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
-        </div>
+        </div> -->
         <div class="tool-item tool3">
             <p class="tool-item-name">意见反馈</p>
             <br>
             <textarea class="tool3-input">我没有什么意见。</textarea>
             <p class="tool3-check"></p>
+        </div>
+        <div class="tool-item tool4">
+            <p class="tool-item-name">注册账号</p>
+            <br>
+            <span class="tool4-left">昵称</span>
+            <input class="tool4-right" type="text" placeholder="输入昵称">
+            <br>
+            <span class="tool4-left">性别</span>
+            <input class="tool4-right" type="text" placeholder="输入性别">
+            <br>
+            <span class="tool4-left">电话号码</span>
+            <input class="tool4-right" type="text" placeholder="输入电话号码">
+            <br>
+            <span class="tool4-left">邮箱</span>
+            <input class="tool4-right" type="text" placeholder="输入邮箱">
+            <br>
+            <span class="tool4-left">地址</span>
+            <input class="tool4-right" type="text" placeholder="输入地址">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool4-check">注册</p>
         </div>
     </div>
 
@@ -214,14 +252,25 @@
             </select>
             <button class="set-check set2-check">确定</button>
         </div>
+        <div class="set-item set3">
+            <p>背景图片</p>
+            <select name="" id="" class="set-select set3-select">
+                <option value="1" class="set3-option" selected>背景1</option>
+                <option value="2" class="set3-option">背景2</option>
+            </select>
+            <button class="set-check set3-check">确定</button>
+        </div>
     </div>
 </body>
+
+<script>
+    languageFlag = 1;
+</script>
 
 <script src="functions.pc.js"></script>
 <script src="functions.js"></script>
 
 <script>
-    languageFlag = 1;
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');
     nojs.style.display = 'none';
