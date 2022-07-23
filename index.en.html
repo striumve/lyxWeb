@@ -70,6 +70,14 @@
         .tool4-left {
             left: 25vw;
         }
+
+        .tool5-input,
+        .tool5-output {
+            margin-left: 15vw;
+            height: 6vh;
+            width: 60vw;
+            /* bottom: 5vh; */
+        }
     </style>
 </head>
 
@@ -107,7 +115,10 @@
 
     <div class="main"></div>
 
-    <div class="sen" title="The sentences are come from Bilibili"></div>
+    <div class="senDiv">
+        <p class="sen" title="The sentences are come from Bilibili"></p>
+        <p class="senChange"></p>
+    </div>
 
     <div class="load">background image is loading……</div>
 
@@ -195,13 +206,6 @@
             <p class="tool-item-name">clear the cache</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
         </div>
-        <!-- <div class="tool-item tool2">
-            <p class="tool-item-name">LaTeX Formula Preview</p>
-            <p style="display: inline;color:gray;">（I don't know what happened to this thing, but it just can't be done）</p>
-            <br>
-            <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
-            <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
-        </div> -->
         <div class="tool-item tool3">
             <p class="tool-item-name">feedback</p>
             <br>
@@ -226,12 +230,27 @@
             <span class="tool4-left">address</span>
             <input class="tool4-right" type="text" placeholder="enter your address">
             <br>
+            <span class="tool4-left">birthday</span>
+            <input class="tool4-right" type="text" placeholder="enter your birthday">
+            <br>
             <br>
             <br>
             <br>
             <br>
             <br>
             <p class="tool4-check">register</p>
+        </div>
+        <div class="tool-item tool5">
+            <p class="tool-item-name">Search for pronunciation of rare words</p>
+            <br>
+            <p class="tool5-left1">Enter rare words you do not know (up to 114514 words) :</p>
+            <input class="tool5-input" maxlength="114514" placeholder="enter"></input>
+            <p class="tool5-check">search</p>
+            <p class="tool5-left2">Pronunciation of rare word:</p>
+            <br>
+            <br>
+            <br>
+            <p class="tool5-output">&emsp;</p>
         </div>
     </div>
 
@@ -280,6 +299,21 @@
 <script>
 
     FLAG = 1;
+
+    console.log('\n\
+    .-------------------------------------------------      \n\
+    |   _          _          _      _           _          \n\
+    |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
+    |  | ||         \\ \\\\    / //      \\ \\\\     / //   \n\
+    |  | ||          \\ \\\\__/ //        \\ \\\\   / //    \n\
+    |  | ||           \\_   _//          \\_\\\\_/ //       \n\
+    |  | ||             | ||            / // \\ \\\\        \n\
+    |  | ||             | ||           / //   \\ \\\\       \n\
+    |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
+    |   \\________||     \\_//         /_//       \\_\\\\   \n\
+    |-------------------------------------------------      \n\
+    | Everything is possible.                               \n\
+    *-------------------------------------------------');
 
     //移动端适配
     var thisOS = navigator.platform;
@@ -337,7 +371,6 @@
         if (hour === 0) {
             hour = '00';
         };
-        console.log('Welcome to visit lyx\'s personal website.');
         return output;
     }
 

@@ -1,20 +1,26 @@
 //public functions
 
+//背景图片加载动画
+var loading = document.querySelector('.loadAni');
+
 //收起与展开nav栏
 var nav = document.querySelector('.nav');
 var navBtn = document.querySelector('.navBtn');
 var sentenceA = document.querySelector('.sen');
+var sentenceB = document.querySelector('.senChange');
 var navFlag = 0;
 navBtn.addEventListener("click", function () {
     if (navFlag === 0) {
         nav.style.animation = 'navUpFrame linear .2s forwards';
         navBtn.style.animation = 'navBtnDown linear .2s forwards';
         sentenceA.style.animation = 'senOut linear .2s forwards';
+        sentenceB.style.animation = 'senOut2 linear .2s forwards';
         navFlag = 1;
     } else if (navFlag === 1) {
         nav.style.animation = 'navDownFrame linear .2s forwards';
         navBtn.style.animation = 'navBtnUp linear .2s forwards';
         sentenceA.style.animation = 'senCome linear .2s forwards';
+        sentenceB.style.animation = 'senCome2 linear .2s forwards';
         navFlag = 0;
     }
 })
@@ -37,6 +43,7 @@ function pageOut(name) {
     main.style.animation = 'pageOut-main ease .5s forwards';
     name.style.animation = 'pageOut ease .5s forwards';
     sentenceA.style.animation = 'senCome linear .2s forwards';
+    sentenceB.style.animation = 'senCome2 linear .2s forwards';
     if (name === webPage) {
         flagA = 0;
     }
@@ -52,6 +59,7 @@ function pageCome(name) {
     main.style.animation = 'pageCome-main ease .5s forwards';
     name.style.animation = 'pageCome ease .5s forwards';
     sentenceA.style.animation = 'senOut linear .2s forwards';
+    sentenceB.style.animation = 'senOut2 linear .2s forwards';
     if (name === webPage) {
         flagA = 1;
     }
@@ -118,13 +126,20 @@ setBtn.addEventListener("click", function () {
 })
 
 //右下角句子
-var senNum = Math.floor(Math.random() * 41);
 var sen = document.querySelector('.sen');
+var senChn = document.querySelector('.senChange');
 if (languageFlag === 1) {
     sentence();
 }
+senChn.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        // senChn.style.animation = 'sentenceChange ease .3s forward';
+        sentence();
+    }
+})
 
 function sentence() {
+    var senNum = Math.floor(Math.random() * 52);
     switch (senNum) {
         case 0:
             sen.innerHTML = '钥匙圈是非常实用的小工具，它可以让你，一次把所有钥匙都丢光。';
@@ -249,6 +264,39 @@ function sentence() {
         case 40:
             sen.innerHTML = '最近头上一直发痒，可能是要长脑子了。';
             break;
+        case 41:
+            sen.innerHTML = '仰天大笑出门去，归来倚仗自叹息。';
+            break;
+        case 42:
+            sen.innerHTML = '垂死病中惊坐起，要留清白在人间。';
+            break;
+        case 43:
+            sen.innerHTML = '老骥伏枥，志在千里。<br>横扫饥饿，做回自己。';
+            break;
+        case 44:
+            sen.innerHTML = '洛阳亲友如相问，轻舟已过万重山。';
+            break;
+        case 45:
+            sen.innerHTML = '老翁逾墙走，虽乘奔御风，不以疾也。';
+            break;
+        case 46:
+            sen.innerHTML = '横眉冷对千夫指，回眸一笑百媚生。';
+            break;
+        case 47:
+            sen.innerHTML = '垂死病中惊坐起，扶摇直上九万里。';
+            break;
+        case 48:
+            sen.innerHTML = '可怜身上衣正单，将登太行雪满山。';
+            break;
+        case 49:
+            sen.innerHTML = '老妪力虽衰，愿为市鞍马，从此替爷征。';
+            break;
+        case 50:
+            sen.innerHTML = '今日听君歌一曲，谪居卧病浔阳城。';
+            break;
+        case 51:
+            sen.innerHTML = '黄鹤一去不复返，飞入寻常百姓家。';
+            break;
         default:
             break;
     }
@@ -316,5 +364,15 @@ tool4.addEventListener("click", function () {
         alert("您还没有注册。\n您需要先注册账号后才能注册账号。");
     } else if (languageFlag === 2) {
         alert("You have not registered. \nYou need to register an account before you can register an account.");
+    }
+})
+
+var tool5 = document.querySelector('.tool5-check');
+var tool5Change = document.querySelector('.tool5-output')
+tool5.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        tool5Change.innerHTML = '生shēng&emsp;僻pì&emsp;字zì'
+    } else if (languageFlag === 2) {
+        tool5Change.innerHTML = 'rare/reə/ word/wɜ:d/';
     }
 })

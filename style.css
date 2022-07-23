@@ -19,6 +19,15 @@
     }
 }
 
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes infoCome {
     0% {
         top: 3vh;
@@ -88,6 +97,39 @@
     100% {
         background-color: rgba(200, 200, 200, .4);
         color: black;
+    }
+}
+
+@keyframes senOut2 {
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes senCome2 {
+    0% {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+    }
+}
+
+@keyframes sentenceChange {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    99% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
@@ -281,25 +323,51 @@ body {
 }
 
 .sen {
+    display: block;
+    position: absolute;
+    right: 2vw;
+    bottom: 5vh;
+    text-align: right;
+    cursor: default;
+    font-size: 2vh;
+    z-index: 0;
+    background-color: rgba(200, 200, 200, .4);
+    color: black;
+}
+
+.senChange {
+    display: block;
     position: absolute;
     right: 2vw;
     bottom: 2vh;
     text-align: right;
     cursor: default;
     font-size: 2vh;
-    background-color: rgba(200, 200, 200, .4);
-    color: black;
     z-index: 0;
+    /* background-color: rgba(200, 200, 200, .4); */
+    color: black;
+    font-family: 'icomoon';
 }
 
 .load {
     position: absolute;
-    top: 48.5vh;
-    left: 45vw;
+    top: 80vh;
+    left: 30vw;
     font-size: 3vh;
     width: 27vh;
     z-index: -123;
     color: rgb(100, 100, 100);
+}
+
+.loadAni {
+    display: block;
+    font-size: 3vh;
+    z-index: -123;
+    color: rgb(100, 100, 100);
+    font-family: 'icomoon';
+    margin: 0;
+    width: 3vh;
+    animation: loading linear .8s infinite;
 }
 
 .navBtn {
@@ -540,4 +608,47 @@ body {
     font-size: 2vh;
     line-height: 5vh;
     text-align: center;
+}
+
+.tool5-input,
+.tool5-output {
+    display: inline-block;
+    font-size: 2vh;
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, 0.5);
+    font-family: 'consolas';
+    position: relative;
+}
+
+.tool5-left1,
+.tool5-left2 {
+    display: inline-block;
+    font-size: 2vh;
+    margin-left: 20vw;
+    outline: none;
+    border: none;
+    height: 3vh;
+    font-family: 'consolas';
+    /* width: 20vw; */
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.tool5-check {
+    display: block;
+    margin-left: 35vw;
+    width: 20vw;
+    height: 5vh;
+    background-color: rgba(150, 150, 255, 0.5);
+    font-size: 2vh;
+    line-height: 5vh;
+    text-align: center;
+}
+
+.tool5-output {
+    height: 6vh;
+    width: 25vw;
+    bottom: 7vh;
 }
