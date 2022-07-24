@@ -1,7 +1,95 @@
 //public functions
 
-//背景图片加载动画
-var loading = document.querySelector('.loadAni');
+//控制台互动
+if (languageFlag === 1) {
+    console.log('\n\
+    .-------------------------------------------------      \n\
+    |   _          _          _      _           _          \n\
+    |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
+    |  | ||         \\ \\\\    / //      \\ \\\\     / //   \n\
+    |  | ||          \\ \\\\__/ //        \\ \\\\   / //    \n\
+    |  | ||           \\_   _//          \\_\\\\_/ //       \n\
+    |  | ||             | ||            / // \\ \\\\        \n\
+    |  | ||             | ||           / //   \\ \\\\       \n\
+    |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
+    |   \\________||     \\_//         /_//       \\_\\\\   \n\
+    |-------------------------------------------------      \n\
+    | 一切皆有可能。                                         \n\
+    *-------------------------------------------------');
+
+    console.error("错误：您正在呼吸");
+    console.error("错误：您睁着眼睛");
+    console.error("错误：您没有睡着");
+    console.info("在下方输入“怎么办()”以查看可能的解决方案。\n注：应使用英文状态下的括号。直接复制也可以。");
+} else if (languageFlag === 2) {
+    console.log('\n\
+    .-------------------------------------------------      \n\
+    |   _          _          _      _           _          \n\
+    |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
+    |  | ||         \\ \\\\    / //      \\ \\\\     / //   \n\
+    |  | ||          \\ \\\\__/ //        \\ \\\\   / //    \n\
+    |  | ||           \\_   _//          \\_\\\\_/ //       \n\
+    |  | ||             | ||            / // \\ \\\\        \n\
+    |  | ||             | ||           / //   \\ \\\\       \n\
+    |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
+    |   \\________||     \\_//         /_//       \\_\\\\   \n\
+    |-------------------------------------------------      \n\
+    | Everything is possible.                               \n\
+    *-------------------------------------------------');
+    console.error("error: You are breathing");
+    console.error("error: Your eyes are open");
+    console.error("error: You are not asleep");
+}
+
+function 怎么办() {
+    console.log('-我怎么知道。\n\n人工智障并不知道怎么办。\n输入“滚()”以召唤人工智能。');
+}
+
+function 滚() {
+    console.log('正在召唤人工智能……\n');
+    setTimeout(function () {
+        console.log('-走开，我在睡觉。等我睡醒了再说。\n\n');
+        console.log('人工智能正在睡觉。\n请等他睡醒（大约需要114514小时），\n或者输入密码以叫醒他。格式：起床啦(密码)。');
+    })
+}
+
+function 起床啦(pw) {
+    if (pw != 114514) {
+        console.log('密码错误。\n请按格式重新输入。');
+    } else {
+        console.log('！！！你居然知道密码\n\n-啊我醒了。我要吃饭。\n\n他要吃晚饭了。请等他吃完。');
+        eat();
+    }
+}
+
+function eat() {
+    var eatNum = Math.floor(Math.random() * 3);
+    var count = 1;
+    console.log('他开始吃饭了。');
+    var eating = setInterval(function () {
+        eatNum = Math.floor(Math.random() * 3);
+        if (eatNum === 0) {
+            console.log('他吃了一口饭。(%d/100)', count);
+        } else if (eatNum === 1) {
+            console.log('他喝了一口汤。(%d/100)', count);
+        } else {
+            console.log('他吃了一口菜。(%d/100)', count);
+        }
+        count++;
+        if (count > 100) {
+            clearInterval(eating);
+            setTimeout(function () {
+                console.log('他吃完了。\n\n-没想到你居然这么有耐心！\n-那么，解决方法就是——\n（请稍等，他正在思考）');
+                setTimeout(function () {
+                    console.log('-不需要解决！');
+                    setTimeout(function () {
+                        console.log('\n嘿嘿\n\n祝你天天开心呀\n\n\\(≧▽≦*)o\n');
+                    }, 1500)
+                }, 8000);
+            }, 2000)
+        }
+    }, 2000);
+}
 
 //收起与展开nav栏
 var nav = document.querySelector('.nav');
@@ -39,9 +127,10 @@ var flagB = 0;
 var flagC = 0;
 var infoFlag = 0;
 
-function pageOut(name) {
+function pageOut(name, btn) {
     main.style.animation = 'pageOut-main ease .5s forwards';
     name.style.animation = 'pageOut ease .5s forwards';
+    btn.style.fontWeight = '100';
     sentenceA.style.animation = 'senCome linear .2s forwards';
     sentenceB.style.animation = 'senCome2 linear .2s forwards';
     if (name === webPage) {
@@ -55,9 +144,10 @@ function pageOut(name) {
     }
 }
 
-function pageCome(name) {
+function pageCome(name, btn) {
     main.style.animation = 'pageCome-main ease .5s forwards';
     name.style.animation = 'pageCome ease .5s forwards';
+    btn.style.fontWeight = '700';
     sentenceA.style.animation = 'senOut linear .2s forwards';
     sentenceB.style.animation = 'senOut2 linear .2s forwards';
     if (name === webPage) {
@@ -76,16 +166,16 @@ webBtn.addEventListener("click", function () {
         infoOutFrame();
     }
     if (flagB === 1) {
-        pageOut(toolPage);
+        pageOut(toolPage, toolBtn);
     }
     if (flagC === 1) {
-        pageOut(setPage);
+        pageOut(setPage, setBtn);
     }
 
     if (flagA === 0) {
-        pageCome(webPage);
+        pageCome(webPage, webBtn);
     } else if (flagA === 1) {
-        pageOut(webPage);
+        pageOut(webPage, webBtn);
     }
 })
 
@@ -94,16 +184,16 @@ toolBtn.addEventListener("click", function () {
         infoOutFrame();
     }
     if (flagA === 1) {
-        pageOut(webPage);
+        pageOut(webPage, webBtn);
     }
     if (flagC === 1) {
-        pageOut(setPage);
+        pageOut(setPage, setBtn);
     }
 
     if (flagB === 0) {
-        pageCome(toolPage);
+        pageCome(toolPage, toolBtn);
     } else if (flagB === 1) {
-        pageOut(toolPage);
+        pageOut(toolPage, toolBtn);
     }
 })
 
@@ -112,16 +202,16 @@ setBtn.addEventListener("click", function () {
         infoOutFrame();
     }
     if (flagA === 1) {
-        pageOut(webPage);
+        pageOut(webPage, webBtn);
     }
     if (flagB === 1) {
-        pageOut(toolPage);
+        pageOut(toolPage, toolBtn);
     }
 
     if (flagC === 0) {
-        pageCome(setPage);
+        pageCome(setPage, setBtn);
     } else if (flagC === 1) {
-        pageOut(setPage);
+        pageOut(setPage, setBtn);
     }
 })
 
@@ -253,7 +343,7 @@ function sentence() {
             sen.innerHTML = '我的钱虽然不是大风刮来的,但很像大风刮走的。';
             break;
         case 37:
-            sen.innerHTML = '有朋自远方来，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，<br>行拂乱其所为，鞭数十，驱之别院，主人曰：不亦乐乎。';
+            sen.innerHTML = '有朋自远方来，必先苦其心志，<br>劳其筋骨，饿其体肤，空乏其身，<br>行拂乱其所为，鞭数十，驱之别院，<br>主人曰：不亦乐乎。';
             break;
         case 38:
             sen.innerHTML = '洗澡的时候突然给停水了，还好我灵机一动给花洒讲了个笑话，它直接笑喷。';
@@ -322,8 +412,10 @@ set3Check.addEventListener("click", function () {
     var set3 = document.querySelector('.set3-select').value;
     if (set3 === '1') {
         main.style.background = 'url(background.jpg)';
+        main.style.backgrounSize = 'cover';
     } else if (set3 === '2') {
         main.style.background = 'url(background2.jpg)';
+        main.style.backgrounSize = 'cover';
     }
 })
 

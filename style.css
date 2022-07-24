@@ -196,6 +196,8 @@
 body {
     margin: 0;
     position: relative;
+    /* cursor: url(cursor.png), auto; */
+    cursor: default;
 }
 
 .main {
@@ -206,7 +208,6 @@ body {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    /* cursor: url(sursor.cur); */
 }
 
 .noJS {
@@ -225,7 +226,7 @@ body {
     top: 0px;
     left: 0px;
     background-color: rgba(255, 255, 255, .5);
-    cursor: default;
+    /* cursor: default; */
     z-index: 5;
 }
 
@@ -294,7 +295,7 @@ body {
     position: relative;
     left: 1vh;
     color: black;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     margin-top: 3vh;
 }
 
@@ -328,7 +329,7 @@ body {
     right: 2vw;
     bottom: 5vh;
     text-align: right;
-    cursor: default;
+    /* cursor: default; */
     font-size: 2vh;
     z-index: 0;
     background-color: rgba(200, 200, 200, .4);
@@ -341,7 +342,7 @@ body {
     right: 2vw;
     bottom: 2vh;
     text-align: right;
-    cursor: default;
+    /* cursor: default; */
     font-size: 2vh;
     z-index: 0;
     /* background-color: rgba(200, 200, 200, .4); */
@@ -354,7 +355,7 @@ body {
     top: 80vh;
     left: 30vw;
     font-size: 3vh;
-    width: 27vh;
+    /* width: 27vh; */
     z-index: -123;
     color: rgb(100, 100, 100);
 }
@@ -367,7 +368,7 @@ body {
     font-family: 'icomoon';
     margin: 0;
     width: 3vh;
-    animation: loading linear .8s infinite;
+    animation: loading cubic-bezier(.1,.3,.5,.3).8s infinite;
 }
 
 .navBtn {
@@ -381,7 +382,7 @@ body {
     font-size: 2vh;
     color: rgba(40, 75, 225, 0.6);
     z-index: 999;
-    cursor: default;
+    /* cursor: default; */
 }
 
 .navRight {
@@ -411,7 +412,7 @@ body {
     /* background-color: rgba(80, 95, 255, 0.5); */
     width: 100vw;
     height: 94vh;
-    cursor: default;
+    /* cursor: default; */
     overflow: auto;
 }
 
