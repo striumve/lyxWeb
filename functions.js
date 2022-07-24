@@ -412,10 +412,10 @@ set3Check.addEventListener("click", function () {
     var set3 = document.querySelector('.set3-select').value;
     if (set3 === '1') {
         main.style.background = 'url(background.jpg)';
-        main.style.backgrounSize = 'cover';
+        main.style.backgroundSize = 'cover';
     } else if (set3 === '2') {
         main.style.background = 'url(background2.jpg)';
-        main.style.backgrounSize = 'cover';
+        main.style.backgroundSize = 'cover';
     }
 })
 
