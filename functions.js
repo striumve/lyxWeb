@@ -1,5 +1,8 @@
 //public functions
 
+// var languageFlag;
+var deviceFlag;
+
 //控制台互动
 if (languageFlag === 1) {
     console.log('\n\
@@ -39,6 +42,7 @@ if (languageFlag === 1) {
     console.error("error: You are breathing");
     console.error("error: Your eyes are open");
     console.error("error: You are not asleep");
+    console.info("You can turn to the Chinese page to look for possible solution.");
 }
 
 function 怎么办() {
@@ -89,6 +93,35 @@ function eat() {
             }, 2000)
         }
     }, 2000);
+}
+
+//信息框
+var logo = document.querySelector('.logo');
+var info = document.querySelector('.info');
+var infoOff = document.querySelector('.infoOff');
+
+function infoOutFrame() {
+    info.style.animation = 'infoOut ease .3s forwards';
+    var infoSleep = setTimeout(function () {
+        info.style.display = 'none';
+    }, 150)
+    infoFlag = 0;
+}
+infoOff.addEventListener("click", function () {
+    infoOutFrame();
+})
+if (deviceFlag === 1) {
+    logo.addEventListener("mouseover", function () {
+        info.style.display = 'block';
+        info.style.animation = 'infoCome ease .3s forwards';
+        infoFlag = 1;
+    })
+} else if (deviceFlag === 2) {
+    logo.addEventListener("click", function () {
+        info.style.display = 'block';
+        info.style.animation = 'infoCome ease .3s forwards';
+        infoFlag = 1;
+    })
 }
 
 //收起与展开nav栏
@@ -393,6 +426,29 @@ function sentence() {
 }
 
 //设置
+var set1Opt = document.querySelector('.set1-option');
+var set1Check = document.querySelector('.set1-check');
+set1Check.addEventListener("click", function () {
+    var set1 = document.querySelector('.set1-select').value;
+    if (deviceFlag === 1) {
+        if (set1 === '1') {
+            window.location = "index.html";
+        } else if (set1 === '2') {
+            window.location = "index.en.html";
+        } else if (set1 === '3') {
+            window.location = '403.html';
+        }
+    } else if (deviceFlag === 2) {
+        if (set1 === '1') {
+            window.location = "index.m.html";
+        } else if (set1 === '2') {
+            window.location = "index.m.en.html";
+        } else if (set1 === '3') {
+            window.location = "403.html";
+        }
+    }
+})
+
 var set2Opt = document.querySelector('.set2-option');
 var set2Check = document.querySelector('.set2-check');
 var bgm = document.querySelector('.bgm');
@@ -436,9 +492,10 @@ tool1.addEventListener("click", function () {
 // var tool2In = document.querySelector('.tool2-input');
 // var tool2Out = document.querySelector('.tool2-output');
 // var tool2Check = document.querySelector('.tool2-check');
+// var tool2Middle = '$$ ' + tool2In.value + ' $$';
 // tool2Check.addEventListener("click", function () {
-//     没用
-//     tool2Out.innerHTML = '$$ ' + tool2In.value + ' $$';
+//     
+//     tool2Out.innerHTML = tool2Middle;
 // });
 
 var tool3 = document.querySelector('.tool3-check');
@@ -468,3 +525,128 @@ tool5.addEventListener("click", function () {
         tool5Change.innerHTML = 'rare/reə/ word/wɜ:d/';
     }
 })
+
+var tool6 = document.querySelector('.tool6-check');
+tool6.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        alert('什么？？？居然出错了？不可能的。肯定是你的问题。');
+    } else if (languageFlag === 2) {
+        alert('What??? Something went wrong? No way. It must be your problem.');
+    }
+})
+
+var tool7Out = document.querySelector('.tool7-output');
+var tool7Check = document.querySelector('.tool7-check');
+var t7a;
+var t7b;
+var t7c;
+var t7d;
+var t7e;
+var t7f;
+var t7g;
+var t7h;
+var t7kFzOut;
+var t7kFmOut;
+var t7hFzOut;
+var t7hFmOut;
+var t7kFz; //k的分子
+var t7kFm; //k的分母
+var t7hFz; // y=kx+b 中的b已被占用，用h代替
+var t7hFm;
+var t7hFzLast, t7hFmLast, t7kFzLast, t7kFmLast;
+tool7();
+tool7Check.addEventListener("click", function () {
+    // alert("1");
+    tool7();
+})
+
+function tool7() {
+    t7a = parseInt(document.querySelector('.tool7-a').value);
+    t7b = parseInt(document.querySelector('.tool7-b').value);
+    t7c = parseInt(document.querySelector('.tool7-c').value);
+    t7d = parseInt(document.querySelector('.tool7-d').value);
+    t7e = parseInt(document.querySelector('.tool7-e').value);
+    t7f = parseInt(document.querySelector('.tool7-f').value);
+    t7g = parseInt(document.querySelector('.tool7-g').value);
+    t7h = parseInt(document.querySelector('.tool7-h').value);
+    t7kFzOut = document.querySelector('.tool7-out-k-fz');
+    t7kFmOut = document.querySelector('.tool7-out-k-fm');
+    t7hFzOut = document.querySelector('.tool7-out-h-fz');
+    t7hFmOut = document.querySelector('.tool7-out-h-fm');
+    t7kFz = (t7b * t7f) * ((t7c * t7h) - (t7d * t7g));
+    t7kFm = (t7d * t7h) * ((t7a * t7f) - (t7b * t7e));
+    t7hFz = ((t7b * t7c * t7d * t7h) * ((t7a * t7f) - (t7b * t7e))) - ((t7a * t7b * t7d * t7f) * ((t7c * t7h) - (t7d * t7g)));
+    t7hFm = (t7b * t7d * t7d * t7h) * ((t7a * t7f) - (t7b * t7e));
+    // alert(t7kFz + '/' + t7kFm + ' k' + ' + ' + t7hFz + '/' + t7hFm);
+
+    //约分
+    function yf1(m, n) {
+        var m;
+        var n;
+        var a = m;
+        var b = n;
+        (a >= b) ? (a = m, b = n) : (a = n, b = m);
+        if (m != 1 && n != 1) {
+            for (var i = b; i >= 2; i--) {
+                if (m % i == 0 && n % i == 0) {
+                    m = m / i;
+                    n = n / i;
+                }
+            }
+        }
+        return m;
+    }
+
+    function yf2(m, n) {
+        var m;
+        var n;
+        var a = m;
+        var b = n;
+        (a >= b) ? (a = m, b = n) : (a = n, b = m);
+        if (m != 1 && n != 1) {
+            for (var i = b; i >= 2; i--) {
+                if (m % i == 0 && n % i == 0) {
+                    m = m / i;
+                    n = n / i;
+                }
+            }
+        }
+        return n;
+    }
+    if (t7kFz < 0 && t7kFm < 0) {
+        t7kFzLast = yf1((0 - t7kFz), (0 - t7kFm));
+        t7kFmLast = yf2((0 - t7kFz), (0 - t7kFm));
+    }
+    if (t7hFz < 0 && t7hFm < 0) {
+        t7hFzLast = yf1((0 - t7hFz), (0 - t7hFm));
+        t7hFmLast = yf2((0 - t7hFz), (0 - t7hFm));
+    }
+    if (t7kFz > 0 && t7kFm > 0) {
+        t7kFzLast = yf1((t7kFz), (t7kFm));
+        t7kFmLast = yf2((t7kFz), (t7kFm));
+    }
+    if (t7hFz > 0 && t7hFm > 0) {
+        t7hFzLast = yf1((t7hFz), (t7hFm));
+        t7hFmLast = yf2((t7hFz), (t7hFm));
+    }
+    if (t7kFz > 0 && t7kFm < 0) {
+        t7kFzLast = yf1((t7kFz), (0 - t7kFm));
+        t7kFmLast = yf2((t7kFz), (0 - t7kFm));
+    }
+    if (t7kFz < 0 && t7kFm > 0) {
+        t7kFzLast = yf1((0 - t7kFz), (t7kFm));
+        t7kFmLast = yf2((0 - t7kFz), (t7kFm));
+    }
+    if (t7hFz > 0 && t7hFm < 0) {
+        t7hFzLast = yf1((t7hFz), (0 - t7hFm));
+        t7hFmLast = yf2((t7hFz), (0 - t7hFm));
+    }
+    if (t7hFz < 0 && t7hFm > 0) {
+        t7hFzLast = yf1((0 - t7hFz), (t7hFm));
+        t7hFmLast = yf2((0 - t7hFz), (t7hFm));
+    }
+    t7kFzOut.innerHTML = t7kFzLast;
+    t7kFmOut.innerHTML = t7kFmLast;
+    t7hFzOut.innerHTML = t7hFzLast;
+    t7hFmOut.innerHTML = t7hFmLast;
+};

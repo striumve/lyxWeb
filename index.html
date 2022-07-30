@@ -7,9 +7,14 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>lyx的个人网站!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <!-- 分享卡片 -->
+    <meta name="description" itemprop="description" content="欢迎分享">
+    <meta itemprop="name" content="lyx的个人网站">
+    <meta itemprop="image" content="logo.jpg">
+    <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="style.css">
     <style>
         .info {
             position: absolute;
@@ -62,12 +67,14 @@
             height: auto;
         }
 
-        .tool4-right {
+        .tool4-right,
+        .tool6-right {
             right: 25vw;
             width: 20vw;
         }
 
-        .tool4-left {
+        .tool4-left,
+        .tool6-left {
             left: 25vw;
         }
 
@@ -77,6 +84,14 @@
             height: 6vh;
             width: 60vw;
             /* bottom: 5vh; */
+        }
+
+        .tool7-out {
+            margin-left: 35vw;
+        }
+
+        .tool7-check {
+            bottom: 10vh;
         }
     </style>
 </head>
@@ -99,16 +114,16 @@
     <div class="info">
         <p class="infoOff"></p>
         <p class="info-sup info-sup-1">提供支持:</p>
-        <p class="info-sup info-sup-2"></p>
-        <p class="info-sup info-sup-3"></p>
-        <p class="info-sup info-sup-4"></p>
+        <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
+        <a class="info-sup info-sup-3" href="https://code.visualstudio.com/" target="_blank"></a>
+        <a class="info-sup info-sup-4" href="https://www.microsoft.com/zh-cn/windows" target="_blank"></a>
         <br>
         <br>
         <p class="info-shr info-shr-1">分享至:</p>
-        <p class="info-shr info-shr-2">&emsp;</p>
-        <p class="info-shr info-shr-3"></p>
-        <p class="info-shr info-shr-4"></p>
-        <p class="info-shr info-shr-5"></p>
+        <a class="info-shr info-shr-2">&emsp;</a>
+        <a class="info-shr info-shr-3"></a>
+        <a class="info-shr info-shr-4"></a>
+        <a class="info-shr info-shr-5"></a>
         <a href="tencent://message/?uin=1041095264" class="info-send">点击以使用QQ直接向我发送消息</a>
         <p class="info-send">您可以按下F12以打开控制台(console)。</p>
     </div>
@@ -155,6 +170,21 @@
             <p class="web-name">&emsp;GitHub Pages 官方文档 (简体中文)</p>
             <p class="web-site">&emsp;https://docs.github.com/cn/pages</p>
             <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Visual Studio Code</p>
+            <p class="web-site">&emsp;https://code.visualstudio.com/</p>
+            <a class="web-go" href="https://code.visualstudio.com/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Visual Studio</p>
+            <p class="web-site">&emsp;https://visualstudio.microsoft.com/zh-hans/</p>
+            <a class="web-go" href="https://visualstudio.microsoft.com/zh-hans/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Microsoft</p>
+            <p class="web-site">&emsp;https://www.microsoft.com/zh-cn/windows</p>
+            <a class="web-go" href="https://www.microsoft.com/zh-cn/windows" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;菜虚坤跳跳乐</p>
@@ -213,13 +243,110 @@
             <p style="display: inline;color:gray;">（这玩意我也不知道为什么，反正就是没法搞，看看就好）</p>
             <br>
             <textarea class="tool2-input">s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2</textarea>
-            <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p> -->
+            <p class="tool2-output">$$ s^2 = \frac{1}{n}\sum^n_{i=1}(x-\overline{x})^2 $$</p>
+            <p class="tool2-check">123</p> -->
+        </div>
+        <div class="tool-item tool7">
+            <p class="tool-item-name">已知直线上两点，求直线解析式</p>
+            <br>
+            <p class="tool7-note">
+                注意事项：<br>
+                1. 输入的数据请<strong>化成分数形式</strong>，但不必化简。如3.14，请输入314/100。欲输入的数据为整数的，分母即为1。<br>
+                2. 输入的数据中<strong>只能有数字</strong>，不得包含小数点、根号等运算符号及特殊符号。<br>
+                3. 输入的数据为负的，可以把负号（英文状态下（-））写在分子或分母。<br>
+            </p>
+            <p class="tool7-left1">输入两点坐标：</p>
+            <br>
+            <div class="tool7-kuohao">(
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-a" maxlength="114514" placeholder="a" value="1">
+                    <input class="tool7-input tool7-fm tool7-b" maxlength="114514" placeholder="b" value="1">
+                </div>,
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-c" maxlength="114514" placeholder="c" value="5">
+                    <input class="tool7-input tool7-fm tool7-d" maxlength="114514" placeholder="d" value="2">
+                </div>)
+            </div>
+            <div class="tool7-kuohao">(
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-e" maxlength="114514" placeholder="e" value="2">
+                    <input class="tool7-input tool7-fm tool7-f" maxlength="114514" placeholder="f" value="1">
+                </div>,
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-g" maxlength="114514" placeholder="g" value="3">
+                    <input class="tool7-input tool7-fm tool7-h" maxlength="114514" placeholder="h" value="1">
+                </div>)
+            </div>
+            <br>
+            <br>
+            <p class="tool7-check">计算</p>
+            <p class="tool7-left2">直线解析式：</p>
+            <br>
+            <br>
+            <br>
+            <div class="tool7-out">
+                <p class="tool7-output tool7-out-y">y=</p>
+                <div class="tool7-frac">
+                    <p class="tool7-output tool7-fz tool7-out-k-fz">a</p>
+                    <p class="tool7-output tool7-fm tool7-out-k-fm">b</p>
+                </div>
+                <p class="tool7-output tool7-out-k">k+</p>
+                <div class="tool7-frac">
+                    <p class="tool7-output tool7-fz tool7-out-h-fz">a</p>
+                    <p class="tool7-output tool7-fm tool7-out-h-fm">b</p>
+                </div>
+                <p class="tool7-output tool7-out-h">b</p>
+            </div>
         </div>
         <div class="tool-item tool3">
             <p class="tool-item-name">意见反馈</p>
             <br>
             <textarea class="tool3-input">我没有什么意见。</textarea>
-            <p class="tool3-check"></p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool3-check">反馈</p>
+        </div>
+        <div class="tool-item tool6">
+            <p class="tool-item-name">错误反馈</p>
+            <br>
+            <span class="tool6-left">类型</span>
+            <input class="tool6-right" type="text" placeholder="输入类型">
+            <br>
+            <span class="tool6-left">设备</span>
+            <input class="tool6-right" type="text" placeholder="输入设备">
+            <br>
+            <span class="tool6-left">浏览器</span>
+            <input class="tool6-right" type="text" placeholder="输入使用的浏览器">
+            <br>
+            <span class="tool6-left">前置条件</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="输入前置条件"></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="tool6-left">复现步骤</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="输入复现步骤"></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="tool6-left">备注</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="输入备注"></textarea>
+            <!-- 啊哈哈哈哈哈哈哈 -->
+            <!-- 一堆换行（ -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool6-check">反馈</p>
         </div>
         <div class="tool-item tool4">
             <p class="tool-item-name">注册账号</p>
@@ -253,7 +380,7 @@
             <p class="tool-item-name">生僻字读音查询</p>
             <br>
             <p class="tool5-left1">输入您不认识的生僻字（114514字以内）：</p>
-            <input class="tool5-input" maxlength="114514" placeholder="请输入"></input>
+            <input class="tool5-input" maxlength="114514" placeholder="请输入">
             <p class="tool5-check">查询</p>
             <p class="tool5-left2">生僻字的读音：</p>
             <br>
@@ -295,9 +422,9 @@
 
 <script>
     languageFlag = 1;
+    deviceFlag = 1;
 </script>
 
-<script src="functions.pc.js"></script>
 <script src="functions.js"></script>
 
 <script>

@@ -62,12 +62,14 @@
             height: auto;
         }
 
-        .tool4-right {
+        .tool4-right,
+        .tool6-right {
             right: 25vw;
             width: 20vw;
         }
 
-        .tool4-left {
+        .tool4-left,
+        .tool6-left {
             left: 25vw;
         }
 
@@ -77,6 +79,14 @@
             height: 6vh;
             width: 60vw;
             /* bottom: 5vh; */
+        }
+
+        .tool7-out {
+            margin-left: 35vw;
+        }
+
+        .tool7-check {
+            bottom: 10vh;
         }
     </style>
 </head>
@@ -110,6 +120,7 @@
         <p class="info-shr info-shr-4"></p>
         <p class="info-shr info-shr-5"></p>
         <a href="tencent://message/?uin=1041095264" class="info-send">Use QQ to send messages to me directly</a>
+        <p class="info-send">You can press F12 to open the console.</p>
     </div>
 
     <div class="main"></div>
@@ -208,11 +219,107 @@
             <p class="tool-item-name">clear the cache</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
         </div>
+        <div class="tool-item tool7">
+            <p class="tool-item-name">Given two points on a line, find the analytical formula for the line</p>
+            <br>
+            <p class="tool7-note">
+                Note:<br>
+                1. Input data <strong>in fractional form</strong>, but do not need to simplify. For 3.14, enter 314/100.
+                If the data to be entered is an integer, the denominator is 1.<br>
+                2. The input data can contain <strong>only digits</strong>, not decimal points, square roots and other
+                operational symbols and special symbols.<br>
+                3. If the input data is negative, you can write the negative sign in the numerator or denominator.<br>
+            </p>
+            <p class="tool7-left1">Enter the two point coordinates:</p>
+            <br>
+            <div class="tool7-kuohao">(
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-a" maxlength="114514" placeholder="a" value="1">
+                    <input class="tool7-input tool7-fm tool7-b" maxlength="114514" placeholder="b" value="1">
+                </div>,
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-c" maxlength="114514" placeholder="c" value="5">
+                    <input class="tool7-input tool7-fm tool7-d" maxlength="114514" placeholder="d" value="2">
+                </div>)
+            </div>
+            <div class="tool7-kuohao">(
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-e" maxlength="114514" placeholder="e" value="2">
+                    <input class="tool7-input tool7-fm tool7-f" maxlength="114514" placeholder="f" value="1">
+                </div>,
+                <div class="tool7-frac">
+                    <input class="tool7-input tool7-fz tool7-g" maxlength="114514" placeholder="g" value="3">
+                    <input class="tool7-input tool7-fm tool7-h" maxlength="114514" placeholder="h" value="1">
+                </div>)
+            </div>
+            <br>
+            <br>
+            <p class="tool7-check">calculate</p>
+            <p class="tool7-left2">Analytical expression of the line:</p>
+            <br>
+            <br>
+            <br>
+            <div class="tool7-out">
+                <p class="tool7-output tool7-out-y">y=</p>
+                <div class="tool7-frac">
+                    <p class="tool7-output tool7-fz tool7-out-k-fz">a</p>
+                    <p class="tool7-output tool7-fm tool7-out-k-fm">b</p>
+                </div>
+                <p class="tool7-output tool7-out-k">k+</p>
+                <div class="tool7-frac">
+                    <p class="tool7-output tool7-fz tool7-out-h-fz">a</p>
+                    <p class="tool7-output tool7-fm tool7-out-h-fm">b</p>
+                </div>
+                <p class="tool7-output tool7-out-h">b</p>
+            </div>
+        </div>
         <div class="tool-item tool3">
             <p class="tool-item-name">feedback</p>
             <br>
             <textarea class="tool3-input">I don't have any opinion.</textarea>
-            <p class="tool3-check"></p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool3-check">feedback</p>
+        </div>
+        <div class="tool-item tool6">
+            <p class="tool-item-name">Bug feedback</p>
+            <br>
+            <span class="tool6-left">type</span>
+            <input class="tool6-right" type="text" placeholder="enter type">
+            <br>
+            <span class="tool6-left">device</span>
+            <input class="tool6-right" type="text" placeholder="enter your device">
+            <br>
+            <span class="tool6-left">browser</span>
+            <input class="tool6-right" type="text" placeholder="enter the browser you use">
+            <br>
+            <span class="tool6-left">precondition</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="enter precondition"></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="tool6-left">reproducible steps</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="enter reproducible steps"></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="tool6-left">note</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="enter note"></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="tool6-check">feedback</p>
         </div>
         <div class="tool-item tool4">
             <p class="tool-item-name">register an account</p>
@@ -293,9 +400,9 @@
 
 <script>
     languageFlag = 2;
+    deviceFlag = 1;
 </script>
 
-<script src="functions.pc.js"></script>
 <script src="functions.js"></script>
 
 <script>
@@ -332,7 +439,6 @@
     if (vw <= 800 || vh <= 500 || vw / vh >= 2.5 || vw / vh <= 0.5) {
         alert('Please adjust the browser interface, \nso that it is not too wide, too high, or too narrow, \nfor the best browsing experience.');
     }
-
 
     //隐藏JavaScript提示
     var nojs = document.querySelector('.noJS');

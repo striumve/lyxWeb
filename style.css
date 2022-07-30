@@ -23,6 +23,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -115,8 +116,7 @@
         color: rgba(0, 0, 0, 0);
     }
 
-    100% {
-    }
+    100% {}
 }
 
 @keyframes sentenceChange {
@@ -253,6 +253,12 @@ body {
     background-color: rgba(255, 255, 255, .8);
 }
 
+.info-sup,
+.info-shr {
+    text-decoration: none;
+    font-size: 2.7vh;
+}
+
 .info-sup-1,
 .info-shr-1 {
     font-size: 2.5vh;
@@ -368,7 +374,7 @@ body {
     font-family: 'icomoon';
     margin: 0;
     width: 3vh;
-    animation: loading cubic-bezier(.1,.3,.5,.3).8s infinite;
+    animation: loading cubic-bezier(.1, .3, .5, .3).8s infinite;
 }
 
 .navBtn {
@@ -558,27 +564,8 @@ body {
     margin-bottom: 2vh;
 }
 
-.tool3-check {
-    display: inline-block;
-    font-family: 'icomoon';
-    width: 4vh;
-    height: 4vh;
-    border-radius: 4vh;
-    position: absolute;
-    right: 3vw;
-    bottom: 2vh;
-    font-size: 2vh;
-    background-color: rgba(150, 150, 255, 0.5);
-    padding: 1vh;
-    z-index: 5;
-    color: #000;
-    outline: none;
-    border: none;
-    text-align: center;
-    line-height: 4vh;
-}
-
-.tool4-left {
+.tool4-left,
+.tool6-left {
     display: inline-block;
     position: relative;
     font-size: 2vh;
@@ -586,7 +573,8 @@ body {
     font-family: 'consolas';
 }
 
-.tool4-right {
+.tool4-right,
+.tool6-right {
     display: inline-block;
     position: absolute;
     font-size: 2vh;
@@ -598,7 +586,10 @@ body {
     font-family: 'consolas';
 }
 
-.tool4-check {
+.tool3-check,
+.tool4-check,
+.tool6-check,
+.tool7-check {
     display: block;
     position: absolute;
     bottom: 1vh;
@@ -609,6 +600,12 @@ body {
     font-size: 2vh;
     line-height: 5vh;
     text-align: center;
+}
+
+.tool6-ta {
+    resize: none;
+    width: 30vw;
+    height: 10vh;
 }
 
 .tool5-input,
@@ -623,7 +620,9 @@ body {
 }
 
 .tool5-left1,
-.tool5-left2 {
+.tool5-left2,
+.tool7-left1,
+.tool7-left2 {
     display: inline-block;
     font-size: 2vh;
     margin-left: 20vw;
@@ -650,6 +649,75 @@ body {
 
 .tool5-output {
     height: 6vh;
-    width: 25vw;
+    width: 60vw;
     bottom: 7vh;
+}
+
+.tool7-note {
+    margin-left: 3vw;
+}
+
+.tool7-output {
+    font-size: 2vh;
+    display: inline-block;
+    outline: none;
+    border: none;
+    font-size: 3vh; 
+    padding: 1vh;
+    font-family: 'Times New Roman';
+    font-style: italic;
+}
+
+.tool7-fz {
+    /* position: absolute;
+    top: 0vh; */
+    position: relative;
+    bottom: 4vh;
+    /* left: 3vh; */
+}
+
+.tool7-fz::after {
+    content: "";
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 4.5vh;
+    left: 0vh;
+}
+
+.tool7-fm {
+    position: absolute;
+    left: 0vh;
+    /* position: relative; */
+}
+
+.tool7-frac {
+    display: inline-block;
+    position: relative;
+    top: 3vh;
+    /* background-color: #fff; */
+    height: 8vh;
+    /* width: 3vh; */
+}
+
+.tool7-left2 {
+    position: relative;
+    top: 10vh;
+}
+
+.tool7-input {
+    width: 10vh;
+    height: 3vh;
+    font-family: 'Times New Roman';
+    font-size: 2vh;
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, 0.5);
+}
+
+.tool7-kuohao {
+    display: inline-block;
+    margin-left: 20vw;
+    /* margin-top: 5vh; */
 }
