@@ -809,6 +809,7 @@ body {
 .tool7-why>p {
     font-size: 2vh;
     margin-left: 3vw;
+    margin-right: 3vw;
     outline: none;
     border: none;
 }
