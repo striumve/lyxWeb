@@ -193,6 +193,66 @@
     }
 }
 
+@keyframes tool7Out {
+    0% {
+        background-color: rgba(120, 120, 200, 0.95);
+        color: rgba(0, 0, 0, 1);
+        top: 10vh;
+        left: 25vw;
+    }
+    100% {
+        background-color: rgba(100, 100, 200, 0);
+        color: rgba(0, 0, 0, 0);
+        top: 8vh;
+        left: 22vw;
+    }
+}
+
+@keyframes tool7Come {
+    0% {
+        background-color: rgba(100, 100, 200, 0);
+        color: rgba(0, 0, 0, 0);
+        top: 8vh;
+        left: 22vw;
+    }
+    100% {
+        background-color: rgba(120, 120, 200, .95);
+        color: rgba(0, 0, 0, 1);
+        top: 10vh;
+        left: 25vw;
+    }
+}
+
+@keyframes tool7OutM {
+    0% {
+        background-color: rgba(120, 120, 200, 0.95);
+        color: rgba(0, 0, 0, 1);
+        top: 10vh;
+        left: 10vw;
+    }
+    100% {
+        background-color: rgba(100, 100, 200, 0);
+        color: rgba(0, 0, 0, 0);
+        top: 8vh;
+        left: 8vw;
+    }
+}
+
+@keyframes tool7ComeM {
+    0% {
+        background-color: rgba(100, 100, 200, 0);
+        color: rgba(0, 0, 0, 0);
+        top: 8vh;
+        left: 8vw;
+    }
+    100% {
+        background-color: rgba(120, 120, 200, .95);
+        color: rgba(0, 0, 0, 1);
+        top: 10vh;
+        left: 10vw;
+    }
+}
+
 body {
     margin: 0;
     position: relative;
@@ -256,7 +316,6 @@ body {
 .info-sup,
 .info-shr {
     text-decoration: none;
-    font-size: 2.7vh;
 }
 
 .info-sup-1,
@@ -561,7 +620,7 @@ body {
 }
 
 .tool3-input {
-    margin-bottom: 2vh;
+    margin-bottom: 10vh;
 }
 
 .tool4-left,
@@ -588,8 +647,7 @@ body {
 
 .tool3-check,
 .tool4-check,
-.tool6-check,
-.tool7-check {
+.tool6-check {
     display: block;
     position: absolute;
     bottom: 1vh;
@@ -650,11 +708,23 @@ body {
 .tool5-output {
     height: 6vh;
     width: 60vw;
-    bottom: 7vh;
+    bottom: 1vh;
 }
 
 .tool7-note {
     margin-left: 3vw;
+}
+
+.tool7-check {
+    display: block;
+    position: absolute;
+    left: 35vw;
+    width: 20vw;
+    height: 5vh;
+    background-color: rgba(150, 150, 255, 0.5);
+    font-size: 2vh;
+    line-height: 5vh;
+    text-align: center;
 }
 
 .tool7-output {
@@ -662,7 +732,7 @@ body {
     display: inline-block;
     outline: none;
     border: none;
-    font-size: 3vh; 
+    font-size: 3vh;
     padding: 1vh;
     font-family: 'Times New Roman';
     font-style: italic;
@@ -674,6 +744,7 @@ body {
     position: relative;
     bottom: 4vh;
     /* left: 3vh; */
+    text-align: right;
 }
 
 .tool7-fz::after {
@@ -690,6 +761,7 @@ body {
     position: absolute;
     left: 0vh;
     /* position: relative; */
+    text-align: right;
 }
 
 .tool7-frac {
@@ -702,8 +774,9 @@ body {
 }
 
 .tool7-left2 {
-    position: relative;
-    top: 10vh;
+    position: absolute;
+    bottom: 3vh;
+    left: 1.8vw;
 }
 
 .tool7-input {
@@ -716,8 +789,32 @@ body {
     background-color: rgba(150, 150, 255, 0.5);
 }
 
-.tool7-kuohao {
+.tool7-why-title {
     display: inline-block;
-    margin-left: 20vw;
-    /* margin-top: 5vh; */
+    font-family: 'icomoon';
+    font-size: 2vh;
+}
+
+.tool7-why {
+    height: 80vh;
+    background-color: rgba(120, 120, 200, .95);
+    position: fixed;
+    top: 10vh;
+    z-index: 1314;
+    overflow: auto;
+    border-radius: 2vh;
+    display: none;
+}
+
+.tool7-why>p {
+    font-size: 2vh;
+    margin-left: 3vw;
+}
+
+.tool7-why-close {
+    font-family: 'icomoon';
+    font-size: 2vh;
+    position: fixed;
+    right: 27vw;
+    top: 12vh;
 }

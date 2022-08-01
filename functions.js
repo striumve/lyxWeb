@@ -248,6 +248,16 @@ setBtn.addEventListener("click", function () {
     }
 })
 
+//浏览器界面
+if (deviceFlag === 1) {
+    var vw = document.documentElement.clientWidth;
+    var vh = document.documentElement.clientHeight;
+    if (vw <= 800 || vh <= 500 || vw / vh >= 2.5 || vw / vh <= 0.5) {
+        alert('请调整浏览器界面，不要过宽、过高、过于窄小，\n以获取最佳浏览体验。');
+    }
+
+}
+
 //右下角句子
 var sen = document.querySelector('.sen');
 var senChn = document.querySelector('.senChange');
@@ -537,6 +547,8 @@ tool6.addEventListener("click", function () {
 
 var tool7Out = document.querySelector('.tool7-output');
 var tool7Check = document.querySelector('.tool7-check');
+var tool7OutK = document.querySelector('.tool7-out-y');
+var tool7OutB = document.querySelector('.tool7-out-k');
 var t7a;
 var t7b;
 var t7c;
@@ -616,37 +628,67 @@ function tool7() {
     if (t7kFz < 0 && t7kFm < 0) {
         t7kFzLast = yf1((0 - t7kFz), (0 - t7kFm));
         t7kFmLast = yf2((0 - t7kFz), (0 - t7kFm));
+        tool7OutK.innerHTML = 'y =';
     }
     if (t7hFz < 0 && t7hFm < 0) {
         t7hFzLast = yf1((0 - t7hFz), (0 - t7hFm));
         t7hFmLast = yf2((0 - t7hFz), (0 - t7hFm));
+        tool7OutB.innerHTML = 'x +';
     }
     if (t7kFz > 0 && t7kFm > 0) {
         t7kFzLast = yf1((t7kFz), (t7kFm));
         t7kFmLast = yf2((t7kFz), (t7kFm));
+        tool7OutK.innerHTML = 'y =';
     }
     if (t7hFz > 0 && t7hFm > 0) {
         t7hFzLast = yf1((t7hFz), (t7hFm));
         t7hFmLast = yf2((t7hFz), (t7hFm));
+        tool7OutB.innerHTML = 'x +';
     }
     if (t7kFz > 0 && t7kFm < 0) {
         t7kFzLast = yf1((t7kFz), (0 - t7kFm));
         t7kFmLast = yf2((t7kFz), (0 - t7kFm));
+        tool7OutK.innerHTML = 'y = -';
     }
     if (t7kFz < 0 && t7kFm > 0) {
         t7kFzLast = yf1((0 - t7kFz), (t7kFm));
         t7kFmLast = yf2((0 - t7kFz), (t7kFm));
+        tool7OutK.innerHTML = 'y = -';
     }
     if (t7hFz > 0 && t7hFm < 0) {
         t7hFzLast = yf1((t7hFz), (0 - t7hFm));
         t7hFmLast = yf2((t7hFz), (0 - t7hFm));
+        tool7OutB.innerHTML = 'x -';
     }
     if (t7hFz < 0 && t7hFm > 0) {
         t7hFzLast = yf1((0 - t7hFz), (t7hFm));
         t7hFmLast = yf2((0 - t7hFz), (t7hFm));
+        tool7OutB.innerHTML = 'x -';
     }
     t7kFzOut.innerHTML = t7kFzLast;
     t7kFmOut.innerHTML = t7kFmLast;
     t7hFzOut.innerHTML = t7hFzLast;
     t7hFmOut.innerHTML = t7hFmLast;
 };
+
+var tool7Why = document.querySelector('.tool7-why');
+var tool7Open = document.querySelector('.tool7-why-title');
+var tool7Close = document.querySelector('.tool7-why-close');
+tool7Open.addEventListener("click", function () {
+    tool7Why.style.display = 'block';
+    if (deviceFlag === 1) {
+        tool7Why.style.animation = 'tool7Come ease-in-out .3s forwards';
+    } else if (deviceFlag === 2) {
+        tool7Why.style.animation = 'tool7ComeM ease-in-out .3s forwards';
+    }
+})
+tool7Close.addEventListener("click", function () {
+    if (deviceFlag === 1) {
+        tool7Why.style.animation = 'tool7Out ease-in-out .3s forwards';
+    } else if (deviceFlag === 2) {
+        tool7Why.style.animation = 'tool7OutM ease-in-out .3s forwards';
+    }
+    setTimeout(function () {
+        tool7Why.style.display = 'none';
+    }, 300)
+})

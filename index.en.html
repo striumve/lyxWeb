@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1200px, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>lyx's personal website!</title>
     <link rel="icon" href="logo.jpg" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" itemprop="description" content="欢迎分享">
+    <meta itemprop="name" content="lyx的个人网站">
+    <meta itemprop="image" content="logo.jpg">
+    <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <!-- bShare -->
+    <script type="text/javascript" charset="utf-8"
+        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
     <style>
         .info {
             position: absolute;
@@ -22,6 +30,7 @@
             z-index: 114514;
             cursor: default;
             padding: 1vh;
+            overflow: auto;
         }
 
         .info-sup,
@@ -68,6 +77,18 @@
             width: 20vw;
         }
 
+        .tool6-ta {
+            right: 15vw;
+            width: 30vw;
+            /* margin-bottom: 10vh; */
+            position: relative;
+            left: 30vw;
+        }
+
+        .tool6-left-ta {
+            bottom: 8vh;
+        }
+
         .tool4-left,
         .tool6-left {
             left: 25vw;
@@ -87,6 +108,28 @@
 
         .tool7-check {
             bottom: 10vh;
+        }
+
+        .tool7-kuohao {
+            display: inline-block;
+            margin-left: 20vw;
+            /* margin-top: 5vh; */
+            margin-bottom: 8vh;
+        }
+
+        .tool7-why {
+            width: 50vw;
+            left: 25vw;
+        }
+
+        .tool7-why-close {
+            right: 27vw;
+        }
+
+        .info-sup-5 {
+            width: 3vh;
+            background: url(https://shared.ydstatic.com/images/favicon.ico) no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
@@ -109,16 +152,21 @@
     <div class="info">
         <p class="infoOff"></p>
         <p class="info-sup info-sup-1">support:</p>
-        <p class="info-sup info-sup-2"></p>
-        <p class="info-sup info-sup-3"></p>
-        <p class="info-sup info-sup-4"></p>
+        <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
+        <a class="info-sup info-sup-3" href="https://code.visualstudio.com/" target="_blank"></a>
+        <a class="info-sup info-sup-4" href="https://www.microsoft.com/zh-cn/windows" target="_blank"></a>
+        <a class="info-sup info-sup-5" href="https://fanyi.youdao.com/" target="_blank">&nbsp;&nbsp;</a>
         <br>
         <br>
         <p class="info-shr info-shr-1">share to:</p>
-        <p class="info-shr info-shr-2">&emsp;</p>
-        <p class="info-shr info-shr-3"></p>
-        <p class="info-shr info-shr-4"></p>
-        <p class="info-shr info-shr-5"></p>
+        <div class="bshare-custom">
+            <a title="share to Qzone" class="bshare-qzone info-shr"></a>
+            <a title="Share to Sina Weibo" class="bshare-sinaminiblog info-shr"></a>
+            <a title="Share to Renren" class="bshare-renren info-shr"></a>
+            <a title="Share to Tencent Weibo" class="bshare-qqmb info-shr"></a>
+            <a title="Share to NetEase Weibo" class="bshare-neteasemb info-shr"></a>
+            <a title="More platforms" class="bshare-more bshare-more-icon more-style-addthis info-shr"></a>
+        </div>
         <a href="tencent://message/?uin=1041095264" class="info-send">Use QQ to send messages to me directly</a>
         <p class="info-send">You can press F12 to open the console.</p>
     </div>
@@ -166,6 +214,26 @@
             <p class="web-name">&emsp;GitHub Pages offical documentation (Simplified Chinese)</p>
             <p class="web-site">&emsp;https://docs.github.com/cn/pages</p>
             <a class="web-go" href="https://docs.github.com/cn/pages" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Visual Studio Code</p>
+            <p class="web-site">&emsp;https://code.visualstudio.com/</p>
+            <a class="web-go" href="https://code.visualstudio.com/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Visual Studio</p>
+            <p class="web-site">&emsp;https://visualstudio.microsoft.com/zh-hans/</p>
+            <a class="web-go" href="https://visualstudio.microsoft.com/zh-hans/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Microsoft</p>
+            <p class="web-site">&emsp;https://www.microsoft.com/zh-cn/windows</p>
+            <a class="web-go" href="https://www.microsoft.com/zh-cn/windows" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;BShare Short link service</p>
+            <p class="web-site">&emsp;https://www.bshare.cn/</p>
+            <a class="web-go" href="https://www.bshare.cn/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;Chicken jumping</p>
@@ -221,6 +289,7 @@
         </div>
         <div class="tool-item tool7">
             <p class="tool-item-name">Given two points on a line, find the analytical formula for the line</p>
+            <p class="tool7-why-title"></p>
             <br>
             <p class="tool7-note">
                 Note:<br>
@@ -234,7 +303,7 @@
             <br>
             <div class="tool7-kuohao">(
                 <div class="tool7-frac">
-                    <input class="tool7-input tool7-fz tool7-a" maxlength="114514" placeholder="a" value="1">
+                    <input class="tool7-input tool7-fz tool7-a" maxlength="114514" placeholder="a" value="4">
                     <input class="tool7-input tool7-fm tool7-b" maxlength="114514" placeholder="b" value="1">
                 </div>,
                 <div class="tool7-frac">
@@ -252,39 +321,64 @@
                     <input class="tool7-input tool7-fm tool7-h" maxlength="114514" placeholder="h" value="1">
                 </div>)
             </div>
-            <br>
-            <br>
             <p class="tool7-check">calculate</p>
-            <p class="tool7-left2">Analytical expression of the line:</p>
-            <br>
-            <br>
-            <br>
+            <p class="tool7-left2">Analytical expression:</p>
             <div class="tool7-out">
                 <p class="tool7-output tool7-out-y">y=</p>
                 <div class="tool7-frac">
                     <p class="tool7-output tool7-fz tool7-out-k-fz">a</p>
                     <p class="tool7-output tool7-fm tool7-out-k-fm">b</p>
                 </div>
-                <p class="tool7-output tool7-out-k">k+</p>
+                <p class="tool7-output tool7-out-k">x+</p>
                 <div class="tool7-frac">
                     <p class="tool7-output tool7-fz tool7-out-h-fz">a</p>
                     <p class="tool7-output tool7-fm tool7-out-h-fm">b</p>
                 </div>
-                <p class="tool7-output tool7-out-h">b</p>
+            </div>
+            <div class="tool7-why">
+                <p class="tool7-why-close"></p>
+                <p>I did it all by myself!</p>
+                <p>Calculation principle:</p>
+                <p>Let the two-point coordinate of the input be $$ (\frac{a}{b},\frac{c}{d}), (\frac{e}{f},\frac{g}{h})
+                    $$</p>
+                <p>Let the analytical expression of the line be $$ y=kx+h $$</p>
+                <p>Substituting the two point coordinates into the analytical formula, we get $$ \left\{ \begin{aligned}
+                    \frac{a}{b}k+h=\frac{c}{d} -- I \\ \frac{e}{f}k+h=\frac{g}{h} -- II \end{aligned} \right. $$</p>
+                <p>I - II $$ (\frac{a}{b}-\frac{e}{f})k=(\frac{c}{d}-\frac{g}{h}) $$</p>
+                <p>$$ \begin{equation}
+                    \begin{split}
+                    k
+                    &=(\frac{c}{d}-\frac{g}{h})÷(\frac{a}{b}-\frac{e}{f}) \\
+                    &=\frac{ch-dg}{dh}÷\frac{af-be}{bf} \\
+                    &=\frac{ch-dg}{dh}·\frac{bf}{af-be} \\
+                    &=\frac{bf(ch-dg)}{dh(af-be)}
+                    \end{split}
+                    \end{equation}
+                    $$
+                </p>
+                <p>Substitute the above equation into I to obtain $$ \frac{a}{b}(\frac{bf(ch-dg)}{dh(af-be)})+h =
+                    \frac{c}{d} $$</p>
+                <p>that is $$ \frac{abf(ch-dg)}{bdh(af-be)}+h = \frac{c}{d} $$</p>
+                <p>$$ \begin{equation}
+                    \begin{split}
+                    h
+                    &=\frac{c}{d}-\frac{abf(ch-dg)}{bdh(af-be)} \\
+                    &=\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)}
+                    \end{split}
+                    \end{equation}
+                    $$
+                </p>
+                <p>Therefore, the analytical expression of the line is: $$
+                    y=\frac{bf(ch-dg)}{dh(af-be)}x+\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)} $$</p>
             </div>
         </div>
         <div class="tool-item tool3">
             <p class="tool-item-name">feedback</p>
             <br>
             <textarea class="tool3-input">I don't have any opinion.</textarea>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <p class="tool3-check">feedback</p>
         </div>
-        <div class="tool-item tool6">
+        <div class="tool-item tool6" title="Unable to align. I'm tired of doing this">
             <p class="tool-item-name">Bug feedback</p>
             <br>
             <span class="tool6-left">type</span>
@@ -296,29 +390,15 @@
             <span class="tool6-left">browser</span>
             <input class="tool6-right" type="text" placeholder="enter the browser you use">
             <br>
-            <span class="tool6-left">precondition</span>
+            <span class="tool6-left tool6-left-ta">precondition</span>
             <textarea class="tool6-right tool6-ta" type="text" placeholder="enter precondition"></textarea>
             <br>
-            <br>
-            <br>
-            <br>
-            <span class="tool6-left">reproducible steps</span>
+            <span class="tool6-left tool6-left-ta">reproducible steps</span>
             <textarea class="tool6-right tool6-ta" type="text" placeholder="enter reproducible steps"></textarea>
             <br>
-            <br>
-            <br>
-            <br>
-            <span class="tool6-left">note</span>
-            <textarea class="tool6-right tool6-ta" type="text" placeholder="enter note"></textarea>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <span class="tool6-left tool6-left-ta" style="bottom: 18vh;">note</span>
+            <textarea class="tool6-right tool6-ta" type="text" placeholder="enter note"
+                style="margin-bottom: 10vh;"></textarea>
             <p class="tool6-check">feedback</p>
         </div>
         <div class="tool-item tool4">
@@ -339,14 +419,8 @@
             <span class="tool4-left">address</span>
             <input class="tool4-right" type="text" placeholder="enter your address">
             <br>
-            <span class="tool4-left">birthday</span>
+            <span class="tool4-left" style="margin-bottom: 10vh;">birthday</span>
             <input class="tool4-right" type="text" placeholder="enter your birthday">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <p class="tool4-check">register</p>
         </div>
         <div class="tool-item tool5">
@@ -356,9 +430,6 @@
             <input class="tool5-input" maxlength="114514" placeholder="enter"></input>
             <p class="tool5-check">search</p>
             <p class="tool5-left2">Pronunciation of rare word:</p>
-            <br>
-            <br>
-            <br>
             <p class="tool5-output">&emsp;</p>
         </div>
     </div>
@@ -407,8 +478,6 @@
 
 <script>
 
-    FLAG = 1;
-
     //移动端适配
     var thisOS = navigator.platform;
     var os = new Array("iPhone", "iPod", "iPad", "android", "Nokia", "SymbianOS", "Symbian", "Windows Phone", "Phone", "Linux armv71", "MAUI", "UNTRUSTED/1.0", "Windows CE", "BlackBerry", "IEMobile");
@@ -432,12 +501,6 @@
                 return true;
         }
         return false;
-    }
-
-    var vw = document.documentElement.clientWidth;
-    var vh = document.documentElement.clientHeight;
-    if (vw <= 800 || vh <= 500 || vw / vh >= 2.5 || vw / vh <= 0.5) {
-        alert('Please adjust the browser interface, \nso that it is not too wide, too high, or too narrow, \nfor the best browsing experience.');
     }
 
     //隐藏JavaScript提示
