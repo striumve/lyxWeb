@@ -749,7 +749,7 @@ body {
 
 .tool7-fz::after {
     content: "";
-    height: 2px;
+    height: 1px;
     background-color: #000;
     width: 100%;
     position: absolute;
@@ -809,6 +809,8 @@ body {
 .tool7-why>p {
     font-size: 2vh;
     margin-left: 3vw;
+    outline: none;
+    border: none;
 }
 
 .tool7-why-close {
