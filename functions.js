@@ -5,7 +5,8 @@ var deviceFlag;
 
 //控制台互动
 if (languageFlag === 1) {
-    console.log('\n\
+    console.log('%c%s',
+        'color: skyblue; font-weight:700','\n\n\
     .-------------------------------------------------      \n\
     |   _          _          _      _           _          \n\
     |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
@@ -16,16 +17,16 @@ if (languageFlag === 1) {
     |  | ||             | ||           / //   \\ \\\\       \n\
     |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
     |   \\________||     \\_//         /_//       \\_\\\\   \n\
-    |-------------------------------------------------      \n\
-    | 一切皆有可能。                                         \n\
-    *-------------------------------------------------');
-
+    *------------------------------------------------\n');
+    console.log('%c%s', 'background:rgb(200, 200, 255);padding:5px;margin-bottom:10px', '一切皆有可能。');
+    console.log('%c%s', 'background:rgb(200, 200, 255);padding:5px;margin-bottom:10px', '长风破浪会有时，直挂云帆济沧海。');
     console.error("错误：您正在呼吸");
     console.error("错误：您睁着眼睛");
     console.error("错误：您没有睡着");
     console.info("在下方输入“怎么办()”以查看可能的解决方案。\n注：应使用英文状态下的括号。直接复制也可以。");
 } else if (languageFlag === 2) {
-    console.log('\n\
+    console.log('%c%s',
+        'color: skyblue; font-weight:700','\n\
     .-------------------------------------------------      \n\
     |   _          _          _      _           _          \n\
     |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
@@ -36,9 +37,7 @@ if (languageFlag === 1) {
     |  | ||             | ||           / //   \\ \\\\       \n\
     |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
     |   \\________||     \\_//         /_//       \\_\\\\   \n\
-    |-------------------------------------------------      \n\
-    | Everything is possible.                               \n\
-    *-------------------------------------------------');
+    |-------------------------------------------------');
     console.error("error: You are breathing");
     console.error("error: Your eyes are open");
     console.error("error: You are not asleep");
