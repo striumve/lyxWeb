@@ -1,482 +1,694 @@
-//显示时间(日期) 及 分时问候功能
-var welcome = document.querySelector('#welcome-1');
-var showPoem = document.querySelector("#poem");
-var date = document.querySelector("#date-1");
+//public functions
 
-//显示当前时间(日期)
-function getNowDate() {
-    var getdate = new Date();
-    var year = getdate.getFullYear();
-    var month = getdate.getMonth() + 1;
-    var date = getdate.getDate();
-    var day = getdate.getDay();
-    var chiday = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-    var outday = chiday[day];
-    var output = year + '年' + month + '月' + date + '日' + ' ' + outday;
-    console.log('今天是' + output);
-    return output;
-}
-//分时问候.左边
-function welcomeByTime() {
-    var getdate = new Date();
-    var hour = getdate.getHours();
-    var sayHi;
-    if (hour <= 4 || hour >= 19) {
-        sayHi = '晚上好！';
-    }
-    if (hour >= 5 && hour <= 11) {
-        sayHi = '上午好！';
-    }
-    if (hour >= 12 && hour <= 13) {
-        sayHi = '中午好！';
-    }
-    if (hour >= 14 && hour <= 16) {
-        sayHi = '下午好！';
-    }
-    if (hour >= 17 && hour <= 18) {
-        sayHi = '傍晚好！';
-    }
-    return sayHi;
-}
-//分时问候.右边（诗句）
-function poemByTime() {
-    var getdate = new Date();
-    var hour = getdate.getHours();
-    var poem;
-    if (hour <= 4 || hour >= 19) {
-        poem = '露从今夜白，月是故乡明。';
-        showPoem.href = 'https://so.gushiwen.cn/shiwenv_ad6f7cfa10c2.aspx';
-    }
-    if (hour >= 5 && hour <= 7) {
-        poem = '清晨入古寺,初日照高林。';
-        showPoem.href = 'https://so.gushiwen.cn/shiwenv_e2890c61279c.aspx';
-    }
-    if (hour >= 8 && hour <= 11) {
-        poem = '一年之计在于春，一日之计在于晨。';
-        showPoem.href = 'https://so.gushiwen.cn/mingju/juv_0b9bcd3d3a7b.aspx';
-    }
-    if (hour >= 12 && hour <= 13) {
-        poem = '云淡风轻过午天，傍花随柳过前川。';
-        showPoem.href = 'https://so.gushiwen.cn/shiwenv_45fe7c553da8.aspx';
-    }
-    if (hour >= 14 && hour <= 16) {
-        poem = '午后郊园静，晴来景物新。';
-        showPoem.href = 'https://so.gushiwen.cn/shiwenv_ee3fe413887f.aspx';
-    }
-    if (hour >= 17 && hour <= 18) {
-        poem = '朱雀桥边野草花，乌衣巷口夕阳斜。';
-        showPoem.href = 'https://so.gushiwen.cn/shiwenv_8b671db8c10d.aspx';
-    }
-    return poem;
-}
-welcome.innerHTML = welcomeByTime();
-showPoem.innerHTML = poemByTime();
-date.innerHTML = getNowDate();
+// var languageFlag;
+var deviceFlag;
 
-
-// 音乐播放器
-// 以下那堆……俗称……shit山 代码
-var play1 = document.getElementById("play1");
-var play2 = document.getElementById("play2");
-var play3 = document.getElementById("play3");
-var play4 = document.getElementById("play4");
-var play5 = document.getElementById("play5");
-var play6 = document.getElementById("play6");
-var play7 = document.getElementById("play7");
-var play8 = document.getElementById("play8");
-var play9 = document.getElementById("play9");
-var play10 = document.getElementById("play10");
-var pause1 = document.getElementById("pause1");
-var pause2 = document.getElementById("pause2");
-var pause3 = document.getElementById("pause3");
-var pause4 = document.getElementById("pause4");
-var pause5 = document.getElementById("pause5");
-var pause6 = document.getElementById("pause6");
-var pause7 = document.getElementById("pause7");
-var pause8 = document.getElementById("pause8");
-var pause9 = document.getElementById("pause9");
-var pause10 = document.getElementById("pause10");
-var player1 = document.getElementById("player1");
-var player2 = document.getElementById("player2");
-var player3 = document.getElementById("player3");
-var player4 = document.getElementById("player4");
-var player5 = document.getElementById("player5");
-var player6 = document.getElementById("player6");
-var player7 = document.getElementById("player7");
-var player8 = document.getElementById("player8");
-var player9 = document.getElementById("player9");
-var player10 = document.getElementById("player10");
-
-player2.play();
-//自动播放
-
-play1.onclick = function () {
-    //start play
-    play1.style.display = 'none';
-    pause1.style.display = 'block';
-    player1.play();
-}
-pause1.onclick = function () {
-    //pause
-    play1.style.display = 'block';
-    pause1.style.display = 'none';
-    player1.pause();
-}
-play2.onclick = function () {
-    play2.style.display = 'none';
-    pause2.style.display = 'block';
-    player2.play();
-}
-pause2.onclick = function () {
-    play2.style.display = 'block';
-    pause2.style.display = 'none';
-    player2.pause();
-}
-play3.onclick = function () {
-    play3.style.display = 'none';
-    pause3.style.display = 'block';
-    player3.play();
-}
-pause3.onclick = function () {
-    play3.style.display = 'block';
-    pause3.style.display = 'none';
-    player3.pause();
-}
-play4.onclick = function () {
-    play4.style.display = 'none';
-    pause4.style.display = 'block';
-    player4.play();
-}
-pause4.onclick = function () {
-    play4.style.display = 'block';
-    pause4.style.display = 'none';
-    player4.pause();
-}
-play5.onclick = function () {
-    play5.style.display = 'none';
-    pause5.style.display = 'block';
-    player5.play();
-}
-pause5.onclick = function () {
-    play5.style.display = 'block';
-    pause5.style.display = 'none';
-    player5.pause();
-}
-play6.onclick = function () {
-    play6.style.display = 'none';
-    pause6.style.display = 'block';
-    player6.play();
-}
-pause6.onclick = function () {
-    play6.style.display = 'block';
-    pause6.style.display = 'none';
-    player6.pause();
-}
-play7.onclick = function () {
-    play7.style.display = 'none';
-    pause7.style.display = 'block';
-    player7.play();
-}
-pause7.onclick = function () {
-    play7.style.display = 'block';
-    pause7.style.display = 'none';
-    player7.pause();
-}
-play8.onclick = function () {
-    play8.style.display = 'none';
-    pause8.style.display = 'block';
-    player8.play();
-}
-pause8.onclick = function () {
-    play8.style.display = 'block';
-    pause8.style.display = 'none';
-    player8.pause();
-}
-play9.onclick = function () {
-    play9.style.display = 'none';
-    pause9.style.display = 'block';
-    player9.play();
-}
-pause9.onclick = function () {
-    play9.style.display = 'block';
-    pause9.style.display = 'none';
-    player9.pause();
-}
-play10.onclick = function () {
-    play10.style.display = 'none';
-    pause10.style.display = 'block';
-    player10.play();
-}
-pause10.onclick = function () {
-    play10.style.display = 'block';
-    pause10.style.display = 'none';
-    player10.pause();
+//控制台互动
+if (languageFlag === 1) {
+    console.log('%c%s',
+        'color: skyblue; font-weight:700','\n\n\
+    .-------------------------------------------------      \n\
+    |   _          _          _      _           _          \n\
+    |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
+    |  | ||         \\ \\\\    / //      \\ \\\\     / //   \n\
+    |  | ||          \\ \\\\__/ //        \\ \\\\   / //    \n\
+    |  | ||           \\_   _//          \\_\\\\_/ //       \n\
+    |  | ||             | ||            / // \\ \\\\        \n\
+    |  | ||             | ||           / //   \\ \\\\       \n\
+    |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
+    |   \\________||     \\_//         /_//       \\_\\\\   \n\
+    *------------------------------------------------\n');
+    console.log('%c%s', 'background:rgb(200, 200, 255);padding:5px;margin-bottom:10px', '一切皆有可能。');
+    console.log('%c%s', 'background:rgb(200, 200, 255);padding:5px;margin-bottom:10px', '长风破浪会有时，直挂云帆济沧海。');
+    console.error("错误：您正在呼吸");
+    console.error("错误：您睁着眼睛");
+    console.error("错误：您没有睡着");
+    console.info("在下方输入“怎么办()”以查看可能的解决方案。\n注：应使用英文状态下的括号。直接复制也可以。");
+} else if (languageFlag === 2) {
+    console.log('%c%s',
+        'color: skyblue; font-weight:700','\n\
+    .-------------------------------------------------      \n\
+    |   _          _          _      _           _          \n\
+    |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
+    |  | ||         \\ \\\\    / //      \\ \\\\     / //   \n\
+    |  | ||          \\ \\\\__/ //        \\ \\\\   / //    \n\
+    |  | ||           \\_   _//          \\_\\\\_/ //       \n\
+    |  | ||             | ||            / // \\ \\\\        \n\
+    |  | ||             | ||           / //   \\ \\\\       \n\
+    |  \\ \\\\______..     | ||          / //     \\ \\\\   \n\
+    |   \\________||     \\_//         /_//       \\_\\\\   \n\
+    |-------------------------------------------------');
+    console.log('%c%s', 'background:rgb(200, 200, 255);padding:5px;margin-bottom:10px', 'Everything is possible.');
+    console.error("error: You are breathing");
+    console.error("error: Your eyes are open");
+    console.error("error: You are not asleep");
+    console.info("You can turn to the Chinese page to look for possible solution.");
 }
 
-//音频进度条及时间显示
-var audio1 = setInterval(function () {
-    var nowTime = document.getElementById("player1").currentTime;
-    var range = document.getElementById("timeline1");
-    var show = document.getElementById("nowTime1");
-    range.value = nowTime;
+function 怎么办() {
+    console.log('-我怎么知道。\n\n人工智障并不知道怎么办。\n输入“滚()”以召唤人工智能。');
+}
 
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+function 滚() {
+    console.log('正在召唤人工智能……\n');
+    setTimeout(function () {
+        console.log('-走开，我在睡觉。等我睡醒了再说。\n\n');
+        console.log('人工智能正在睡觉。\n请等他睡醒（大约需要114514小时），\n或者输入密码以叫醒他。格式：起床啦(密码)。');
+    })
+}
+
+function 起床啦(pw) {
+    if (pw != 114514) {
+        console.log('密码错误。\n请按格式重新输入。');
+    } else {
+        console.log('！！！你居然知道密码\n\n-啊我醒了。我要吃饭。\n\n他要吃晚饭了。请等他吃完。');
+        eat();
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio2 = setInterval(function () {
-    var nowTime = document.getElementById("player2").currentTime;
-    var range = document.getElementById("timeline2");
-    var show = document.getElementById("nowTime2");
-    range.value = nowTime;
+}
 
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+function eat() {
+    var eatNum = Math.floor(Math.random() * 3);
+    var count = 1;
+    console.log('他开始吃饭了。');
+    var eating = setInterval(function () {
+        eatNum = Math.floor(Math.random() * 3);
+        if (eatNum === 0) {
+            console.log('他吃了一口饭。(%d/100)', count);
+        } else if (eatNum === 1) {
+            console.log('他喝了一口汤。(%d/100)', count);
+        } else {
+            console.log('他吃了一口菜。(%d/100)', count);
+        }
+        count++;
+        if (count > 100) {
+            clearInterval(eating);
+            setTimeout(function () {
+                console.log('他吃完了。\n\n-没想到你居然这么有耐心！\n-那么，解决方法就是——\n（请稍等，他正在思考）');
+                setTimeout(function () {
+                    console.log('-不需要解决！');
+                    setTimeout(function () {
+                        console.log('\n嘿嘿\n\n祝你天天开心呀\n\n\\(≧▽≦*)o\n');
+                    }, 1500)
+                }, 8000);
+            }, 2000)
+        }
+    }, 2000);
+}
+
+//信息框
+var logo = document.querySelector('.logo');
+var info = document.querySelector('.info');
+var infoOff = document.querySelector('.infoOff');
+
+function infoOutFrame() {
+    info.style.animation = 'infoOut ease .3s forwards';
+    var infoSleep = setTimeout(function () {
+        info.style.display = 'none';
+    }, 150)
+    infoFlag = 0;
+}
+infoOff.addEventListener("click", function () {
+    infoOutFrame();
+})
+if (deviceFlag === 1) {
+    logo.addEventListener("mouseover", function () {
+        info.style.display = 'block';
+        info.style.animation = 'infoCome ease .3s forwards';
+        infoFlag = 1;
+    })
+} else if (deviceFlag === 2) {
+    logo.addEventListener("click", function () {
+        info.style.display = 'block';
+        info.style.animation = 'infoCome ease .3s forwards';
+        infoFlag = 1;
+    })
+}
+
+//收起与展开nav栏
+var nav = document.querySelector('.nav');
+var navBtn = document.querySelector('.navBtn');
+var sentenceA = document.querySelector('.sen');
+var sentenceB = document.querySelector('.senChange');
+var navFlag = 0;
+navBtn.addEventListener("click", function () {
+    if (navFlag === 0) {
+        nav.style.animation = 'navUpFrame linear .2s forwards';
+        navBtn.style.animation = 'navBtnDown linear .2s forwards';
+        sentenceA.style.animation = 'senOut linear .2s forwards';
+        sentenceB.style.animation = 'senOut2 linear .2s forwards';
+        navFlag = 1;
+    } else if (navFlag === 1) {
+        nav.style.animation = 'navDownFrame linear .2s forwards';
+        navBtn.style.animation = 'navBtnUp linear .2s forwards';
+        sentenceA.style.animation = 'senCome linear .2s forwards';
+        sentenceB.style.animation = 'senCome2 linear .2s forwards';
+        navFlag = 0;
     }
-    show.innerHTML = minute + ':' + second;
-    // console.log(nowTime);
-}, 1000);
-var audio3 = setInterval(function () {
-    var nowTime = document.getElementById("player3").currentTime;
-    var range = document.getElementById("timeline3");
-    var show = document.getElementById("nowTime3");
-    range.value = nowTime;
+})
 
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+//nav栏按钮点击后弹出对应界面
+var webBtn = document.querySelector('.web');
+var toolBtn = document.querySelector('.tool');
+var setBtn = document.querySelector('.set');
+var webPage = document.querySelector('.webPage');
+var toolPage = document.querySelector('.toolPage');
+var setPage = document.querySelector('.setPage');
+var main = document.querySelector('.main');
+
+var flagA = 0;
+var flagB = 0;
+var flagC = 0;
+var infoFlag = 0;
+
+function pageOut(name, btn) {
+    main.style.animation = 'pageOut-main ease .5s forwards';
+    name.style.animation = 'pageOut ease .5s forwards';
+    btn.style.fontWeight = '100';
+    sentenceA.style.animation = 'senCome linear .2s forwards';
+    sentenceB.style.animation = 'senCome2 linear .2s forwards';
+    if (name === webPage) {
+        flagA = 0;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio4 = setInterval(function () {
-    var nowTime = document.getElementById("player4").currentTime;
-    var range = document.getElementById("timeline4");
-    var show = document.getElementById("nowTime4");
-    range.value = nowTime;
-
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+    if (name === toolPage) {
+        flagB = 0;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio5 = setInterval(function () {
-    var nowTime = document.getElementById("player5").currentTime;
-    var range = document.getElementById("timeline5");
-    var show = document.getElementById("nowTime5");
-    range.value = nowTime;
-
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+    if (name === setPage) {
+        flagC = 0;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio6 = setInterval(function () {
-    var nowTime = document.getElementById("player6").currentTime;
-    var range = document.getElementById("timeline6");
-    var show = document.getElementById("nowTime6");
-    range.value = nowTime;
+}
 
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+function pageCome(name, btn) {
+    main.style.animation = 'pageCome-main ease .5s forwards';
+    name.style.animation = 'pageCome ease .5s forwards';
+    btn.style.fontWeight = '700';
+    sentenceA.style.animation = 'senOut linear .2s forwards';
+    sentenceB.style.animation = 'senOut2 linear .2s forwards';
+    if (name === webPage) {
+        flagA = 1;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio7 = setInterval(function () {
-    var nowTime = document.getElementById("player7").currentTime;
-    var range = document.getElementById("timeline7");
-    var show = document.getElementById("nowTime7");
-    range.value = nowTime;
-
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+    if (name === toolPage) {
+        flagB = 1;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio8 = setInterval(function () {
-    var nowTime = document.getElementById("player8").currentTime;
-    var range = document.getElementById("timeline8");
-    var show = document.getElementById("nowTime8");
-    range.value = nowTime;
-
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+    if (name === setPage) {
+        flagC = 1;
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio9 = setInterval(function () {
-    var nowTime = document.getElementById("player9").currentTime;
-    var range = document.getElementById("timeline9");
-    var show = document.getElementById("nowTime9");
-    range.value = nowTime;
+}
 
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+webBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
-var audio10 = setInterval(function () {
-    var nowTime = document.getElementById("player10").currentTime;
-    var range = document.getElementById("timeline10");
-    var show = document.getElementById("nowTime10");
-    range.value = nowTime;
-
-    var minute = Math.floor(nowTime / 60);
-    var second = Math.floor(nowTime - minute * 60);
-    if (second >= 60) {
-        second = 0;
+    if (flagB === 1) {
+        pageOut(toolPage, toolBtn);
     }
-    show.innerHTML = minute + ':' + second;
-}, 1000);
+    if (flagC === 1) {
+        pageOut(setPage, setBtn);
+    }
 
-//音量控制
-var volH1 = document.getElementById('volH1');
-var volH2 = document.getElementById('volH2');
-var volH3 = document.getElementById('volH3');
-var volH4 = document.getElementById('volH4');
-var volH5 = document.getElementById('volH5');
-var volH6 = document.getElementById('volH6');
-var volH7 = document.getElementById('volH7');
-var volH8 = document.getElementById('volH8');
-var volH9 = document.getElementById('volH9');
-var volH10 = document.getElementById('volH10');
-var volL1 = document.getElementById('volL1');
-var volL2 = document.getElementById('volL2');
-var volL3 = document.getElementById('volL3');
-var volL4 = document.getElementById('volL4');
-var volL5 = document.getElementById('volL5');
-var volL6 = document.getElementById('volL6');
-var volL7 = document.getElementById('volL7');
-var volL8 = document.getElementById('volL8');
-var volL9 = document.getElementById('volL9');
-var volL10 = document.getElementById('volL10');
-var bar1 = document.getElementById('vol1');
-var bar2 = document.getElementById('vol2');
-var bar3 = document.getElementById('vol3');
-var bar4 = document.getElementById('vol4');
-var bar5 = document.getElementById('vol5');
-var bar6 = document.getElementById('vol6');
-var bar7 = document.getElementById('vol7');
-var bar8 = document.getElementById('vol8');
-var bar9 = document.getElementById('vol9');
-var bar10 = document.getElementById('vol10');
+    if (flagA === 0) {
+        pageCome(webPage, webBtn);
+    } else if (flagA === 1) {
+        pageOut(webPage, webBtn);
+    }
+})
 
-player1.volume = 0.5;
-player2.volume = 0.5;
-player3.volume = 0.5;
-player4.volume = 0.5;
-player5.volume = 0.5;
-player6.volume = 0.5;
-player7.volume = 0.5;
-player8.volume = 0.5;
-player9.volume = 0.5;
-player10.volume = 0.5;
+toolBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
+    }
+    if (flagA === 1) {
+        pageOut(webPage, webBtn);
+    }
+    if (flagC === 1) {
+        pageOut(setPage, setBtn);
+    }
 
-bar1.style.width = player1.volume * 100 + 'px';
-bar2.style.width = player2.volume * 100 + 'px';
-bar3.style.width = player3.volume * 100 + 'px';
-bar4.style.width = player4.volume * 100 + 'px';
-bar5.style.width = player5.volume * 100 + 'px';
-bar6.style.width = player6.volume * 100 + 'px';
-bar7.style.width = player7.volume * 100 + 'px';
-bar8.style.width = player8.volume * 100 + 'px';
-bar9.style.width = player9.volume * 100 + 'px';
-bar10.style.width = player10.volume * 100 + 'px';
+    if (flagB === 0) {
+        pageCome(toolPage, toolBtn);
+    } else if (flagB === 1) {
+        pageOut(toolPage, toolBtn);
+    }
+})
 
-volH1.onclick = function () {
-    player1.volume += 0.1;
-    bar1.style.width = player1.volume * 100 + 'px';
+setBtn.addEventListener("click", function () {
+    if (infoFlag === 1) {
+        infoOutFrame();
+    }
+    if (flagA === 1) {
+        pageOut(webPage, webBtn);
+    }
+    if (flagB === 1) {
+        pageOut(toolPage, toolBtn);
+    }
+
+    if (flagC === 0) {
+        pageCome(setPage, setBtn);
+    } else if (flagC === 1) {
+        pageOut(setPage, setBtn);
+    }
+})
+
+//浏览器界面
+if (deviceFlag === 1) {
+    var vw = document.documentElement.clientWidth;
+    var vh = document.documentElement.clientHeight;
+    if (vw <= 800 || vh <= 500 || vw / vh >= 2.5 || vw / vh <= 0.5) {
+        alert('请调整浏览器界面，不要过宽、过高、过于窄小，\n以获取最佳浏览体验。');
+    }
+
 }
-volL1.onclick = function () {
-    player1.volume -= 0.1;
-    bar1.style.width = player1.volume * 100 + 'px';
+
+//右下角句子
+var sen = document.querySelector('.sen');
+var senChn = document.querySelector('.senChange');
+if (languageFlag === 1) {
+    sentence();
 }
-volH2.onclick = function () {
-    player2.volume += 0.1;
-    bar2.style.width = player2.volume * 100 + 'px';
+senChn.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        // senChn.style.animation = 'sentenceChange ease .3s forward';
+        sentence();
+    }
+})
+
+function sentence() {
+    var senNum = Math.floor(Math.random() * 52);
+    switch (senNum) {
+        case 0:
+            sen.innerHTML = '钥匙圈是非常实用的小工具，它可以让你，一次把所有钥匙都丢光。';
+            break;
+        case 1:
+            sen.innerHTML = '世界上有很多出人意料的事，比如，你以为我会举个例子。';
+            break;
+        case 2:
+            sen.innerHTML = '会呼吸的女孩子真的很加分。';
+            break;
+        case 3:
+            sen.innerHTML = '俗话说得好：俗话说得好。';
+            break;
+        case 4:
+            sen.innerHTML = '我前脚刚走，后脚就跟上了。';
+            break;
+        case 5:
+            sen.innerHTML = '天气炎热，想玩水的朋友可以来我家洗碗。';
+            break;
+        case 6:
+            sen.innerHTML = '如果你不丑的话，那肯定很帅吧。';
+            break;
+        case 7:
+            sen.innerHTML = '把裤子放进冰箱，做一个冷裤的人。';
+            break;
+        case 8:
+            sen.innerHTML = '为什么轮椅都是手摇，没有用脚蹬的呢？';
+            break;
+        case 9:
+            sen.innerHTML = '白天：再熬夜我就是狗&emsp;<br>晚上：小狗应该也熬夜吧';
+            break;
+        case 10:
+            sen.innerHTML = '人都是贪心的，<br>就像我一开始只想知道你叫什么，<br>后来还想知道你怎么叫。';
+            break;
+        case 11:
+            sen.innerHTML = '好想关心你，可你老是不生病。';
+            break;
+        case 12:
+            sen.innerHTML = '今天又拒绝了两个人，<br>看着她们失望的背影，我只能默默说声抱歉，<br>毕竟你们的楼盘和健身卡我真的买不起。';
+            break;
+        case 13:
+            sen.innerHTML = '最近看牙医，医生问我怎么牙齿磨损这么严重，我说这些年都是咬着牙过来的。';
+            break;
+        case 14:
+            sen.innerHTML = '一直很尊重金钱，没偷，没抢，没有。';
+            break;
+        case 15:
+            sen.innerHTML = '今天想通了一个道理：有些道理就是想不通的。';
+            break;
+        case 16:
+            sen.innerHTML = '忙碌了两个小时的王师傅决定吃康师傅。';
+            break;
+        case 17:
+            sen.innerHTML = '别哭，注水的猪肉没人要。';
+            break;
+        case 18:
+            sen.innerHTML = '早起真的可以做很多事，比如睡个回笼觉。';
+            break;
+        case 19:
+            sen.innerHTML = '小明发高烧后找女神聊天，被女神的冷漠治好了。';
+            break;
+        case 20:
+            sen.innerHTML = '我想告诉大家什么叫半途而';
+            break;
+        case 21:
+            sen.innerHTML = '很担心自己以后老了怎么办，那些广场舞看起来好难啊。';
+            break;
+        case 22:
+            sen.innerHTML = '老师说打雷下雨时不能在树下躲雨，于是小明爬到了树上。';
+            break;
+        case 23:
+            sen.innerHTML = '骗我感情可以，但你不能骗我钱。';
+            break;
+        case 24:
+            sen.innerHTML = '师傅你是做什么工作的？';
+            break;
+        case 25:
+            sen.innerHTML = '“很高兴认识你”<br>“你高兴得太早了”';
+            break;
+        case 26:
+            sen.innerHTML = '没有什么好送你的，就送你上路吧。';
+            break;
+        case 27:
+            sen.innerHTML = '买西瓜的时候不可以拍拍打打，会惊动住在里面的夏天。';
+            break;
+        case 28:
+            sen.innerHTML = '如果遇见你，要花掉所有运气，<br>那么请你离我远点，我过年要打牌。';
+            break;
+        case 29:
+            sen.innerHTML = '是不是非要我学电焊，才能让你眼前一亮';
+            break;
+        case 30:
+            sen.innerHTML = '懒人日记：算了，懒得写。';
+            break;
+        case 31:
+            sen.innerHTML = '实不相瞒，我是个隐形的富豪，至今还没有找到自己的钱。';
+            break;
+        case 32:
+            sen.innerHTML = '接下来的路你和她好好走，我坐车。';
+            break;
+        case 33:
+            sen.innerHTML = '我对银行无语了，每次取钱都显示余额不足，没钱开什么银行？！';
+            break;
+        case 34:
+            sen.innerHTML = '如果你实在饿了可以打电话给我，我吃点零食嚼给你听。';
+            break;
+        case 35:
+            sen.innerHTML = '不要当着我的面说别人坏话，不然我也想说。';
+            break;
+        case 36:
+            sen.innerHTML = '我的钱虽然不是大风刮来的,但很像大风刮走的。';
+            break;
+        case 37:
+            sen.innerHTML = '有朋自远方来，必先苦其心志，<br>劳其筋骨，饿其体肤，空乏其身，<br>行拂乱其所为，鞭数十，驱之别院，<br>主人曰：不亦乐乎。';
+            break;
+        case 38:
+            sen.innerHTML = '洗澡的时候突然给停水了，还好我灵机一动给花洒讲了个笑话，它直接笑喷。';
+            break;
+        case 39:
+            sen.innerHTML = '吃货的人生就像一列火车，总结起来就是逛吃，逛吃，逛吃。';
+            break;
+        case 40:
+            sen.innerHTML = '最近头上一直发痒，可能是要长脑子了。';
+            break;
+        case 41:
+            sen.innerHTML = '仰天大笑出门去，归来倚仗自叹息。';
+            break;
+        case 42:
+            sen.innerHTML = '垂死病中惊坐起，要留清白在人间。';
+            break;
+        case 43:
+            sen.innerHTML = '老骥伏枥，志在千里。<br>横扫饥饿，做回自己。';
+            break;
+        case 44:
+            sen.innerHTML = '洛阳亲友如相问，轻舟已过万重山。';
+            break;
+        case 45:
+            sen.innerHTML = '老翁逾墙走，虽乘奔御风，不以疾也。';
+            break;
+        case 46:
+            sen.innerHTML = '横眉冷对千夫指，回眸一笑百媚生。';
+            break;
+        case 47:
+            sen.innerHTML = '垂死病中惊坐起，扶摇直上九万里。';
+            break;
+        case 48:
+            sen.innerHTML = '可怜身上衣正单，将登太行雪满山。';
+            break;
+        case 49:
+            sen.innerHTML = '老妪力虽衰，愿为市鞍马，从此替爷征。';
+            break;
+        case 50:
+            sen.innerHTML = '今日听君歌一曲，谪居卧病浔阳城。';
+            break;
+        case 51:
+            sen.innerHTML = '黄鹤一去不复返，飞入寻常百姓家。';
+            break;
+        default:
+            break;
+    }
 }
-volL2.onclick = function () {
-    player2.volume -= 0.1;
-    bar2.style.width = player2.volume * 100 + 'px';
-}
-volH3.onclick = function () {
-    player3.volume += 0.1;
-    bar3.style.width = player3.volume * 100 + 'px';
-}
-volL3.onclick = function () {
-    player3.volume -= 0.1;
-    bar3.style.width = player3.volume * 100 + 'px';
-}
-volH4.onclick = function () {
-    player4.volume += 0.1;
-    bar4.style.width = player4.volume * 100 + 'px';
-}
-volL4.onclick = function () {
-    player4.volume -= 0.1;
-    bar4.style.width = player4.volume * 100 + 'px';
-}
-volH5.onclick = function () {
-    player5.volume += 0.1;
-    bar5.style.width = player5.volume * 100 + 'px';
-}
-volL5.onclick = function () {
-    player5.volume -= 0.1;
-    bar5.style.width = player5.volume * 100 + 'px';
-}
-volH6.onclick = function () {
-    player6.volume += 0.1;
-    bar6.style.width = player6.volume * 100 + 'px';
-}
-volL6.onclick = function () {
-    player6.volume -= 0.1;
-    bar6.style.width = player6.volume * 100 + 'px';
-}
-volH7.onclick = function () {
-    player7.volume += 0.1;
-    bar7.style.width = player7.volume * 100 + 'px';
-}
-volL7.onclick = function () {
-    player7.volume -= 0.1;
-    bar7.style.width = player7.volume * 100 + 'px';
-}
-volH8.onclick = function () {
-    player8.volume += 0.1;
-    bar8.style.width = player8.volume * 100 + 'px';
-}
-volL8.onclick = function () {
-    player8.volume -= 0.1;
-    bar8.style.width = player8.volume * 100 + 'px';
-}
-volH9.onclick = function () {
-    player9.volume += 0.1;
-    bar9.style.width = player9.volume * 100 + 'px';
-}
-volL9.onclick = function () {
-    player9.volume -= 0.1;
-    bar9.style.width = player9.volume * 100 + 'px';
-}
-volH10.onclick = function () {
-    player10.volume += 0.1;
-    bar10.style.width = player10.volume * 100 + 'px';
-}
-volL10.onclick = function () {
-    player10.volume -= 0.1;
-    bar10.style.width = player10.volume * 100 + 'px';
-}
+
+//设置
+var set1Opt = document.querySelector('.set1-option');
+var set1Check = document.querySelector('.set1-check');
+set1Check.addEventListener("click", function () {
+    var set1 = document.querySelector('.set1-select').value;
+    if (deviceFlag === 1) {
+        if (set1 === '1') {
+            window.location = "index.html";
+        } else if (set1 === '2') {
+            window.location = "index.en.html";
+        } else if (set1 === '3') {
+            window.location = '403.html';
+        }
+    } else if (deviceFlag === 2) {
+        if (set1 === '1') {
+            window.location = "index.m.html";
+        } else if (set1 === '2') {
+            window.location = "index.m.en.html";
+        } else if (set1 === '3') {
+            window.location = "403.html";
+        }
+    }
+})
+
+var set2Opt = document.querySelector('.set2-option');
+var set2Check = document.querySelector('.set2-check');
+var bgm = document.querySelector('.bgm');
+set2Check.addEventListener("click", function () {
+    var set2 = document.querySelector('.set2-select').value;
+    if (set2 === '1') {
+        bgm.play();
+    } else if (set2 === '2') {
+        bgm.pause();
+    }
+})
+
+var set3Opt = document.querySelector('.set3-option');
+var set3Check = document.querySelector('.set3-check');
+var main = document.querySelector('.main');
+set3Check.addEventListener("click", function () {
+    var set3 = document.querySelector('.set3-select').value;
+    if (set3 === '1') {
+        main.style.background = 'url(background.jpg)';
+        main.style.backgroundSize = 'cover';
+    } else if (set3 === '2') {
+        main.style.background = 'url(background2.jpg)';
+        main.style.backgroundSize = 'cover';
+    }
+})
+
+//工具
+var tool1 = document.querySelector('.tool1');
+var tool1Change = document.querySelector('.tool1-change');
+tool1.addEventListener("click", function () {
+    var sweep = setTimeout(function () {
+        if (languageFlag === 1) {
+            alert('缓存已清除');
+        } else if (languageFlag === 2) {
+            alert('The cache has been cleared.')
+        }
+        tool1Change.innerHTML = '0.0000 MB';
+    }, 1234);
+})
+
+// var tool2In = document.querySelector('.tool2-input');
+// var tool2Out = document.querySelector('.tool2-output');
+// var tool2Check = document.querySelector('.tool2-check');
+// var tool2Middle = '$$ ' + tool2In.value + ' $$';
+// tool2Check.addEventListener("click", function () {
+//     
+//     tool2Out.innerHTML = tool2Middle;
+// });
+
+var tool3 = document.querySelector('.tool3-check');
+tool3.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        alert("发送失败。");
+    } else if (languageFlag === 2) {
+        alert("Falied.");
+    }
+})
+
+var tool4 = document.querySelector('.tool4-check');
+tool4.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        alert("您还没有注册。\n您需要先注册账号后才能注册账号。");
+    } else if (languageFlag === 2) {
+        alert("You have not registered. \nYou need to register an account before you can register an account.");
+    }
+})
+
+var tool5 = document.querySelector('.tool5-check');
+var tool5Change = document.querySelector('.tool5-output')
+tool5.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        tool5Change.innerHTML = '生shēng&emsp;僻pì&emsp;字zì'
+    } else if (languageFlag === 2) {
+        tool5Change.innerHTML = 'rare/reə/ word/wɜ:d/';
+    }
+})
+
+var tool6 = document.querySelector('.tool6-check');
+tool6.addEventListener("click", function () {
+    if (languageFlag === 1) {
+        alert('什么？？？居然出错了？不可能的。肯定是你的问题。');
+    } else if (languageFlag === 2) {
+        alert('What??? Something went wrong? No way. It must be your problem.');
+    }
+})
+
+var tool7Out = document.querySelector('.tool7-output');
+var tool7Check = document.querySelector('.tool7-check');
+var tool7OutK = document.querySelector('.tool7-out-y');
+var tool7OutB = document.querySelector('.tool7-out-k');
+var t7a;
+var t7b;
+var t7c;
+var t7d;
+var t7e;
+var t7f;
+var t7g;
+var t7h;
+var t7kFzOut;
+var t7kFmOut;
+var t7hFzOut;
+var t7hFmOut;
+var t7kFz; //k的分子
+var t7kFm; //k的分母
+var t7hFz; // y=kx+b 中的b已被占用，用h代替
+var t7hFm;
+var t7hFzLast, t7hFmLast, t7kFzLast, t7kFmLast;
+tool7();
+tool7Check.addEventListener("click", function () {
+    // alert("1");
+    tool7();
+})
+
+function tool7() {
+    t7a = parseInt(document.querySelector('.tool7-a').value);
+    t7b = parseInt(document.querySelector('.tool7-b').value);
+    t7c = parseInt(document.querySelector('.tool7-c').value);
+    t7d = parseInt(document.querySelector('.tool7-d').value);
+    t7e = parseInt(document.querySelector('.tool7-e').value);
+    t7f = parseInt(document.querySelector('.tool7-f').value);
+    t7g = parseInt(document.querySelector('.tool7-g').value);
+    t7h = parseInt(document.querySelector('.tool7-h').value);
+    t7kFzOut = document.querySelector('.tool7-out-k-fz');
+    t7kFmOut = document.querySelector('.tool7-out-k-fm');
+    t7hFzOut = document.querySelector('.tool7-out-h-fz');
+    t7hFmOut = document.querySelector('.tool7-out-h-fm');
+    t7kFz = (t7b * t7f) * ((t7c * t7h) - (t7d * t7g));
+    t7kFm = (t7d * t7h) * ((t7a * t7f) - (t7b * t7e));
+    t7hFz = ((t7b * t7c * t7d * t7h) * ((t7a * t7f) - (t7b * t7e))) - ((t7a * t7b * t7d * t7f) * ((t7c * t7h) - (t7d * t7g)));
+    t7hFm = (t7b * t7d * t7d * t7h) * ((t7a * t7f) - (t7b * t7e));
+    // alert(t7kFz + '/' + t7kFm + ' k' + ' + ' + t7hFz + '/' + t7hFm);
+
+    //约分
+    function yf1(m, n) {
+        var m;
+        var n;
+        var a = m;
+        var b = n;
+        (a >= b) ? (a = m, b = n) : (a = n, b = m);
+        if (m != 1 && n != 1) {
+            for (var i = b; i >= 2; i--) {
+                if (m % i == 0 && n % i == 0) {
+                    m = m / i;
+                    n = n / i;
+                }
+            }
+        }
+        return m;
+    }
+
+    function yf2(m, n) {
+        var m;
+        var n;
+        var a = m;
+        var b = n;
+        (a >= b) ? (a = m, b = n) : (a = n, b = m);
+        if (m != 1 && n != 1) {
+            for (var i = b; i >= 2; i--) {
+                if (m % i == 0 && n % i == 0) {
+                    m = m / i;
+                    n = n / i;
+                }
+            }
+        }
+        return n;
+    }
+    if (t7kFz < 0 && t7kFm < 0) {
+        t7kFzLast = yf1((0 - t7kFz), (0 - t7kFm));
+        t7kFmLast = yf2((0 - t7kFz), (0 - t7kFm));
+        tool7OutK.innerHTML = 'y =';
+    }
+    if (t7hFz < 0 && t7hFm < 0) {
+        t7hFzLast = yf1((0 - t7hFz), (0 - t7hFm));
+        t7hFmLast = yf2((0 - t7hFz), (0 - t7hFm));
+        tool7OutB.innerHTML = 'x +';
+    }
+    if (t7kFz > 0 && t7kFm > 0) {
+        t7kFzLast = yf1((t7kFz), (t7kFm));
+        t7kFmLast = yf2((t7kFz), (t7kFm));
+        tool7OutK.innerHTML = 'y =';
+    }
+    if (t7hFz > 0 && t7hFm > 0) {
+        t7hFzLast = yf1((t7hFz), (t7hFm));
+        t7hFmLast = yf2((t7hFz), (t7hFm));
+        tool7OutB.innerHTML = 'x +';
+    }
+    if (t7kFz > 0 && t7kFm < 0) {
+        t7kFzLast = yf1((t7kFz), (0 - t7kFm));
+        t7kFmLast = yf2((t7kFz), (0 - t7kFm));
+        tool7OutK.innerHTML = 'y = -';
+    }
+    if (t7kFz < 0 && t7kFm > 0) {
+        t7kFzLast = yf1((0 - t7kFz), (t7kFm));
+        t7kFmLast = yf2((0 - t7kFz), (t7kFm));
+        tool7OutK.innerHTML = 'y = -';
+    }
+    if (t7hFz > 0 && t7hFm < 0) {
+        t7hFzLast = yf1((t7hFz), (0 - t7hFm));
+        t7hFmLast = yf2((t7hFz), (0 - t7hFm));
+        tool7OutB.innerHTML = 'x -';
+    }
+    if (t7hFz < 0 && t7hFm > 0) {
+        t7hFzLast = yf1((0 - t7hFz), (t7hFm));
+        t7hFmLast = yf2((0 - t7hFz), (t7hFm));
+        tool7OutB.innerHTML = 'x -';
+    }
+    t7kFzOut.innerHTML = t7kFzLast;
+    t7kFmOut.innerHTML = t7kFmLast;
+    t7hFzOut.innerHTML = t7hFzLast;
+    t7hFmOut.innerHTML = t7hFmLast;
+};
+
+var tool7Why = document.querySelector('.tool7-why');
+var tool7Open = document.querySelector('.tool7-why-title');
+var tool7Close = document.querySelector('.tool7-why-close');
+tool7Open.addEventListener("click", function () {
+    tool7Why.style.display = 'block';
+    if (deviceFlag === 1) {
+        tool7Why.style.animation = 'tool7Come ease-in-out .3s forwards';
+    } else if (deviceFlag === 2) {
+        tool7Why.style.animation = 'tool7ComeM ease-in-out .3s forwards';
+    }
+})
+tool7Close.addEventListener("click", function () {
+    if (deviceFlag === 1) {
+        tool7Why.style.animation = 'tool7Out ease-in-out .3s forwards';
+    } else if (deviceFlag === 2) {
+        tool7Why.style.animation = 'tool7OutM ease-in-out .3s forwards';
+    }
+    setTimeout(function () {
+        tool7Why.style.display = 'none';
+    }, 300)
+})
