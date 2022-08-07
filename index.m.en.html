@@ -131,15 +131,15 @@
 
     <div class="nav">
         <p class="logo"></p>
-        <a class="web navbtn"></a>
-        <a class="tool navbtn"></a>
-        <a class="set navbtn"></a>
-        <p class="time">[time]</p>
+        <a class="web navbtn navNight1"></a>
+        <a class="tool navbtn navNight2"></a>
+        <a class="set navbtn navNight3"></a>
+        <p class="time navNight4">[time]</p>
     </div>
 
     <div class="info">
-        <p class="infoOff"></p>
-        <p class="info-sup info-sup-1">support:</p>
+        <p class="infoOff infoNight1"></p>
+        <p class="info-sup info-sup-1 infoNight2">support:</p>
         <br>
         <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
         <a class="info-sup info-sup-3" href="https://code.visualstudio.com/" target="_blank"></a>
@@ -158,9 +158,9 @@
             <a title="More platforms" class="bshare-more bshare-more-icon more-style-addthis info-shr"></a>
         </div> -->
         <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=1041095264&card_type=person&source=qrcode"
-            class="info-send">Use QQ to send messages
+            class="info-send infoNight3">Use QQ to send messages
             to me directly</a>
-        <p class="info-send">Use a computer and discover more.</p>
+        <p class="info-send infoNight4">Use a computer and discover more.</p>
     </div>
 
     <div class="main"></div>
@@ -181,7 +181,7 @@
     <p class="navBtn"></p>
 
     <div class="webPage page">
-        <p class="pageTitle">websites</p>
+        <p class="pageTitle pageTitle1">websites</p>
         <div class="web-item">
             <p class="web-name">&emsp;bilibili</p>
             <a class="web-go" href="https://www.bilibili.com/" target="_blank"></a>
@@ -255,7 +255,7 @@
     </div>
 
     <div class="toolPage page">
-        <p class="pageTitle">tools</p>
+        <p class="pageTitle pageTitle2">tools</p>
         <div class="tool-item tool1">
             <p class="tool-item-name">clear the cache</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
@@ -375,7 +375,7 @@
             <p class="tool6-check">feedback</p>
         </div>
         <div class="tool-item tool4">
-            <p class="tool-item-name">register an account</p>
+            <p class="tool-item-name">sign up</p>
             <br>
             <span class="tool4-left">nickname</span>
             <input class="tool4-right" type="text" placeholder="enter a nickname">
@@ -394,7 +394,7 @@
             <br>
             <span class="tool4-left" style="margin-bottom: 10vh;">birthday</span>
             <input class="tool4-right" type="text" placeholder="enter your birthday">
-            <p class="tool4-check">register</p>
+            <p class="tool4-check">sign up</p>
         </div>
         <div class="tool-item tool5">
             <p class="tool-item-name">Search for pronunciation of rare words</p>
@@ -408,7 +408,7 @@
     </div>
 
     <div class="setPage page">
-        <p class="pageTitle">settings</p>
+        <p class="pageTitle pageTitle3">settings</p>
         <div class="set-item set1">
             <p>language</p>
             <!-- <div class="set-option">
@@ -433,10 +433,18 @@
         <div class="set-item set3">
             <p>background picture</p>
             <select name="" id="" class="set-select set3-select">
-                <option value="1" class="set3-option" selected>picture 1</option>
-                <!-- <option value="2" class="set3-option">picture 2</option> -->
+                <option value="1" class="set3-option set3-option1" selected>picture 1(知乎@世尊逛人间)</option>
+                <option value="2" class="set3-option set3-option2">picture 2(film: Your Name.)</option>
             </select>
             <button class="set-check set3-check">OK</button>
+        </div>
+        <div class="set-item set4">
+            <p>theme</p>
+            <select name="" id="" class="set-select set4-select">
+                <option value="1" class="set4-option" selected>day</option>
+                <option value="2" class="set4-option">night</option>
+            </select>
+            <button class="set-check set4-check">OK</button>
         </div>
     </div>
 </body>

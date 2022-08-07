@@ -137,15 +137,15 @@
 
     <div class="nav">
         <p class="logo"></p>
-        <p class="web navbtn"></p>
-        <p class="tool navbtn"></p>
-        <p class="set navbtn"></p>
-        <p class="time">[time]</p>
+        <p class="web navbtn navNight1"></p>
+        <p class="tool navbtn navNight2"></p>
+        <p class="set navbtn navNight3"></p>
+        <p class="time navNight4">[time]</p>
     </div>
 
     <div class="info">
-        <p class="infoOff"></p>
-        <p class="info-sup info-sup-1">提供支持:</p>
+        <p class="infoOff infoNight1"></p>
+        <p class="info-sup info-sup-1 infoNight2">提供支持:</p>
         <br>
         <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
         <a class="info-sup info-sup-3" href="https://code.visualstudio.com/" target="_blank"></a>
@@ -163,8 +163,8 @@
             <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis info-shr"></a>
         </div> -->
         <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=1041095264&card_type=person&source=qrcode"
-            class="info-send">使用QQ直接向我发送消息</a>
-        <p class="info-send">使用电脑，发现更多功能。</p>
+            class="info-send infoNight3">使用QQ直接向我发送消息</a>
+        <p class="info-send infoNight4">使用电脑，发现更多功能。</p>
     </div>
 
     <div class="main"></div>
@@ -184,7 +184,7 @@
     <p class="navBtn"></p>
 
     <div class="webPage page">
-        <p class="pageTitle">网址导航</p>
+        <p class="pageTitle pageTitle1">网址导航</p>
         <div class="web-item">
             <p class="web-name">&emsp;网页开发日志</p>
             <a class="web-go" href="diary.html"></a>
@@ -262,7 +262,7 @@
     </div>
 
     <div class="toolPage page">
-        <p class="pageTitle">工具</p>
+        <p class="pageTitle pageTitle2">工具</p>
         <div class="tool-item tool1">
             <p class="tool-item-name">清除缓存</p>
             <p class="tool-item-right tool1-change">11.4154 MB</p>
@@ -409,7 +409,7 @@
     </div>
 
     <div class="setPage page">
-        <p class="pageTitle">设置</p>
+        <p class="pageTitle pageTitle3">设置</p>
         <div class="set-item set1">
             <p>语言</p>
             <!-- <div class="set-option">
@@ -434,10 +434,18 @@
         <div class="set-item set3">
             <p>背景图片</p>
             <select name="" id="" class="set-select set3-select">
-                <option value="1" class="set3-option" selected>背景1</option>
-                <!-- <option value="2" class="set3-option">背景2</option> -->
+                <option value="1" class="set3-option set3-option1" selected>背景1(知乎@世尊逛人间)</option>
+                <option value="2" class="set3-option set3-option2">背景2(电影 你的名字。)</option>
             </select>
             <button class="set-check set3-check">确定</button>
+        </div>
+        <div class="set-item set4">
+            <p>主题</p>
+            <select name="" id="" class="set-select set4-select">
+                <option value="1" class="set4-option" selected>日间模式</option>
+                <option value="2" class="set4-option">夜间模式</option>
+            </select>
+            <button class="set-check set4-check">确定</button>
         </div>
     </div>
 </body>
