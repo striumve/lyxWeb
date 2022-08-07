@@ -6,7 +6,7 @@ var deviceFlag;
 //控制台互动
 if (languageFlag === 1) {
     console.log('%c%s',
-        'color: skyblue; font-weight:700','\n\n\
+        'color: skyblue; font-weight:700', '\n\n\
     .-------------------------------------------------      \n\
     |   _          _          _      _           _          \n\
     |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
@@ -26,7 +26,7 @@ if (languageFlag === 1) {
     console.info("在下方输入“怎么办()”以查看可能的解决方案。\n注：应使用英文状态下的括号。直接复制也可以。");
 } else if (languageFlag === 2) {
     console.log('%c%s',
-        'color: skyblue; font-weight:700','\n\
+        'color: skyblue; font-weight:700', '\n\
     .-------------------------------------------------      \n\
     |   _          _          _      _           _          \n\
     |  | ||        \\ \\\\      / //    \\ \\\\       / //  \n\
@@ -101,11 +101,19 @@ var info = document.querySelector('.info');
 var infoOff = document.querySelector('.infoOff');
 
 function infoOutFrame() {
-    info.style.animation = 'infoOut ease .3s forwards';
-    var infoSleep = setTimeout(function () {
-        info.style.display = 'none';
-    }, 150)
-    infoFlag = 0;
+    if (modeFlag === 1) {
+        info.style.animation = 'infoOut ease .3s forwards';
+        var infoSleep = setTimeout(function () {
+            info.style.display = 'none';
+        }, 150)
+        infoFlag = 0;
+    } else if (modeFlag === 2) {
+        info.style.animation = 'infoOutNight ease .3s forwards';
+        var infoSleep = setTimeout(function () {
+            info.style.display = 'none';
+        }, 150)
+        infoFlag = 0;
+    }
 }
 infoOff.addEventListener("click", function () {
     infoOutFrame();
@@ -113,13 +121,21 @@ infoOff.addEventListener("click", function () {
 if (deviceFlag === 1) {
     logo.addEventListener("mouseover", function () {
         info.style.display = 'block';
-        info.style.animation = 'infoCome ease .3s forwards';
+        if (modeFlag === 1) {
+            info.style.animation = 'infoCome ease .3s forwards';
+        } else if (modeFlag === 2) {
+            info.style.animation = 'infoComeNight ease .3s forwards';
+        }
         infoFlag = 1;
     })
 } else if (deviceFlag === 2) {
     logo.addEventListener("click", function () {
         info.style.display = 'block';
-        info.style.animation = 'infoCome ease .3s forwards';
+        if (modeFlag === 1) {
+            info.style.animation = 'infoCome ease .3s forwards';
+        } else if (modeFlag === 2) {
+            info.style.animation = 'infoComeNight ease .3s forwards';
+        }
         infoFlag = 1;
     })
 }
@@ -471,17 +487,104 @@ set2Check.addEventListener("click", function () {
     }
 })
 
+var modeFlag = 1;
+var night1 = document.querySelector('.nav');
+var night2 = document.querySelector('.info');
+var night3 = document.querySelector('.senChange');
+var night4 = document.querySelector('.pageTitle1');
+var night5 = document.querySelector('.navNight1');
+var night6 = document.querySelector('.navNight2');
+var night7 = document.querySelector('.navNight3');
+var night8 = document.querySelector('.navNight4');
+var night9 = document.querySelector('.navBtn');
+var night10 = document.querySelector('.pageTitle2');
+var night11 = document.querySelector('.pageTitle3');
+var night12 = document.querySelector('.infoNight1');
+var night13 = document.querySelector('.infoNight2');
+var night14 = document.querySelector('.infoNight3');
+var night15 = document.querySelector('.infoNight4');
+
 var set3Opt = document.querySelector('.set3-option');
+var set3Opt1 = document.querySelector('.set3-option1');
+var set3Opt2 = document.querySelector('.set3-option2');
 var set3Check = document.querySelector('.set3-check');
 var main = document.querySelector('.main');
 set3Check.addEventListener("click", function () {
     var set3 = document.querySelector('.set3-select').value;
-    if (set3 === '1') {
+    if (modeFlag === 1) {
+        if (set3 === '1') {
+            main.style.background = 'url(background.jpg)';
+            main.style.backgroundSize = 'cover';
+            main.style.backgroundPosition = '0 0';
+            set3Opt1.selected = true;
+        } else if (set3 === '2') {
+            main.style.background = 'url(background2.jpg)';
+            main.style.backgroundSize = 'cover';
+            main.style.backgroundPosition = '0 0';
+            set3Opt2.selected = true;
+        }
+    } else if(modeFlag === 2) {
+        if (set3 === '1') {
+            main.style.background = 'url(background_night.jpg)';
+            main.style.backgroundSize = 'cover';
+            main.style.backgroundPosition = '0 0';
+            set3Opt1.selected = true;
+        } else if (set3 === '2') {
+            main.style.background = 'url(background_night2.jpg)';
+            main.style.backgroundSize = 'cover';
+            main.style.backgroundPosition = '0 -200px';
+            set3Opt2.selected = true;
+        }
+    }
+})
+
+var set4Opt = document.querySelector('.set4-option');
+var set4Check = document.querySelector('.set4-check');
+var main = document.querySelector('.main');
+set4Check.addEventListener("click", function () {
+    var set4 = document.querySelector('.set4-select').value;
+    if (set4 === '1') {
+        modeFlag = 1;
         main.style.background = 'url(background.jpg)';
+        set3Opt1.selected = true;
         main.style.backgroundSize = 'cover';
-    } else if (set3 === '2') {
-        main.style.background = 'url(background2.jpg)';
+        night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
+        night3.style.color = 'black';
+        night4.style.color = 'black';
+        night5.style.color = 'rgba(40, 75, 225, 0.6)';
+        night6.style.color = 'rgba(40, 75, 225, 0.6)';
+        night7.style.color = 'rgba(40, 75, 225, 0.6';
+        night8.style.color = 'rgba(40, 75, 225, 0.6)';
+        night9.style.color = 'rgba(40, 75, 225, 0.6)';
+        night10.style.color = 'black';
+        night11.style.color = 'black';
+        night12.style.color = 'black';
+        night13.style.color = 'black';
+        night14.style.color = 'black';
+        night15.style.color = 'black';
+        set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
+        set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+    } else if (set4 === '2') {
+        modeFlag = 2;
+        main.style.background = 'url(background_night.jpg)';
+        set3Opt1.selected = true;
         main.style.backgroundSize = 'cover';
+        night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
+        night3.style.color = 'rgba(255, 255, 255, .6)';
+        night4.style.color = 'rgba(255, 255, 255, .6)';
+        night5.style.color = 'rgba(255, 255, 255, .6)';
+        night6.style.color = 'rgba(255, 255, 255, .6)';
+        night7.style.color = 'rgba(255, 255, 255, .6)';
+        night8.style.color = 'rgba(255, 255, 255, .6)';
+        night9.style.color = 'rgba(255, 255, 255, .6)';
+        night10.style.color = 'rgba(255, 255, 255, .6)';
+        night11.style.color = 'rgba(255, 255, 255, .6)';
+        night12.style.color = 'white';
+        night13.style.color = 'white';
+        night14.style.color = 'white';
+        night15.style.color = 'white';
+        set3Opt1.innerHTML = '背景1(知乎@马梦李)';
+        set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
     }
 })
 

@@ -57,6 +57,36 @@
     }
 }
 
+@keyframes infoComeNight {
+    0% {
+        top: 3vh;
+        left: -3vh;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        top: 7vh;
+        left: 1vh;
+        background-color: rgba(20, 0, 90, 0.8);
+        color: white;
+    }
+}
+
+@keyframes infoOutNight {
+    0% {
+        top: 7vh;
+        left: 1vh;
+        background-color: rgba(20, 0, 90, 0.8);
+        color: white;
+    }
+
+    100% {
+        top: 3vh;
+        left: -3vh;
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
 @keyframes navUpFrame {
     0% {
         top: 0vh;
@@ -268,6 +298,7 @@ body {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-position: -200px 0; */
 }
 
 .noJS {
@@ -310,7 +341,7 @@ body {
     right: 2vh;
     top: 2vh;
     margin: 0;
-    background-color: rgba(255, 255, 255, .8);
+    /* background-color: rgba(255, 255, 255, .8); */
 }
 
 .info-sup,
@@ -487,6 +518,7 @@ body {
     font-size: 4vh;
     /* font-weight: 700; */
     font-family: '微软雅黑';
+    color: black;
 }
 
 .web-item {
