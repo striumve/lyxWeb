@@ -717,8 +717,13 @@ function day() {
     night13.style.color = 'black';
     night14.style.color = 'black';
     night15.style.color = 'black';
-    set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
-    set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+    if (languageFlag === 1) {
+        set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
+        set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+    } else if (languageFlag === 2) {
+        set3Opt1.innerHTML = 'background1(Zhihu@世尊逛人间)';
+        set3Opt2.innerHTML = 'background2(film: Your Name.)';
+    }
 }
 
 function night() {
@@ -741,8 +746,13 @@ function night() {
     night13.style.color = 'rgba(255, 255, 255, .7)';
     night14.style.color = 'rgba(255, 255, 255, .7)';
     night15.style.color = 'rgba(255, 255, 255, .7)';
-    set3Opt1.innerHTML = '背景1(知乎@马梦李)';
-    set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
+    if (languageFlag === 1) {
+        set3Opt1.innerHTML = '背景1(知乎@马梦李)';
+        set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
+    } else if (languageFlag === 2) {
+        set3Opt1.innerHTML = 'background1(Zhihu@马梦李)';
+        set3Opt2.innerHTML = 'background2(Zhihu@爱做饭的程序员)';
+    }
 }
 set4Check.addEventListener("click", function () {
     var set4 = document.querySelector('.set4-select').value;
