@@ -101,13 +101,13 @@ var info = document.querySelector('.info');
 var infoOff = document.querySelector('.infoOff');
 
 function infoOutFrame() {
-    if (modeFlag === 1) {
+    if (themeFlag === 1) {
         info.style.animation = 'infoOut ease .3s forwards';
         var infoSleep = setTimeout(function () {
             info.style.display = 'none';
         }, 150)
         infoFlag = 0;
-    } else if (modeFlag === 2) {
+    } else if (themeFlag === 2) {
         info.style.animation = 'infoOutNight ease .3s forwards';
         var infoSleep = setTimeout(function () {
             info.style.display = 'none';
@@ -121,9 +121,9 @@ infoOff.addEventListener("click", function () {
 if (deviceFlag === 1) {
     logo.addEventListener("mouseover", function () {
         info.style.display = 'block';
-        if (modeFlag === 1) {
+        if (themeFlag === 1) {
             info.style.animation = 'infoCome ease .3s forwards';
-        } else if (modeFlag === 2) {
+        } else if (themeFlag === 2) {
             info.style.animation = 'infoComeNight ease .3s forwards';
         }
         infoFlag = 1;
@@ -131,9 +131,9 @@ if (deviceFlag === 1) {
 } else if (deviceFlag === 2) {
     logo.addEventListener("click", function () {
         info.style.display = 'block';
-        if (modeFlag === 1) {
+        if (themeFlag === 1) {
             info.style.animation = 'infoCome ease .3s forwards';
-        } else if (modeFlag === 2) {
+        } else if (themeFlag === 2) {
             info.style.animation = 'infoComeNight ease .3s forwards';
         }
         infoFlag = 1;
@@ -288,7 +288,7 @@ senChn.addEventListener("click", function () {
 })
 
 function sentence() {
-    var senNum = Math.floor(Math.random() * 52);
+    var senNum = Math.floor(Math.random() * 79);
     switch (senNum) {
         case 0:
             sen.innerHTML = '钥匙圈是非常实用的小工具，它可以让你，一次把所有钥匙都丢光。';
@@ -446,8 +446,159 @@ function sentence() {
         case 51:
             sen.innerHTML = '黄鹤一去不复返，飞入寻常百姓家。';
             break;
+        case 52:
+            sen.innerHTML = '以勇敢的胸膛面对逆境。<br>——贺拉斯《诗艺》';
+            break;
+        case 53:
+            sen.innerHTML = '勇敢并非没有恐惧，而是克服恐惧，战胜恐惧。<br>——马克·吐温';
+            break;
+        case 54:
+            sen.innerHTML = '临大难而不惧者，圣人之勇也。<br>——《庄子·秋水》';
+            break;
+        case 55:
+            sen.innerHTML = '奋斗需要坚持！<br>——雨果《巴黎圣母院》';
+            break;
+        case 56:
+            sen.innerHTML = '重要的不是成功，而是奋斗。<br>——赫伯特';
+            break;
+        case 57:
+            sen.innerHTML = '你要自力更生，不要太依赖别人。<br>——《熊出没》';
+            break;
+        case 58:
+            sen.innerHTML = '因为遇见你，我才知道，原来我也能有美好的回忆。<br>——宫崎骏《千与千寻》';
+            break;
+        case 59:
+            sen.innerHTML = '云掠石崖啼鸟树，雨添山涧落花泉。<br>——杨万里《晨炊白升山》';
+            break;
+        case 60:
+            sen.innerHTML = '我们是国家的主人，应该处处为国家着想。<br>——雷锋';
+            break;
+        case 61:
+            sen.innerHTML = '创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民';
+            break;
+        case 62:
+            sen.innerHTML = '一般地，我们把形如y=ax²+bx+c（其中a，b，c是常数，a≠0）的函数叫做二次函数。<br>';
+            break;
+        case 63:
+            sen.innerHTML = '掌握新技术，要善于学习，更要善于创新。<br>——邓小平';
+            break;
+        case 64:
+            sen.innerHTML = '使卵石臻于完美的,并非锤的打击,而是水的且歌且舞。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 65:
+            sen.innerHTML = '全是理智的心，恰如一柄全是锋刃的刀。它叫使用它的人手上流血。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 66:
+            sen.innerHTML = '我是一隻旷野的鸟，在你的眼里找到了天空。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 67:
+            sen.innerHTML = '如果你因为错过了太阳而哭泣，那么你也将错过群星了。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 68:
+            sen.innerHTML = '使生如夏花之绚烂，死如秋叶之静美。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 69:
+            sen.innerHTML = '我的存在，对我是一个永久的神奇，这就是生活。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 70:
+            sen.innerHTML = '我们把世界看错了，反说它欺骗我们。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 71:
+            sen.innerHTML = '道路虽然拥挤，却是寂寞的，因为它没有品尝到爱。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 72:
+            sen.innerHTML = '人类的历史是很忍耐地等待着被侮辱者的胜利。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 73:
+            sen.innerHTML = '让我设想，在群星之中，有一颗星是指导着我的生命通过不可知的黑暗的。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 74:
+            sen.innerHTML = '不要从你自己的袋里掏出勋章借给你的朋友，这是侮辱他的。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 75:
+            sen.innerHTML = '当我们是大为谦卑的时候，便是我们最接近伟大的时候。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 76:
+            sen.innerHTML = '接触着，你也许会伤害；远离着，你也许会占有。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 77:
+            sen.innerHTML = '如果你不等待着要说出完全的真理，那么把话说出来是很容易的。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 78:
+            sen.innerHTML = '太阳在西方落下时， 他的早晨的东方已静悄悄的站在他面前。<br>——泰戈尔《飞鸟集》';
+            break;
+        case 79:
+            sen.innerHTML = '奴才总不过是寻人诉苦。只要这样，也只能这样。——鲁迅《野草》-《聪明人和傻子和奴才》';
+            break;
+        case 80:
+            sen.innerHTML = '爱情必须时时更新，生长，创造。<br>——鲁迅《伤逝》';
+            break;
+        case 81:
+            sen.innerHTML = '游戏是儿童最正当的行为，玩具是儿童的天使。<br>——鲁迅《野草》-《风筝》';
+            break;
+        case 82:
+            sen.innerHTML = '以人为鉴，明白非常，是使人能够反省的妙法。<br>——鲁迅';
+            break;
+        case 83:
+            sen.innerHTML = '人类的悲欢并不相通，我只觉得他们吵闹。<br>——鲁迅《而已集》-《小杂感》';
+            break;
+        case 84:
+            sen.innerHTML = '幼稚是会成长，会成熟的。只要不衰老，腐败，就好。<br>——鲁迅';
+            break;
+        case 85:
+            sen.innerHTML = '墨写的谎言，决掩不住血写的事实。<br>——鲁迅';
+            break;
+        case 86:
+            sen.innerHTML = '所以，贪安稳就没有自由，要自由就总要历些危险。<br>——鲁迅《集外集拾遗》';
+            break;
+        case 87:
+            sen.innerHTML = '绝望之为虚妄，正与希望相同！<br>——鲁迅《野草》-《希望》';
+            break;
+        case 88:
+            sen.innerHTML = '无论何时，不管怎样，我决不允许自己有一点灰心丧气。<br>——鲁迅';
+            break;
+        case 89:
+            sen.innerHTML = '生命是以时间为单位的，浪费别人的时间等于谋财害命；<br>浪费自己的时间，等于慢性自杀。——鲁迅';
+            break;
+        case 90:
+            sen.innerHTML = '轻敌，最容易失败。<br>——鲁迅';
+            break;
+        case 91:
+            sen.innerHTML = '倘有陌生的声音叫你的名字，你万不可答应它。<br>——鲁迅《朝花夕拾》-《从百草园到三味书屋》';
+            break;
+        case 92:
+            sen.innerHTML = '世界上本没有路，走的人多了，也就成了路。<br>——鲁迅《故乡》';
+            break;
+        case 93:
+            sen.innerHTML = '我向来不惮以最坏的恶意揣测中国人。<br>——鲁迅';
+            break;
+        case 94:
+            sen.innerHTML = '绝望正与希望相同，大恨恰恰是大爱的起点。<br>——鲁迅';
+            break;
+        case 95:
+            sen.innerHTML = '要极省俭的画出一个人的特点，最好是画他的眼睛。<br>——鲁迅《南腔北调集》';
+            break;
+        case 96:
+            sen.innerHTML = '人最苦的是梦醒了却无路可走。<br>——鲁迅';
+            break;
+        case 97:
+            sen.innerHTML = '时间就像海绵里的水，只要愿挤，总还是有的。<br>——鲁迅';
+            break;
+        case 98:
+            sen.innerHTML = '说到希望，却是不能抹杀的，因为希望是在于将来的。<br>——鲁迅';
+            break;
+        case 99:
+            sen.innerHTML = '爱国者的话是最有价值的。——鲁迅';
+            break;
         default:
             break;
+    }
+    if (senNum <= 51) {
+        sen.style.backgroundColor = 'rgba(150, 150, 255, .4)';
+        sen.title = '(不正经)\n文案来自B站';
+    } else if (senNum > 51) {
+        sen.style.backgroundColor = 'rgba(200, 200, 200, .4)';
+        sen.title = '';
     }
 }
 
@@ -487,7 +638,7 @@ set2Check.addEventListener("click", function () {
     }
 })
 
-var modeFlag = 1;
+var themeFlag = 1;
 var night1 = document.querySelector('.nav');
 var night2 = document.querySelector('.info');
 var night3 = document.querySelector('.senChange');
@@ -511,7 +662,7 @@ var set3Check = document.querySelector('.set3-check');
 var main = document.querySelector('.main');
 set3Check.addEventListener("click", function () {
     var set3 = document.querySelector('.set3-select').value;
-    if (modeFlag === 1) {
+    if (themeFlag === 1) {
         if (set3 === '1') {
             main.style.background = 'url(background.jpg)';
             main.style.backgroundSize = 'cover';
@@ -523,7 +674,7 @@ set3Check.addEventListener("click", function () {
             main.style.backgroundPosition = '0 0';
             set3Opt2.selected = true;
         }
-    } else if (modeFlag === 2) {
+    } else if (themeFlag === 2) {
         if (set3 === '1') {
             main.style.background = 'url(background_night.jpg)';
             main.style.backgroundSize = 'cover';
@@ -543,50 +694,64 @@ set3Check.addEventListener("click", function () {
 var set4Opt = document.querySelector('.set4-option');
 var set4Check = document.querySelector('.set4-check');
 var main = document.querySelector('.main');
+var body = document.querySelector('body');
+var load = document.querySelector('.load');
+
+function day() {
+    main.style.background = 'url(background.jpg)';
+    body.style.backgroundColor = 'rgb(255, 255, 255)';
+    load.style.color = 'rgb(100, 100, 100)';
+    set3Opt1.selected = true;
+    main.style.backgroundSize = 'cover';
+    night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
+    night3.style.color = 'black';
+    night4.style.color = 'black';
+    night5.style.color = 'rgba(40, 75, 225, 0.6)';
+    night6.style.color = 'rgba(40, 75, 225, 0.6)';
+    night7.style.color = 'rgba(40, 75, 225, 0.6';
+    night8.style.color = 'rgba(40, 75, 225, 0.6)';
+    night9.style.color = 'rgba(40, 75, 225, 0.6)';
+    night10.style.color = 'black';
+    night11.style.color = 'black';
+    night12.style.color = 'black';
+    night13.style.color = 'black';
+    night14.style.color = 'black';
+    night15.style.color = 'black';
+    set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
+    set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+}
+
+function night() {
+    main.style.background = 'url(background_night.jpg)';
+    body.style.backgroundColor = 'rgb(50, 50, 50)';
+    load.style.color = 'rgb(200, 200, 200)';
+    set3Opt1.selected = true;
+    main.style.backgroundSize = 'cover';
+    night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
+    night3.style.color = 'rgba(255, 255, 255, .7)';
+    night4.style.color = 'rgba(255, 255, 255, .7)';
+    night5.style.color = 'rgba(255, 255, 255, .7)';
+    night6.style.color = 'rgba(255, 255, 255, .7)';
+    night7.style.color = 'rgba(255, 255, 255, .7)';
+    night8.style.color = 'rgba(255, 255, 255, .7)';
+    night9.style.color = 'rgba(255, 255, 255, .7)';
+    night10.style.color = 'rgba(255, 255, 255, .7)';
+    night11.style.color = 'rgba(255, 255, 255, .7)';
+    night12.style.color = 'rgba(255, 255, 255, .7)';
+    night13.style.color = 'rgba(255, 255, 255, .7)';
+    night14.style.color = 'rgba(255, 255, 255, .7)';
+    night15.style.color = 'rgba(255, 255, 255, .7)';
+    set3Opt1.innerHTML = '背景1(知乎@马梦李)';
+    set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
+}
 set4Check.addEventListener("click", function () {
     var set4 = document.querySelector('.set4-select').value;
     if (set4 === '1') {
-        modeFlag = 1;
-        main.style.background = 'url(background.jpg)';
-        set3Opt1.selected = true;
-        main.style.backgroundSize = 'cover';
-        night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
-        night3.style.color = 'black';
-        night4.style.color = 'black';
-        night5.style.color = 'rgba(40, 75, 225, 0.6)';
-        night6.style.color = 'rgba(40, 75, 225, 0.6)';
-        night7.style.color = 'rgba(40, 75, 225, 0.6';
-        night8.style.color = 'rgba(40, 75, 225, 0.6)';
-        night9.style.color = 'rgba(40, 75, 225, 0.6)';
-        night10.style.color = 'black';
-        night11.style.color = 'black';
-        night12.style.color = 'black';
-        night13.style.color = 'black';
-        night14.style.color = 'black';
-        night15.style.color = 'black';
-        set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
-        set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+        themeFlag = 1;
+        day();
     } else if (set4 === '2') {
-        modeFlag = 2;
-        main.style.background = 'url(background_night.jpg)';
-        set3Opt1.selected = true;
-        main.style.backgroundSize = 'cover';
-        night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
-        night3.style.color = 'rgba(255, 255, 255, .7)';
-        night4.style.color = 'rgba(255, 255, 255, .7)';
-        night5.style.color = 'rgba(255, 255, 255, .7)';
-        night6.style.color = 'rgba(255, 255, 255, .7)';
-        night7.style.color = 'rgba(255, 255, 255, .7)';
-        night8.style.color = 'rgba(255, 255, 255, .7)';
-        night9.style.color = 'rgba(255, 255, 255, .7)';
-        night10.style.color = 'rgba(255, 255, 255, .7)';
-        night11.style.color = 'rgba(255, 255, 255, .7)';
-        night12.style.color = 'rgba(255, 255, 255, .7)';
-        night13.style.color = 'rgba(255, 255, 255, .7)';
-        night14.style.color = 'rgba(255, 255, 255, .7)';
-        night15.style.color = 'rgba(255, 255, 255, .7)';
-        set3Opt1.innerHTML = '背景1(知乎@马梦李)';
-        set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
+        themeFlag = 2;
+        night();
     }
 })
 

@@ -13,6 +13,15 @@
     font-display: block;
 }
 
+@font-face {
+    /* 字体声明  */
+    font-family: 'consolas';
+    src: url('fonts/consolas.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 @media (prefers-color-scheme: dark) {
     .main {
         background: url(background_night.jpg);
@@ -288,6 +297,7 @@ body {
     position: relative;
     /* cursor: url(cursor.png), auto; */
     cursor: default;
+    background-color: rgb(255, 255, 255);
 }
 
 .main {
