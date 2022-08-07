@@ -288,7 +288,7 @@ senChn.addEventListener("click", function () {
 })
 
 function sentence() {
-    var senNum = Math.floor(Math.random() * 79);
+    var senNum = Math.floor(Math.random() * 100);
     switch (senNum) {
         case 0:
             sen.innerHTML = '钥匙圈是非常实用的小工具，它可以让你，一次把所有钥匙都丢光。';
