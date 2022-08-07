@@ -523,7 +523,7 @@ set3Check.addEventListener("click", function () {
             main.style.backgroundPosition = '0 0';
             set3Opt2.selected = true;
         }
-    } else if(modeFlag === 2) {
+    } else if (modeFlag === 2) {
         if (set3 === '1') {
             main.style.background = 'url(background_night.jpg)';
             main.style.backgroundSize = 'cover';
@@ -532,7 +532,9 @@ set3Check.addEventListener("click", function () {
         } else if (set3 === '2') {
             main.style.background = 'url(background_night2.jpg)';
             main.style.backgroundSize = 'cover';
-            main.style.backgroundPosition = '0 -200px';
+            if (deviceFlag === 1) {
+                main.style.backgroundPosition = '0 -200px';
+            }
             set3Opt2.selected = true;
         }
     }
@@ -570,19 +572,19 @@ set4Check.addEventListener("click", function () {
         set3Opt1.selected = true;
         main.style.backgroundSize = 'cover';
         night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
-        night3.style.color = 'rgba(255, 255, 255, .6)';
-        night4.style.color = 'rgba(255, 255, 255, .6)';
-        night5.style.color = 'rgba(255, 255, 255, .6)';
-        night6.style.color = 'rgba(255, 255, 255, .6)';
-        night7.style.color = 'rgba(255, 255, 255, .6)';
-        night8.style.color = 'rgba(255, 255, 255, .6)';
-        night9.style.color = 'rgba(255, 255, 255, .6)';
-        night10.style.color = 'rgba(255, 255, 255, .6)';
-        night11.style.color = 'rgba(255, 255, 255, .6)';
-        night12.style.color = 'white';
-        night13.style.color = 'white';
-        night14.style.color = 'white';
-        night15.style.color = 'white';
+        night3.style.color = 'rgba(255, 255, 255, .7)';
+        night4.style.color = 'rgba(255, 255, 255, .7)';
+        night5.style.color = 'rgba(255, 255, 255, .7)';
+        night6.style.color = 'rgba(255, 255, 255, .7)';
+        night7.style.color = 'rgba(255, 255, 255, .7)';
+        night8.style.color = 'rgba(255, 255, 255, .7)';
+        night9.style.color = 'rgba(255, 255, 255, .7)';
+        night10.style.color = 'rgba(255, 255, 255, .7)';
+        night11.style.color = 'rgba(255, 255, 255, .7)';
+        night12.style.color = 'rgba(255, 255, 255, .7)';
+        night13.style.color = 'rgba(255, 255, 255, .7)';
+        night14.style.color = 'rgba(255, 255, 255, .7)';
+        night15.style.color = 'rgba(255, 255, 255, .7)';
         set3Opt1.innerHTML = '背景1(知乎@马梦李)';
         set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
     }
