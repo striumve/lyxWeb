@@ -842,6 +842,11 @@ tool8Check.addEventListener("click", function () {
     isTool8NaN = document.querySelector('.tool8-right').value;
     tool8 = parseInt(isTool8NaN);
     if (isTool8NaN === '') {
+        if(languageFlag === 1) {
+            alert('您已退出登录');
+        } else if(languageFlag === 2) {
+            alert('You have logged out');
+        }
         tool8Url = 'logo.jpg';
         if (languageFlag === 1) {
             infoNum.innerHTML = '未登录';
