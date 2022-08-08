@@ -3,6 +3,22 @@
 // var languageFlag;
 var deviceFlag;
 
+//全屏
+var div = document.querySelector("body");
+document.querySelector(".full").onclick = function () {
+    if (div.requestFullScreen) { // 正常浏览器 
+        div.requestFullScreen();
+    } else if (div.webkitRequestFullScreen) { // webkit 内核
+        div.webkitRequestFullScreen();
+    } else if (div.mozRequestFullScreen) { // moz
+        div.mozRequestFullScreen();
+    } else if (div.msRequestFullscreen) { // ms 微软  这里面有个坑 别掉进去了
+        div.msRequestFullscreen();
+    } else { // 欧朋
+        div.oRequestFullScreen();
+    }
+}
+
 //控制台互动
 if (languageFlag === 1) {
     console.log('%c%s',
@@ -601,170 +617,6 @@ function sentence() {
         sen.title = '';
     }
 }
-
-//设置
-var set1Opt = document.querySelector('.set1-option');
-var set1Check = document.querySelector('.set1-check');
-set1Check.addEventListener("click", function () {
-    var set1 = document.querySelector('.set1-select').value;
-    if (deviceFlag === 1) {
-        if (set1 === '1') {
-            window.location = "index.html";
-        } else if (set1 === '2') {
-            window.location = "index.en.html";
-        } else if (set1 === '3') {
-            window.location = '403.html';
-        }
-    } else if (deviceFlag === 2) {
-        if (set1 === '1') {
-            window.location = "index.m.html";
-        } else if (set1 === '2') {
-            window.location = "index.m.en.html";
-        } else if (set1 === '3') {
-            window.location = "403.html";
-        }
-    }
-})
-
-var set2Opt = document.querySelector('.set2-option');
-var set2Check = document.querySelector('.set2-check');
-var bgm = document.querySelector('.bgm');
-set2Check.addEventListener("click", function () {
-    var set2 = document.querySelector('.set2-select').value;
-    if (set2 === '1') {
-        bgm.play();
-    } else if (set2 === '2') {
-        bgm.pause();
-    }
-})
-
-var themeFlag = 1;
-var night1 = document.querySelector('.nav');
-var night2 = document.querySelector('.info');
-var night3 = document.querySelector('.senChange');
-var night4 = document.querySelector('.pageTitle1');
-var night5 = document.querySelector('.navNight1');
-var night6 = document.querySelector('.navNight2');
-var night7 = document.querySelector('.navNight3');
-var night8 = document.querySelector('.navNight4');
-var night9 = document.querySelector('.navBtn');
-var night10 = document.querySelector('.pageTitle2');
-var night11 = document.querySelector('.pageTitle3');
-var night12 = document.querySelector('.infoNight1');
-var night13 = document.querySelector('.infoNight2');
-var night14 = document.querySelector('.infoNight3');
-var night15 = document.querySelector('.infoNight4');
-
-var set3Opt = document.querySelector('.set3-option');
-var set3Opt1 = document.querySelector('.set3-option1');
-var set3Opt2 = document.querySelector('.set3-option2');
-var set3Check = document.querySelector('.set3-check');
-var main = document.querySelector('.main');
-set3Check.addEventListener("click", function () {
-    var set3 = document.querySelector('.set3-select').value;
-    if (themeFlag === 1) {
-        if (set3 === '1') {
-            main.style.background = 'url(background.jpg)';
-            main.style.backgroundSize = 'cover';
-            main.style.backgroundPosition = '0 0';
-            set3Opt1.selected = true;
-        } else if (set3 === '2') {
-            main.style.background = 'url(background2.jpg)';
-            main.style.backgroundSize = 'cover';
-            main.style.backgroundPosition = '0 0';
-            set3Opt2.selected = true;
-        }
-    } else if (themeFlag === 2) {
-        if (set3 === '1') {
-            main.style.background = 'url(background_night.jpg)';
-            main.style.backgroundSize = 'cover';
-            main.style.backgroundPosition = '0 0';
-            set3Opt1.selected = true;
-        } else if (set3 === '2') {
-            main.style.background = 'url(background_night2.jpg)';
-            main.style.backgroundSize = 'cover';
-            if (deviceFlag === 1) {
-                main.style.backgroundPosition = '0 -200px';
-            }
-            set3Opt2.selected = true;
-        }
-    }
-})
-
-var set4Opt = document.querySelector('.set4-option');
-var set4Check = document.querySelector('.set4-check');
-var main = document.querySelector('.main');
-var body = document.querySelector('body');
-var load = document.querySelector('.load');
-
-function day() {
-    main.style.background = 'url(background.jpg)';
-    body.style.backgroundColor = 'rgb(255, 255, 255)';
-    load.style.color = 'rgb(100, 100, 100)';
-    set3Opt1.selected = true;
-    main.style.backgroundSize = 'cover';
-    night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
-    night3.style.color = 'black';
-    night4.style.color = 'black';
-    night5.style.color = 'rgba(40, 75, 225, 0.6)';
-    night6.style.color = 'rgba(40, 75, 225, 0.6)';
-    night7.style.color = 'rgba(40, 75, 225, 0.6';
-    night8.style.color = 'rgba(40, 75, 225, 0.6)';
-    night9.style.color = 'rgba(40, 75, 225, 0.6)';
-    night10.style.color = 'black';
-    night11.style.color = 'black';
-    night12.style.color = 'black';
-    night13.style.color = 'black';
-    night14.style.color = 'black';
-    night15.style.color = 'black';
-    if (languageFlag === 1) {
-        set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
-        set3Opt2.innerHTML = '背景2(电影 你的名字。)';
-    } else if (languageFlag === 2) {
-        set3Opt1.innerHTML = 'background1(Zhihu@世尊逛人间)';
-        set3Opt2.innerHTML = 'background2(film: Your Name.)';
-    }
-}
-
-function night() {
-    main.style.background = 'url(background_night.jpg)';
-    body.style.backgroundColor = 'rgb(50, 50, 50)';
-    load.style.color = 'rgb(200, 200, 200)';
-    set3Opt1.selected = true;
-    main.style.backgroundSize = 'cover';
-    night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
-    night3.style.color = 'rgba(255, 255, 255, .7)';
-    night4.style.color = 'rgba(255, 255, 255, .7)';
-    night5.style.color = 'rgba(255, 255, 255, .7)';
-    night6.style.color = 'rgba(255, 255, 255, .7)';
-    night7.style.color = 'rgba(255, 255, 255, .7)';
-    night8.style.color = 'rgba(255, 255, 255, .7)';
-    night9.style.color = 'rgba(255, 255, 255, .7)';
-    night10.style.color = 'rgba(255, 255, 255, .7)';
-    night11.style.color = 'rgba(255, 255, 255, .7)';
-    night12.style.color = 'rgba(255, 255, 255, .7)';
-    night13.style.color = 'rgba(255, 255, 255, .7)';
-    night14.style.color = 'rgba(255, 255, 255, .7)';
-    night15.style.color = 'rgba(255, 255, 255, .7)';
-    if (languageFlag === 1) {
-        set3Opt1.innerHTML = '背景1(知乎@马梦李)';
-        set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
-    } else if (languageFlag === 2) {
-        set3Opt1.innerHTML = 'background1(Zhihu@马梦李)';
-        set3Opt2.innerHTML = 'background2(Zhihu@爱做饭的程序员)';
-    }
-}
-set4Check.addEventListener("click", function () {
-    var set4 = document.querySelector('.set4-select').value;
-    if (set4 === '1') {
-        themeFlag = 1;
-        day();
-    } else if (set4 === '2') {
-        themeFlag = 2;
-        night();
-    }
-})
-
 //工具
 var tool1 = document.querySelector('.tool1');
 var tool1Change = document.querySelector('.tool1-change');
@@ -972,3 +824,257 @@ tool7Close.addEventListener("click", function () {
         tool7Why.style.display = 'none';
     }, 300)
 })
+
+//设置
+var set1Opt = document.querySelector('.set1-option');
+var set1Check = document.querySelector('.set1-check');
+var set1 = document.querySelector('.set1-select').value;
+
+function set1Change() {
+    set1 = document.querySelector('.set1-select').value;
+    if (deviceFlag === 1) {
+        if (set1 === '1') {
+            window.location = "index.html";
+        } else if (set1 === '2') {
+            window.location = "index.en.html";
+        } else if (set1 === '3') {
+            window.location = '403.html';
+        }
+    } else if (deviceFlag === 2) {
+        if (set1 === '1') {
+            window.location = "index.m.html";
+        } else if (set1 === '2') {
+            window.location = "index.m.en.html";
+        } else if (set1 === '3') {
+            window.location = "403.html";
+        }
+    }
+
+}
+set1Check.addEventListener("click", function () {
+    set1Change();
+})
+
+var set2Opt = document.querySelector('.set2-option');
+var set2Opt1 = document.querySelector('.set2-option1');
+var set2Opt2 = document.querySelector('.set2-option2');
+var set2Check = document.querySelector('.set2-check');
+var bgm = document.querySelector('.bgm');
+var set2 = document.querySelector('.set2-select').value;
+if (localStorage.set2 != undefined) {
+    if (localStorage.set2 === '1') {
+        bgm.play();
+        set2Opt1.selected = true;
+    } else if (localStorage.set2 === '2') {
+        bgm.pause();
+        set2Opt2.selected = true;
+    }
+}
+set2Check.addEventListener("click", function () {
+    set2 = document.querySelector('.set2-select').value;
+    if (set2 === '1') {
+        bgm.play();
+        set2Opt1.selected = true;
+    } else if (set2 === '2') {
+        bgm.pause();
+        set2Opt2.selected = true;
+    }
+    localStorage.setItem("set2", set2);
+
+})
+
+var themeFlag = 1;
+var night1 = document.querySelector('.nav');
+var night2 = document.querySelector('.info');
+var night3 = document.querySelector('.senChange');
+var night4 = document.querySelector('.pageTitle1');
+var night5 = document.querySelector('.navNight1');
+var night6 = document.querySelector('.navNight2');
+var night7 = document.querySelector('.navNight3');
+var night8 = document.querySelector('.navNight4');
+var night9 = document.querySelector('.navBtn');
+var night10 = document.querySelector('.pageTitle2');
+var night11 = document.querySelector('.pageTitle3');
+var night12 = document.querySelector('.infoNight1');
+var night13 = document.querySelector('.infoNight2');
+var night14 = document.querySelector('.infoNight3');
+var night15 = document.querySelector('.infoNight4');
+var night16 = document.querySelector('.infoNight5');
+
+var set3Opt = document.querySelector('.set3-option');
+var set3Opt1 = document.querySelector('.set3-option1');
+var set3Opt2 = document.querySelector('.set3-option2');
+var set3Check = document.querySelector('.set3-check');
+var main = document.querySelector('.main');
+var set3 = document.querySelector('.set3-select').value;
+
+if (localStorage.set3 != undefined) {
+    if (localStorage.set4 != undefined) {
+        if (localStorage.set4 === '1') {
+            themeFlag = 1;
+            day();
+            set4Opt1.selected = true;
+            if (localStorage.set3 === '1') {
+                main.style.background = 'url(background.jpg)';
+                main.style.backgroundSize = 'cover';
+                set3Opt1.selected = true;
+            } else if (localStorage.set3 === '2') {
+                main.style.background = 'url(background2.jpg)';
+                main.style.backgroundSize = 'cover';
+                set3Opt2.selected = true;
+            }
+        } else if (localStorage.set4 === '2') {
+            themeFlag = 2;
+            night();
+            // set4Opt2.selected = true;
+            if (localStorage.set3 === '1') {
+                main.style.background = 'url(background_night.jpg)';
+                main.style.backgroundSize = 'cover';
+                set3Opt1.selected = true;
+            } else if (localStorage.set3 === '2') {
+                main.style.background = 'url(background_night2.jpg)';
+                main.style.backgroundSize = 'cover';
+                set3Opt2.selected = true;
+            }
+        }
+    }
+}
+
+set3Check.addEventListener("click", function () {
+    set3 = document.querySelector('.set3-select').value;
+    if (themeFlag === 1) {
+        if (set3 === '1') {
+            main.style.background = 'url(background.jpg)';
+            main.style.backgroundSize = 'cover';
+            set3Opt1.selected = true;
+        } else if (set3 === '2') {
+            main.style.background = 'url(background2.jpg)';
+            main.style.backgroundSize = 'cover';
+            set3Opt2.selected = true;
+        }
+    } else if (themeFlag === 2) {
+        if (set3 === '1') {
+            main.style.background = 'url(background_night.jpg)';
+            main.style.backgroundSize = 'cover';
+            set3Opt1.selected = true;
+        } else if (set3 === '2') {
+            main.style.background = 'url(background_night2.jpg)';
+            main.style.backgroundSize = 'cover';
+            set3Opt2.selected = true;
+        }
+    }
+    localStorage.setItem("set3", set3);
+})
+
+// var set4Opt = document.querySelector('.set4-option');
+var set4Opt1 = document.querySelector('.set4-option1');
+var set4Opt2 = document.querySelector('.set4-option2');
+var set4Check = document.querySelector('.set4-check');
+var main = document.querySelector('.main');
+// var load = document.querySelector('.load');
+var set4 = document.querySelector('.set4-select').value;
+
+function day() {
+    if (localStorage.set3 === '1') {
+        main.style.background = 'url(background.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt1.selected = true;
+    } else if (localStorage.set3 === '2') {
+        main.style.background = 'url(background2.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt2.selected = true;
+    }
+    // load.style.color = 'rgb(100, 100, 100)';
+    main.style.backgroundSize = 'cover';
+    night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
+    night3.style.color = 'black';
+    night4.style.color = 'black';
+    night5.style.color = 'rgba(40, 75, 225, 0.6)';
+    night6.style.color = 'rgba(40, 75, 225, 0.6)';
+    night7.style.color = 'rgba(40, 75, 225, 0.6';
+    night8.style.color = 'rgba(40, 75, 225, 0.6)';
+    night9.style.color = 'rgba(40, 75, 225, 0.6)';
+    night10.style.color = 'black';
+    night11.style.color = 'black';
+    night12.style.color = 'black';
+    night13.style.color = 'black';
+    night14.style.color = 'black';
+    night15.style.color = 'black';
+    night16.style.color = 'black';
+    if (languageFlag === 1) {
+        set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
+        set3Opt2.innerHTML = '背景2(电影 你的名字。)';
+    } else if (languageFlag === 2) {
+        set3Opt1.innerHTML = 'background1(Zhihu@世尊逛人间)';
+        set3Opt2.innerHTML = 'background2(film: Your Name.)';
+    }
+}
+
+function night() {
+    if (localStorage.set3 === '1') {
+        main.style.background = 'url(background_night.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt1.selected = true;
+    } else if (localStorage.set3 === '2') {
+        main.style.background = 'url(background_night2.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt2.selected = true;
+    }
+    // load.style.color = 'rgb(200, 200, 200)';
+    main.style.backgroundSize = 'cover';
+    night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
+    night3.style.color = 'rgba(255, 255, 255, .7)';
+    night4.style.color = 'rgba(255, 255, 255, .7)';
+    night5.style.color = 'rgba(255, 255, 255, .7)';
+    night6.style.color = 'rgba(255, 255, 255, .7)';
+    night7.style.color = 'rgba(255, 255, 255, .7)';
+    night8.style.color = 'rgba(255, 255, 255, .7)';
+    night9.style.color = 'rgba(255, 255, 255, .7)';
+    night10.style.color = 'rgba(255, 255, 255, .7)';
+    night11.style.color = 'rgba(255, 255, 255, .7)';
+    night12.style.color = 'rgba(255, 255, 255, .7)';
+    night13.style.color = 'rgba(255, 255, 255, .7)';
+    night14.style.color = 'rgba(255, 255, 255, .7)';
+    night15.style.color = 'rgba(255, 255, 255, .7)';
+    night16.style.color = 'rgba(255, 255, 255, .7)';
+    if (languageFlag === 1) {
+        set3Opt1.innerHTML = '背景1(知乎@马梦李)';
+        set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';
+    } else if (languageFlag === 2) {
+        set3Opt1.innerHTML = 'background1(Zhihu@马梦李)';
+        set3Opt2.innerHTML = 'background2(Zhihu@爱做饭的程序员)';
+    }
+    // set4Opt1.selected = false;
+}
+if (localStorage.set4 != undefined) {
+    if (set4 === '1') {
+        themeFlag = 1;
+        day();
+        set4Opt1.selected = true;
+    } else if (set4 === '2') {
+        themeFlag = 2;
+        night();
+        set4Opt2.selected = true;
+    }
+}
+set4Check.addEventListener("click", function () {
+    set4 = document.querySelector('.set4-select').value;
+    if (set4 === '1') {
+        themeFlag = 1;
+        day();
+        set4Opt1.selected = true;
+    } else if (set4 === '2') {
+        themeFlag = 2;
+        night();
+        set4Opt2.selected = true;
+    }
+    localStorage.setItem("set4", set4);
+})
+
+if(window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
+    night();
+    set4Opt2.selected = true;
+} else if(window.matchMedia('(prefers-color-scheme: dark)').matches === false) {
+    day();
+    set4Opt1.selected = true;
+}

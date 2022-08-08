@@ -18,6 +18,9 @@
     <!-- <script type="text/javascript" charset="utf-8"
         src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
     <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script> -->
+    <!-- Baidu Map -->
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=2.0&ak=7IYKvewcmfolQTNaQnTOPhfmBfo3uxD8"></script>
     <style>
         .info {
             position: absolute;
@@ -133,11 +136,6 @@
 </head>
 
 <body>
-    <audio class="bgm" loop autoplay id="player2">
-        <source src="bgm.mp3" type="audio/mpeg" />
-        你的浏览器不支持播放音乐┑(￣Д ￣)┍
-    </audio>
-
     <div class="nav">
         <p class="logo"></p>
         <p class="web navbtn navNight1"></p>
@@ -168,6 +166,7 @@
         <a class="info-shr info-shr-3"></a>
         <a class="info-shr info-shr-4"></a>
         <a class="info-shr info-shr-5"></a> -->
+        <a class="info-send infoNight5 full">点击以全屏显示网页</a>
         <a href="tencent://message/?uin=1041095264" class="info-send infoNight3">点击以使用QQ直接向我发送消息</a>
         <p class="info-send infoNight4">您可以按下F12以打开控制台(console)。</p>
     </div>
@@ -459,10 +458,14 @@
             <button class="set-check set1-check">确定</button>
         </div>
         <div class="set-item set2">
+            <audio class="bgm" loop id="player2">
+                <source src="bgm.mp3" type="audio/mpeg" />
+                你的浏览器不支持播放音乐┑(￣Д ￣)┍
+            </audio>        
             <p>音乐</p>
             <select name="" id="" class="set-select set2-select">
-                <option value="1" class="set2-option" selected>瓦妮莎的微笑</option>
-                <option value="2" class="set2-option">不播放音乐</option>
+                <option value="1" class="set2-option set2-option1">瓦妮莎的微笑</option>
+                <option value="2" class="set2-option set2-option2" selected>不播放音乐</option>
             </select>
             <button class="set-check set2-check">确定</button>
         </div>
@@ -477,8 +480,8 @@
         <div class="set-item set4">
             <p>主题</p>
             <select name="" id="" class="set-select set4-select">
-                <option value="1" class="set4-option" selected>日间模式</option>
-                <option value="2" class="set4-option">夜间模式</option>
+                <option value="1" class="set4-option set4-option1">日间模式</option>
+                <option value="2" class="set4-option set4-option2">夜间模式</option>
             </select>
             <button class="set-check set4-check">确定</button>
         </div>
