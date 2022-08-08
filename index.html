@@ -33,12 +33,27 @@
             overflow: auto;
         }
 
+        .info-headimg {
+            margin-left: 2vw;
+            width: 3vw;
+            height: 3vw;
+            background: url(logo.jpg);
+            background-size: cover;
+        }
+
+        .info-qqnum {
+            position: absolute;
+            left: 7vw;
+            top: 2vh;
+            font-size: 2vh;
+        }
+
         .info-sup,
         .info-shr {
             font-family: 'icomoon';
             display: inline;
             /* float: left; */
-            font-size: 3vh;
+            font-size: 2.5vh;
             margin: 0;
             margin-left: 2vh;
             margin-top: 2vh;
@@ -76,7 +91,8 @@
         }
 
         .tool4-right,
-        .tool6-right {
+        .tool6-right,
+        .tool8-right {
             right: 25vw;
             width: 20vw;
         }
@@ -94,7 +110,8 @@
         }
 
         .tool4-left,
-        .tool6-left {
+        .tool6-left,
+        .tool8-left {
             left: 25vw;
         }
 
@@ -143,12 +160,13 @@
     </div>
 
     <div class="info">
+        <p class="info-headimg"></p>
+        <p class="info-qqnum">未登录</p>
         <p class="infoOff infoNight1"></p>
         <p class="info-sup info-sup-1 infoNight2">提供支持:</p>
         <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
         <a class="info-sup info-sup-3" href="https://code.visualstudio.com/" target="_blank"></a>
         <a class="info-sup info-sup-4" href="https://www.microsoft.com/zh-cn/windows" target="_blank"></a>
-        <br>
         <br>
         <!-- <p class="info-shr info-shr-1">分享至:</p> -->
         <!-- <div class="bshare-custom">
@@ -171,7 +189,7 @@
     <div class="main"></div>
 
     <div class="senDiv">
-        <p class="sen" title="文案来自B站"></p>
+        <p class="sen" title="文案来自B站">创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民</p>
         <p class="senChange"></p>
     </div>
 
@@ -215,6 +233,36 @@
             <p class="web-name">&emsp;GitHub个人主页</p>
             <p class="web-site">&emsp;https://github.com/striumve</p>
             <a class="web-go" href="https://github.com/striumve" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;MDN Web Docs</p>
+            <p class="web-site">&emsp;https://developer.mozilla.org/en-US/</p>
+            <a class="web-go" href="https://developer.mozilla.org/en-US/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;据意查句</p>
+            <p class="web-site">&emsp;https://wantquotes.net/</p>
+            <a class="web-go" href="https://wantquotes.net/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;反向词典</p>
+            <p class="web-site">&emsp;https://wantwords.net/</p>
+            <a class="web-go" href="https://wantwords.net/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;中国自然标本馆</p>
+            <p class="web-site">&emsp;https://cfh.ac.cn/</p>
+            <a class="web-go" href="https://cfh.ac.cn/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;中国生物物种名录</p>
+            <p class="web-site">&emsp;http://www.sp2000.org.cn/browse/browse_taxa</p>
+            <a class="web-go" href="http://www.sp2000.org.cn/browse/browse_taxa" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;有道翻译</p>
+            <p class="web-site">&emsp;https://fanyi.youdao.com/</p>
+            <a class="web-go" href="https://fanyi.youdao.com/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;GitHub Pages 官方文档 (简体中文)</p>
@@ -348,13 +396,13 @@
                 <p>都是我自己算的！</p>
                 <p>计算原理：</p>
                 <p>设输入的两点坐标为$$ (\frac{a}{b},\frac{c}{d}), (\frac{e}{f},\frac{g}{h}) $$</p>
-                <p>直线解析式为$$ y=kx+h $$</p>
-                <p>将两点坐标代入解析式，得$$ \left\{ \begin{aligned} \frac{a}{b}k+h=\frac{c}{d} -- I \\ \frac{e}{f}k+h=\frac{g}{h}
+                <p>直线解析式为$$ y=mx+n $$</p>
+                <p>将两点坐标代入解析式，得$$ \left\{ \begin{aligned} \frac{a}{b}m+n=\frac{c}{d} -- I \\ \frac{e}{f}m+n=\frac{g}{h}
                     -- II \end{aligned} \right. $$</p>
-                <p>I - II 得 $$ (\frac{a}{b}-\frac{e}{f})k=(\frac{c}{d}-\frac{g}{h}) $$</p>
+                <p>I - II 得 $$ (\frac{a}{b}-\frac{e}{f})m=(\frac{c}{d}-\frac{g}{h}) $$</p>
                 <p>$$ \begin{equation}
                     \begin{split}
-                    k
+                    m
                     &=(\frac{c}{d}-\frac{g}{h})÷(\frac{a}{b}-\frac{e}{f}) \\
                     &=\frac{ch-dg}{dh}÷\frac{af-be}{bf} \\
                     &=\frac{ch-dg}{dh}·\frac{bf}{af-be} \\
@@ -363,11 +411,11 @@
                     \end{equation}
                     $$
                 </p>
-                <p>将上式代入I得 $$ \frac{a}{b}(\frac{bf(ch-dg)}{dh(af-be)})+h = \frac{c}{d} $$</p>
-                <p>即 $$ \frac{abf(ch-dg)}{bdh(af-be)}+h = \frac{c}{d} $$</p>
+                <p>将上式代入I得 $$ \frac{a}{b}(\frac{bf(ch-dg)}{dh(af-be)})+n = \frac{c}{d} $$</p>
+                <p>即 $$ \frac{abf(ch-dg)}{bdh(af-be)}+n = \frac{c}{d} $$</p>
                 <p>$$ \begin{equation}
                     \begin{split}
-                    h
+                    n
                     &=\frac{c}{d}-\frac{abf(ch-dg)}{bdh(af-be)} \\
                     &=\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)}
                     \end{split}
@@ -376,6 +424,13 @@
                 </p>
                 <p>故直线解析式为：$$ y=\frac{bf(ch-dg)}{dh(af-be)}x+\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)} $$</p>
             </div>
+        </div>
+        <div class="tool-item tool8">
+            <p class="tool-item-name">登录</p>
+            <br>
+            <span class="tool8-left" style="margin-bottom: 10vh;">QQ号码</span>
+            <input class="tool8-right" type="text" placeholder="输入QQ号码">
+            <p class="tool8-check">登录</p>
         </div>
         <div class="tool-item tool1">
             <p class="tool-item-name">清除缓存</p>
@@ -458,7 +513,7 @@
             <audio class="bgm" loop id="player2">
                 <source src="bgm.mp3" type="audio/mpeg" />
                 你的浏览器不支持播放音乐┑(￣Д ￣)┍
-            </audio>        
+            </audio>
             <p>音乐</p>
             <select name="" id="" class="set-select set2-select">
                 <option value="1" class="set2-option set2-option1">瓦妮莎的微笑</option>

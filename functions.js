@@ -293,9 +293,6 @@ if (deviceFlag === 1) {
 //右下角句子
 var sen = document.querySelector('.sen');
 var senChn = document.querySelector('.senChange');
-if (languageFlag === 1) {
-    sentence();
-}
 senChn.addEventListener("click", function () {
     if (languageFlag === 1) {
         // senChn.style.animation = 'sentenceChange ease .3s forward';
@@ -307,7 +304,7 @@ function sentence() {
     var senNum = Math.floor(Math.random() * 100);
     switch (senNum) {
         case 0:
-            sen.innerHTML = '钥匙圈是非常实用的小工具，它可以让你，一次把所有钥匙都丢光。';
+            sen.innerHTML = '钥匙圈是非常实用的小工具，<br>它可以让你一次把所有钥匙都丢光。';
             break;
         case 1:
             sen.innerHTML = '世界上有很多出人意料的事，比如，你以为我会举个例子。';
@@ -493,7 +490,7 @@ function sentence() {
             sen.innerHTML = '创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民';
             break;
         case 62:
-            sen.innerHTML = '一般地，我们把形如y=ax²+bx+c（其中a，b，c是常数，a≠0）的函数叫做二次函数。<br>';
+            sen.innerHTML = '一般地，我们把形如y=ax²+bx+c（其中a，b，c是常数，a≠0）的函数叫做二次函数。';
             break;
         case 63:
             sen.innerHTML = '掌握新技术，要善于学习，更要善于创新。<br>——邓小平';
@@ -574,7 +571,7 @@ function sentence() {
             sen.innerHTML = '无论何时，不管怎样，我决不允许自己有一点灰心丧气。<br>——鲁迅';
             break;
         case 89:
-            sen.innerHTML = '生命是以时间为单位的，浪费别人的时间等于谋财害命；<br>浪费自己的时间，等于慢性自杀。——鲁迅';
+            sen.innerHTML = '生命是以时间为单位的，浪费别人的时间等于谋财害命；<br>浪费自己的时间，等于慢性自杀。<br>——鲁迅';
             break;
         case 90:
             sen.innerHTML = '轻敌，最容易失败。<br>——鲁迅';
@@ -826,6 +823,48 @@ tool7Close.addEventListener("click", function () {
     }, 300)
 })
 
+var tool8;
+var tool8Url;
+var tool8Check = document.querySelector('.tool8-check');
+var logo = document.querySelector('.logo');
+var infoLogo = document.querySelector('.info-headimg');
+var infoNum = document.querySelector('.info-qqnum');
+if (localStorage.signin != undefined) {
+    tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + localStorage.signin;
+    logo.style.background = 'url(' + tool8Url + ')';
+    logo.style.backgroundSize = 'cover';
+    infoLogo.style.background = 'url(' + tool8Url + ')';
+    infoLogo.style.backgroundSize = 'cover';
+    infoNum.innerHTML = localStorage.signin;
+    document.querySelector('.tool8-right').value = localStorage.signin;
+}
+tool8Check.addEventListener("click", function () {
+    isTool8NaN = document.querySelector('.tool8-right').value;
+    tool8 = parseInt(isTool8NaN);
+    if (isTool8NaN === '') {
+        tool8Url = 'logo.jpg';
+        if (languageFlag === 1) {
+            infoNum.innerHTML = '未登录';
+        } else if (languageFlag === 2) {
+            infoNum.innerHTML = 'Not signed in';
+        }
+        localStorage.removeItem("signin");
+    } else {
+        tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + tool8;
+        logo.style.background = 'url(' + tool8Url + ')';
+        logo.style.backgroundSize = 'cover';
+        infoLogo.style.background = 'url(' + tool8Url + ')';
+        infoLogo.style.backgroundSize = 'cover';
+        infoNum.innerHTML = tool8;
+        if (languageFlag === 1) {
+            alert("登录成功");
+        } else if (languageFlag === 2) {
+            alert("Successfully sign in")
+        }
+        localStorage.setItem("signin", tool8);
+    }
+})
+
 //设置
 var set1Opt = document.querySelector('.set1-option');
 var set1Check = document.querySelector('.set1-check');
@@ -984,6 +1023,10 @@ function day() {
         main.style.background = 'url(background2.jpg)';
         main.style.backgroundSize = 'cover';
         set3Opt2.selected = true;
+    } else {
+        main.style.background = 'url(background.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt1.selected = true;
     }
     // load.style.color = 'rgb(100, 100, 100)';
     main.style.backgroundSize = 'cover';
@@ -1020,6 +1063,10 @@ function night() {
         main.style.background = 'url(background_night2.jpg)';
         main.style.backgroundSize = 'cover';
         set3Opt2.selected = true;
+    } else {
+        main.style.background = 'url(background_night.jpg)';
+        main.style.backgroundSize = 'cover';
+        set3Opt1.selected = true;
     }
     // load.style.color = 'rgb(200, 200, 200)';
     main.style.backgroundSize = 'cover';
@@ -1045,7 +1092,7 @@ function night() {
         set3Opt1.innerHTML = 'background1(Zhihu@马梦李)';
         set3Opt2.innerHTML = 'background2(Zhihu@爱做饭的程序员)';
     }
-    // set4Opt1.selected = false;
+    // set4Opt2.selected = true;
 }
 if (localStorage.set4 != undefined) {
     if (set4 === '1') {
@@ -1072,7 +1119,7 @@ set4Check.addEventListener("click", function () {
     localStorage.setItem("set4", set4);
 })
 
-if(window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
+if (window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
     night();
     set4Opt2.selected = true;
 }

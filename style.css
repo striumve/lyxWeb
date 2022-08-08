@@ -239,6 +239,7 @@
         top: 10vh;
         left: 25vw;
     }
+
     100% {
         background-color: rgba(100, 100, 200, 0);
         color: rgba(0, 0, 0, 0);
@@ -254,6 +255,7 @@
         top: 8vh;
         left: 22vw;
     }
+
     100% {
         background-color: rgba(120, 120, 200, .95);
         color: rgba(0, 0, 0, 1);
@@ -269,6 +271,7 @@
         top: 10vh;
         left: 10vw;
     }
+
     100% {
         background-color: rgba(100, 100, 200, 0);
         color: rgba(0, 0, 0, 0);
@@ -284,6 +287,7 @@
         top: 8vh;
         left: 8vw;
     }
+
     100% {
         background-color: rgba(120, 120, 200, .95);
         color: rgba(0, 0, 0, 1);
@@ -295,9 +299,10 @@
 body {
     margin: 0;
     position: relative;
-    /* cursor: url(cursor.png), auto; */
+    cursor: url(cursor.png), auto;
     cursor: default;
     background-color: rgb(50, 50, 50);
+    user-select: none;
 }
 
 .main {
@@ -351,6 +356,7 @@ body {
     right: 2vh;
     top: 2vh;
     margin: 0;
+    font-size: 2.5vh;
     /* background-color: rgba(255, 255, 255, .8); */
 }
 
@@ -403,6 +409,7 @@ body {
     color: black;
     /* text-decoration: underline; */
     margin-top: 3vh;
+    font-size: 2vh;
 }
 
 .navbtn {
@@ -440,6 +447,7 @@ body {
     z-index: 0;
     background-color: rgba(200, 200, 200, .4);
     color: black;
+    user-select: text;
 }
 
 .senChange {
@@ -527,7 +535,7 @@ body {
     margin-left: 5vw;
     font-size: 4vh;
     /* font-weight: 700; */
-    font-family: '微软雅黑';
+    font-family: 'consolas';
     color: black;
 }
 
@@ -541,6 +549,10 @@ body {
     overflow: hidden;
     border-radius: 3vh;
     font-family: 'serif';
+}
+
+.web-site {
+    user-select: text;
 }
 
 .web-item>p,
@@ -563,6 +575,7 @@ body {
     overflow: hidden;
     border-radius: 3vh;
     position: relative;
+    font-family: 'serif';
 }
 
 .set-item>p {
@@ -616,6 +629,7 @@ body {
     overflow: hidden;
     border-radius: 3vh;
     position: relative;
+    font-family: 'serif';
 }
 
 .tool-item-name {
@@ -666,7 +680,8 @@ body {
 }
 
 .tool4-left,
-.tool6-left {
+.tool6-left,
+.tool8-left {
     display: inline-block;
     position: relative;
     font-size: 2vh;
@@ -675,7 +690,8 @@ body {
 }
 
 .tool4-right,
-.tool6-right {
+.tool6-right,
+.tool8-right {
     display: inline-block;
     position: absolute;
     font-size: 2vh;
@@ -689,7 +705,8 @@ body {
 
 .tool3-check,
 .tool4-check,
-.tool6-check {
+.tool6-check,
+.tool8-check {
     display: block;
     position: absolute;
     bottom: 1vh;
@@ -755,6 +772,7 @@ body {
 
 .tool7-note {
     margin-left: 3vw;
+    font-size: 1.8vh;
 }
 
 .tool7-check {

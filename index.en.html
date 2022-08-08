@@ -33,6 +33,21 @@
             overflow: auto;
         }
 
+        .info-headimg {
+            margin-left: 2vw;
+            width: 3vw;
+            height: 3vw;
+            background: url(logo.jpg);
+            background-size: cover;
+        }
+
+        .info-qqnum {
+            position: absolute;
+            left: 7vw;
+            top: 2vh;
+            font-size: 2vh;
+        }
+
         .info-sup,
         .info-shr {
             font-family: 'icomoon';
@@ -42,6 +57,10 @@
             margin: 0;
             margin-left: 2vh;
             margin-top: 2vh;
+        }
+
+        .info-send {
+            font-size: 2vh;
         }
 
         .web-go {
@@ -72,7 +91,8 @@
         }
 
         .tool4-right,
-        .tool6-right {
+        .tool6-right,
+        .tool8-right {
             right: 25vw;
             width: 20vw;
         }
@@ -90,7 +110,8 @@
         }
 
         .tool4-left,
-        .tool6-left {
+        .tool6-left,
+        .tool8-left {
             left: 25vw;
         }
 
@@ -135,7 +156,7 @@
 </head>
 
 <body>
-    <audio class="bgm" loop autoplay id="player2">
+    <audio class="bgm" loop id="player2">
         <source src="bgm.mp3" type="audio/mpeg" />
         你的浏览器不支持播放音乐┑(￣Д ￣)┍
     </audio>
@@ -150,6 +171,8 @@
     </div>
 
     <div class="info">
+        <p class="info-headimg"></p>
+        <p class="info-qqnum">Not signed in</p>
         <p class="infoOff infoNight1"></p>
         <p class="info-sup info-sup-1 infoNight2">support:</p>
         <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>
@@ -168,7 +191,8 @@
             <a title="More platforms" class="bshare-more bshare-more-icon more-style-addthis info-shr"></a>
         </div> -->
         <a class="info-send infoNight5 full">Click to display the web page in full screen</a>
-        <a href="tencent://message/?uin=1041095264" class="info-send infoNight3">Use QQ to send messages to me directly</a>
+        <a href="tencent://message/?uin=1041095264" class="info-send infoNight3">Use QQ to send messages to me
+            directly</a>
         <p class="info-send infoNight4">You can press F12 to open the console.</p>
     </div>
 
@@ -215,6 +239,36 @@
             <p class="web-name">&emsp;my GitHub profile</p>
             <p class="web-site">&emsp;https://github.com/striumve</p>
             <a class="web-go" href="https://github.com/striumve" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;MDN Web Docs</p>
+            <p class="web-site">&emsp;https://developer.mozilla.org/en-US/</p>
+            <a class="web-go" href="https://developer.mozilla.org/en-US/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Want Quotes/p>
+            <p class="web-site">&emsp;https://wantquotes.net/</p>
+            <a class="web-go" href="https://wantquotes.net/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Want Words</p>
+            <p class="web-site">&emsp;https://wantwords.net/</p>
+            <a class="web-go" href="https://wantwords.net/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;China Natural Herbarium</p>
+            <p class="web-site">&emsp;https://cfh.ac.cn/</p>
+            <a class="web-go" href="https://cfh.ac.cn/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;List of biological species in China</p>
+            <p class="web-site">&emsp;http://www.sp2000.org.cn/browse/browse_taxa</p>
+            <a class="web-go" href="http://www.sp2000.org.cn/browse/browse_taxa" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;Youdao translator</p>
+            <p class="web-site">&emsp;https://fanyi.youdao.com/</p>
+            <a class="web-go" href="https://fanyi.youdao.com/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;GitHub Pages offical documentation (Simplified Chinese)</p>
@@ -343,13 +397,13 @@
                 <p>Calculation principle:</p>
                 <p>Let the two-point coordinate of the input be $$ (\frac{a}{b},\frac{c}{d}), (\frac{e}{f},\frac{g}{h})
                     $$</p>
-                <p>Let the analytical expression of the line be $$ y=kx+h $$</p>
+                <p>Let the analytical expression of the line be $$ y=mx+n $$</p>
                 <p>Substituting the two point coordinates into the analytical formula, we get $$ \left\{ \begin{aligned}
-                    \frac{a}{b}k+h=\frac{c}{d} -- I \\ \frac{e}{f}k+h=\frac{g}{h} -- II \end{aligned} \right. $$</p>
-                <p>I - II $$ (\frac{a}{b}-\frac{e}{f})k=(\frac{c}{d}-\frac{g}{h}) $$</p>
+                    \frac{a}{b}m+n=\frac{c}{d} -- I \\ \frac{e}{f}m+n=\frac{g}{h} -- II \end{aligned} \right. $$</p>
+                <p>I - II $$ (\frac{a}{b}-\frac{e}{f})m=(\frac{c}{d}-\frac{g}{h}) $$</p>
                 <p>$$ \begin{equation}
                     \begin{split}
-                    k
+                    m
                     &=(\frac{c}{d}-\frac{g}{h})÷(\frac{a}{b}-\frac{e}{f}) \\
                     &=\frac{ch-dg}{dh}÷\frac{af-be}{bf} \\
                     &=\frac{ch-dg}{dh}·\frac{bf}{af-be} \\
@@ -358,12 +412,12 @@
                     \end{equation}
                     $$
                 </p>
-                <p>Substitute the above equation into I to obtain $$ \frac{a}{b}(\frac{bf(ch-dg)}{dh(af-be)})+h =
+                <p>Substitute the above equation into I to obtain $$ \frac{a}{b}(\frac{bf(ch-dg)}{dh(af-be)})+n =
                     \frac{c}{d} $$</p>
-                <p>that is $$ \frac{abf(ch-dg)}{bdh(af-be)}+h = \frac{c}{d} $$</p>
+                <p>that is $$ \frac{abf(ch-dg)}{bdh(af-be)}+n = \frac{c}{d} $$</p>
                 <p>$$ \begin{equation}
                     \begin{split}
-                    h
+                    n
                     &=\frac{c}{d}-\frac{abf(ch-dg)}{bdh(af-be)} \\
                     &=\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)}
                     \end{split}
@@ -373,6 +427,14 @@
                 <p>Therefore, the analytical expression of the line is: $$
                     y=\frac{bf(ch-dg)}{dh(af-be)}x+\frac{bcdh(af-be)-abdf(ch-dg)}{bd^2h(af-be)} $$</p>
             </div>
+        </div>
+        <div class="tool-item tool8">
+            <p class="tool-item-name">sign in</p>
+            <br>
+            <span class="tool8-left" style="margin-bottom: 10vh;">QQ number</span>
+            <input class="tool8-right" type="text" placeholder="enter QQ number">
+
+            <p class="tool8-check">sign in</p>
         </div>
         <div class="tool-item tool1">
             <p class="tool-item-name">clear the cache</p>
