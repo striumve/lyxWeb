@@ -621,14 +621,15 @@ function sentence() {
 var tool1 = document.querySelector('.tool1');
 var tool1Change = document.querySelector('.tool1-change');
 tool1.addEventListener("click", function () {
-    var sweep = setTimeout(function () {
+    localStorage.clear();
+    setTimeout(function () {
         if (languageFlag === 1) {
             alert('缓存已清除');
         } else if (languageFlag === 2) {
             alert('The cache has been cleared.')
         }
         tool1Change.innerHTML = '0.0000 MB';
-    }, 1234);
+    }, 666);
 })
 
 // var tool2In = document.querySelector('.tool2-input');
@@ -1074,7 +1075,4 @@ set4Check.addEventListener("click", function () {
 if(window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
     night();
     set4Opt2.selected = true;
-} else if(window.matchMedia('(prefers-color-scheme: dark)').matches === false) {
-    day();
-    set4Opt1.selected = true;
 }
