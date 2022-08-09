@@ -14,10 +14,8 @@
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!-- bShare -->
-    <!-- <script type="text/javascript" charset="utf-8"
-        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
-    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script> -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <style>
         .info {
             position: absolute;
@@ -34,6 +32,7 @@
         }
 
         .info-headimg {
+            margin-top: 3vh;
             margin-left: 2vw;
             width: 3vw;
             height: 3vw;
@@ -41,11 +40,26 @@
             background-size: cover;
         }
 
+        .info-qqname {
+            position: absolute;
+            left: 7vw;
+            top: 2.5vh;
+            font-size: 2vh;
+            width: 13vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         .info-qqnum {
             position: absolute;
             left: 7vw;
-            top: 2vh;
+            top: 5vh;
             font-size: 2vh;
+            width: 13vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .info-sup,
@@ -161,7 +175,8 @@
 
     <div class="info">
         <p class="info-headimg"></p>
-        <p class="info-qqnum">未登录</p>
+        <p class="info-qqname">未登录</p>
+        <p class="info-qqnum"></p>
         <p class="infoOff infoNight1"></p>
         <p class="info-sup info-sup-1 infoNight2">提供支持:</p>
         <a class="info-sup info-sup-2" href="https://github.com" target="_blank"></a>

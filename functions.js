@@ -119,13 +119,13 @@ var infoOff = document.querySelector('.infoOff');
 function infoOutFrame() {
     if (themeFlag === 1) {
         info.style.animation = 'infoOut ease .3s forwards';
-        var infoSleep = setTimeout(function () {
+        setTimeout(function () {
             info.style.display = 'none';
         }, 150)
         infoFlag = 0;
     } else if (themeFlag === 2) {
         info.style.animation = 'infoOutNight ease .3s forwards';
-        var infoSleep = setTimeout(function () {
+        setTimeout(function () {
             info.style.display = 'none';
         }, 150)
         infoFlag = 0;
@@ -829,6 +829,7 @@ var tool8Check = document.querySelector('.tool8-check');
 var logo = document.querySelector('.logo');
 var infoLogo = document.querySelector('.info-headimg');
 var infoNum = document.querySelector('.info-qqnum');
+var infoName = document.querySelector('.info-qqname');
 if (localStorage.signin != undefined) {
     tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + localStorage.signin;
     logo.style.background = 'url(' + tool8Url + ')';
@@ -836,23 +837,25 @@ if (localStorage.signin != undefined) {
     infoLogo.style.background = 'url(' + tool8Url + ')';
     infoLogo.style.backgroundSize = 'cover';
     infoNum.innerHTML = localStorage.signin;
+    getQQName(localStorage.signin);
     document.querySelector('.tool8-right').value = localStorage.signin;
 }
 tool8Check.addEventListener("click", function () {
     isTool8NaN = document.querySelector('.tool8-right').value;
     tool8 = parseInt(isTool8NaN);
     if (isTool8NaN === '') {
-        if(languageFlag === 1) {
+        if (languageFlag === 1) {
             alert('您已退出登录');
-        } else if(languageFlag === 2) {
+        } else if (languageFlag === 2) {
             alert('You have logged out');
         }
-        tool8Url = 'logo.jpg';
         if (languageFlag === 1) {
-            infoNum.innerHTML = '未登录';
+            infoName.innerHTML = '未登录';
         } else if (languageFlag === 2) {
-            infoNum.innerHTML = 'Not signed in';
+            infoName.innerHTML = 'Not signed in';
         }
+        tool8Url = 'logo.jpg';
+        infoNum.innerHTML = '';
         localStorage.removeItem("signin");
     } else {
         tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + tool8;
@@ -861,6 +864,7 @@ tool8Check.addEventListener("click", function () {
         infoLogo.style.background = 'url(' + tool8Url + ')';
         infoLogo.style.backgroundSize = 'cover';
         infoNum.innerHTML = tool8;
+        getQQName(tool8);
         if (languageFlag === 1) {
             alert("登录成功");
         } else if (languageFlag === 2) {
@@ -869,6 +873,18 @@ tool8Check.addEventListener("click", function () {
         localStorage.setItem("signin", tool8);
     }
 })
+
+function getQQName(num) {
+    $.ajax({
+        url: "https://api.usuuu.com/qq/" + num,
+        type: "GET",
+        dataType: "json",
+        success: function (result) {
+            // console.log(result["data"].name, result["data"].avatar);
+            infoName.innerHTML = result["data"].name;
+        }
+    });
+}
 
 //设置
 var set1Opt = document.querySelector('.set1-option');
