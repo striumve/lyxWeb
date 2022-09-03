@@ -118,13 +118,13 @@ var infoOff = document.querySelector('.infoOff');
 
 function infoOutFrame() {
     if (themeFlag === 1) {
-        info.style.animation = 'infoOut ease .3s forwards';
+        info.style.animation = 'infoOut ease .3s both';
         setTimeout(function () {
             info.style.display = 'none';
         }, 150)
         infoFlag = 0;
     } else if (themeFlag === 2) {
-        info.style.animation = 'infoOutNight ease .3s forwards';
+        info.style.animation = 'infoOutNight ease .3s both';
         setTimeout(function () {
             info.style.display = 'none';
         }, 150)
@@ -138,9 +138,9 @@ if (deviceFlag === 1) {
     logo.addEventListener("mouseover", function () {
         info.style.display = 'block';
         if (themeFlag === 1) {
-            info.style.animation = 'infoCome ease .3s forwards';
+            info.style.animation = 'infoCome ease .3s both';
         } else if (themeFlag === 2) {
-            info.style.animation = 'infoComeNight ease .3s forwards';
+            info.style.animation = 'infoComeNight ease .3s both';
         }
         infoFlag = 1;
     })
@@ -148,9 +148,9 @@ if (deviceFlag === 1) {
     logo.addEventListener("click", function () {
         info.style.display = 'block';
         if (themeFlag === 1) {
-            info.style.animation = 'infoCome ease .3s forwards';
+            info.style.animation = 'infoCome ease .3s both';
         } else if (themeFlag === 2) {
-            info.style.animation = 'infoComeNight ease .3s forwards';
+            info.style.animation = 'infoComeNight ease .3s both';
         }
         infoFlag = 1;
     })
@@ -164,16 +164,16 @@ var sentenceB = document.querySelector('.senChange');
 var navFlag = 0;
 navBtn.addEventListener("click", function () {
     if (navFlag === 0) {
-        nav.style.animation = 'navUpFrame linear .2s forwards';
-        navBtn.style.animation = 'navBtnDown linear .2s forwards';
-        sentenceA.style.animation = 'senOut linear .2s forwards';
-        sentenceB.style.animation = 'senOut2 linear .2s forwards';
+        nav.style.animation = 'navUpFrame linear .2s both';
+        navBtn.style.animation = 'navBtnDown linear .2s both';
+        sentenceA.style.animation = 'senOut linear .2s both';
+        sentenceB.style.animation = 'senOut2 linear .2s both';
         navFlag = 1;
     } else if (navFlag === 1) {
-        nav.style.animation = 'navDownFrame linear .2s forwards';
-        navBtn.style.animation = 'navBtnUp linear .2s forwards';
-        sentenceA.style.animation = 'senCome linear .2s forwards';
-        sentenceB.style.animation = 'senCome2 linear .2s forwards';
+        nav.style.animation = 'navDownFrame linear .2s both';
+        navBtn.style.animation = 'navBtnUp linear .2s both';
+        sentenceA.style.animation = 'senCome linear .2s both';
+        sentenceB.style.animation = 'senCome2 linear .2s both';
         navFlag = 0;
     }
 })
@@ -193,11 +193,11 @@ var flagC = 0;
 var infoFlag = 0;
 
 function pageOut(name, btn) {
-    main.style.animation = 'pageOut-main ease .5s forwards';
-    name.style.animation = 'pageOut ease .5s forwards';
+    main.style.animation = 'pageOut-main ease .5s both';
+    name.style.animation = 'pageOut ease .5s both';
     btn.style.fontWeight = '100';
-    sentenceA.style.animation = 'senCome linear .2s forwards';
-    sentenceB.style.animation = 'senCome2 linear .2s forwards';
+    sentenceA.style.animation = 'senCome linear .2s both';
+    sentenceB.style.animation = 'senCome2 linear .2s both';
     if (name === webPage) {
         flagA = 0;
     }
@@ -210,11 +210,11 @@ function pageOut(name, btn) {
 }
 
 function pageCome(name, btn) {
-    main.style.animation = 'pageCome-main ease .5s forwards';
-    name.style.animation = 'pageCome ease .5s forwards';
+    main.style.animation = 'pageCome-main ease .5s both';
+    name.style.animation = 'pageCome ease .5s both';
     btn.style.fontWeight = '700';
-    sentenceA.style.animation = 'senOut linear .2s forwards';
-    sentenceB.style.animation = 'senOut2 linear .2s forwards';
+    sentenceA.style.animation = 'senOut linear .2s both';
+    sentenceB.style.animation = 'senOut2 linear .2s both';
     if (name === webPage) {
         flagA = 1;
     }
@@ -614,6 +614,134 @@ function sentence() {
         sen.title = '';
     }
 }
+
+//消息
+var msg1 = document.querySelector('.msg1');
+var msg1Title = document.querySelector('.msg1-title');
+var msg1Btn = document.querySelector('.msg1-btn');
+var msg1Detail = document.querySelector('.msg1-detail');
+var msg2 = document.querySelector('.msg2');
+var msg2Title = document.querySelector('.msg2-title');
+var msg2Btn = document.querySelector('.msg2-btn');
+var msg2Detail = document.querySelector('.msg2-detail');
+var msg1Flag = 0;
+var msg2Flag = 0;
+var dates = new Date();
+var month = dates.getMonth() + 1;
+var tomorrow = dates.getDate() + 1;
+var year = dates.getFullYear();
+if (languageFlag === 1) {
+    var msg1Date = document.querySelector('.msg1-detail-date');
+    var msg2Date = document.querySelector('.msg2-detail-date');
+    msg1Date.innerHTML = '请你在家长的陪伴下于' + year + '年' + month + '月' + tomorrow + '日下午12:00前到达中央广播电视台参与节目录制。';
+    msg2Date.innerHTML = '请您于' + year + '年' + month + '月' + tomorrow + '日上午7:00至祁门门路与怀宁路交口向西100米 男生女生向前冲观众入口处检录并参加节目录制。';
+} else if (languageFlag === 2) {
+    var msg2Date = document.querySelector('.msg2-detail-date');
+    msg2Date.innerHTML = 'Please arrive at Room 114514 of the Oxford University Trinity College at 7:30 am on ' + tomorrow + '/' + month + '/' + year + '.';
+}
+
+function showMsg() {
+    var msgNum = Math.floor(Math.random() * 2);
+    if (msgNum === 0) {
+        msg1.style.display = 'block';
+    } else if (msgNum === 1) {
+        msg2.style.display = 'block';
+    }
+}
+msg1Btn.addEventListener("click", function () {
+    if (msg1Flag === 0) {
+        if (deviceFlag === 1) {
+            msg1.style.width = '30vw';
+        } else if (deviceFlag === 2) {
+            msg1.style.width = '60vw';
+        }
+        msg1.style.height = '40vh';
+        msg1.style.overflow = 'auto';
+        msg1Title.style.display = 'none';
+        msg1Detail.style.display = 'block';
+        if (languageFlag === 1) {
+            msg1Btn.innerHTML = '关闭';
+        } else if (languageFlag === 2) {
+            msg1Btn.innerHTML = 'close';
+        }
+        msg1Flag = 1;
+    } else if (msg1Flag === 1) {
+        msg1.style.display = 'none';
+    }
+})
+msg2Btn.addEventListener("click", function () {
+    if (msg2Flag === 0) {
+        if (deviceFlag === 1) {
+            msg2.style.width = '30vw';
+        } else if (deviceFlag === 2) {
+            msg2.style.width = '60vw';
+        }
+        msg2.style.height = '40vh';
+        msg2.style.overflow = 'auto';
+        msg2Title.style.display = 'none';
+        msg2Detail.style.display = 'block';
+        if (languageFlag === 1) {
+            msg2Btn.innerHTML = '关闭';
+        } else if (languageFlag === 2) {
+            msg2Btn.innerHTML = 'close';
+        }
+        msg2Flag = 1;
+    } else if (msg2Flag === 1) {
+        msg2.style.display = 'none';
+    }
+})
+
+//拼图验证码
+
+var shouldMove = false;
+var captcha2 = document.querySelector('.captcha2');
+var captcha2All = document.querySelector('.captcha2-scene');
+var captcha2Handle = document.querySelector('.handle');
+var captcha2Button = document.querySelector('.handle-span');
+var captcha2Close = document.querySelector('.captcha2-btn');
+
+if (deviceFlag === 1) {
+    captcha2Button.addEventListener('mousedown', (e) => {
+        shouldMove = true;
+    })
+    window.addEventListener('mousemove', (e) => {
+        if (shouldMove) {
+            var offsetLeft = captcha2Handle.getBoundingClientRect().left;
+            var buttonWidth = captcha2Button.getBoundingClientRect().width;
+            captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
+        }
+    })
+    window.addEventListener('mouseup', (e) => {
+        if (shouldMove) {
+            var finalOffset = e.clientX - captcha2Handle.getBoundingClientRect().left;
+            captcha2.style.setProperty('--moved', '0px');
+            shouldMove = false;
+        }
+    })
+} else if (deviceFlag === 2) {
+    captcha2Button.addEventListener('touchstart', (e) => {
+        shouldMove = true;
+    })
+    window.addEventListener('touchmove', (e) => {
+        if (shouldMove) {
+            var offsetLeft = captcha2Handle.getBoundingClientRect().left;
+            var buttonWidth = captcha2Button.getBoundingClientRect().width;
+            captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
+        }
+    })
+    window.addEventListener('touchend', (e) => {
+        if (shouldMove) {
+            var finalOffset = e.clientX - captcha2Handle.getBoundingClientRect().left;
+            captcha2.style.setProperty('--moved', '0px');
+            shouldMove = false;
+        }
+    })
+}
+
+captcha2Close.addEventListener("click", function () {
+    captcha2All.style.display = 'none';
+})
+
 //工具
 var tool1 = document.querySelector('.tool1');
 var tool1Change = document.querySelector('.tool1-change');
@@ -649,11 +777,12 @@ tool3.addEventListener("click", function () {
 
 var tool4 = document.querySelector('.tool4-check');
 tool4.addEventListener("click", function () {
-    if (languageFlag === 1) {
-        alert("您还没有注册。\n您需要先注册账号后才能注册账号。");
-    } else if (languageFlag === 2) {
-        alert("You have not registered. \nYou need to register an account before you can register an account.");
-    }
+    captcha2All.style.display = 'block';
+    // if (languageFlag === 1) {
+    //     alert("您还没有注册。\n您需要先注册账号后才能注册账号。");
+    // } else if (languageFlag === 2) {
+    //     alert("You have not registered. \nYou need to register an account before you can register an account.");
+    // }
 })
 
 var tool5 = document.querySelector('.tool5-check');
@@ -807,16 +936,16 @@ var tool7Close = document.querySelector('.tool7-why-close');
 tool7Open.addEventListener("click", function () {
     tool7Why.style.display = 'block';
     if (deviceFlag === 1) {
-        tool7Why.style.animation = 'tool7Come ease-in-out .3s forwards';
+        tool7Why.style.animation = 'tool7Come ease-in-out .3s both';
     } else if (deviceFlag === 2) {
-        tool7Why.style.animation = 'tool7ComeM ease-in-out .3s forwards';
+        tool7Why.style.animation = 'tool7ComeM ease-in-out .3s both';
     }
 })
 tool7Close.addEventListener("click", function () {
     if (deviceFlag === 1) {
-        tool7Why.style.animation = 'tool7Out ease-in-out .3s forwards';
+        tool7Why.style.animation = 'tool7Out ease-in-out .3s both';
     } else if (deviceFlag === 2) {
-        tool7Why.style.animation = 'tool7OutM ease-in-out .3s forwards';
+        tool7Why.style.animation = 'tool7OutM ease-in-out .3s both';
     }
     setTimeout(function () {
         tool7Why.style.display = 'none';
@@ -830,6 +959,9 @@ var logo = document.querySelector('.logo');
 var infoLogo = document.querySelector('.info-headimg');
 var infoNum = document.querySelector('.info-qqnum');
 var infoName = document.querySelector('.info-qqname');
+var captchaCode = '';
+var inputCaptcha = document.querySelector('.inputCaptcha').value;
+newCaptcha();
 if (localStorage.signin != undefined) {
     tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + localStorage.signin;
     logo.style.background = 'url(' + tool8Url + ')';
@@ -841,36 +973,49 @@ if (localStorage.signin != undefined) {
     document.querySelector('.tool8-right').value = localStorage.signin;
 }
 tool8Check.addEventListener("click", function () {
-    isTool8NaN = document.querySelector('.tool8-right').value;
-    tool8 = parseInt(isTool8NaN);
-    if (isTool8NaN === '') {
-        if (languageFlag === 1) {
-            alert('您已退出登录');
-        } else if (languageFlag === 2) {
-            alert('You have logged out');
+    inputCaptcha = document.querySelector('.inputCaptcha').value;
+    if (inputCaptcha === captchaCode) {
+        isTool8NaN = document.querySelector('.tool8-right').value;
+        tool8 = parseInt(isTool8NaN);
+        if (isTool8NaN === '') {
+            if (languageFlag === 1) {
+                alert('您已退出登录');
+            } else if (languageFlag === 2) {
+                alert('You have logged out');
+            }
+            if (languageFlag === 1) {
+                infoName.innerHTML = '未登录';
+            } else if (languageFlag === 2) {
+                infoName.innerHTML = 'Not signed in';
+            }
+            tool8Url = 'logo.jpg';
+            infoNum.innerHTML = '';
+            localStorage.removeItem("signin");
+        } else {
+            tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + tool8;
+            logo.style.background = 'url(' + tool8Url + ')';
+            logo.style.backgroundSize = 'cover';
+            infoLogo.style.background = 'url(' + tool8Url + ')';
+            infoLogo.style.backgroundSize = 'cover';
+            infoNum.innerHTML = tool8;
+            getQQName(tool8);
+            if (languageFlag === 1) {
+                alert("登录成功");
+            } else if (languageFlag === 2) {
+                alert("Successfully sign in")
+            }
+            localStorage.setItem("signin", tool8);
+            setTimeout(function () {
+                showMsg();
+            }, 1234);
         }
-        if (languageFlag === 1) {
-            infoName.innerHTML = '未登录';
-        } else if (languageFlag === 2) {
-            infoName.innerHTML = 'Not signed in';
-        }
-        tool8Url = 'logo.jpg';
-        infoNum.innerHTML = '';
-        localStorage.removeItem("signin");
     } else {
-        tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + tool8;
-        logo.style.background = 'url(' + tool8Url + ')';
-        logo.style.backgroundSize = 'cover';
-        infoLogo.style.background = 'url(' + tool8Url + ')';
-        infoLogo.style.backgroundSize = 'cover';
-        infoNum.innerHTML = tool8;
-        getQQName(tool8);
         if (languageFlag === 1) {
-            alert("登录成功");
+            alert('验证码错误');
         } else if (languageFlag === 2) {
-            alert("Successfully sign in")
+            alert("The captcha is incorrect.");
         }
-        localStorage.setItem("signin", tool8);
+        newCaptcha();
     }
 })
 
@@ -883,6 +1028,26 @@ function getQQName(num) {
             // console.log(result["data"].name, result["data"].avatar);
             infoName.innerHTML = result["data"].name;
         }
+    });
+}
+
+function newCaptcha() {
+    let captcha2 = new Captcha({
+        lineWidth: 1, //线条宽度
+        lineNum: 6, //线条数量
+        dotR: 2, //点的半径
+        dotNum: 25, //点的数量
+        preGroundColor: [10, 80], //前景色区间
+        backGroundColor: [150, 250], //背景色区间
+        fontSize: 30, //字体大小
+        fontFamily: ['Georgia'], //字体类型
+        fontStyle: 'fill', //字体绘制方法，有fill和stroke
+        content: 'abcdefghijklmnopqrstuvwxyz0123456789', //验证码内容
+        length: 6 //验证码长度
+    }); // 传值
+    captcha2.draw(document.querySelector('.captcha'), r => {
+        captchaCode = r;
+        // console.log(captchaCode);
     });
 }
 
@@ -1066,6 +1231,10 @@ function day() {
     night14.style.color = 'black';
     night15.style.color = 'black';
     night16.style.color = 'black';
+    msg1.style.backgroundColor = 'white';
+    msg2.style.backgroundColor = 'white';
+    msg1.style.color = 'black';
+    msg2.style.color = 'black';
     if (languageFlag === 1) {
         set3Opt1.innerHTML = '背景1(知乎@世尊逛人间)';
         set3Opt2.innerHTML = '背景2(电影 你的名字。)';
@@ -1106,6 +1275,10 @@ function night() {
     night14.style.color = 'rgba(255, 255, 255, .7)';
     night15.style.color = 'rgba(255, 255, 255, .7)';
     night16.style.color = 'rgba(255, 255, 255, .7)';
+    msg1.style.backgroundColor = 'rgb(50, 50, 50)';
+    msg2.style.backgroundColor = 'rgb(50, 50, 50)';
+    msg1.style.color = 'white';
+    msg2.style.color = 'white';
     if (languageFlag === 1) {
         set3Opt1.innerHTML = '背景1(知乎@马梦李)';
         set3Opt2.innerHTML = '背景2(知乎@爱做饭的程序员)';

@@ -16,6 +16,8 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- captcha -->
+    <script src="captcha.js"></script>
     <style>
         .info {
             position: absolute;
@@ -166,6 +168,15 @@
             background: url(https://shared.ydstatic.com/images/favicon.ico) no-repeat;
             background-size: cover;
         }
+
+        .captcha2 {
+            --width: 30vw;
+            --height: 30vh;
+            --puzzle-width: 5vw;
+            --puzzle-height: 7vh;
+
+            left: 40vw;
+        }
     </style>
 </head>
 
@@ -208,7 +219,8 @@
         <a class="info-send infoNight5 full">Click to display the web page in full screen</a>
         <a href="tencent://message/?uin=1041095264" class="info-send infoNight3">Use QQ to send messages to me
             directly</a>
-        <p class="info-send infoNight4">You can press F12 to open the console.</p>
+        <a href="https://www.apache.org/licenses/LICENSE-2.0.html" class="info-send infoNight4" target="_blank">Apache
+            License 2.0</a>
     </div>
 
     <div class="main"></div>
@@ -227,6 +239,50 @@
         your browser and open JavaScript.</div>
 
     <p class="navBtn"></p>
+
+    <div class="msg1">
+        <span class="msg1-title">You have a new message&emsp;</span>
+        <span class="msg1-btn">more</span>
+        <div class="msg1-detail">
+            <p>Dear Friend:</p>
+            <p>Congratulations on your successful registration to run for president of the United States.</p>
+            <p>Please arrive on time for the campaign speech at the White House, 1600 Pennsylvania Avenue, Washington,
+                DC, United States of America. <br>
+                The exact time will be informed later.</p>
+            <p>Please dress appropriately, do not overdo makeup, do not wear sandals, do not dye hair, perm hair,
+                etc.<br>
+                Please prepare your speech in advance. It is better not to have pauses, typos and so on during the
+                campaign speech, which may affect the effect of the speech.</p>
+        </div>
+    </div>
+
+    <div class="msg2">
+        <span class="msg2-title">You have a new message&emsp;</span>
+        <span class="msg2-btn">more</span>
+        <div class="msg2-detail">
+            <p>Dear Friend:</p>
+            <p>Congratulations on your successful registration for ACT.</p>
+            <p class="msg2-detail-date">Please arrive at Room 114514 of the Oxford University Trinity College at 7:30 am
+                on [date]/[month]/[year].
+            <p>
+            <p>20 minutes before the test (the first 30 minutes before the test),<br>
+                peolpe in an orderly manner into the examination room, check the admission ticket and other documents
+                required.<br>
+                Distribute the test papers 5 minutes before the start of the examination.<br>
+                After the start of the examination signal issued, begin to answer the questions.<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="captcha2-scene">
+        <p class="captcha2-title">Jigsaw Puzzle Captcha<br>Drag the slider to match the image:</p>
+        <div class="captcha2">
+            <div class="handle">
+                <span class="handle-span"></span>
+            </div>
+        </div>
+        <p class="captcha2-btn">How can I make it???</p>
+    </div>
 
     <div class="webPage page">
         <p class="pageTitle pageTitle1">websites</p>
@@ -448,7 +504,10 @@
             <br>
             <span class="tool8-left" style="margin-bottom: 10vh;">QQ number</span>
             <input class="tool8-right" type="text" placeholder="enter QQ number">
-
+            <br>
+            <span class="tool8-left" style="margin-bottom: 10vh;">captcha</span>
+            <input class="tool8-right inputCaptcha" type="text" placeholder="enter 6-digit captcha" maxlength="6">
+            <canvas width="240" height="90" class="captcha"></canvas>
             <p class="tool8-check">sign in</p>
         </div>
         <div class="tool-item tool1">

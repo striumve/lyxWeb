@@ -881,3 +881,172 @@ body {
     right: 27vw;
     top: 12vh;
 }
+
+.captcha {
+    position: absolute;
+    right: 25vw;
+    bottom: 14vh;
+}
+
+.msg1,
+.msg2 {
+    padding: 2vh;
+    position: absolute;
+    left: 3vw;
+    top: 8vh;
+    border-radius: 1vh;
+    background-color: #fff;
+    /* width: 10vw; */
+    /* height: 2.3vh; */
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    font-size: 1.8vh;
+    display: none;
+}
+
+.msg1-btn,
+.msg2-btn {
+    text-decoration: underline;
+}
+
+.msg1-detail,
+.msg2-detail {
+    display: none;
+}
+
+.captcha2-scene {
+    width: 100vw;
+    height: 100vh;
+    z-index: 665;
+    background-color: rgba(50, 50, 50, .6);
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    display: none;
+}
+
+.captcha2-title {
+    font-family: '微软雅黑';
+    font-size: 2vh;
+    position: absolute;
+    top: 23vh;
+    left: 30vw;
+    color: white;
+}
+
+.captcha2 {
+    --offset-left: var(--width) * -1;
+    --moved: 0px;
+
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    border-radius: 4px;
+    background-image: url(background-captcha.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .3);
+
+    position: absolute;
+    top: 35vh;
+    z-index: 666;
+}
+
+.captcha2::before,
+.captcha2::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+
+    clip-path: inset(calc((var(--height) - var(--puzzle-height)) / 2)
+            /* 90px */
+            var(--puzzle-width)
+            /* 90px */
+            calc((var(--height) - var(--puzzle-height)) / 2)
+            /* 90px */
+            calc(var(--width) - var(--puzzle-width) * 2)
+            /* 230px */
+        );
+    -webkit-clip-path: inset(calc((var(--height) - var(--puzzle-height)) / 2)
+            /* 90px */
+            var(--puzzle-width)
+            /* 90px */
+            calc((var(--height) - var(--puzzle-height)) / 2)
+            /* 90px */
+            calc(var(--width) - var(--puzzle-width) * 2)
+            /* 230px */
+        );
+}
+
+.captcha2::after {
+    transform: translateX(clamp(calc(var(--width) * -1),
+                calc((var(--width) * -1) + var(--moved)),
+                calc(var(--puzzle-width))));
+    position: relative;
+    top: 3vw;
+    transition: .25s all ease-in-out;
+}
+
+.captcha2:active::after {
+    transition: none;
+}
+
+.captcha2::before {
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+    bottom: 5vh;
+}
+
+.handle {
+    width: calc(var(--width) + var(--puzzle-width) * 2);
+    height: 3vh;
+    border-radius: 3vh;
+    background-color: #eee;
+    position: absolute;
+    bottom: -50px;
+    left: calc(var(--puzzle-width) * 2 * -1);
+    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, .2);
+    border: 3px solid #ccc;
+}
+
+.handle-span {
+    display: block;
+    width: var(--puzzle-width);
+    height: inherit;
+    border-radius: inherit;
+    background-color: #fff;
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, .25), 0px 2px 4px rgba(0, 0, 0, .3);
+    position: absolute;
+    cursor: move;
+    transform: translatex(clamp(0vh,
+                var(--moved),
+                calc(var(--width) + var(--puzzle-width))));
+
+    transition: .25s all ease-in-out;
+}
+
+.captcha2:active .handle-span {
+    transition: none;
+}
+
+.captcha2.passed::before,
+.captcha2.passed::after,
+.captcha2.passed #handle {
+    opacity: 0;
+}
+
+.captcha2-btn {
+    font-family: '微软雅黑';
+    font-size: 2vh;
+    position: absolute;
+    top: 73vh;
+    left: 60vw;
+    color: white;
+    text-decoration: underline;
+}

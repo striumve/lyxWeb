@@ -16,6 +16,8 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- captcha -->
+    <script src="captcha.js"></script>
     <style>
         .info {
             position: absolute;
@@ -160,6 +162,15 @@
         .tool7-why-close {
             right: 27vw;
         }
+
+        .captcha2 {
+            --width: 30vw;
+            --height: 30vh;
+            --puzzle-width: 5vw;
+            --puzzle-height: 7vh;
+
+            left: 40vw;
+        }
     </style>
 </head>
 
@@ -198,7 +209,8 @@
         <a class="info-shr info-shr-5"></a> -->
         <a class="info-send infoNight5 full">点击以全屏显示网页</a>
         <a href="tencent://message/?uin=1041095264" class="info-send infoNight3">点击以使用QQ直接向我发送消息</a>
-        <p class="info-send infoNight4">您可以按下F12以打开控制台(console)。</p>
+        <a href="https://www.apache.org/licenses/LICENSE-2.0.html" class="info-send infoNight4" target="_blank">开源协议
+            Apache License 2.0</a>
     </div>
 
     <div class="main"></div>
@@ -216,6 +228,47 @@
     <div class="noJS">您已关闭JavaScript，<br>这可能会影响到您的浏览体验。<br>建议前往浏览器设置中开启JavaScript。</div>
 
     <p class="navBtn"></p>
+
+    <div class="msg1">
+        <span class="msg1-title">您有一条新通知&emsp;</span>
+        <span class="msg1-btn">展开</span>
+        <div class="msg1-detail">
+            <p>亲爱的小朋友：</p>
+            <p>恭喜你，成功报名参加中央电视台少儿频道《智慧树》。</p>
+            <p>栏目创办于2003年12月28日。是为3-6岁学龄前儿童专门打造的一档益智娱乐节目。<br>
+                节目以自由生动的形式，寓科学的教育理念于生动的游戏当中，让孩子在游戏中学，在游戏中乐，在游戏中快乐成长。</p>
+            <p class="msg1-detail-date">请你在家长的陪伴下于[year]年[month]月[date]日下午12:00前到达中央广播电视台参与节目录制。</p>
+            <p>小咕咚和她的朋友们都等着你哟~<br>
+                记住我们的口号，智慧树上智慧果，智慧树下你和我，智慧树前做游戏欢乐多又多~期待与你的见面！<br>
+                ——小咕咚</p>
+        </div>
+    </div>
+
+    <div class="msg2">
+        <span class="msg2-title">您有一条新通知&emsp;</span>
+        <span class="msg2-btn">展开</span>
+        <div class="msg2-detail">
+            <p>您好，感谢您对2022《男生女生向前冲》栏目的支持，</p>
+            <p class="msg2-detail-date">请您于[year]年[month]月[date]日上午7:00至祁门门路与怀宁路交口向西100米 男生女生向前冲观众入口处检录并参加节目录制。</p>
+            <p>1、请务必携带本人有效身份证以及身份证复印件2张，[不带者视作放弃]；<br>
+                2、请穿宽松运动服，尽量是纯色[千万不要有条纹、骷髅头、雪花点、马赛克图案等明显商标，或带日本文字的服装。不要穿牛仔裤]；<br>
+                3、请穿运动休闲鞋[千万不要穿钉鞋或内增高]；<br>
+                4、请携带一套换洗衣服，包括内衣和鞋子。因为疫情，现场暂不提供沐浴，望您谅解；<br>
+                5、请确保您的健康码是绿色，否则无法参与节目录制；<br>
+                6、请确保您的头发颜色正常，头发颜色是彩色、过黄或非正常发色，颜色过于明显都无法参与节目。<br>
+            </p>
+        </div>
+    </div>
+
+    <div class="captcha2-scene">
+        <p class="captcha2-title">拼图验证码<br>拖动滑块使图片拼合：</p>
+        <div class="captcha2">
+            <div class="handle">
+                <span class="handle-span"></span>
+            </div>
+        </div>
+        <p class="captcha2-btn">算了，不验证了</p>
+    </div>
 
     <div class="webPage page">
         <p class="pageTitle pageTitle1">网址导航</p>
@@ -445,6 +498,10 @@
             <br>
             <span class="tool8-left" style="margin-bottom: 10vh;">QQ号码</span>
             <input class="tool8-right" type="text" placeholder="输入QQ号码">
+            <br>
+            <span class="tool8-left" style="margin-bottom: 10vh;">验证码</span>
+            <input class="tool8-right inputCaptcha" type="text" placeholder="输入6位验证码" maxlength="6">
+            <canvas width="240" height="90" class="captcha"></canvas>
             <p class="tool8-check">登录</p>
         </div>
         <div class="tool-item tool1">
