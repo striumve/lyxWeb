@@ -299,7 +299,7 @@
 body {
     margin: 0;
     position: relative;
-    cursor: url(cursor.png), auto;
+    /* cursor: url(cur/02.png), auto; */
     cursor: default;
     background-color: rgb(50, 50, 50);
     user-select: none;
@@ -989,7 +989,7 @@ body {
                 calc((var(--width) * -1) + var(--moved)),
                 calc(var(--puzzle-width))));
     position: relative;
-    top: 3vw;
+    top: 4vw;
     transition: .25s all ease-in-out;
 }
 
@@ -1000,7 +1000,7 @@ body {
 .captcha2::before {
     background-color: rgba(0, 0, 0, .6);
     background-blend-mode: multiply;
-    bottom: 5vh;
+    /* bottom: 5vh; */
 }
 
 .handle {
