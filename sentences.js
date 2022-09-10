@@ -454,7 +454,7 @@ function sentence_en() {
             sen.innerHTML = 'Live well, love lots, and laugh often.'
             break;
         case 39:
-            sen.innerHTML = 'Whatever is worth doing is worth doing well.任'
+            sen.innerHTML = 'Whatever is worth doing is worth doing well.'
             break;
         default:
             break;
