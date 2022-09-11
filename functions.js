@@ -400,10 +400,10 @@ if (deviceFlag === 1) {
     window.addEventListener('touchmove', (e) => {
         if (shouldMove) {
             var offsetLeft = e.changedTouches[0].clientX;
-            var buttonWidth = captcha2Button.offsetLeft; 
+            // var buttonWidth = captcha2Button.offsetLeft; 
             // console.log(offsetLeft);
             // captcha2Handle.getBoundingClientRect().left;
-            // var buttonWidth = captcha2Button.getBoundingClientRect().width;
+            var buttonWidth = captcha2Button.getBoundingClientRect().width;
             // captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
             captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth}px`);
         }
