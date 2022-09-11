@@ -265,7 +265,7 @@ function sentence2() {
             sen.innerHTML = '太阳在西方落下时， 他的早晨的东方已静悄悄的站在他面前。<br>——泰戈尔《飞鸟集》';
             break;
         case 79:
-            sen.innerHTML = '奴才总不过是寻人诉苦。只要这样，也只能这样。——鲁迅《野草》-《聪明人和傻子和奴才》';
+            sen.innerHTML = '奴才总不过是寻人诉苦。只要这样，也只能这样。<br>——鲁迅《野草》-《聪明人和傻子和奴才》';
             break;
         case 80:
             sen.innerHTML = '爱情必须时时更新，生长，创造。<br>——鲁迅《伤逝》';
