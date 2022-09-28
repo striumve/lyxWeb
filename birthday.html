@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐</title>
+    <style>
+    		body {
+            margin: 0; 
+        }
+    </style>
+</head>
+<body>
+	<img src="birthday.jpg" style="width: 100vw; ">
+  	<p style="position: relative; bottom: 50px; left: 10px; background-color: rgba(200, 200, 255, .5); display: inline">For: No.3 _ Xu Ruikun</p>
+  	<br>
+  	<p>请输入验证码以进行下一步</p>
+    	<button class="btn">发送验证码</button>
+     <br>
+     <input type="text" placeholder="输入验证码"></input>
+     <button class="check">确定</button>
+     <hr>
+     <p>没用电脑，画面很简单，将就看看</p>
+     <a href="https://github.com/striumve/lyxWeb/blob/gh-pages/birthday.html">源代码</a>
+     
+     <script>
+      var btn = document.quertSelecter('.btn'); 
+      btn.addEventListener("click", function() {
+      	alert("验证码为：\n etshit"); 
+      	
+      })
+      var check = document.quertSelecter('.check'); 
+      check.addEventListener("click", function() {
+      	alert("含有敏感词，验证失败"); 
+      	
+      })
+      
+      </script>
+</body>
