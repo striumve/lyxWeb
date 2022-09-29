@@ -90,9 +90,10 @@
       })
         
         var check4 = document.querySelector('.check4'); 
-      var pw = document.querySelector('.pw').value;
+      var pw; 
         var more = document.querySelector('.more');
       check4.addEventListener("click", function() {
+     pw = document.querySelector('.pw').value;
       	if(pw === '114514') {
      	more.style.display = 'block'; 
      } else  {
