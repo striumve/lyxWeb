@@ -8,33 +8,100 @@
     <title>生日快乐</title>
     <style>
     		body {
-            margin: 0; 
+            margin: 1vw; 
+        }
+        p {
+        		display: inline; 
         }
     </style>
 </head>
 <body>
-	<img src="birthday.JPG" style="width: 100vw; ">
-  	<p style="position: relative; bottom: 50px; left: 10px; background-color: rgba(200, 200, 255, .5); display: inline">For: No.3 _ Xu Ruikun</p>
+	<img src="birthday.JPG" alt="Happy Birthday _ 图片加载失败" style="width: 98vw; ">
+  	<!-- <p style="position: relative; bottom: 50px; left: 10px; background-color: rgba(200, 200, 255, .5); display: inline">For: No.3 _ Xu Ruikun</p> -->
   	<br>
-  	<p>请输入验证码以进行下一步</p>
+  	<h3>请完成以下步骤后方可领取礼物</h3>
+    <br>
+    <p>1、验证码</p>
+    <span style="color: orange; "> 未完成</span>
+    <br>
     	<button class="btn">发送验证码</button>
      <br>
      <input type="text" placeholder="输入验证码"></input>
      <button class="check">确定</button>
-     <hr>
-     <p>没用电脑，画面很简单，将就看看</p>
+     <br><br>
+    <p>2、计算</p>
+     <span style="color: orange; "> 未完成</span>
+     <br>
+     <span>16 - 9 = </span>
+     <input type="text" placeholder="计算结果"></input>
+     <button class="check2">确定</button>
+     <br><br>
+     <p>3、求值</p>
+     <span style="color: orange; "> 未完成</span>
+     <br>
+     <img alt="图片加载失败">
+     <br>
+     <p>如图，已知：AB≠CD≠114514，求：AB、CD、DE、AE的长及∠DBA、∠AEB的度数。
+     <input type="text" placeholder="AD"></input>
+     <input type="text" placeholder="CD"></input>
+     <br>
+     <input type="text" placeholder="DE"></input>
+     <input type="text" placeholder="AE"></input>
+     <br>
+     <input type="text" placeholder="∠DBA"></input>
+     <input type="text" placeholder="∠AEB"></input>
+     <br>
+     <button class="check3">确定</button>
+     <br><br>
+     <p>滚，强制领取</p>
+     <br>
+     <p>输入密码：</p>
+     <input type="text" placeholder="输入密码" class="pw"></input>
+     <button class="check4">确定</button>
+     
+     <br>
+     <div class="more" style="display: none; ">
+     	<button class="check5">领取礼物</button>
+     </div>
+     
+     <br><br><hr>
+     <p>By: No.4 lyx <br>For: No.3 xrk</p>
+     <br>
+     <p>没用电脑，画面很简陋，将就看看</p>
+     <br>
      <a href="https://github.com/striumve/lyxWeb/blob/gh-pages/birthday.html">源代码</a>
      
      <script>
       var btn = document.querySelector('.btn'); 
       btn.addEventListener("click", function() {
       	alert('验证码为：\n etshit'); 
-      	
       })
-      var check = document.querySelector('.check'); 
+     var check = document.querySelector('.check'); 
       check.addEventListener("click", function() {
       	alert('含有敏感词，验证失败'); 
-      	
+      })
+      var check2 = document.querySelector('.check2'); 
+      check2.addEventListener("click", function() {
+      	alert('计算错误'); 
+      })
+     var check3 = document.querySelector('.check3'); 
+      check3.addEventListener("click", function() {
+      	alert('哦？你确定吗？'); 
+      })
+        
+        var check4 = document.querySelector('.check4'); 
+      var pw = document.querySelector('.pw').value;
+        var more = document.querySelector('.more');
+      check4.addEventListener("click", function() {
+      	if(pw === '114514') {
+     	more.style.display = 'block'; 
+     } else  {
+        alert('再想想？') 
+        }
+      })
+        
+        var check5 = document.querySelector('.check5'); 
+      check5.addEventListener("click", function() {      	 	window.location = 'https://b23.tv/DMiJloT'; 
       })
       
       </script>
