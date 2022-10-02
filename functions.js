@@ -406,7 +406,7 @@ if (deviceFlag === 1) {
             // console.log(offsetLeft);
             // captcha2Handle.getBoundingClientRect().left;
             // captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
-            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth + 3 + handleSpanWidth * 0.5}px`);    //3px：handle的border宽
+            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth + 3}px`);    //3px：handle的border宽
         }
     })
     window.addEventListener('touchend', (e) => {
