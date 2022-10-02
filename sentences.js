@@ -17,7 +17,7 @@ senChn.addEventListener("click", function () {
 })
 
 function sentence1() {
-    var senNum = Math.floor(Math.random() * 52);
+    var senNum = Math.floor(Math.random() * 84);
     switch (senNum) {
         case 0:
             sen.innerHTML = '钥匙圈是非常实用的小工具，<br>它可以让你一次把所有钥匙都丢光。';
@@ -175,13 +175,109 @@ function sentence1() {
         case 51:
             sen.innerHTML = '黄鹤一去不复返，飞入寻常百姓家。';
             break;
+        case 52:
+            sen.innerHTML = '大家都在为情所困，而我每天比狗还困';
+            break;
+        case 53:
+            sen.innerHTML = '我也知道被窝是冬天学习的坟墓，可坟墓里真的好温暖。';
+            break;
+        case 54:
+            sen.innerHTML = '知道在学校为什么这么困吗？因为学校是梦开始的地方。';
+            break;
+        case 55:
+            sen.innerHTML = '跑操有没有提高身体素质我不知道，反正我素质越跑越差。';
+            break;
+        case 56:
+            sen.innerHTML = '我妈经常说我是从垃圾堆里捡的，所以<br>我格外喜欢吃垃圾食品，因为有家的味道。';
+            break;
+        case 57:
+            sen.innerHTML = '如果全世界都不要你了，记得去找他，他认识好几个人贩子呢！';
+            break;
+        case 58:
+            sen.innerHTML = '喜欢什么告诉姐，姐给你买，<br>但最好不要超过三块钱，姐不喜欢太物质的男人。';
+            break;
+        case 59:
+            sen.innerHTML = '我这个人看似坚强洒脱，但其实被车撞到也会死。';
+            break;
+        case 60:
+            sen.innerHTML = '我这个人看似坚强洒脱，但其实被车撞到也会死。';
+            break;
+        case 61:
+            sen.innerHTML = '我把玫瑰藏在身后，花店老板说我老六';
+            break;
+        case 62:
+            sen.innerHTML = '你值得更好的，而不是我这种最好的';
+            break;
+        case 63:
+            sen.innerHTML = '我还是喜欢你，唢呐一吹，我就觉得走的是你。';
+            break;
+        case 64:
+            sen.innerHTML = '停下休息的时候，不要忘记别人还在奔跑，所以请努力伸出双腿，绊倒他。';
+            break;
+        case 65:
+            sen.innerHTML = '解不止出现在数学题上，姐还出现在你心里。';
+            break;
+        case 66:
+            sen.innerHTML = '运动真的可以让人长寿，我以为我已经平板支撑了半小时了，实际上才2分钟。';
+            break;
+        case 67:
+            sen.innerHTML = '我藏在骨子里的高冷气质，让我年纪轻轻得了骨节炎。';
+            break;
+        case 68:
+            sen.innerHTML = '我不敢把房间打扫得太干净，我怕我打扫得太干净，房间里唯一的垃圾就只剩下我了。';
+            break;
+        case 69:
+            sen.innerHTML = '“我靠,这辈子死定了。”';
+            break;
+        case 70:
+            sen.innerHTML = '我怀疑我是不死之身，证据是我到现在都还没死过。';
+            break;
+        case 71:
+            sen.innerHTML = '笑死，跑一百米还要十秒，我五十米就够了。';
+            break;
+        case 72:
+            sen.innerHTML = '你值得更好的，而不是我这种最好的';
+            break;
+        case 73:
+            sen.innerHTML = '恐怖分子是由恐怖原子组成的吗？';
+            break;
+        case 74:
+            sen.innerHTML = '流浪地球被民警成功抓获。';
+            break;
+        case 75:
+            sen.innerHTML = '未在无安全人员陪同的情况下驾驶机动车上路不得取得机动车驾驶执照。';
+            break;
+        case 76:
+            sen.innerHTML = '既然五月二十号是情侣的节日，那我们把二月五十号作为弱智的节日吧。';
+            break;
+        case 77:
+            sen.innerHTML = '每个成功男人的背后，都有一条脊椎。';
+            break;
+        case 78:
+            sen.innerHTML = '来到这个世界上，我就没打算活着回去 。';
+            break;
+        case 79:
+            sen.innerHTML = '就算是a piece of shit，也没人敢踩在它头上不是？';
+            break;
+        case 80:
+            sen.innerHTML = '我可以活到我死。';
+            break;
+        case 81:
+            sen.innerHTML = '假如你每天早上出门前对着你的镜子<br>说一声“你很棒”，那么一段时间后，<br>这个镜子就会成为一块很棒的镜子。';
+            break;
+        case 82:
+            sen.innerHTML = '只有一番努力之后，你才能尝到放弃的快乐。';
+            break;
+        case 83:
+            sen.innerHTML = '脑袋好疼，<br>是不是知识太渊博要溢出来了';
+            break;
         default:
             break;
     }
 }
 
 function sentence2() {
-    var senNum = Math.floor(Math.random() * 48 + 52);
+    var senNum = Math.floor(Math.random() * 49 + 52);
     switch (senNum) {
         case 52:
             sen.innerHTML = '以勇敢的胸膛面对逆境。<br>——贺拉斯《诗艺》';
@@ -265,7 +361,7 @@ function sentence2() {
             sen.innerHTML = '太阳在西方落下时， 他的早晨的东方已静悄悄的站在他面前。<br>——泰戈尔《飞鸟集》';
             break;
         case 79:
-            sen.innerHTML = '奴才总不过是寻人诉苦。只要这样，也只能这样。<br>——鲁迅《野草》-《聪明人和傻子和奴才》';
+            sen.innerHTML = '奴才总不过是寻人诉苦。只要这样，也只能这样。——鲁迅《野草》-《聪明人和傻子和奴才》';
             break;
         case 80:
             sen.innerHTML = '爱情必须时时更新，生长，创造。<br>——鲁迅《伤逝》';
@@ -327,6 +423,9 @@ function sentence2() {
         case 99:
             sen.innerHTML = '爱国者的话是最有价值的。——鲁迅';
             break;
+        case 100:
+            sen.innerHTML = '人生就像一杯茶，不会苦一辈子，但总会苦一阵子。';
+            break;
         default:
             break;
     }
@@ -334,7 +433,7 @@ function sentence2() {
 }
 
 function sentence_en() {
-    var senNum = Math.floor(Math.random() * 40);
+    var senNum = Math.floor(Math.random() * 52);
     switch (senNum) {
         case 0:
             sen.innerHTML = 'Attitude decides altitude.'
@@ -388,7 +487,7 @@ function sentence_en() {
             sen.innerHTML = 'Asking costs nothing.'
             break;
         case 17:
-            sen.innerHTML = 'Big mouthfuls ofter choke.'
+            sen.innerHTML = 'Big mouthfuls often choke.'
             break;
         case 18:
             sen.innerHTML = 'Nothing is impossible!'
@@ -455,6 +554,42 @@ function sentence_en() {
             break;
         case 39:
             sen.innerHTML = 'Whatever is worth doing is worth doing well.'
+            break;
+        case 40:
+            sen.innerHTML = 'Go big or go home.'
+            break;
+        case 41:
+            sen.innerHTML = 'Absence sharpens love, presence strengthens it.'
+            break;
+        case 42:
+            sen.innerHTML = 'The end doesn\'t justify the means.'
+            break;
+        case 43:
+            sen.innerHTML = 'One swallow doesn\'t make a summer.'
+            break;
+        case 44:
+            sen.innerHTML = 'Have more than you show, speak less than you know.<br>--Shakespeare'
+            break;
+        case 45:
+            sen.innerHTML = 'Don\'t die before you\'re dead.'
+            break;
+        case 46:
+            sen.innerHTML = 'People who think they know everything <br>are a great annoyance to those of us who do. '
+            break;
+        case 47:
+            sen.innerHTML = 'Be valuable, not vegetable. '
+            break;
+        case 48:
+            sen.innerHTML = 'How can I know what I think till I see what I say? '
+            break;
+        case 49:
+            sen.innerHTML = 'I\'m working on myself, for myself, by myself.'
+            break;
+        case 50:
+            sen.innerHTML = 'Offline is the new peace of mind. '
+            break;
+        case 51:
+            sen.innerHTML = 'People who know the least always argue the most.'
             break;
         default:
             break;

@@ -989,7 +989,7 @@ body {
                 calc((var(--width) * -1) + var(--moved)),
                 calc(var(--puzzle-width))));
     position: relative;
-    top: 4vw;
+    top: 10vh;
     transition: .25s all ease-in-out;
 }
 

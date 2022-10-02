@@ -398,14 +398,15 @@ if (deviceFlag === 1) {
         shouldMove = true;
     })
     window.addEventListener('touchmove', (e) => {
+        var vw = document.documentElement.clientWidth;
         if (shouldMove) {
             var offsetLeft = e.changedTouches[0].clientX;
-            // var buttonWidth = captcha2Button.offsetLeft; 
+            var buttonWidth = vw * (0.3-0.07) ;  //30vw：大图片（.captcha2）距离左端长度；7vw：handle左移长度
+            var handleSpanWidth = vw * 0.07;     //7vw：滑块（handle-span）宽
             // console.log(offsetLeft);
             // captcha2Handle.getBoundingClientRect().left;
-            var buttonWidth = captcha2Button.getBoundingClientRect().width;
             // captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
-            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth}px`);
+            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth + 3 + handleSpanWidth * 0.5}px`);    //3px：handle的border宽
         }
     })
     window.addEventListener('touchend', (e) => {
