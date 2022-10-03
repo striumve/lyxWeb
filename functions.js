@@ -729,27 +729,27 @@ tool8Check.addEventListener("click", function () {
 function getQQName(num) {
     $.ajax({
         // url: "https://api.qqsuu.cn/api/dm-qq.info?qq=" + num,
+        url: "https://api.uomg.com/api/qq.info?qq=" + num,
         type: "GET",
         dataType: "json",
-        headers: {
-            "Access-Control-Allow-Origin": "f**k you",
-        },
         success: function (result) {
             // console.log(result["data"].name, result["data"].avatar);
-            qqName = result["data"].name;
+            qqName = result.name;
             infoName.innerHTML = qqName;
         },
         error: function () {
-            // alert("QQ昵称获取失败");
+            alert("QQ昵称获取失败");
         }
     });
 }
 
 function getQQPhoto(num) {
+    qqPhotoUrl = "https://q3.qlogo.cn/headimg_dl?dst_uin=" + num + "&spec=100";
+    /*
     $.ajax({
         // url: "https://api.qqsuu.cn/api/dm-qq.info?qq=" + num,
         // url: "https://tenapi.cn/bilibili/?uid=" + num,
-        url: "https://tenapi.cn/wether/?city=北京",
+        // url: "https://tenapi.cn/wether/?city=北京",
         type: "GET",
         dataType: "json",
         success: function (result) {
@@ -761,6 +761,9 @@ function getQQPhoto(num) {
             // alert("QQ头像获取失败");
         }
     });
+    */
+
+
 }
 
 document.querySelector('.captcha').addEventListener("click", function () {
