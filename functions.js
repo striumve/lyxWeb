@@ -375,6 +375,8 @@ var captcha2Handle = document.querySelector('.handle');
 var captcha2Button = document.querySelector('.handle-span');
 var captcha2Close = document.querySelector('.captcha2-btn');
 
+
+
 if (deviceFlag === 1) {
     captcha2Button.addEventListener('mousedown', (e) => {
         shouldMove = true;
@@ -391,6 +393,11 @@ if (deviceFlag === 1) {
             var finalOffset = e.clientX - captcha2Handle.getBoundingClientRect().left;
             captcha2.style.setProperty('--moved', '0px');
             shouldMove = false;
+            if (languageFlag === 1) {
+                alert("图片未拼合，请重试");
+            } else {
+                alert("The image isn\'t matched. \nPlease try again.")
+            }
         }
     })
 } else if (deviceFlag === 2) {
@@ -401,12 +408,11 @@ if (deviceFlag === 1) {
         var vw = document.documentElement.clientWidth;
         if (shouldMove) {
             var offsetLeft = e.changedTouches[0].clientX;
-            var buttonWidth = vw * (0.3-0.07) ;  //30vw：大图片（.captcha2）距离左端长度；7vw：handle左移长度
-            var handleSpanWidth = vw * 0.07;     //7vw：滑块（handle-span）宽
+            var buttonWidth = vw * (0.3 - 0.07); //30vw：大图片（.captcha2）距离左端长度；7vw：handle左移长度
             // console.log(offsetLeft);
             // captcha2Handle.getBoundingClientRect().left;
             // captcha2.style.setProperty('--moved', `${e.clientX - offsetLeft - buttonWidth / 2}px`);
-            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth + 3}px`);    //3px：handle的border宽
+            captcha2.style.setProperty('--moved', `${offsetLeft - buttonWidth + 3}px`); //3px：handle的border宽
         }
     })
     window.addEventListener('touchend', (e) => {
@@ -414,6 +420,11 @@ if (deviceFlag === 1) {
             var finalOffset = e.clientX - captcha2Handle.getBoundingClientRect().left;
             captcha2.style.setProperty('--moved', '0px');
             shouldMove = false;
+            if (languageFlag === 1) {
+                alert("图片未拼合，请重试");
+            } else {
+                alert("The image isn\'t matched. \nPlease try again.")
+            }
         }
     })
 }
@@ -519,6 +530,43 @@ tool7Check.addEventListener("click", function () {
     tool7();
 })
 
+//约分
+function yf1(m, n) {
+    // 返回约分m/n后得到的分子m
+    var m;
+    var n;
+    var a = m;
+    var b = n;
+    (a >= b) ? (a = m, b = n) : (a = n, b = m);
+    if (m != 1 && n != 1) {
+        for (var i = b; i >= 2; i--) {
+            if (m % i == 0 && n % i == 0) {
+                m = m / i;
+                n = n / i;
+            }
+        }
+    }
+    return m;
+}
+
+function yf2(m, n) {
+    // 返回约分m/n后得到的分母n
+    var m;
+    var n;
+    var a = m;
+    var b = n;
+    (a >= b) ? (a = m, b = n) : (a = n, b = m);
+    if (m != 1 && n != 1) {
+        for (var i = b; i >= 2; i--) {
+            if (m % i == 0 && n % i == 0) {
+                m = m / i;
+                n = n / i;
+            }
+        }
+    }
+    return n;
+}
+
 function tool7() {
     t7a = parseInt(document.querySelector('.tool7-a').value);
     t7b = parseInt(document.querySelector('.tool7-b').value);
@@ -538,80 +586,47 @@ function tool7() {
     t7hFm = (t7b * t7d * t7d * t7h) * ((t7a * t7f) - (t7b * t7e));
     // alert(t7kFz + '/' + t7kFm + ' k' + ' + ' + t7hFz + '/' + t7hFm);
 
-    //约分
-    function yf1(m, n) {
-        var m;
-        var n;
-        var a = m;
-        var b = n;
-        (a >= b) ? (a = m, b = n) : (a = n, b = m);
-        if (m != 1 && n != 1) {
-            for (var i = b; i >= 2; i--) {
-                if (m % i == 0 && n % i == 0) {
-                    m = m / i;
-                    n = n / i;
-                }
-            }
-        }
-        return m;
-    }
-
-    function yf2(m, n) {
-        var m;
-        var n;
-        var a = m;
-        var b = n;
-        (a >= b) ? (a = m, b = n) : (a = n, b = m);
-        if (m != 1 && n != 1) {
-            for (var i = b; i >= 2; i--) {
-                if (m % i == 0 && n % i == 0) {
-                    m = m / i;
-                    n = n / i;
-                }
-            }
-        }
-        return n;
-    }
-    if (t7kFz < 0 && t7kFm < 0) {
+    if (t7kFz <= 0 && t7kFm <= 0) {
         t7kFzLast = yf1((0 - t7kFz), (0 - t7kFm));
         t7kFmLast = yf2((0 - t7kFz), (0 - t7kFm));
         tool7OutK.innerHTML = 'y =';
     }
-    if (t7hFz < 0 && t7hFm < 0) {
+    if (t7hFz <= 0 && t7hFm < 0) {
         t7hFzLast = yf1((0 - t7hFz), (0 - t7hFm));
         t7hFmLast = yf2((0 - t7hFz), (0 - t7hFm));
         tool7OutB.innerHTML = 'x +';
     }
-    if (t7kFz > 0 && t7kFm > 0) {
+    if (t7kFz >= 0 && t7kFm >= 0) {
         t7kFzLast = yf1((t7kFz), (t7kFm));
         t7kFmLast = yf2((t7kFz), (t7kFm));
         tool7OutK.innerHTML = 'y =';
     }
-    if (t7hFz > 0 && t7hFm > 0) {
+    if (t7hFz >= 0 && t7hFm >= 0) {
         t7hFzLast = yf1((t7hFz), (t7hFm));
         t7hFmLast = yf2((t7hFz), (t7hFm));
         tool7OutB.innerHTML = 'x +';
     }
-    if (t7kFz > 0 && t7kFm < 0) {
+    if (t7kFz >= 0 && t7kFm <= 0) {
         t7kFzLast = yf1((t7kFz), (0 - t7kFm));
         t7kFmLast = yf2((t7kFz), (0 - t7kFm));
         tool7OutK.innerHTML = 'y = -';
     }
-    if (t7kFz < 0 && t7kFm > 0) {
+    if (t7kFz <= 0 && t7kFm >= 0) {
         t7kFzLast = yf1((0 - t7kFz), (t7kFm));
         t7kFmLast = yf2((0 - t7kFz), (t7kFm));
         tool7OutK.innerHTML = 'y = -';
     }
-    if (t7hFz > 0 && t7hFm < 0) {
+    if (t7hFz >= 0 && t7hFm <= 0) {
         t7hFzLast = yf1((t7hFz), (0 - t7hFm));
         t7hFmLast = yf2((t7hFz), (0 - t7hFm));
         tool7OutB.innerHTML = 'x -';
     }
-    if (t7hFz < 0 && t7hFm > 0) {
+    if (t7hFz <= 0 && t7hFm >= 0) {
         t7hFzLast = yf1((0 - t7hFz), (t7hFm));
         t7hFmLast = yf2((0 - t7hFz), (t7hFm));
         tool7OutB.innerHTML = 'x -';
     }
+
     t7kFzOut.innerHTML = t7kFzLast;
     t7kFmOut.innerHTML = t7kFmLast;
     t7hFzOut.innerHTML = t7hFzLast;
@@ -650,15 +665,17 @@ var infoNum = document.querySelector('.info-qqnum');
 var infoName = document.querySelector('.info-qqname');
 var captchaCode = '';
 var inputCaptcha = document.querySelector('.inputCaptcha').value;
+var qqName = '';
+var qqPhotoUrl = '';
 newCaptcha();
 if (localStorage.signin != undefined) {
-    tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + localStorage.signin;
-    logo.style.background = 'url(' + tool8Url + ')';
+    getQQName(localStorage.signin);
+    getQQPhoto(localStorage.signin);
+    logo.style.background = 'url(' + qqPhotoUrl + ')';
     logo.style.backgroundSize = 'cover';
-    infoLogo.style.background = 'url(' + tool8Url + ')';
+    infoLogo.style.background = 'url(' + qqPhotoUrl + ')';
     infoLogo.style.backgroundSize = 'cover';
     infoNum.innerHTML = localStorage.signin;
-    getQQName(localStorage.signin);
     document.querySelector('.tool8-right').value = localStorage.signin;
 }
 tool8Check.addEventListener("click", function () {
@@ -681,13 +698,14 @@ tool8Check.addEventListener("click", function () {
             infoNum.innerHTML = '';
             localStorage.removeItem("signin");
         } else {
+            getQQName(tool8);
+            getQQPhoto(tool8);
             tool8Url = 'https://api.qqsuu.cn/api/qt?qq=' + tool8;
-            logo.style.background = 'url(' + tool8Url + ')';
+            logo.style.background = 'url(' + qqPhotoUrl + ')';
             logo.style.backgroundSize = 'cover';
-            infoLogo.style.background = 'url(' + tool8Url + ')';
+            infoLogo.style.background = 'url(' + qqPhotoUrl + ')';
             infoLogo.style.backgroundSize = 'cover';
             infoNum.innerHTML = tool8;
-            getQQName(tool8);
             if (languageFlag === 1) {
                 alert("登录成功");
             } else if (languageFlag === 2) {
@@ -710,12 +728,37 @@ tool8Check.addEventListener("click", function () {
 
 function getQQName(num) {
     $.ajax({
-        url: "https://api.usuuu.com/qq/" + num,
+        // url: "https://api.qqsuu.cn/api/dm-qq.info?qq=" + num,
+        type: "GET",
+        dataType: "json",
+        headers: {
+            "Access-Control-Allow-Origin": "f**k you",
+        },
+        success: function (result) {
+            // console.log(result["data"].name, result["data"].avatar);
+            qqName = result["data"].name;
+            infoName.innerHTML = qqName;
+        },
+        error: function () {
+            // alert("QQ昵称获取失败");
+        }
+    });
+}
+
+function getQQPhoto(num) {
+    $.ajax({
+        // url: "https://api.qqsuu.cn/api/dm-qq.info?qq=" + num,
+        // url: "https://tenapi.cn/bilibili/?uid=" + num,
+        url: "https://tenapi.cn/wether/?city=北京",
         type: "GET",
         dataType: "json",
         success: function (result) {
             // console.log(result["data"].name, result["data"].avatar);
-            infoName.innerHTML = result["data"].name;
+            qqPhotoUrl = result["data"].imgurl;
+            // alert(result["data"].imgurl)
+        },
+        error: function () {
+            // alert("QQ头像获取失败");
         }
     });
 }
@@ -734,7 +777,7 @@ function newCaptcha() {
         preGroundColor: [10, 80], //前景色区间
         backGroundColor: [150, 250], //背景色区间
         fontSize: 30, //字体大小
-        fontFamily: ['Georgia'], //字体类型
+        fontFamily: ['consolas'], //字体类型
         fontStyle: 'fill', //字体绘制方法，有fill和stroke
         content: 'abcdefghijklmnopqrstuvwxyz0123456789', //验证码内容
         length: 6 //验证码长度
