@@ -301,7 +301,7 @@ body {
     position: relative;
     /* cursor: url(cur/02.png), auto; */
     cursor: default;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(150, 150, 150);
     user-select: none;
 }
 
