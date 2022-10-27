@@ -218,8 +218,9 @@
     <div class="main"></div>
 
     <div class="senDiv">
-        <p class="sen" title="文案来自B站">创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民</p>
-        <p class="senChange"></p>
+        <!-- <p class="sen" title="文案来自B站">创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民</p> -->
+        <p class="sen"></p>
+        <p class="senChange"></p>
     </div>
 
     <div class="load">
@@ -270,6 +271,36 @@
             </div>
         </div>
         <p class="captcha2-btn">算了，不验证了</p>
+    </div>
+
+    <div class="hitokoto">
+        <p class="sentence"></p>
+        <p class="resource"></p>
+        <div class="filter"></div>
+        <div class="weather">
+            <p class="weather-title">今日天气</p>
+            <!-- <p class="weather-city">北京市</p> -->
+            <input type="text" value="北京市" class="weather-city">
+            <p class="weather-get">定位</p>
+            <p class="weather-check">确定</p>
+            <br>
+            <div class="weather-message"><p class="weather-message-title">最高气温</p><p class="weather-detail weather-tempMax"></p></div>
+            <div class="weather-message"><p class="weather-message-title">最低气温</p><p class="weather-detail weather-tempMin"></p></div>
+            <div class="weather-message"><p class="weather-message-title">白天天气</p><p class="weather-detail weather-textDay"></p></div>
+            <div class="weather-message"><p class="weather-message-title">夜间天气</p><p class="weather-detail weather-textNight"></p></div>
+            <div class="weather-message"><p class="weather-message-title">总降雨量</p><p class="weather-detail weather-precip"></p></div>
+            <div class="weather-message"><p class="weather-message-title">日出</p><p class="weather-detail weather-sunrise"></p></div>
+            <div class="weather-message"><p class="weather-message-title">日落</p><p class="weather-detail weather-sunset"></p></div>
+            <div class="weather-message"><p class="weather-message-title">月升</p><p class="weather-detail weather-moonrise"></p></div>
+            <div class="weather-message"><p class="weather-message-title">月落</p><p class="weather-detail weather-moonset"></p></div>
+            <div class="weather-message"><p class="weather-message-title">月相</p><p class="weather-detail weather-moonPhase"></p></div>
+            <div class="weather-message"><p class="weather-message-title">白天风向</p><p class="weather-detail weather-windDirDay"></p></div>
+            <div class="weather-message"><p class="weather-message-title">白天风力等级</p><p class="weather-detail weather-windScaleDay"></p></div>
+            <div class="weather-message"><p class="weather-message-title">夜间风向</p><p class="weather-detail weather-windDirNight"></p></div>
+            <div class="weather-message"><p class="weather-message-title">夜间风力等级</p><p class="weather-detail weather-windScaleNight"></p></div>
+            <div class="weather-message"><p class="weather-message-title">能见度</p><p class="weather-detail weather-vis"></p></div>
+            <div class="weather-message"><p class="weather-message-title">相对湿度</p><p class="weather-detail weather-humidity"></p></div>
+        </div>
     </div>
 
     <div class="webPage page">
@@ -397,6 +428,16 @@
             <p class="web-name">&emsp;Stack Overflow</p>
             <p class="web-site">&emsp;https://stackoverflow.com</p>
             <a class="web-go" href="https://stackoverflow.com" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;和风天气</p>
+            <p class="web-site">&emsp;https://www.qweather.com/</p>
+            <a class="web-go" href="https://www.qweather.com/" target="_blank"></a>
+        </div>
+        <div class="web-item">
+            <p class="web-name">&emsp;一言</p>
+            <p class="web-site">&emsp;https://hitokoto.cn/</p>
+            <a class="web-go" href="https://hitokoto.cn/" target="_blank"></a>
         </div>
         <div class="web-item">
             <p class="web-name">&emsp;教你获取任意网站资源</p>
@@ -612,10 +653,10 @@
             <button class="set-check set4-check">确定</button>
         </div>
         <div class="set-item set5">
-            <p>右下角文案内容</p>
+            <p>（该设置已失效）</p>
             <select name="" id="" class="set-select set5-select">
-                <option value="1" class="set5-option set5-option1">正常</option>
-                <option value="2" class="set5-option set5-option2">不正经（来自B站）</option>
+                <option value="1" class="set5-option set5-option1">（该设置已失效）</option>
+                <option value="2" class="set5-option set5-option2">（该设置已失效）</option>
             </select>
             <button class="set-check set5-check">确定</button>
         </div>
@@ -628,8 +669,9 @@
 </script>
 
 <script src="functions.js"></script>
-<script src="sentences.js"></script>
+<!-- <script src="sentences.js"></script> -->
 <!-- <script src="https://tenapi.cn/yiyan/?format=js"></script> -->
+<!-- <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
 
 <script>
     //隐藏JavaScript提示

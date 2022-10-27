@@ -232,6 +232,26 @@
     }
 }
 
+@keyframes hitokotoOut {
+    0% {
+        filter: blur(0px);
+    }
+
+    100% {
+        filter: blur(10px);
+    }
+}
+
+@keyframes hitokotoCome {
+    0% {
+        filter: blur(10px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}
+
 @keyframes tool7Out {
     0% {
         background-color: rgba(120, 120, 200, 0.95);
@@ -519,6 +539,91 @@ body {
     font-size: 2vh;
 }
 
+.hitokoto {
+    height: 8vh;
+    width: 50vw;
+    position: absolute;
+    top: 20vh;
+    left: 25vw;
+    background-color: rgba(255, 255, 255, .4);
+    padding: 2vh;
+    z-index: 0;
+}
+
+.sentence {
+    font-size: 2.5vh;
+    margin: 0;
+    text-align: center;
+}
+
+.resource {
+    font-size: 2vh;
+    margin: 0;
+    margin-top: 2vh;
+    text-align: right;
+}
+
+.weather {
+    height: 37vh;
+    width: 50vw;
+    position: absolute;
+    top: 14vh;
+    left: 0;
+    background-color: rgba(150, 150, 255, .4);
+    padding: 2vh;
+    z-index: 0;
+}
+
+.weather-title {
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.weather-message{
+    display: inline-block;
+    width: 24vw;
+    height: 2vh;
+    font-size: 2vh;
+    margin: 0;
+    margin-top: 1vh;
+}
+
+.weather-get, 
+.weather-check {
+    font-size: 2vh;
+    margin: 0;
+    margin-top: 1vh;
+    display: inline-block;
+    margin-left: 2vw;
+}
+
+.weather-city {
+    outline: none;
+    border: none;
+    background-color: rgba(150, 150, 255, .6);
+    padding: 1vh;
+    font-family: 'consolas';
+    font-size: 1.5vh;
+}
+
+.weather-message-title {
+    display: inline-block;
+    width: 12vh;
+    text-align: right;
+    margin: 0;
+}
+
+.weather-detail {
+    display: inline-block;
+    width: auto;
+    height: 2vh;
+    font-size: 2vh;
+    margin: 0;
+    margin-top: 1vh;
+    margin: 0;
+    margin-left: 2vh;
+}
+
 .page {
     position: absolute;
     top: -100vh;
@@ -528,6 +633,7 @@ body {
     height: 94vh;
     /* cursor: default; */
     overflow: auto;
+    z-index: 1000;
 }
 
 .pageTitle {

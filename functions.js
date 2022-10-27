@@ -186,6 +186,7 @@ var webPage = document.querySelector('.webPage');
 var toolPage = document.querySelector('.toolPage');
 var setPage = document.querySelector('.setPage');
 var main = document.querySelector('.main');
+var hitokotoDiv = document.querySelector('.hitokoto');
 
 var flagA = 0;
 var flagB = 0;
@@ -195,6 +196,7 @@ var infoFlag = 0;
 function pageOut(name, btn) {
     main.style.animation = 'pageOut-main ease .5s both';
     name.style.animation = 'pageOut ease .5s both';
+    hitokotoDiv.style.animation = 'hitokotoCome ease .5s both';
     btn.style.fontWeight = '100';
     sentenceA.style.animation = 'senCome linear .2s both';
     sentenceB.style.animation = 'senCome2 linear .2s both';
@@ -212,6 +214,7 @@ function pageOut(name, btn) {
 function pageCome(name, btn) {
     main.style.animation = 'pageCome-main ease .5s both';
     name.style.animation = 'pageCome ease .5s both';
+    hitokotoDiv.style.animation = 'hitokotoOut ease .5s both';
     btn.style.fontWeight = '700';
     sentenceA.style.animation = 'senOut linear .2s both';
     sentenceB.style.animation = 'senOut2 linear .2s both';
@@ -432,6 +435,114 @@ if (deviceFlag === 1) {
 captcha2Close.addEventListener("click", function () {
     captcha2All.style.display = 'none';
 })
+
+//一言
+fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+        var hitokoto = document.querySelector('.sentence')
+        var from = document.querySelector('.resource')
+        // hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+        hitokoto.innerText = data.hitokoto
+        from.innerText = '——' + data.from
+    })
+    .catch(console.error)
+
+//天气
+
+var weather_location_text = document.querySelector('.weather-city').value;
+var weather_location_input = document.querySelector('.weather-city');
+var weather_check = document.querySelector('.weather-check');
+var weather_get = document.querySelector('.weather-get');
+getWeather();
+weather_check.addEventListener("click", function() {
+    getWeather();
+});
+
+weather_get.addEventListener("click", function() {
+    getLocation();
+    getWeather();
+})
+
+function getWeather() {
+    weather_location_text = document.querySelector('.weather-city').value;
+    fetch('https://geoapi.qweather.com/v2/city/lookup?&location=' + weather_location_text + '&key=f187e32108ce415bb12408e9a4d33e81')
+        .then(response => response.json())
+        .then(data => {
+            fetch('https://devapi.qweather.com/v7/weather/3d?location=' + data.location[0].id + '&key=f187e32108ce415bb12408e9a4d33e81')
+                .then(response => response.json())
+                .then(data => {
+                    var weather_tempMax = document.querySelector('.weather-tempMax');
+                    var weather_tempMin = document.querySelector('.weather-tempMin');
+                    var weather_textDay = document.querySelector('.weather-textDay');
+                    var weather_textNight = document.querySelector('.weather-textNight');
+                    var weather_precip = document.querySelector('.weather-precip');
+                    var weather_sunrise = document.querySelector('.weather-sunrise');
+                    var weather_sunset = document.querySelector('.weather-sunset');
+                    var weather_moonrise = document.querySelector('.weather-moonrise');
+                    var weather_moonset = document.querySelector('.weather-moonset');
+                    var weather_moonPhase = document.querySelector('.weather-moonPhase');
+                    var weather_windDirDay = document.querySelector('.weather-windDirDay');
+                    var weather_windScaleDay = document.querySelector('.weather-windScaleDay');
+                    var weather_windDirNight = document.querySelector('.weather-windDirNight');
+                    var weather_windScaleNight = document.querySelector('.weather-windScaleNight');
+                    var weather_vis = document.querySelector('.weather-vis');
+                    var weather_humidity = document.querySelector('.weather-humidity');
+                    weather_tempMax.innerText = data.daily[0].tempMax + '°C';
+                    weather_tempMin.innerText = data.daily[0].tempMin + '°C';
+                    weather_textDay.innerText = data.daily[0].textDay;
+                    weather_textNight.innerText = data.daily[0].textNight;
+                    weather_precip.innerText = data.daily[0].precip + 'mm';
+                    weather_sunrise.innerText = data.daily[0].sunrise;
+                    weather_sunset.innerText = data.daily[0].sunset;
+                    weather_moonrise.innerText = data.daily[0].moonrise;
+                    weather_moonset.innerText = data.daily[0].moonset;
+                    weather_moonPhase.innerText = data.daily[0].moonPhase;
+                    weather_windDirDay.innerText = data.daily[0].windDirDay;
+                    weather_windScaleDay.innerText = data.daily[0].windScaleDay + '级';
+                    weather_windDirNight.innerText = data.daily[0].windDirNight;
+                    weather_windScaleNight.innerText = data.daily[0].windScaleNight + '级';
+                    weather_vis.innerText = data.daily[0].vis + 'km';
+                    weather_humidity.innerText = data.daily[0].humidity + '%';
+                })
+                .catch(console.error)
+        })
+        .catch(console.error)
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("浏览器不支持地理定位。");
+    }
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("定位失败,用户拒绝请求地理定位");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("定位失败,位置信息不可用");
+            break;
+        case error.TIMEOUT:
+            alert("定位失败,请求获取用户位置超时");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("定位失败,定位系统失效");
+            break;
+    }
+}
+
+function showPosition(position) {
+    var lag = position.coords.longitude; //经度
+    lag = lag.toFixed(2);
+    var lat = position.coords.latitude; //纬度
+    lat = lat.toFixed(2);
+    weather_location_input.value = lag + ',' + lat;
+    // alert(lat +','+lag);
+}
 
 //工具
 //tool1：清除缓存
