@@ -176,6 +176,24 @@
 
             left: 40vw;
         }
+
+        .weather-message {
+            width: 50vw;
+            display: inline-block;
+        }
+
+        .weather-message-title {
+            width: 24vw;
+        }
+
+        .weather-detail {
+            width: 20vw;
+        }
+
+        .weather {
+            height: 30vh;
+            overflow: auto;
+        }
     </style>
 </head>
 
@@ -228,6 +246,7 @@
 
     <div class="senDiv">
         <!-- <p class="sen" title="">Attitude decides altitude.</p> -->
+        <p class="sen"></p>
         <p class="senChange"></p>
     </div>
 
@@ -283,6 +302,88 @@
             </div>
         </div>
         <p class="captcha2-btn">I can't make it.</p>
+    </div>
+
+    <div class="hitokoto">
+        <a href="https://hitokoto.cn/" class="hitokoto-jump" target="_blank">
+            <p class="sentence"></p>
+            <p class="resource"></p>
+        </a>
+        <!-- <div class="filter"></div> -->
+        <div class="weather">
+            <p class="weather-title"></p>
+            <p class="weather-city"></p>
+            <!-- <p class="weather-location"></p> -->
+            <input type="text" value="" class="weather-location" placeholder="">
+            <p class="weather-get"></p>
+            <p class="weather-check"></p>
+            <br>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-tempMax"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-tempMin"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-textDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-textNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-precip"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-sunrise"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-sunset"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-moonrise"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-moonset"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-moonPhase"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-windDirDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-windScaleDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-windDirNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-windScaleNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-vis"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title"></p>
+                <p class="weather-detail weather-humidity"></p>
+            </div>
+            <a class="weather-a" href="https://www.qweather.com/" target="_blank"></a>
+        </div>
     </div>
 
     <div class="webPage page">

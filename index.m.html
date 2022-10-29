@@ -170,6 +170,24 @@
 
             left: 30vw;
         }
+
+        .weather-message {
+            width: 50vw;
+            display: inline-block;
+        }
+
+        .weather-message-title {
+            width: 24vw;
+        }
+
+        .weather-detail {
+            width: 20vw;
+        }
+
+        .weather {
+            height: 30vh;
+            overflow: auto;
+        }
     </style>
 </head>
 
@@ -220,6 +238,7 @@
 
     <div class="senDiv">
         <!-- <p class="sen" title="文案来自B站">创新是一个民族进步的灵魂，是国家兴旺发达的不竭动力。<br>——江泽民</p> -->
+        <p class="sen"></p>
         <p class="senChange"></p>
     </div>
 
@@ -271,6 +290,88 @@
             </div>
         </div>
         <p class="captcha2-btn">算了，不验证了</p>
+    </div>
+
+    <div class="hitokoto">
+        <a href="https://hitokoto.cn/" class="hitokoto-jump" target="_blank">
+            <p class="sentence"></p>
+            <p class="resource"></p>
+        </a>
+        <!-- <div class="filter"></div> -->
+        <div class="weather">
+            <p class="weather-title">今日天气</p>
+            <p class="weather-city">北京市</p>
+            <!-- <a class="weather-a" href="https://www.qweather.com/">数据来源：和风天气</a> -->
+            <!-- <p class="weather-location">北京市</p> -->
+            <input type="text" value="北京市" class="weather-location" placeholder="输入城市名或经纬度">
+            <p class="weather-get">定位</p>
+            <p class="weather-check">确定</p>
+            <br>
+            <div class="weather-message">
+                <p class="weather-message-title">最高气温</p>
+                <p class="weather-detail weather-tempMax"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">最低气温</p>
+                <p class="weather-detail weather-tempMin"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">白天天气</p>
+                <p class="weather-detail weather-textDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">夜间天气</p>
+                <p class="weather-detail weather-textNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">总降雨量</p>
+                <p class="weather-detail weather-precip"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">日出</p>
+                <p class="weather-detail weather-sunrise"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">日落</p>
+                <p class="weather-detail weather-sunset"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">月升</p>
+                <p class="weather-detail weather-moonrise"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">月落</p>
+                <p class="weather-detail weather-moonset"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">月相</p>
+                <p class="weather-detail weather-moonPhase"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">白天风向</p>
+                <p class="weather-detail weather-windDirDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">白天风力等级</p>
+                <p class="weather-detail weather-windScaleDay"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">夜间风向</p>
+                <p class="weather-detail weather-windDirNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">夜间风力等级</p>
+                <p class="weather-detail weather-windScaleNight"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">能见度</p>
+                <p class="weather-detail weather-vis"></p>
+            </div>
+            <div class="weather-message">
+                <p class="weather-message-title">相对湿度</p>
+                <p class="weather-detail weather-humidity"></p>
+            </div>
+        </div>
     </div>
 
     <div class="webPage page">

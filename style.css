@@ -325,6 +325,29 @@ body {
     user-select: none;
 }
 
+div::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 4px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+    /* scrollbar-arrow-color: red; */
+}
+
+div::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(50, 50, 250, .7);
+    background: rgba(0, 0, 0, 0.2);
+    /* scrollbar-arrow-color: red; */
+}
+
+div::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .main {
     /* height: 900px; */
     height: 100vh;
@@ -540,20 +563,32 @@ body {
 }
 
 .hitokoto {
-    height: 8vh;
+    /* height: 8vh; */
     width: 50vw;
     position: absolute;
-    top: 20vh;
+    bottom: 60vh;
     left: 25vw;
     background-color: rgba(255, 255, 255, .4);
     padding: 2vh;
     z-index: 0;
 }
 
+.hitokoto-jump {
+    display: block;
+    width: 50vw;
+    color: #000;
+    text-decoration: none;
+}
+
 .sentence {
     font-size: 2.5vh;
     margin: 0;
     text-align: center;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    position: relative;
+    bottom: 0vh;
 }
 
 .resource {
@@ -561,67 +596,109 @@ body {
     margin: 0;
     margin-top: 2vh;
     text-align: right;
+    width: 50vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .weather {
-    height: 37vh;
+    /* height: auto; */
     width: 50vw;
     position: absolute;
-    top: 14vh;
+    top: 34vh;
     left: 0;
     background-color: rgba(150, 150, 255, .4);
     padding: 2vh;
     z-index: 0;
+    overflow: auto;
 }
 
 .weather-title {
     font-size: 2.5vh;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.weather-message{
-    display: inline-block;
-    width: 24vw;
-    height: 2vh;
+.weather-message {
+    /* height: 2vh; */
     font-size: 2vh;
     margin: 0;
-    margin-top: 1vh;
+    margin-top: .5vh;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
 }
 
-.weather-get, 
+.weather-get,
 .weather-check {
-    font-size: 2vh;
+    font-size: 1.5vh;
     margin: 0;
     margin-top: 1vh;
     display: inline-block;
     margin-left: 2vw;
+    background-color: rgba(150, 150, 255, .6);
+    padding: 1vh;
 }
 
-.weather-city {
+.weather-location {
     outline: none;
     border: none;
     background-color: rgba(150, 150, 255, .6);
     padding: 1vh;
     font-family: 'consolas';
     font-size: 1.5vh;
+    width: 20vw;
+    height: 2vh;
+}
+
+.weather-city {
+    display: inline-block;
+    font-size: 2vh;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 2.5vh;
+    left: 15vh;
+}
+
+.weather-a {
+    display: inline-block;
+    font-size: 2vh;
+    width: auto;
+    height: auto;
+    margin: 0;
+    /* position: absolute;
+    bottom: 2.5vh;
+    right: 5vh; */
+    color: #000;
 }
 
 .weather-message-title {
     display: inline-block;
-    width: 12vh;
     text-align: right;
     margin: 0;
+    white-space: nowrap;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom; */
 }
 
 .weather-detail {
     display: inline-block;
-    width: auto;
-    height: 2vh;
+    /* height: 2vh; */
     font-size: 2vh;
     margin: 0;
     margin-top: 1vh;
     margin: 0;
     margin-left: 2vh;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    /* vertical-align: center; */
 }
 
 .page {
