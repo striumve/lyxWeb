@@ -357,6 +357,7 @@ div::-webkit-scrollbar-track {
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: -200px 0; */
+    z-index: -2;
 }
 
 .noJS {
@@ -1086,6 +1087,7 @@ div::-webkit-scrollbar-track {
     overflow: hidden;
     font-size: 1.8vh;
     display: none;
+    z-index: 1;
 }
 
 .msg1-btn,

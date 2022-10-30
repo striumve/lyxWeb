@@ -481,10 +481,24 @@ if (languageFlag === 1) {
         fetch('https://geoapi.qweather.com/v2/city/lookup?&location=' + weather_location_text + '&key=f187e32108ce415bb12408e9a4d33e81')
             .then(response => response.json())
             .then(data => {
-                if (data.code === '400' || data.code === '401' || data.code === '402' || data.code === '403' || data.code === '404') {
-                    alert('获取城市失败');
+                if (data.code === '400') {
+                    alert('获取数据失败\n400：错误的请求参数\n请联系我：QQ:1041095264');
+                } else if (data.code === '401') {
+                    alert('获取数据失败\n401：错误的key/数字签名/key类型\n请联系我：QQ:1041095264');
+                } else if (data.code === '402') {
+                    alert('获取数据失败\n402：请求次数过多，请于第二天重试\n我使用的是免费订阅\n若想要提供支持，请联系我：QQ:1041095264');
+                } else if (data.code === '403') {
+                    alert('获取数据失败\n403：无访问权限');
+                } else if (data.code === '404') {
+                    alert('获取数据失败\n404：查询的数据或地区不存在');
+                } else if (data.code === '429') {
+                    alert('获取数据失败\n429：请求过于频繁，请一分钟后重试');
+                } else if (data.code === '500') {
+                    alert('获取数据失败\n500：无响应或超时');
+                } else if (data.code === '204') {
+                    alert('获取数据失败\n204：该地区暂无数据');
                 }
-                weather_city.innerHTML = data.location[0].name;
+                weather_city.innerHTML = data.location[0].adm2 + data.location[0].name;
                 fetch('https://devapi.qweather.com/v7/weather/3d?location=' + data.location[0].id + '&key=f187e32108ce415bb12408e9a4d33e81')
                     .then(response => response.json())
                     .then(data => {
