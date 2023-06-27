@@ -1103,7 +1103,7 @@ div::-webkit-scrollbar-track {
 .captcha2-scene {
     width: 100vw;
     height: 100vh;
-    z-index: 665;
+    z-index: 1919809;
     background-color: rgba(50, 50, 50, .6);
     position: fixed;
     top: 0vh;
@@ -1135,7 +1135,7 @@ div::-webkit-scrollbar-track {
 
     position: absolute;
     top: 35vh;
-    z-index: 666;
+    z-index: 1919810;
 }
 
 .captcha2::before,
