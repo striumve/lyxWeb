@@ -608,7 +608,7 @@ tool3.addEventListener("click", function () {
     if (languageFlag === 1) {
         alert("发送失败。");
     } else if (languageFlag === 2) {
-        alert("Falied.");
+        alert("Failed.");
     }
 })
 
@@ -878,6 +878,9 @@ function getQQName(num) {
             // console.log(result["data"].name, result["data"].avatar);
             qqName = result.name;
             infoName.innerHTML = qqName;
+            if (result.name === null) {
+                alert("QQ昵称获取失败");
+            }
         },
         error: function () {
             alert("QQ昵称获取失败");
@@ -1024,7 +1027,7 @@ if (localStorage.set3 != undefined) {
         if (localStorage.set4 === '1') {
             themeFlag = 1;
             day();
-            set4Opt1.selected = true;
+            set3Opt1.selected = true;
             if (localStorage.set3 === '1') {
                 main.style.background = 'url(background.jpg)';
                 main.style.backgroundSize = 'cover';
@@ -1101,6 +1104,8 @@ function day() {
         set3Opt1.selected = true;
     }
     // load.style.color = 'rgb(100, 100, 100)';
+    body.style.color = 'black';
+    body.style.setProperty('--basicColor2', 'rgba(129, 216, 207, 0.5');
     main.style.backgroundSize = 'cover';
     night1.style.backgroundColor = 'rgba(255, 255, 255, .5)';
     night3.style.color = 'black';
@@ -1145,6 +1150,8 @@ function night() {
         set3Opt1.selected = true;
     }
     // load.style.color = 'rgb(200, 200, 200)';
+    body.style.color = 'rgb(200, 200, 200)';
+    body.style.setProperty('--basicColor2', 'rgba(40, 75, 225, 0.6');
     main.style.backgroundSize = 'cover';
     night1.style.backgroundColor = 'rgba(255, 255, 255, .3)';
     night3.style.color = 'rgba(255, 255, 255, .7)';
